@@ -1,0 +1,142 @@
+<?php
+namespace Generic\Biblioteka\Input;
+use Generic\Biblioteka\Input;
+use Generic\Biblioteka\Zadanie;
+
+
+/**
+ * Klasa obsługująca listę rozwijaną(select)
+ *
+ * @author Łukasz Wrucha
+ * @package biblioteki
+ */
+
+class SelectProduktyZamowienieVillaCorrection extends Input
+{
+	protected $katalogSzablonu = 'SelectProductsOrderVillaCorrectionsNew';
+	protected $tpl = '';
+
+	protected $parametry = array(
+		'lista' => array(),
+		'wybierz' => '',
+		'dodawanie' => true,
+		'skok_h' => 0.25,
+		'skok_szt' => 1,
+	);
+
+	
+	function pobierzHtml()
+	{
+		$wartosc = $this->pobierzWartosc();
+		$dane = array(
+			'nazwa' => $this->pobierzNazwe(),
+			'atrybuty' => $this->pobierzAtrybuty(),
+			'wybierz' => $this->parametry['wybierz'],
+			'dodawanie' => (bool)$this->parametry['dodawanie'],
+			'skok_h' => $this->parametry['skok_h'],
+			'skok_szt' => $this->parametry['skok_szt'],
+		);
+
+		$this->szablon->ustawGlobalne($dane);
+
+		$lista = array();
+		if (is_array($this->parametry['lista']) && count($this->parametry['lista']) > 0)
+		{
+			$lista = $this->parametry['lista'];
+		}
+		else
+		{
+			trigger_error('Brak listy danych dla pola select '.$this->nazwa, E_USER_WARNING);
+		}
+
+		if (count($lista) > 0)
+		{
+			foreach($lista as $klucz => $val)
+			{
+				$dane['wiersz'][] = array(
+					'wartosc' => htmlspecialchars($val['id']),
+					'etykieta' => $val['name'],
+					'jednostka' => $val['measure_unit'],
+				);
+			}
+			
+			foreach ($wartosc as $id => $element)
+			{
+				$dane['produkt_dodany'][] = array(
+					'wartosc_id' => $id,
+					'wartosc_nazwa' => $element['nazwa'],
+					'wartosc_ilosc' => $element['ilosc'],
+					'wartosc_jednostka' => (isset($element['jadnostka'])) ? $element['jadnostka'] : '' ,
+				);
+			}
+			
+		}
+
+		$this->szablon->ustaw($dane);
+		return $this->szablon->parsuj();
+	}
+	
+	
+		/**
+	 * Obecna wartosc inputa w formacie array(id_produktu => array('nazwa' => 'Nazwa produktu', 'ilosc' => 4)),
+	 *
+	 * @return Obecna wartosc inputa.
+	 */
+	function pobierzWartosc()
+	{
+		if ($this->wymusPoczatkowa)
+		{
+			return $this->pobierzWartoscPoczatkowa();
+		}
+		if ($this->filtrowany)
+		{
+			return $this->wartosc;
+		}
+		
+		$dane = Zadanie::pobierz($this->pobierzNazwe());
+		
+		if ($dane !== null)
+		{
+			$ids = Zadanie::pobierz($this->pobierzNazwe().'_id');
+			if ($ids == '')
+			$ids = array();
+		
+			$nazwy = Zadanie::pobierz($this->pobierzNazwe().'_nazwa');
+			$ilosci = Zadanie::pobierz($this->pobierzNazwe().'_qty');
+
+			$this->wartosc = array();
+			$i = 0;
+			foreach ($ids as $id)
+			{
+				if (isset($nazwy[$i]) && isset($ilosci[$i]))
+					$this->wartosc[$id] = array('nazwa' => $nazwy[$i], 'ilosc' => $ilosci[$i]); $i++;
+			}
+		}
+		else
+		{
+			$this->wartosc = $this->pobierzWartoscPoczatkowa();
+		}
+		
+		
+		return $this->wartosc;
+	}
+	
+	function pobierzWartoscPoczatkowa()
+	{
+		$wartoscPoczatkowa = parent::pobierzWartoscPoczatkowa();
+		if (! is_array($wartoscPoczatkowa))
+			$wartoscPoczatkowa = array();
+		
+		return $wartoscPoczatkowa;
+	}
+	
+	/**
+	 * Sprawdza czy input zostal zmodyfikowany.
+	 *
+	 * @return boolean
+	 */
+	public function zmieniony()
+	{
+		return ($this->pobierzWartosc() !== $this->pobierzWartoscPoczatkowa());
+	}
+}

@@ -1,0 +1,1 @@
+<iframe id="{{$nazwa}}" src="{{$wartosc}}" {{$atrybuty}}>{{$tekst_alternatywny}}</iframe>

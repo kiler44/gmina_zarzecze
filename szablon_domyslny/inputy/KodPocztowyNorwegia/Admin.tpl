@@ -1,0 +1,1 @@
+<input type="text" name="{{$nazwa}}" value="{{$wartosc}}" size="4" maxlength="4" class="kod_pocztowy" {{$atrybuty}} id="{{$nazwa}}" />

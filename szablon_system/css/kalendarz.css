@@ -1,0 +1,447 @@
+#sidebar > ul > li > a > span {
+		display: none;
+	}
+#sidebar, #sidebar > ul {width: 44px}
+#sidebar > a {
+	background-image: -moz-linear-gradient(top, #464646 0%, #404040 100%);
+	border-bottom: 1px solid #6e6e6e;
+}
+#sidebar > ul {
+	background-color: #444444;
+}
+#sidebar > ul ul:before {
+	border-right: 7px solid rgba(0, 0, 0, 0.2);
+}
+#sidebar > ul ul:after {
+	border-right: 6px solid #222222;
+ }
+ #sidebar h5 a span, #sidebar h5 span {display: none}
+ #content {
+    margin-left: 45px;
+}
+.teamKalendarz{
+	 border: 1px solid #000;
+    border-radius: 15px;
+    box-shadow: 10px 10px 5px #888888;
+    float: left;
+    margin-right: 19px;
+    margin-top: 20px;
+    min-height: 650px;
+    width: 580px;
+}
+.ui-sortable li:first-child {
+	border: 1px solid #000;
+}
+.ui-sortable li{
+	border: 1px solid #000;
+}
+.container-fluid{
+	padding-left: 7px;
+	padding-right: 7px;
+}
+.teamKalendarz .fc-header-title h2{
+	font-size: 10pt;
+	 margin: 0;
+    padding: 0;
+	 line-height:15px;
+}
+.teamKalendarz .fc-header-left{
+	width: 18%;
+}
+.teamKalendarz .fc-header-right {
+    text-align: right;
+    width: 32%;
+}
+.teamKalendarz .fc-header{
+	float: right;
+	width: 60% !important;
+}
+.fc-header tr td{
+	border: none !important;
+}
+.teamKalendarz .fc-button{
+	font-size: 10px;
+}
+.kalendarzTeamNaglowek{
+	background: #8edffa none repeat scroll 0 0;
+	border-bottom: 1px solid #000;
+	border-radius: 15px 0;
+	border-right: 1px solid #000;
+	float: left;
+	margin-left: -10px;
+	margin-top: -5px;
+	padding-left: 5px;
+	width: 40%;
+}
+.ui-state-highlight{
+	width: 580px;
+	min-height: 400px;
+	float: left;
+	border: 1px solid #ccc;
+	border-radius: 15px;
+	background: #ccc;
+}
+#fullKalendarz{
+	background: #fff;
+}
+#myTab li{
+	background: #fff;
+}
+#adminToggle, #clip{
+	display: none;
+}
+/* xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx */
+#kalendarz_szerokosc{
+	
+}
+#kalendarzSlim{
+	float: left;
+	width: 100%;
+}
+.tekstWPionie1{
+	background-color: #e6b8af;
+	background-image: url("../img/event_bg.png");
+	background-repeat: repeat;
+	color: #000;
+	display: block;
+	float: left;
+	font-size: 12px;
+	font-weight: 500;
+	margin-left: 3px;
+	padding: 7px !important;
+	line-height: 14px !important;
+	white-space: nowrap;
+	writing-mode: vertical-rl;
+}
+.tekstWPionie1:not(.nie-przenos){
+	cursor: move;
+}
+.tekstWPionie{
+	 background-color: #e6b8af;
+    background-image: url("../img/event_bg.png");
+    background-repeat: repeat;
+    color: #000;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 500;
+    margin-left: 40px;
+    padding: 7px;
+    text-align: left;
+    transform: rotate(90deg);
+    transform-origin: left top 0;
+    width: 300px;
+}
+table#cal-tabela{
+	padding-left: 0px;
+	position: relative;
+}
+#overflow{
+	width: 100%;
+	overflow-x: scroll;
+}
+.event{
+	position: absolute !important;
+	word-wrap: break-word;
+	overflow: hidden;
+	word-break: break-all;
+	display: none;
+	margin-top:0px;
+	z-index: 99;
+	border-top: 3px solid #000 ;
+	border-bottom: 3px solid #000;
+	width: 12px;
+}
+.event-zaznaczony{
+	border-top:15px solid #f96216;
+}
+td.cal-team-data{
+	height: 170px;
+	padding: 5px;
+}
+#cal-tabela th.cal-team{
+	min-width: auto;
+	border-right: 1px solid #ddd;
+}
+.cal-data{
+	margin-left: 30px;
+   transform: rotate(90deg);
+   transform-origin: left top 0;
+	border-top: 2px solid #0000ff !important;
+	font-size: 16px !important;
+}
+#cal-tabela th.cal-team{
+	height: 110px;
+	display: table-cell;
+}
+.wypelnienie{
+	margin:0 auto;
+    height: 113px;
+    min-height: 30px;
+    min-width: 75px;
+    padding: 10px 0px;;
+    position: relative;
+    vertical-align: top ;
+}
+.wypelnienie-rozwin{
+	position: absolute;
+	height: auto;
+	z-index: 100;
+	background: #eff1f4;
+	top:0px;
+}
+#cal-tabela th.cal-team, #cal-tabela-1 th.cal-team , #cal-tabela-2 th.cal-team{
+	padding: 0px;
+	position: relative;
+}
+.cal-team-kontener{
+	margin-bottom: 10px;
+}
+.rozwin-grupe{
+	background: #7fd7f5 none repeat scroll 0 0;
+	cursor: pointer;
+	float: left;
+	height: 77%;
+	padding-top: 50px;
+	width: 9px;
+}
+.pokazBilGrupa{
+	cursor: pointer;
+}
+.moveHead{
+	z-index: 998;
+}
+.pusty{
+	padding: 0px !important; width: 20px;
+	border-bottom: 5px solid #5897d6 !important;
+}
+.moveHead tr th.pusty{
+	width: 16px;
+}
+.zalogowanyEvent{
+	background: linear-gradient(to bottom, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	border-radius: 100%;
+	display: block;
+	float: left;
+	height: 13px;
+	margin-bottom: 10px;
+	width: 13px;
+}
+.od{
+	background-color: #eaecef;
+}
+.ot{
+	background-color: #eff1f4;
+}
+.team-wiecej{
+	text-align: center;
+	margin-top: -10px;
+	background-color: #efefef;
+	position: relative;
+	z-index: 999;
+	cursor: pointer;
+}
+.teamZaznaczony{
+	border-bottom: 5px solid #55d12b !important;
+}
+#stworzGrupe{
+	padding: 10px;
+	border: 1px solid #7fd7f5;
+	width: 300px;
+	border-radius: 0px 20px 20px 20px;
+	box-shadow: 0 3px 6px #2f4f4f;
+	margin-bottom: 10px;
+	background: #9bd9f2;
+	display: none;
+	position: absolute;
+	top: 75px;
+}
+.zaznaczGrupa{
+	font-weight: bold;
+	color:#166efc;
+}
+.cal-team-zdjecia{
+	min-height: 40px;
+}
+#menuPodreczne, #menuCopy{
+	border-radius: 0px 20px 20px 20px;
+	box-shadow: 0 3px 6px #2f4f4f;
+}
+.pointerNone{
+	pointer-events:none;
+}
+.modal-no-resize > .modal-header{
+	display: none;
+}
+.modal-no-resize{
+	background: none;
+	border: none;
+	box-shadow: none;
+}
+.kosz{
+	background-color: #fff;
+	border: 1px solid #000;
+	font-size: 30px;
+	height: 40px;
+	left: 29%;
+	margin: 0 auto;
+	opacity: 0.8;
+	padding-top: 8px;
+	position: fixed;
+	text-align: center;
+	top: 10px;
+	width: 830px;
+	z-index: 9999;
+	opacity:0;
+}
+.usunGrupe, .edytujGrupe, .usunTeam{
+	opacity:1; margin-right: 4px; margin-top: -4px; position: relative; z-index: 2;
+}
+.zaznaczonyPracownik{
+	border: 4px solid #166efc;
+}
+.opacityTeam{
+	opacity: 0.4;
+}
+.wybranyUser{
+	box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+	border-left: 1px solid #000 !important;
+}
+.grupa-menu{
+	width: 100%;
+	float: right;
+}
+.grupaSzczegolyTeamu{
+	display: none;
+	cursor: pointer;
+}
+.doGrupy{
+	cursor: pointer;
+}
+#listaPracownikowPrzycisk{
+	float: left;
+	margin-bottom: 10px;
+	margin-left: 5px;
+	cursor: pointer;
+}
+#widokPracownikow{
+	float: left;
+	margin-bottom: 10px;
+	margin-right: 5px;
+	cursor: pointer;
+}
+#listaPracownikow{
+	border: 1px solid #ccc;
+	border-radius: 30px 5px 5px 30px;
+	float: left;
+	margin-top: -10px;
+	max-height: 36px;
+	padding: 0 13px;
+	width: 0;
+	display: none;
+	 background: #ccc none repeat scroll 0 0;
+   left: 276px;
+   position: absolute;
+	z-index: 999;
+}
+#listaPracownikow > .imgPracownik{
+	float: left;
+}
+#sortujTeam{
+	float: left;
+}
+#teamyGrupyUkryte{
+	display: none;
+}
+#datyKalendarza{
+	float: right;
+	width: 470px;
+	margin-top: -15px;
+}
+.smallDataInput{
+	width: 90px;
+}
+#wczytaj-wiecej-kalendarz{
+	background: #ccc none repeat scroll 0 0;
+	border: 1px solid #000;
+	cursor: pointer;
+	height: 30px;
+	margin-top: -20px;
+	padding-top: 7px;
+	text-align: center;
+	width: 100%;
+	position: relative;
+	z-index: 99;
+}
+h3.sortujeNaglowek{
+	color: #fff;
+	text-align: center;
+}
+.cal-team-sort{
+	width: 60px;
+}
+#cal-tabela-2, #cal-tabela-1{
+	margin:0 auto;
+	width: auto;
+}
+.posortowane > .wypelnienie{
+	min-height: 130px;
+	background-color: #efefef;
+   background-image: -moz-linear-gradient(center top , #fdfdfd 0%, #eaeaea 100%);
+}
+.logowanieInfo{
+	border-radius: 100%;
+   display: inline-block;
+	height: 13px;
+	width: 13px;
+}
+.smallLogowanie{
+	height: 8px;
+	width: 8px;
+}
+.niezalogowanyTeam{
+	background: linear-gradient(to right, rgba(248,80,50,1) 0%, rgba(241,111,92,1) 48%, rgba(240,47,23,1) 71%, rgba(246,41,12,1) 94%, rgba(231,56,39,1) 100%);; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.zalogowanyTeam{
+	background: linear-gradient(to bottom, #b4ddb4 0%,#83c783 17%,#52b152 33%,#008a00 67%,#005700 83%,#002400 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.wiecejInfoTeam{
+	 background-color: #efefef;
+	 position: relative;
+	 z-index: 999;
+}
+th.pusty{
+   min-width: 28px;
+	border-bottom: none;
+	height: 133px;
+}
+.ukryty{
+	display: none;
+}
+.group-placeholder{
+	 background: #c13e3e none repeat scroll 0 0;
+    height: 170px;
+    opacity: 0.3;
+    position: absolute;
+    right: 4px;
+    width: 70px;
+}
+.ui-resizable-handle{ height:20px !important; }
+.imieUzytkownik{
+	margin-left: 20px;
+    margin-top: 10px;
+    transform: rotate(90deg);
+    transform-origin: left top 0; width: 10px;
+}
+.cal-user-data{
+	height: 100px !important;
+}
+.table th.cal-data-user{
+	font-size: 15px !important;
+	width:92px !important;
+}
+#cal-tabela th.cal-user{
+	min-width: 31px;
+}
+#cal-tabela .klonNaglowek th.cal-user{
+	min-width: 31px;
+}

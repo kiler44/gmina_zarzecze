@@ -1,0 +1,1 @@
+<input type="submit" id="{{$nazwa}}" name="{{$nazwa}}" value="{{$wartosc}}" {{$atrybuty}} class="btn btn-primary"  />

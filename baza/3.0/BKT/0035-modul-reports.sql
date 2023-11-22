@@ -1,0 +1,1 @@
+ALTER TABLE modul_reports ADD COLUMN additional_data text;

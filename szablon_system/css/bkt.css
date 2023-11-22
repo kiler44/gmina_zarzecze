@@ -1,0 +1,2531 @@
+body {overflow:auto}
+iframe body {overflow:auto; margin: 0}
+.tablet #user-nav {top: 7px; right: 20px}
+#user-nav {right: 50px;}
+#user-nav > ul > li > a > i {font-size: 13px; vertical-align: middle; line-height: 20px;}
+#style-switcher i {color:#aaa;}
+.input-append .btn {height: 30px;}
+.input_array_ul .input-append .btn, .para .input-append .btn {height: auto;}
+.input-prepend.input-append .btn {height: auto;}
+.btn i {font-size: 15px;}
+button.btn.btn-medium, input[type="submit"].btn.btn-medium {
+	padding: 7px 10px;
+	font-size: 14.5px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px}
+.skocz_do {width:28px;}
+.pager_form {display: inline; margin-right: -1px}
+.input-prepend.input-append .pager_form span.add-on {border-radius: 0}
+.pager_boks_skocz_zakres {margin-top:5px; clear:both;}
+.select_wybor_zakresu {width:100px;}
+.region_tytul {cursor:pointer;}
+.region_zamkniety {display: none}
+.form-horizontal .no-label .controls{margin-left:10px;}
+.treeLvl1 {padding-left:15px;}
+.treeLvl2 {padding-left:25px;}
+.treeLvl3 {padding-left:35px;}
+.treeLvl4 {padding-left:45px;}
+.treeLvl5 {padding-left:55px;}
+.treeLvl6 {padding-left:65px;}
+.treeLvl7 {padding-left:75px;}
+.treeLvl8 {padding-left:85px;}
+.treeLvl1:before, .treeLvl2:before, .treeLvl3:before, .treeLvl4:before, .treeLvl5:before, .treeLvl6:before, .treeLvl7:before, .treeLvl8:before {content: "\f061"; font-family: FontAwesome; padding-right:5px;}
+.form-horizontal .control-group {min-height: 60px; position: relative}
+.form-horizontal .control-group .control-label {word-wrap:break-word}
+.form-horizontal .control-label {padding-left:10px; width:175px;}
+.kod_pocztowy_cz1 {width:20px !important;}
+.kod_pocztowy_cz2 {width:30px !important;}
+.formularz_stopka {padding:10px;}
+/*.tabelaDanych {overflow-x:auto;}*/
+.tabelaDanych .widget-title {min-height:32px; height:auto; padding:5px; background: none; border-bottom: none; border-bottom: 1px solid #CDCDCD}
+.tabelaDanych input.faktura_zaplacono.long {margin-bottom: 0}
+.widget-box .przyciskiFunkcyjne {padding: 10px 10px 5px 10px}
+.formularz_grid li {float:right; display: inline-block; padding:0px 5px 10px 5px;}
+select {width:auto;}
+#oknoModalne iframe, #oknoModalne2 iframe  {width:100%; border:0px; background: none}
+.para label, .para input, .para select, .para .select2-container {float:left;}
+#ordersContainer .niestandardowe .select2-container {width: 92% !important}
+.para input:not(.noWidth) {width:270px !important; }
+.para select {width:284px !important;}
+.para label {padding-top:5px;}
+.input_array_dodawanie_wierszy {padding:10px 0px;}
+.input_array_ul {list-style: none; margin-left:0px;}
+.input_array_ul li {margin:10px 0px;}
+#search i {color:#fff;}
+#search input[type="text"] {width:170px;}
+/*#search .tip-right {margin-top:-9px;}*/
+
+#header h1 {
+	top: 0px;
+	left: 0px;
+	overflow: hidden;
+	position: relative;
+	width:340px; height:65px;
+	padding: 0 40px 10px 0; 
+	background-color: #f5f5f5;
+	*background-color: #e6e6e6;
+	background-image: -moz-linear-gradient(top, #fff, #ededed);
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#fff), to(#ededed));
+	background-image: -webkit-linear-gradient(top, #fff, #ededed);
+	background-image: -o-linear-gradient(top, #fff, #ededed);
+	background-image: linear-gradient(to bottom, #fff, #ededed);
+	background-repeat: repeat-x;
+	border-radius: 0 0 8px 0;
+	box-shadow: 0px 1px 1px #C9C9C9 inset, 1px 1px 4px #222;
+	border: 1px solid white;
+	border-width: 0 1px 1px 0;
+}
+#header h1 a {
+	display:block;
+	width: 100%;
+	height: 100%;
+	background: url("../img/logo.png") no-repeat right bottom transparent;
+	z-index: 100;
+}
+
+#kategorieMenu {position:absolute; z-index:10; width:400px; background: #fff; padding:10px; border-radius:0px 8px 8px 0px; overflow:hidden; display:none;background: none repeat scroll 0 0 #EEE; background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(#fdfdfd), to(#eaeaea));
+	background-image: -webkit-linear-gradient(top, #fdfdfd 0%, #eaeaea 40%);
+    background-image: -moz-linear-gradient(top, #fdfdfd 0%, #eaeaea 40%);
+    background-image: -ms-linear-gradient(top, #fdfdfd 0%, #eaeaea 40%);
+    background-image: -o-linear-gradient(top, #fdfdfd 0%, #eaeaea 40%);
+    background-image: -linear-gradient(top, #fdfdfd 0%, #eaeaea 40%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fdfdfd', endColorstr='#eaeaea',GradientType=0 ); /* IE6-9 */
+	border: 1px solid #CDCDCD; border-left:0px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	-webkit-background-clip: padding-box;
+    -moz-background-clip: padding;
+     background-clip: padding-box;
+}
+#kategorieMenu ul {list-style: none; margin-left:0px; color:#777;}
+#kategorieMenu ul .poziom_2 {margin-left:12px;}
+#kategorieMenu ul .poziom_3 {margin-left:24px;}
+#kategorieMenu ul .poziom_4 {margin-left:36px;}
+#kategorieMenu ul .poziom_5 {margin-left:48px;}
+#kategorieMenu ul a {color:#000;}
+#kategorieMenu ul a:hover {color:#666;}
+#kategorieMenu ul i {color:#000;}
+#kategorieMenu #kategorieMenuUkryj {font-size: 40px; position:absolute; margin-left:374px; cursor:pointer; opacity:0.5;}
+#kategorieMenu #kategorieMenuUkryj:hover {opacity:1;}
+#kategorieMenuToggle {font-size:32px; cursor:pointer; color:#fff; opacity:0.5; margin: 16px 0px 0px 9px;}
+#kategorieMenuToggle:hover {opacity:1;}
+
+.zaznaczWieleUprawnienia {margin:-13px 0px -10px 10px; }
+#sorter {list-style: none; margin:0px;}
+#sorter li {border-top: 1px solid #ddd;}
+#sorter li:hover {background-color: #e5e5e5;}
+#sorter li .element {float:left; cursor:pointer;}
+#sorter .wiersz div{padding: 8px; line-height: 20px; text-align: left; vertical-align: top; border-left: 1px solid #ddd;}
+
+.input_zaznaczony {background-color: #e5e5e5;}
+
+.tree .tree-default li.last {background-color: none !important;}
+
+.przypisaneBloki {padding-top: 20px}
+#r_0 {background-image: url(/_system/admin/ikony/region_0.png)}
+#r_1 {background-image: url(/_system/admin/ikony/region_1.png)}
+#r_2 {background-image: url(/_system/admin/ikony/region_2.png)}
+#r_3 {background-image: url(/_system/admin/ikony/region_3.png)}
+#r_4 {background-image: url(/_system/admin/ikony/region_4.png)}
+#r_5 {background-image: url(/_system/admin/ikony/region_5.png)}
+#r_6 {background-image: url(/_system/admin/ikony/region_6.png)}
+#r_7 {background-image: url(/_system/admin/ikony/region_7.png)}
+#r_8 {background-image: url(/_system/admin/ikony/region_8.png)}
+#r_9 {background-image: url(/_system/admin/ikony/region_9.png)}
+#r_10 {background-image: url(/_system/admin/ikony/region_10.png)}
+#r_11 {background-image: url(/_system/admin/ikony/region_11.png)}
+#r_12 {background-image: url(/_system/admin/ikony/region_12.png)}
+#r_13 {background-image: url(/_system/admin/ikony/region_13.png)}
+#r_14 {background-image: url(/_system/admin/ikony/region_14.png)}
+
+.przypisaneBloki {width: 70%}
+.nieprzypisaneBloki {vertical-align: top; padding-top:20px;}
+.nieprzypisaneBloki ul,
+.przypisaneBloki .region ul{	list-style-type: none;	padding: 3px;	min-height: 33px;	height: 100%;	border: 1px solid #D6D6D6;}
+
+.ukladStrony {margin-top:20px;}
+.region {background-repeat: no-repeat; background-position: center center;}
+.region ul {border: 1px solid #D6D6D6;}
+.region .dostepnyRegion, .region .dostepnyR {	background: rgba(223,240,216, 0.7);	border: 1px solid #85b438;}
+.region .locked, .region .lck {	background: rgba(0, 0, 0, 0.1);	border: 1px solid grey;}
+.nieprzypisaneBloki ul {	height: 770px;	overflow: auto;}
+
+.nieprzypisaneBloki li,
+.przypisaneBloki .region li {	list-style-type: none;	border: 1px solid silver;	margin: 3px;	padding: 5px 5px 5px 5px;	background: #D9D9D9;	position: relative;}
+
+.nieprzypisaneBloki li#blok_0,
+.przypisaneBloki .region li#blok_0 {background: #999;}
+
+.nieprzypisaneBloki li .przyciski,
+.przypisaneBloki .region li .przyciski,
+.przypisaneBloki .locked li .przyciski {	position: absolute;	right: 5px;	top: 3px;	width: 77px;	text-align: right;}
+
+.nieprzypisaneBloki li:hover,
+.przypisaneBloki .region li:hover {	cursor: pointer;}
+
+.highlight td {background-color: #C2D7EB !important}
+.added {background-color: #2F7D33; color: white}
+
+.menedzer_plikow .widget-content {background-color: #F2F2F2;}
+.menedzer_plikow div.menu {width:20%; float:left; background-color: #F2F2F2;}
+.menedzer_plikow .header {background-color: #ECECEC; border-bottom: 1px solid #DDD;}
+.menedzer_plikow .header h5 {font-size: 12px; color: #777; text-shadow: 0 1px 0 white; padding: 6px 10px 5px; margin: 0;}
+.menedzer_plikow div.menu ul {list-style: none; margin:0px;}
+.menedzer_plikow div.menu ul li span a {padding:5px 0px 5px 10px; display:block; color:#777; border-bottom: 1px solid #F2F2F2; border-top: 1px solid #F2F2F2;}
+.menedzer_plikow div.menu ul li span a:hover {background-color: #ECECEC; border-bottom: 1px solid #DDD; border-top: 1px solid #DDD;}
+.menedzer_plikow div.pliki {margin-left:20%; min-height:400px; border-left: 1px solid #DDD; background-color: #f9f9f9;}
+.menedzer_plikow div.pliki .tabela {overflow: auto; height:400px; width: 100%;}
+.menedzer_plikow div.pliki .fullurl {width: 100%;}
+.menedzer_plikow div.pliki .alertKontener {padding:10px; background-color: #ECECEC;}
+.menedzer_plikow div.pliki .alertKontener .alert{margin-bottom:0px;}
+.menedzer_plikow div.pliki .uploadPlikow, .menedzer_plikow div.pliki .tworzenieKatalogow  {width:50%; float:left; }
+.menedzer_plikow table.pliki .type {display:none;}
+.menedzer_plikow table.pliki a.obrazek i:before { content: "\f03e"; }
+.menedzer_plikow_img {position: absolute; background-color: #fff; border:1px solid #ddd;}
+
+.eg_drzewo a, .listaFiltrow a {padding: 5px 0px 5px 10px; display: block; color: #777; border-bottom: 1px solid #F2F2F2; border-top: 1px solid #F2F2F2;}
+.eg_drzewo a:hover, .listaFiltrow a:hover {background-color: #ECECEC; border-bottom: 1px solid #DDD; border-top: 1px solid #DDD;}
+.listaFiltrow h6 {margin:0px; font-weight: normal; font-size:14px;}
+.eg_sciana .listaMiniatur {margin-left: 20%; min-height: 400px; border-left: 1px solid #DDD; background-color: #F9F9F9;}
+.eg_sciana .listaMiniatur .thumbnails {margin-top:20px; padding-left:23px;}
+.eg_sciana .listaMiniatur .thumbnails a {height: 120px; max-height: 120px; overflow:hidden;}
+.eg_sciana .listaMiniatur .thumbnails .actions {width:18px;}
+.eg_sciana .listaMiniatur .thumbnails .actions a {color:#fff;}
+.eg_sciana .listaMiniatur .thumbnailTytul {display:block; text-align: center; word-break:break-word;}
+.eg_sciana .listaMiniatur .edycjaWznow {padding-left:10px;}
+
+.edytor_grafiki .nav i {font-size: 18px;}
+.edytor_grafiki .opcje {background-color:#f2f2f2; margin-top:-20px; overflow:hidden; padding-left:10px; border-bottom: 1px solid #D4D4D4;}
+.edytor_grafiki .opcje input.text {background-color: #fff; width:60px;}
+.edytor_grafiki div.opcje form {position:absolute; top:55px; display:none;}
+.edytor_grafiki .odstepPionowy {height:10px;}
+.edytor_grafiki .obszar_roboczy {background: url('../edytor_grafiki/obszar_roboczy.jpg'); position: absolute; overflow:scroll;}
+.edytor_grafiki .edytor .historia {position: absolute; right: 0; width: 220px; padding:0px;}
+.edytor_grafiki .edytor .widget-box {margin-top:0px;}
+.edytor_grafiki .navbar-inner {border-radius:0px;}
+.edytor_grafiki td.wybrany {background-color:#f2f2f2 !important;}
+.edytor_grafiki .popover {z-index:1000; position:absolute;}
+
+#znakWodnyPodglad {position:absolute; display:none; z-index:500; overflow:hidden;}
+#znakWodnyPodglad span {display:inline-block;}
+
+.popupBox {margin-top:0px;}
+
+.obrotPion {-webkit-transform: scaleY(-1); -moz-transform: scaleY(-1); -ms-transform: scaleY(-1); -o-transform: scaleY(-1); transform: scaleY(-1); filter: flipv;}
+.obrotPoziom {-webkit-transform: scaleX(-1); -moz-transform: scaleX(-1); -ms-transform: scaleX(-1); -o-transform: scaleX(-1); transform: scaleX(-1); filter: fliph;}
+
+.przyciskiFunkcyjne {line-height:40px;}
+
+.table tr.clicked td {background-color:#f5f5f5 !important;}
+
+.turn_ckeditor_on_off {margin-top:5px; margin-right:120px;}
+
+.modal.large {
+    width: 820px; /* respsonsive width */
+    margin-left: -410px; /* width/2) */
+    height-min: 600px;
+}
+
+#loginbox {height:260px; vertical-align:middle;}
+#loginbox a.close {display:none;}
+#loginbox form {margin-top: 70px;}
+#loginbox .alert {border-radius: 4px 4px 0px 0px;}
+#loginbox .wyjasnienie {margin-top: -25px;}
+
+/* Belka fixed top */
+#search {position:fixed;}
+
+#search .search-bg {position:absolute; width:275px; height:40px; background:#333; margin-top:-6px; margin-left:-25px; z-index:50; border-radius:0px 0px 6px 6px;
+background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(#3F3F3F), to(#222));
+background-image: -webkit-linear-gradient(top, #3F3F3F 50%, #222 100%);
+background-image: -moz-linear-gradient(top, #3F3F3F 50%, #222 100%);
+background-image: -ms-linear-gradient(top, #3F3F3F 50%, #222 100%);
+background-image: -o-linear-gradient(top, #3F3F3F 50%, #222 100%);
+background-image: linear-gradient(top, #3F3F3F 50%, #222 100%);
+}
+#search input, #search button {position:absolute; z-index:200;}
+#search button {margin:0px 0px 0px 190px; }
+
+.pola-tablicy-zaawansowanej {margin-bottom:7px;}
+.input-tablica-zaawansowana input, .pola-tablicy-zaawansowanej select, .pola-tablicy-zaawansowanej textarea, .pola-tablicy-zaawansowanej .select2-container {margin:3px;}
+.input-tablica-zaawansowana .input-append input, .pola-tablicy-zaawansowanej .input-append select, .pola-tablicy-zaawansowanej .input-append textarea {margin:0px;}
+.input-tablica-zaawansowana .input-append {margin:3px; margin-bottom:0px;}
+.wiersz-tablicy-zaawansowanej label {margin-top:4px; margin-bottom:7px; }
+.input-tablica-zaawansowana input.dodaj_pole {margin:0px;}
+.input-tablica-zaawansowana-pionowy {float:none; margin-left:310px; padding:3px; min-height:2.2em;}
+.klucze-ukryte .input-tablica-zaawansowana-pionowy {margin-left:0px;}
+.input-tablica-zaawansowana-pionowy textarea {width:45%;}
+.pola-tablicy-zaawansowanej .input-tablica-zaawansowana-pionowy:first-child input, .pola-tablicy-zaawansowanej .input-tablica-zaawansowana-pionowy:first-child textarea, .pola-tablicy-zaawansowanej .input-tablica-zaawansowana-pionowy:first-child select, .pola-tablicy-zaawansowanej .input-tablica-zaawansowana-pionowy:first-child select2-container {margin-left:3px;}
+.help-inline {font-size: 14px; color: #B94A48}
+
+@media (max-width: 700px) {
+	.input-tablica-zaawansowana-pionowy input, .input-tablica-zaawansowana-pionowy textarea, .input-tablica-zaawansowana-pionowy select,  .input-tablica-zaawansowana-pionowy .select2-container {float:none; margin-left:3px;}
+	.input-tablica-zaawansowana-pionowy textarea {width:80%;}
+	.pola-tablicy-zaawansowanej .input-tablica-zaawansowana-pionowy:first-child input, .pola-tablicy-zaawansowanej .input-tablica-zaawansowana-pionowy:first-child textarea, .pola-tablicy-zaawansowanej .input-tablica-zaawansowana-pionowy:first-child select, .pola-tablicy-zaawansowanej .input-tablica-zaawansowana-pionowy:first-child .select2-container {margin-left:3px;}
+}
+
+
+/* Strony błędów */
+#errorContainer {background-color:#fff; border-radius: 6px; padding:10px; width:550px; height:90px; margin-left:auto; margin-right: auto; margin-top:20%; cursor:pointer;}
+#errorContainer i {font-size:90px; float:left; padding: 0px 10px 0px 0px;}
+#errorContainer p {text-align:right;}
+#errorBottom {position:absolute; text-align:right; bottom:10px; right:10px; color:#fff;}
+
+/* Style popup'a' */
+.popupBox .btn [class^="icon-"] {line-height:1em !important;}
+.popupBox .widget-title .icon {height:20px;}
+
+/* Poprawki FF */
+.form-inline {min-height:2.5em;}
+@-moz-document url-prefix() {
+	.form-inline .input-append .btn {padding-top:5px; padding-bottom:5px;}
+	.tworzenieKatalogow .input-append .btn {padding-top:5px; padding-bottom:5px;}
+}
+
+/* poprawki O */
+doesnotexist:-o-prefocus, .form-inline .input-append .btn {padding-top:6px; padding-bottom:6px;}
+doesnotexist:-o-prefocus, .tworzenieKatalogow .input-append .btn {padding-top:6px; padding-bottom:6px;}
+
+/* Poprawka tootlipow w Bootstrap 2.2 */
+.btn-group > .tooltip + .btn, .btn-group > .popover + .btn{margin-left:-1px;}
+
+/* Inne poprawki */
+.select2-container .select2-choice {height:28px;}
+.input-append .select2-container .select2-choice {border-radius: 4px 0 0 4px;}
+.input-append .select2-container .select2-choice div {border-radius: 0px;}
+.input-prepend .select2-container .select2-choice {border-radius: 0 4px 4px 0;}
+.select_wrap {line-height: 28px; position: relative}
+.select_wrap .qty {position: absolute; right: 0; top: 11px;}
+.select2-search {display:none;}
+
+.podgladZdjecia {clear: both; display: block; border: 1px solid #ccc; padding: 4px; border-radius: 4px; text-align: center; width: 160px; background: white url(/_system/admin/ajaxLoader.gif) no-repeat center; box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.075) inset, 0 1px 1px rgba(0, 0, 0, 0.075); margin: 0 20px 0 20px;}
+.control {text-align: center; width: 208px; margin-top: 5px}
+.nazwaZdjecia {margin-left: 20px}
+.sidebarHeader {
+	clear: both;
+	
+	background-color: #999;
+    background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(#BFBFBF), to(#646464));
+    background-image: -webkit-linear-gradient(top, #BFBFBF 0%, #646464 100%);
+    background-image: -moz-linear-gradient(top, #7F7F7F 0%, #222 100%);
+	background-image: -ms-linear-gradient(top, #BFBFBF 0%, #646464 100%);
+	background-image: -o-linear-gradient(top, #BFBFBF 0%, #646464 100%);
+	background-image: linear-gradient(top, #BFBFBF 0%, #646464 100%);
+	border-bottom: 1px solid #7A7A7A;
+    border-top: 1px solid #515151;
+    padding: 1px 5px;
+    margin-top: -1px;
+}
+.sidebarHeader, .sidebarHeader a.link {
+	line-height: 20px;
+	color: white;
+	text-shadow: 1px 1px black;
+	display: block;
+}
+.sidebarHeader a.link:hover {
+	color: #efefef;
+}
+#adminToggle {
+	float: right;
+	padding: 2px 7px 2px 7px;
+	background-image: linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+    background-repeat: repeat-x;
+	margin-top: -3px;
+	border: 1px solid #111;
+	border-radius: 4px;
+	box-shadow: 1px 1px 1px #aaa inset, 0 1px 1px #aaa;
+	text-shadow: none;
+	font-size: 13px;
+}
+#adminToggle h5 {
+	margin: 0; padding: 0;
+}
+#sidebar > ul {margin-top: -1px}
+
+.controls .input-prepend {
+	display: table-row;
+	height: 45px;
+}
+.controls .input-prepend .btn {
+	margin-left: 4px;
+	border-radius: 4px;
+	vertical-align: middle;
+}
+.controls .input-prepend .long {width: 300px}
+#lang {font-size: 11px; color: #666; float: right; margin-top: -45px; margin-right: 10px}
+.flag-ico {margin: 3px; margin-top: 4px}
+#lang a:hover img {border: 1px solid #0088CC;}
+
+#content-header .btn-group {
+	padding-left: 20px; 
+	border-left: 1px solid silver;
+	box-shadow: 1px 0 0 white inset;
+}
+#content-header .btn-group:not(.admin) {
+	border-left: none;
+	box-shadow: none;
+}
+
+.podkategoria {
+    color: #808080;
+    font-size: 12px;
+    font-style: italic;
+}
+
+#clip {
+	position: absolute;
+	top: 10px;
+	right: 4px;
+	width: 22px;
+	height: 22px;
+	display: block;
+	color: white;
+}
+
+.polePoziome {
+	float: left;
+	margin-right: 15px;
+}
+
+form li {line-height: 30px}
+
+/*gallery*/
+.gallery { margin:15px -15px; clear:both; width: 100%; }
+.gallery .links { background:#f0f3f6; padding:15px; }
+.gallery .links a { padding:0 10px; }
+.gallery .links.top { text-align:left; padding-left:45px; display:none; }
+.gallery .links.bottom { text-align:right; padding-right:65px; display:none; }
+.gallery ul { overflow:hidden; }
+.box.fullwidth .gallery label { width:auto; padding-right:15px; }
+.box.fullwidth .gallery label strong { font-weight:bold; color:#222; font-size:12px; white-space: nowrap; display: inline-block; overflow: hidden; max-width: 250px; }
+.gallery li.podgladZdjecia{
+	background: none;
+	clear: none;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+.gallery li { padding:15px; height:auto; border-bottom:1px solid #eaeef2; float:left; width:auto; padding-right:48px; list-style:none;  }
+.gallery li img { border:1px solid #eaeef2; float:left; }
+.gallery p { padding-bottom:18px; }
+.box.fullwidth .gallery p input[type='checkbox'] { margin:0 10px 5px 0; }
+.gallery .right { text-align:right; padding-right:10px; }
+.gallery .edition-area { width:220px; float:right; }
+.gallery .remove { float:right; }
+.gallery input[type='text'] { width:215px; }
+.drop-area { background:#f0f2f4; text-align:center; padding:35px 0; margin:15px 0; }
+.drop-area h2 { color:#bcc6cf !important; text-shadow:1px 1px 0px #fff; padding:0 !important; margin:0 !important; }
+.drop-area h2:before, .drop-area h2:after { border-top:2px solid #e9ecef; border-bottom:6px double #e9ecef; display:inline-block; height:2px; width:150px; margin:0 10px; vertical-align:middle; content: ""; }
+
+#dane_zamowienia > .widget-box {
+	margin-top:0px;
+}
+#oknoModalne .modal-body {
+   // max-height: 600px;
+}
+img.tabela_lista{
+	margin-right: 5px;
+}
+.margin {margin: 5px}
+.margin-bottom {margin-bottom: 15px;}
+.margin-bottom-10 {margin-bottom: 10px}
+.margin-top {margin-top: 10px}
+.margin-top-30 {margin-top: 30px}
+.spinner {min-height: 32px; min-width: 16px; background: transparent center center url(/_system/img/spinner.gif) no-repeat; margin: auto}
+#notesButtonContainer {min-width: 110px}
+.clear {clear: both}
+.fL {float: left}
+
+.fR {float: right}
+.widget-box .widget-box {border-left: none; border-right: none;}
+.table-bordered th:first-child, .table-bordered td:first-child {border-left: none}
+
+.faded {opacity: 0.5}
+#content {min-height: 600px}
+.btn-xs {
+   border-radius: 3px;
+   font-size: 11px;
+   padding: 1px 3px 2px;
+}
+.cursorPointer{
+	cursor: pointer;
+}
+
+/* DRAG & DROP przydzielanie zamówien */
+
+.column {
+	width: 170px;
+	float: left;
+	min-height: 70px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+.portlet {
+	border: 1px solid #CDCDCD;
+   box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
+   float: left;
+	margin: 2px;
+   width: 99%;
+	background: #EEE;
+}
+.portlet.apartamenty {float: none; border-bottom: 5px solid red}
+.portlet.apartamenty .content {padding: 3px}
+.apartamenty .label {padding: 6px}
+.apartamenty a {color: black; font-weight: bold}
+.apartamenty .ilosc {width: 96px}
+.zamowienie{
+	
+}
+
+.zamowienie-naglowek {
+	padding: 0.3em 0.3em;
+	margin-bottom: 0px;
+	border-bottom: 1px solid #CDCDCD;
+	position: relative;
+	z-index: 0;
+}
+.box-naglowek {position: relative; z-index: 1;}
+.zamowienie-naglowek a.btn {position: relative; z-index: 100 !important}
+.box-naglowek {
+	float: left;
+	width: 33%;
+}
+#ordersContainer {margin-top: -2px}
+#ordersContainer .zamowienie-naglowek .box-naglowek {width: auto !important; padding-right: 15px}
+#ordersContainer .zamowienie-naglowek {min-height: inherit}
+#ordersContainer .spn {width: 120px}
+.portlet-toggle {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin-top: -8px;
+}
+.zamowienie-opis {
+	font-size: 12px;
+   line-height: 16px;
+   padding: 0.4em;
+}
+#correctionsContainer .zamowienie-opis {
+	padding: 5px
+}
+#correctionsContainer .ui-spinner-button {top: -5px}
+.pozycja{
+	border-right: 1px solid #CDCDCD;
+	float: left;
+	margin-right: 10px;
+	width: 15%;
+}
+.zamowienie-opis .opis{
+	float: left;
+	width: 83%;
+}
+.maly-input{
+	font-size: 12px;
+	height: 17px;
+	margin: 0 5px 5px 0px;
+	border: 1px solid #ccc;
+	padding: 2px;
+	width: 21px;
+}
+a.ui-spinner-button{
+	cursor: pointer;
+}
+
+.portlet-placeholder {
+	border: 1px dotted black;
+	margin: 0 1em 1em 0;
+	height: 50px;
+}
+#listaZamowien{
+	width: 65%;
+	float:left;
+	border: 1px solid #ccc;
+}
+.listaZamowien{
+	width: 100%;
+
+}
+.team, .assignBox{
+	border: 1px solid #CCCCCC;
+   float: right;
+	clear: right;
+   margin-bottom: 5px;
+   width: 34.6%;
+}
+.sekcja-team {
+}
+.sekcja-team .team-naglowek {
+	height: auto;
+	text-align: center;
+	border: none;
+}
+.sekcja-team .team-naglowek img {margin: 5px 20px 10px 0}
+.sekcja-team img.lider {border: 4px solid dodgerblue}
+.team-naglowek{
+	padding: 3px 10px;
+	margin-bottom: 1px;
+	border-bottom: 1px solid #CDCDCD;
+	height: 30px;
+	color: #666666;
+	font-size: 12px;
+}
+.team-naglowek img{
+	border-radius: 5px;
+	margin-left: 5px;
+}
+.table-bordered .team-naglowek {border-bottom: initial}
+.column-team{
+	width: 100%;
+}
+.zamowienie-naglowek {cursor: move}
+.team .zamowienie-naglowek{
+	padding: 3px 2px 3px 2px;
+	margin-bottom: 0px;
+}
+.team .portlet{
+	border: none;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+	width: 99%;
+	box-shadow: none;
+}
+.team .portlet .zamowienie-opis{
+	display: none;
+}
+.team .portlet .zamowienie-opis .pozycja{
+	display: none;
+}
+.team .portlet .box-naglowek{
+	font-size: 12px;
+}
+.team .portlet .box-naglowek .label-info{
+	font-size: 12px;
+}
+#listaZamowienForm .placeholder{
+	width: 99%;
+	height: 20px;
+	border: 1px solid #5d9c0a;
+	float: left;
+	background-color: #800000;
+}
+#teamlist .placeholder{
+	width: 99%;
+	height: 20px;
+	border: 1px solid #5d9c0a;
+	float: left;
+	background-color: #800000;
+}
+#przeniesienie .element_wylaczony{
+	padding: 5px;
+}
+#teamlist{
+	margin-top: 90px;
+}
+.rozwin_dla_teamu{
+	float: right;
+	cursor: pointer;
+	margin-top: 5px
+}
+
+#content {min-height: 600px}
+
+.ui-sortable {
+	margin: 0;
+	list-style: none;
+}
+.editable-input .input-medium {float: left; margin-right: 5px}
+.ui-sortable li {padding: 5px 10px; cursor: move; border-top: 1px solid #EEE; line-height: 28px}
+.ui-sortable li:first-child {border-top: none}
+.ui-sortable li strong {margin-left: 15px}
+.ui-sortable a.faded {margin-left: 20px;}
+.ui-sortable .placeholder {background-color: #fefefe; border-bottom: 1px solid papayawhip}
+.ui-sortable-helper {background: aliceblue}
+.ui-sortable .btn-group li a {opacity: 1}
+.right {float: right}
+.left {float: left}
+.margin-right {margin-right: 18px}
+.margin-left {margin-left: 18px}
+.margin-left-10 {margin-left: 10px}
+
+#importButton {border: none; margin: 3px 10px}
+.select2-result-label .type {width: 120px; white-space:normal; font-size: 10px}
+.select2-result-label td div {padding: 2px}
+.bigdrop .select2-results {max-height: 332px}
+.select2-drop.bigdrop {border-color: rgba(82, 168, 236, 0.8)}
+.select2-result-label td.small div {font-size: 11px}
+.selectOrder {padding: 20px 20px 60px}
+
+#zbiorowy_directAssignment {max-width: 420px; clear: both}
+#zbiorowy_assignToCoordinator, #zbiorowy_assignToTeam {line-height: 100%}
+#zamowienie.form-horizontal #zbiorowy_assignToCoordinator, #zamowienie.form-horizontal #zbiorowy_assignToTeam {width: auto}
+.orderAssignment {padding: 25px 0 0 0}
+#zbiorowy_appointedTime .help-block {display: inline}
+
+#zbiorowy_directAssignment .control-label, 
+#zbiorowy_appointedTime .control-label, 
+#zbiorowy_assignToCoordinator .control-label,
+#zbiorowy_assignToTeam .control-label {//width: auto; //height: 100px;
+					margin-right: 10px}
+
+#zbiorowy_directAssignment .controls, 
+#zbiorowy_appointedTime .controls, 
+#zbiorowy_assignToCoordinator .controls,
+#zbiorowy_assignToTeam .controls {margin-left: auto; float: left;}
+
+#zamowienie.form-horizontal #zbiorowy_directAssignment, 
+#zamowienie.form-horizontal #zbiorowy_appointedTime, 
+#zamowienie.form-horizontal #zbiorowy_assignToCoordinator,
+#zamowienie.form-horizontal #zbiorowy_assignToTeam {width: auto !important; border: none; margin-right: 20px}
+.form-horizontal .bootstrap-timepicker input.input-small {width: 40px}
+.form-horizontal  .input-append {display: inline-flex}
+#zbiorowy_appointedTime .controls {line-height: 30px}
+#filtrujPrzydzielenie{
+	float: left;
+}
+#listaZamowien .label-info{
+	font-size: 15px;
+	padding: 5px;
+}
+.team .label-info{
+	font-size: 13px;
+}
+.zaczep{
+	float:right;
+	margin: 5px 0 0 10px;
+}
+#teamyContainer .column {padding: 0}
+.team .import, .team .listaApartamenty {display: none}
+.duzy-widok{
+	background: none repeat scroll 0 0 #CCCCCC;
+	z-index: 990;
+	border: 1px solid black;
+	border-radius: 2px;
+   box-shadow: 0 3px 6px #2F4F4F;
+   position: fixed;
+   right: 10px;
+	top: 70px;
+   width: 45%;
+}
+.duzy-widok .column-team{
+	overflow-x:auto;
+	max-height:540px;
+}
+
+.duzy-widok .team-naglowek{
+	height: 75px;
+	font-size: 18px;
+}
+
+.duzy-widok .team-naglowek img{
+	width:70px;
+}
+
+.duzy-widok .portlet .box-naglowek{
+	font-size: 15px;
+}
+
+.duzy-widok .portlet .zamowienie-naglowek{
+	padding: 7px 5px;
+}
+
+#przeniesienie{
+	float: right;
+}
+
+.move {
+	 position: fixed;
+    right: 20px;
+    width: 25.2%;
+	 background: #f7d099;
+	 top:40px;
+	 z-index: 999;
+	 box-shadow: 0 3px 6px #2F4F4F;
+	 border: 1px solid black;
+	 border-radius: 2px;
+}
+.move .ui-sortable {position: relative; width: 100%; height: 100%; z-index: 1000}
+
+.move .team-naglowek{
+	background: #006699;
+	color:#fff;
+}
+.move .team-naglowek i {color: #fff}
+
+.btn-lg {
+    border-radius: 6px;
+    font-size: 18px;
+    line-height: 1.33;
+    padding: 10px 16px;
+}
+/* #add.btn {margin-top: -8px} */
+.products .select {width: 300px; display: inline-block; padding: 15px 0}
+.qty, .qty_kreditnota {display: inline-block; width: 120px; margin-right: 60px}
+.qty input, .qty_kreditnota input {width: 60px}
+.qty .ui-spinner, .qty_kreditnota .ui-spinner{position: relative}
+.qty .ui-spinner .ui-spinner-up, .qty .ui-spinner .ui-spinner-down ,
+.qty_kreditnota .ui-spinner .ui-spinner-up, .qty_kreditnota .ui-spinner .ui-spinner-down,
+label.etykieta .ui-spinner .ui-spinner-up, label.etykieta .ui-spinner .ui-spinner-down,
+.qty_full .ui-spinner .ui-spinner-up, .qty_full .ui-spinner .ui-spinner-down {
+	position: absolute; 
+	right: -50px;
+	-moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #F5F5F5;
+    background-image: linear-gradient(to bottom, #FFFFFF, #E6E6E6);
+    background-repeat: repeat-x;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #A2A2A2;
+    border-image: none;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+    color: #333333;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding: 4px 12px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    vertical-align: middle;
+}
+.qty .ui-spinner .ui-spinner-up:hover, .qty .ui-spinner .ui-spinner-down:hover {
+	background-color: #E6E6E6;
+	background-position: 0 -15px;
+	color: #333;
+	text-decoration: none;
+	transition: background-position 0.1s linear 0s;
+}
+.qty_full .ui-spinner .ui-spinner-up {right: 55px} 
+.qty_full .ui-spinner .ui-spinner-down {right: 7px}
+label.etykieta .ui-spinner-button {position: relative !important}
+label.etykieta .ui-spinner .ui-spinner-up {right: auto; margin: -3px 9px 5px} 
+label.etykieta .ui-spinner .ui-spinner-down {right: auto; margin: -3px 0 5px}
+.prd_dodane.productsFull .ui-spinner-button {top: 1px}
+
+.qty .ui-spinner .ui-spinner-down, .qty_kreditnota .ui-spinner .ui-spinner-down  {right: -98px}
+.tablet .qty .ui-spinner .ui-spinner-button, #manualInvoice .qty .ui-spinner .ui-spinner-button {top: -6px}
+
+.qty input.spn {background-color: #F5F5F5;
+   background-repeat: repeat-x;
+   border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) #A2A2A2;
+   border-image: none;
+   border-radius: 4px;
+   border-style: solid;
+   border-width: 1px;
+   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05);
+   color: #333333;
+   display: inline-block;
+   font-size: 14px;
+   line-height: 20px;
+   margin-bottom: 0;
+   text-align: center;
+   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); 
+	margin-top: 1px
+}
+.formularz_region .qty input.spn, .tabelaDanych .qty input.spn {
+	margin-top: 0px;
+}
+#correctionsContainer .qty input.spn {font-size: 12px; margin-top: 5px}
+.prd_dodane .qty {position: absolute; right: 0; top: 0px}
+#zamknijFormContainer .prd_dodane .qty {top: 3px}
+.prd_dodane ul {margin: 0; list-style-type: decimal}
+.prd_dodane li {
+	line-height: 33px;
+	border-top: 1px solid #e6e6e6;
+	margin: 5px 0 5px
+}
+.tablet .prd_dodane li {width: 686px;}
+.prd_dodane li {width: 702px}
+li .prd {display: inline-block; width: 374px; margin-right: 30px; font-size: 14px; float: left}
+.pozycja li .prd {margin-right: 12px}
+li .prd_projekt{display: inline-block; width: 375px; margin-right: 30px; font-size: 14px; float: left}
+.productsFull li .prd_projekt {width: 275px}
+.item .prd {line-height: 125%; margin-top: 7px}
+#uniform-checkbox_open_order {float: left}
+
+.break{
+	word-break:break-all;
+}
+
+/*** WIDOK Tablet ***/
+.tablet #user-nav {top: 7px; right: 6px}
+.tablet #header {height: 65px;}
+.tablet #header h1 {
+	 -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #F5F5F5;
+    background-image: linear-gradient(to bottom, #FFFFFF, #EDEDED);
+    background-repeat: repeat-x;
+    border-color: #FFFFFF;
+    border-image: none;
+    border-radius: 0 0 8px;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    box-shadow: 0 1px 1px #C9C9C9 inset, 1px 1px 4px #222222;
+    height: 27px !important;
+    left: 0;
+    overflow: hidden;
+    padding: 0 40px 10px 0;
+    position: relative;
+    top: 0;
+    width: 340px;
+}
+#breadcrumb {margin-bottom: 15px}
+.tablet #content-header {height: 46px}
+.tablet #content-header h1 {font-size: 16px; margin: 5px 0 5px 10px; width: 98%}
+#content-header h1 {width: 78%}
+.widget-title h5 {width: 80%}
+.tablet #breadcrumb a {padding: 5px 16px 5px 8px; font-size: 12px}
+.tablet #user-nav .icon-user {font-size: 16px}
+.tablet #user-nav > ul > li > a  {padding: 4px 12px 4px; height: 25px}
+.tablet #user-nav .icon-off {padding: 1px 0 2px;}
+.tablet #header h1 {width: 315px; padding-right: 0; position: relative}
+.tablet #header h1 a {background: url("../img/logo.png") no-repeat scroll 5px 6px rgba(0, 0, 0, 0); height: 38px; position: absolute; z-index: 1000}
+.tablet #clip {display: none}
+
+.tablet #sidebar {left: 325px; top: 7px; width: 698px}
+.tablet #sidebar > ul > li {width: auto; border: 1px solid #7A7A7A; border-bottom: none; border-radius: 5px 5px 0 0; margin-left: 1px; float: left;}
+.tablet .sidebarHeader {display: none}
+.tablet #sidebar, #sidebar > ul {margin: 0; border: none;}
+.tablet #sidebar > ul > li.active > a {background: url("../img/menu-active-min.png") no-repeat scroll center bottom rgba(0, 0, 0, 0) !important;}
+.tablet #content {margin: 19px 0 0; border-radius: 8px}
+.tablet #sidebar, .tablet #sidebar > ul {width: 698px}
+.tablet #sidebar > ul > li > a {padding: 10px 8px 10px;}
+.tablet #sidebar > ul > li > a > i {margin: 2px 0 0}
+.tablet #sidebar > ul > li {background-color: #6A6A6A; display: inline-block; height: 40px !important}
+.tablet #sidebar > ul > li.active {background-color: #0A0A0A}
+.menu {list-style: none; margin: 0}
+.menu li {margin: 15px 5px; text-align: center}
+
+
+.portlet{ margin-bottom: 10px; background:#FFFAFA; }
+.widokZamowien .zamowienie-naglowek{ cursor: pointer; font-weight: bold; border-bottom: 6px solid #49AFCD; padding: 5px; background: #FFFAFA; min-height: 35px;}
+.widokZamowien .highpriority{ border-color: #DA4F49; }
+.widokZamowien .cancelled{ border-color: #DCDCDC; text-decoration: line-through}
+
+.widokZamowien .logedin{ border-bottom: 6px solid #a9a9a9; }
+.widokZamowien .zamowienie-naglowek .box-naglowek { width:23%; padding: 1px; white-space: normal; }
+.box-naglowek .label-info{ font-size: 15px; }
+.zamowienie-opis{ display: block; }
+p.opis_zamowienia{ margin-top: 8px; color:#000; }
+.red{ color:#ff0000; }
+.widokZamowien .polowa{ width: 50%; }
+.widokZamowien .zamowienie-naglowek a{ color: #000; }
+.widokZamowien .cancelled a, .widokZamowien .cancelled span, .widokZamowien .cancelled div, .widokZamowien .cancelled p{ color: #A0A0A0; text-decoration: line-through}
+.spn {text-align: right; width: 28px !important;}
+
+.tablet .widokZamowien .zamowienie-opis .opis{ width: 70%; float: right; margin: 0}
+.widokZamowien .zamowienie-opis .opis{ width: 65%; float: right; margin: 0}
+.widokZamowien .zamowienie-opis {display: none;}
+.widokZamowien.opened .zamowienie-opis {display: block;}
+.tablet .widokZamowien .pozycja{ width: 29%; float: left; margin: 0; padding-right: 6px;}
+.widokZamowien .pozycja{ width: 34%; float: left; margin: 0; padding-right: 6px;}
+.element_wylaczony .zamowienie-naglowek{ cursor: not-allowed ; }
+.container-fluid {padding-bottom: 10px}
+.tablet .container-fluid {padding: 10px; margin: 0}
+.tablet .row-fluid {padding: 0px; margin: 0}
+.tablet label {margin-bottom: 28px}
+
+.tablet .stdMenu {display: none}
+.stdMenu {margin: 0}
+.tablet .row-fluid, .tablet .container-fluid {margin-top: 0px !important; padding-top: 0}
+.tablet .widget-box {margin-top: -1px}
+.mobile-loader {background-image: url(/_system/img/ajax-loader.gif); background-position: center center; background-repeat: no-repeat; z-index: 10000 !important}
+
+#live-search{ float: left; margin-top:10px; }
+#filter-count{text-shadow: 1px 1px black; font-weight: bold; margin: 6px 8px 0 0}
+.pozycjonowany{position: relative; right: 5px; top: 5px; z-index: 3;}
+
+.textareaclass{
+	width: 90%;
+	min-height: 100px;
+}
+#produkty option, #produkt_pierwszy option {padding: 3px; border-top: 1px solid silver}
+.prd_dodane .item {position: relative}
+.prd_dodane .remove {position: absolute; right: 0px; top: 3px}
+#ordersContainer .prd_dodane .remove {top: 4px}
+.prd_dodane .remove_n {position: absolute; right: 0px; top: 3px}
+.prd_dodane .bold span {font-weight: bolder}
+.products p {position: relative; width: 702px}
+.tablet .products p {width: 686px}
+.add_button, .add_button_n {position: absolute; right: 0px; top: 11px}
+#ordersContainer .add_button, #ordersContainer .add_button_n, #add_niestandardowy.add_button {top: 14px}
+.productsFull #add_niestandardowy {top: 1px}
+.tablet form #formularz ul,.tablet div.products {margin-left: 15px}
+#serial_ul {list-style-type: decimal;}
+#serial_ul span {width: 500px}
+
+#serial_ul input {color: silver}
+
+#produkt_pierwszy option, #produkty option.main {font-weight: bold; color: #002a80}
+.site-stats {margin-left: 30px}
+.stats-plain li {display: inline-block}
+.block {display: block !important}
+ul.widokZamowien {list-style: decimal; margin: 0; padding: 0; padding-left: 18px}
+ul.widokZamowien li {padding-left: 0}.zamowienie .btn.pozycjonowany {width: 100px}
+.zamowienie.logedin .btn.pozycjonowany {padding: 2px; width: 96px; margin-bottom: 5px}
+.zamowienie.logedin a.btn var {display: block; font-size: 11px; font-style: normal; font-weight: bold; white-space: nowrap}
+.zamowienie.logedin a.btn i {font-size: 12px}
+.xhprof {float: right; margin-left: 10px; color: white}
+.telefony {font-family: "Ropa Sans" !important; font-style: normal; font-weight: 400; font-size: 18px; text-shadow: 1px 1px white}
+#usunPotwierdzenie {border: 2px solid; box-shadow: 0 3px 7px rgba(0, 0, 0, 0.8)}
+#usunPotwierdzenie .modal-header {border-radius: 6px 6px 0}
+#poprawGodzine {width: 100%; display: inline-block; border-bottom: none}
+#koniecPracy_dzien {margin-right: 20px}
+.spacedAlert {margin-bottom: 20px; margin-top: 35px; padding: 30px; font-size: 14px}
+.stats-plain h4 strong i {color: #0088CC}
+.stats-plain.big .icon {font-size: 40px;}
+.stats-plain .icon {font-weight: normal; font-style: normal;}
+.stats-plain li h4, .stats-plain li h5 {display: inline-block}
+.no-signal #counter {font-size: 18px}
+.no-signal p {background: url("/_system/img/no-signal.png") no-repeat center center; height: 250px;}
+.no-signal {text-align: center; margin: 100px 25% 0 25%}
+.sortProducts {float: left; margin: 10px}
+#sortowanie .right span {
+	border-left: 1px solid #ECECEC;
+	display: inline-block;
+	height: 28px;
+	padding: 0 8px;
+}
+.logedin .pozycjonowany span {font-size: 9px}
+#zamknijFormContainer .alert {margin: 20px}
+.tablet .alert {margin: 10px}
+.tablet .alert.alert-block {margin: 0 0 5px 0}
+
+.sortowanieAktywne{ background: #F6FFDA; }
+tr.cancelled {border-top: 1px solid silver; border-bottom: 1px solid silver}
+tr.cancelled td, tr.cancelled:nth-child(2n+1) td.parzysty {opacity: 0.6; background-color: #a9a9a9; text-decoration: line-through}
+.modal{
+	z-index: 9997 !important;
+}
+#alertModal {z-index: 9999 !important;}
+tfoot td {font-weight: bold; text-shadow: 1px 1px white; font-size: 13px}
+
+#correctionsContainer, .moduleContainer {width: 100%; overflow: hidden !important; position: relative; background: none repeat scroll 0 0 #f9f9f9; border: 1px solid #cdcdcd; margin-top: -15px; background: #f9f9f9}
+#ordersLeftPane {float: left; width: 20%; margin-right: 6px}
+
+#ordersContainer {float: left; min-height: 500px; width: 79%}
+.innerSlider {background: none; overflow: hidden}
+.widget-box.no-margin {margin-top: 0}
+.widget-box.inside {margin-top: 0; border: none}
+.padding-sides {padding: 0 5px}
+
+#ordersLeftPane .widget-content {padding: 6px 3px; height: 560px; overflow-y: auto; position: relative; width: 100%}
+#ordersLeftPane ul {padding: 0; margin: 0; list-style: none}
+#ordersLeftPane li {margin: 1px; padding: 2px; border-bottom: 1px solid silver;}
+#ordersLeftPane li a {display: block}
+#ordersLeftPane li:first-child {border-top: 1px solid silver}
+#ordersLeftPane li address {font-size: 11px; color: black; line-height: normal; margin: 0}
+#ordersLeftPane li.checked {background: #ddf0af}
+#ordersLeftPane li.active {
+   border: 1px solid #669;
+   border-radius: 4px;
+   box-shadow: 0px 0px 15px 5px rgba(255, 255, 190, .75) inset;
+   margin-top: -2px;
+	margin-bottom: 1px;
+}
+#ordersLeftPane li.active:first-child {margin-top: 1px}
+#ordersContainer .widokZamowien {width: 100%;}
+#ordersContainer .widokZamowien .zamowienie-opis .pozycja {float: right; width: 44%; padding: 0; border-right: none; position: relative}
+#ordersContainer .widokZamowien .pozycja .btn.btn-primary.right.margin.margin-bottom {position: absolute; top: -42px; right: -5px}
+#ordersContainer .widokZamowien .zamowienie-opis .opis {float: left; width: 55%;  border-right: 1px solid #cdcdcd; padding: 0 6px 0 0;}
+#ordersContainer .widokZamowien .portlet {box-shadow: none; margin-bottom: 3px; background: white; overflow: hidden}
+.user-thumb img, .user-thumb {border-radius: 1px}
+#ordersContainer .pozycja .widget-box {margin: 0 0 15px 0; border-radius: 4px}
+#ordersContainer .pozycja .widget-box .widget-content {border: none}
+#ordersContainer .pozycja .products p {width: 540px}
+#ordersContainer .pozycja .products .select {width: 360px}
+#ordersContainer .pozycja .qty {margin-right: 76px}
+#ordersContainer .pozycja .prd_dodane ul {padding-left: 20px}
+#ordersContainer .pozycja .prd_dodane li {width: 520px}
+#ordersContainer textarea {resize: none}
+
+#no-focus-filtr {margin: 0; padding: 0}
+#no-focus-filtr .control-group {display: inline-block; min-height: 15px; border-bottom: none; margin-bottom: -5px}
+#no-focus-filtr .control-group:last-child {margin-right: 10px;}
+#no-focus-filtr .control-group .control-label {width: auto; float: left; padding-top: 10px}
+#no-focus-filtr .control-group .controls {margin-left: 10px; float: left; padding: 4px}
+#correctionsContainer .control-group {border-top: none}
+#correctionsContainer .left .widget-box {border-radius: 5px; margin: 0 15px 5px 0;}
+#correctionsContainer .left .widget-content {border-bottom: none}
+#correctionsContainer .margin-bottom {margin-bottom: 10px}
+#ordersContainer .zamowienie-naglowek .box-naglowek {width: 24.7%}
+#correctionsContainer .stat-boxes {margin: 0}
+#correctionsContainer .stat-boxes strong {display: initial}
+#correctionsContainer .stat-boxes span {font-size: 26px}
+#correctionsContainer .stat-boxes .right {width: auto}
+.prepare .stat-boxes .right {padding-top: 15px}
+.big {float: left; line-height: 43px; margin-left: 20px}
+.big strong, .big span {font-size: 22px; font-style: normal}
+.stat-boxes strong {font-size: 22px;}
+.right strong {display: inline !important}
+#ordersContainer .pozycja .table-bordered {border: 1px solid #ddd}
+#ordersContainer .pozycja form label {float: left; margin-right: 20px}
+#ordersContainer .pozycja form .controls {margin-left: 10px}
+#ordersContainer .pozycja form .help-block {display: inline-block}
+#zbiorowy_wyborNotatki {display: none}
+#zbiorowy_wyborNotatki textarea {width: 96%}
+
+#ordersContainer #zbiorowy_wyborNotatki div label input {float: left; margin-right: 10px}
+#ordersContainer .czyNotatka, #ordersContainer .notCharge {margin-top: 8px !important}
+.notChargeAlert {display: none}
+.oznaczSprawdzony, .usunSprawdzony {margin: 5px 0}
+.rejected td {text-decoration: line-through; color: darkgrey}
+.zakladka_tresc {overflow: hidden}
+.right.no-margin {padding: 0; margin: 0; font-size: 10px; height: 38px}
+.right.no-margin p {text-align: left; display: inline-block; padding: 0 15px}
+.right.no-margin p strong {font-size: 16px}
+.right.margin-bottom {margin-top: 0px}
+.correctionsListaOgloszenNaglowek {background: #f0f2f4; border: 1px solid silver; color: #3a87ad; border-radius: 3px; text-align: center; font-size: 11px; text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5); margin: 0 0 3px 0}
+.correctionsListaOgloszenNaglowek:before, .correctionsListaOgloszenNaglowek:after {
+	border-bottom: 6px double #dfeff8;
+	border-top: 2px solid #dfeff8;
+	content: "";
+	display: inline-block;
+	height: 2px;
+	margin: 0 10px;
+	vertical-align: middle;
+	width: 10%;
+}
+#oknoModalne .modal-body, #oknoModalne .modal-body iframe html {background: #f0f2f4 url('/_system/img/ajax-loader.gif') no-repeat center 15%}
+.cena{display: inline-block; width: 120px; padding: 0 5px; }
+#oknoModalne .modal-body, #oknoModalne .modal-body iframe html {background: #f0f2f4 url('/_system/img/ajax-loader.gif') no-repeat center 25%}
+.cena{display: inline-block}
+.form-horizontal .cena input {width: 65px !important; margin-top: -2px}
+.productsFull.products .select {padding: 0}
+.form-horizontal .productsFull .cena {width: auto}
+.form-horizontal .productsFull .cena input {width: 90px !important}
+.form-horizontal .nst .cena input {font-size: 12px; box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset, 0 1px 2px rgba(0, 0, 0, 0.05)}
+#ordersContainer .form-horizontal .niestandardowe .cena input {
+	position: absolute;
+	right: 47px;
+	top: 16px;
+	width: 77px !important;
+}
+.form-horizontal .cena {width: 120px}
+.products p.niestandardowe{width:810px;}
+.prd_dodane ul.nst li{width:810px;}
+.dodane_projekt{margin-top: 40px;}
+.auto_wylogowany td {background-color: #F03759 !important}
+.prd_dodane .qty_projekt{position: relative; width:40px;}
+.auto_wylogowany td {background-color: #F03759 !important}
+#ordersContainer .niestandardowe {height: 102px}
+#ordersContainer .niestandardowe .qty {top: 60px; right: -59px}
+#ordersContainer .nst .qty {top: 0px}
+#ordersContainer .nst li .prd {width:210px}
+#ordersContainer .item {padding-top: 3px}
+.cena var {font-style: normal}
+#ordersContainer .remove_n {top: 4px}
+.notatki_wiecej{height: 290px; margin-left: 0px; overflow-y: auto; position: relative;}
+.notatki{max-height: 100px; width: 100%; overflow-y: auto; position: relative; margin-bottom: 10px;}
+ #ordersContainer .remove_n {top: 4px}
+.price {white-space: nowrap}
+.prepareFaktura .price {text-align: right; font-size: 16px}
+.price td {font-size: 13px}
+.wyslany td {background-color: #D8FAC8 !important; color: #999}
+.prd_dodane ul.nst li.item_szeroki{width:930px; float: left;}
+.productsFull ul.nst li.item_szeroki {width: 1346px; padding-bottom: 33px; margin-left: -1px}
+.productsFull.bezProcentow ul.nst li.item_szeroki {padding-bottom: 0px; padding-top: 4px}
+li.podsumowanie_produkty_projekt{border-top: 1px solid #ccc; list-style: none outside none; text-align: right; width: 695px;}
+ul.podsumowanie_produkty{ margin:20px 0 0 0; float: left; }
+.podsumowanie_tekst{ font-weight: bold; font-size: 18px;}
+.form-horizontal .cena input.readonly {width:106px !important;}
+.products p.niestandardowe_projekt{width:780px;}
+.productsFull p.niestandardowe_projekt {width: 1378px; min-width: 1060px}
+
+.get_project .box-naglowek:first-child{ width: 80%; }
+.get_project .box-naglowek:nth-child(2){ display: none; }
+.get_project .box-naglowek:nth-child(3){ width: 20%; }
+.projekt .box-naglowek:first-child{ width:auto; }
+
+.scrollBox {
+	height: 180px;
+	overflow-y: auto;
+}
+
+ul.podsumowanie_produkty, ul.nst {width: 100%}
+ul.podsumowanie_produkty li {width: 99%}
+ul.nst li {width: 97%}
+.podsumowanie_tekst {font-weight: normal}
+.podsumowanie_tekst #suma {font-weight: bold}
+.podsumowanie_tekst var {font-style: normal}
+#dodatkowo {font-size: 14px; color: green; border: 1px solid greenyellow; border-radius: 3px; padding: 3px}
+.widget-box {margin-top: 0}
+.prepare {margin-top: -5px}
+.prepare .stat-boxes {margin: 0}
+.prepare .stat-boxes li {margin: 3px; float: left}
+.prepare .left {min-height: 22px; margin: 5px 5px 0}
+.right.block {width: auto}
+
+.ceny td, .ceny th {border-left: 1px solid #eee}
+.ceny td {padding: 0 5px}
+.ceny td:first-child, .ceny th:first-child {border-left: none}
+.stat-boxes strong {text-shadow: 1px 1px white}
+.faktura_ilosc{width:20px;}
+.faktura_data{width: 80px;}
+.stat-boxes .faktura_suma{width: auto;}
+.faktura_zaplacono{width: 100px;}
+tr.faktura_zaplacona td:last-child{background: #9EE7F7 !important; }
+tr.faktura_niezaplacona td:last-child{background: #F79EA4 !important; }
+li.faktura_netto, td.faktura_netto{background: #F8FCCC !important;}
+li.faktura_brutto, td.faktura_brutto{background: #D3EBEB !important;}
+li.faktura_vat, td.faktura_vat{background: #F7EFE1 !important;}
+li.faktura_graving, td.faktura_graving{background: #E6E8E6 !important;}
+li.faktura_instalacje, td.faktura_instalacje{background: #EBFEFF !important;}
+li.zaplacono_brutto, td.zaplacono_brutto{background: #9EF7F3 !important; }
+li.pozostalo_do_zaplaty{background: #9ee7f7;}
+.dziecko{ font-style: italic;}
+.error_faktura_input{border-color: #b94a48 !important;}
+ul.faktury li {padding: 0}
+tr.bottom > td {border-bottom: 1px solid black; padding: 0}
+tr.bottom td {background-color: white !important}
+.pending td, .pending th {background-color: #d8fac8 !important; color: #999}
+.pending table tbody tr > td {background-color: inherit; color: #999}
+.naglowek_faktury td {color: black; font-weight: bold; font-size: 120%}
+.faktury td {padding: 4px 8px; vertical-align: middle}
+.buttons {margin-bottom: 20px}
+.editWindow {
+	background: white;
+}
+.editWindow.widokZamowien .zamowienie-opis {display: block}
+.editWindow.widokZamowien .pozycja {padding-right: 9px}
+.editWindow.widokZamowien .zamowienie-naglowek {min-height: inherit}
+.editWindow.widokZamowien .zamowienie-naglowek .box-naglowek {width: auto; margin: 0 10px}
+.editWindow .dodane_projekt {margin-top: 0}
+.editWindow .prd_dodane ul {padding-left: 20px}
+.editWindow .prd_dodane ul.nst li.item_szeroki {width: 97%}
+.editWindow li .prd_projekt {width: 54%}
+.editWindow .productsFull li .prd_projekt {width: 32%}
+.editWindow li .procent {width: 60px !important}
+.editWindow .qty .ui-spinner .ui-spinner-button {top: -7px}
+.tabelaDanych .qty .ui-spinner .ui-spinner-button, #zamowienie .qty .ui-spinner .ui-spinner-button {top: -6px}
+#archiwumForm .control-group {float: left; border: none; min-height: unset; padding: 0; border-left: 1px solid #efefef}
+#archiwumForm .control-group:first-of-type {border: none}
+#archiwumForm.form-horizontal .control-label {width: auto; margin: 0}
+#archiwumForm.form-horizontal .controls {margin: 0; float: right}
+
+#archiwumForm .control-group > div, #archiwumForm .control-group > label {line-height: 40px; padding: 5px}
+
+.zakladka_tresc .formularz_region:first-of-type {margin-top: -5px;}
+.zakladka_tresc .formularz_region:first-of-type .region_tytul {border-top: none; padding-top: 6px}
+#select_address input[type="radio"] {float: left; margin-right: 10px}
+.prd_dodane ul.kreditnota{width: 100%; margin-left: 20px;}
+.kreditnota li.item{ width: 60%; float: left; margin-top: 30px; }
+.prd_dodane .qty_kreditnota{width:80px; position: initial; display: inline-block; margin-right: 70px;}
+.prd_dodane .qty_kreditnota input{width: 65%; }
+.datepicker{z-index: 99999}
+.form-horizontal .productsFull .qty_full.cena input {width: 90px !important; font-size: 12px}
+.qty_full.noEdit {width: 42px !important}
+.qty_full.noEdit .ui-spinner-button {display: none}
+.qty_full {position: relative; width: 140px !important}
+.form-horizontal .productsFull .cena.qty_full {width: 200px !important}
+.sum_price {font-weight: bold !important; font-size: 14px !important}
+.sum_total_price {font-weight: bold !important; border: 2px solid #51a351 !important; background-color: #f7fff7 !important; font-size: 14px !important}
+.procent_wykonania_kontener, .kwota_kontener {display: inline}
+
+.procent_wykonania_kontener {float: right}
+.etykieta {display: inline}
+.etykieta input {width: 80px !important}
+.etykieta.total {display: block; position: absolute; right: 175px; top: 41px; width: 280px}
+.editWindow .etykieta.total {left: 540px}
+.etykieta.total input {width: 194px !important}
+#dane_dodatkowe_get .control-group, #excel .control-group{width: 50%; float: left; clear: none}
+#excel .upload {margin: 5px 0 0 20px; text-align: right}
+
+#manualInvoice .formularz_stopka {text-align: right}
+
+#archiwumForm .control-group {clear: none}
+.etykieta_procent {display: inline-block; width: 10px}
+#wybor_produktow .help-block {bottom: 6px; clear: both; position: absolute}
+#dodatkowoWartosc {font-weight: bold}
+.bgRed{background: #F7A3A9}
+/*** przydzielanie apartamentow ***/
+#lista-apartamentow{
+	width: 69%;
+	float: left;
+	border:1px solid #ccc;
+	border-top: none;
+	margin-top: 10px;
+}
+#konfiguracja-apartamentow{
+	width: 30%;
+	float: right;
+	position: relative;
+}
+#konfiguracja-apartamentow .widget-content {overflow-y: auto}
+#konfiguracja-apartamentow .widget-box {border: 1px solid #ccc}
+#konfiguracja-apartamentow .konfiguracja{
+	box-shadow: 0 3px 6px #2f4f4f;
+   position: fixed;
+	top: 358px;
+}
+tr.apartament-villa > td{
+	border-top:3px solid #7A7A79;
+}
+tr.apartament-blok{
+	height: 36px;
+}
+tr.apartament-blok > td{
+	background-color: #efefef;
+	border-top:3px solid #7A7A79;
+   background-image: -moz-linear-gradient(center top , #fdfdfd 0%, #eaeaea 100%);
+}
+tr.apartament-blok > td .icon{
+	float: left;
+	padding: 2px 10px 2px 1px;
+}
+tr.apartament-blok > td .icon.nopadding {padding: 2px 0px 2px 1px !important;}
+tr.apartament-blok > td h5{
+	width: 70%;
+	margin: 3px 0px;
+}
+tr.zaznaczony > td {
+	//background: #f39814 !important;
+	//color: #ffffff;
+	border-top: 1px solid #f39814;
+	border-bottom: 1px solid #f39814;
+}
+.widget-title span.pull-right{
+	float: right;
+	border-left: 1px solid #cdcdcd;
+}
+.box-konfiguracja{
+	width: 32%;
+	margin-left: 2px;
+	float: left;
+}
+.box-auto-konfiguracja{
+	width: 42%;
+	margin-left: 2px;
+	float: left;
+}
+ul#konfiguracja-button li, ul.box-konfiguracja li, ul.box-auto-konfiguracja li{
+	min-height: 20px;
+	padding: 3px;
+	cursor: pointer;
+}
+ul#konfiguracja-button li .icon , ul.box-konfiguracja li:not(.add) .icon:not(.add),  ul.box-auto-konfiguracja li:not(.add) .icon:not(.add){
+	float: left;
+	padding: 3px;
+	background: none;
+	border-right: 1px solid #ccc;
+}
+ul#konfiguracja-button li span{
+	margin: 0 5px;
+}
+li.zaznaczona-opcja{
+	border: 3px solid #f39814;
+	box-shadow: 0 3px 6px #2f4f4f;
+}
+li.add{
+	padding: 0px;
+	margin: 0px;
+	background: none;
+	border: none;
+	box-shadow:none;
+	width: auto;
+}
+li.add:hover{
+	background: none;
+	border: none;
+	box-shadow:none;
+}
+.auto-konfiguracja-podglad{
+   float: right !important;
+   margin-right: -40px  !important;
+}
+.zaznacz-podglad{
+	border: 1px solid #000;
+   box-shadow: 0 3px 6px #2f4f4f;
+}
+.usun-wartosc{
+	background-color: #428bca;
+	color: #ffffff;
+	font-size: 13px;
+	border-radius: 3px;
+	cursor: pointer;
+	padding: 3px 22px 3px 3px;
+}
+.no-border{
+	border: none !important; 
+}
+.dodaj-wiersz, .wyczysc, .zapisz-adres, .dodaj-notatke, .podglad, .user, .dodaj-wiersz-dziecka{
+	margin-right: 5px;
+}
+.apartamenty-tabela tr > td{
+	position : relative;
+	z-index: initial;
+}
+#konfiguracja-button{
+	border-top: 1px solid #ccc;
+	clear: both;
+	//padding: 15px 25px;
+	width: 100%;
+}
+#konfiguracja-button-margin{
+	margin : 15px 23px;
+}
+#konfiguracja-button-margin button{
+	margin-top: 7px;
+}
+.zapisz-zmiany{
+	/*
+	background: #006dcc !important;
+	border: 1px solid #006dcc !important;
+	box-shadow:none !important;
+	color: #fff;
+	*/
+}
+.ukryjWypelnione{
+	/*
+	background: #5bb75b !important;
+	border: 1px solid #5bb75b !important;
+	box-shadow:none !important;
+	color: #fff;
+  */
+}
+.pokazWypelnione{
+	/*
+	background: #faa732 !important;
+	border: 1px solid #faa732 !important;
+	box-shadow:none !important;
+	color: #fff;
+	*/
+}
+#pokazZsumowane {margin: -3px 0 5px 3px}
+
+.errorInput{
+	border: 1px solid #ff0000 !important;
+}
+
+tr.tableError{
+	background: #ff0000 !important;
+}
+.select2-duzy{
+	min-width: 450px; 
+}
+#wyszukiwanieProjekt{
+	width: 950px;
+}
+.colorpicker, .bootstrap-timepicker-widget{
+	z-index: 25000 !important;
+}
+table.konfiguracja tr td{
+	border:none;
+	//border-bottom: 1px solid #ccc !important;
+}
+.input-group-addon{
+	border: 1px solid #ccc;
+	border-radius: 0px 5px 5px  0px;
+	border-left: none;
+   margin-top: 0;
+   padding: 4px;
+	left: 92px;
+   position: absolute;
+}
+.konfiguracja-content{
+	border: none;
+}
+.konfiguracja-box{
+	border: none;
+}
+tr .dataKonfigPoczatek td{
+	border-bottom: 1px solid #ccc !important;
+}
+#selectKonfiguracjaCzasu{
+	width: 100%;
+}
+.podkresl > td{
+	border-top: 2px solid #000;
+}
+#checkboxBlok{
+	margin: 3px;
+}
+.auto-czas{
+	margin: 10px 0 0 25px;
+}
+.podswietl{
+	border: 1px solid #ff0000;
+	border-radius: 5px;
+	background: #FAD2D2;
+}
+.dataWypelniona{
+	border : 2px solid #3E34FA !important;
+}
+#konfiguracjaPrzycisk{
+	text-align: center;
+	margin-top: 20px;
+}
+td.wycentrujTabele > table{
+	margin: 0 auto;
+}
+.auto-konfiguracja-naglowek{
+	height: 40px !important;
+	vertical-align:middle !important;
+}
+.auto-konfiguracja-naglowek > .label{
+	font-size: 11pt !important;
+	padding: 5px;
+}
+/*** koniec przydzielanie apartamentow ***/
+.container_get_project #listaZamowien {width: 60%}
+.container_get_project .team, .container_get_project .assignBox {width: 39%}
+.container_get_project .team .box-naglowek:first-child {width: 90%}
+.container_get_project .team .get_project .box-naglowek:nth-child(3) {width: 10%}
+.container_get_project .widget-title h5 {width: 75%}
+.team .installation .box-naglowek {width: auto !important; margin: 0 5px 0 5px}
+.naglowki {width: 90%; float: left}
+.get_project .naglowki {width: auto; display: inline-block} 
+.team .naglowki {width: 84%; display: inline-block} 
+.container_get_project #listaZamowien .naglowkiAkcje {width: 235px; display: inline-block; float: right}
+.container_get_project .box-naglowek:first-child {width: auto}
+.przyciski-margines-lewy .btn{ margin-left: 5px; }
+.przyciski-margines-lewy a.btn { color:#fff; }
+.przyciski-margines-lewy{
+	float: right;
+	margin: -5px 0px 5px 0px;
+}
+/*** wyszukiwarka dla Renaty ***/
+.input-szukaj{
+	height: 31px !important;
+	width: 600px !important;
+	font-size: 22px !important;
+	padding: 5px 10px !important;
+	margin-left: 20px;
+}
+.label-szukaj{
+	font-size:22px;
+}
+.wyszukiwarka-lista{
+	margin: 0px;
+	list-style: none;
+}
+.wyszukiwarka-lista li:not(.zakladka_tytul):not(.item){
+	padding-bottom: 10px;
+	background-color: #F5F5F5;
+   border: 1px solid #DDDDDD;
+   cursor: pointer;
+   margin: 0 0 10px;
+   padding: 13px 20px 10px;
+   position: relative;
+}
+.przyciski-widok-wyszukaj{
+	float: right;
+}
+.wyszukiwarka-lista li:hover:not(.item) {
+    background-color: #EDEDED;
+}
+.label-danger{
+	background: #e74c3c;
+}
+.btn-etykieta{
+	margin: -5px 5px 0px 5px;
+	padding: 4px 15px;
+	font-weight: bold;
+	min-width: 110px;
+	text-align: left;
+}
+.btn-etykieta > .icon{
+	float: left;
+	margin : 2px 10px 0px -10px;
+}
+.zamowienie-informacje{
+	margin-top:10px;
+}
+.widok-wyszukaj-tytul{
+	margin-top: -3px;
+   width: 60%;
+}
+.widok-wyszukaj-przyciski{
+	text-align: right;
+   width: 40%;
+}
+#loader{
+	display: none;
+   position: absolute;
+   top: 0; left: 0; right: 0; bottom: 0;
+   background: url(/_system/img/ajax-loader.gif) center center no-repeat #000;
+	opacity: 0.6;
+   z-index: 1000;
+}
+.wyszukiwarka-lista > #wiecej{
+	text-align: center;
+}
+.auto-szerokosc{
+	width: auto !important;
+}
+/*** koniec wyszukiwarka dla Renaty ***/
+.boxApartamenty {padding: 4px; float: left}
+.zamowienie .btn.pozycjonowany {width: 100px}
+.zamowienie.logedin .btn.pozycjonowany {padding: 2px; width: 96px; margin-bottom: 5px}
+.zamowienie.logedin a.btn var {display: block; font-size: 11px; font-style: normal; font-weight: bold; white-space: nowrap}
+.zamowienie.logedin a.btn i {font-size: 12px}
+.xhprof {float: right; margin-left: 10px; color: white}
+.telefony {font-family: "Ropa Sans" !important; font-style: normal; font-weight: 400; font-size: 18px; text-shadow: 1px 1px white}
+#usunPotwierdzenie {border: 2px solid; box-shadow: 0 3px 7px rgba(0, 0, 0, 0.8)}
+#usunPotwierdzenie .modal-header {border-radius: 6px 6px 0}
+.wersjaData {width: 100px !important}
+.fakturaNazwa {padding: 2px 4px;}
+.editable {min-height: 22px; background: whitesmoke; border: 1px solid lightblue; border-radius: 3px; padding: 2px 1px 1px 3px; margin: 0; width: 99%}
+.editable textarea {resize: none; width: 100% !important; border: none; margin: 0px !important; padding: 0}
+/* lista apartamentow logowanie tablet */
+.lista-dat-apartamenty{
+	height: auto;
+	left: 0;
+	padding: 0;
+}
+.lista-apartamentow{
+	margin-left: 250px;
+	margin-right: 0px;
+	height: auto;
+}
+.data-link{ font-size: 12px; }
+.data-link:hover{
+	border:1px solid #0088CC !important;
+	background: #FFBC70 !important;
+}
+.data-aktywna{
+	border:1px solid #0088CC !important;
+	background: #FFBC70;
+}
+/* koniec lista apartamentow logowanie tablet */
+.szerokosc{ width: 40% !important;}
+
+.podglad-zamowienia-apartamenty{
+	height: 500px; 
+	overflow-x: auto;
+}
+#numberCustomer{
+	width: 450px;
+}
+#klientFormularz-numberPrivatCustomer .no-label {clear: both; width: 100%}
+#klient p strong {display: block; margin-top: 5px; font-size: 18px}
+#klient p a {margin-left: 10px}
+#klient p a.select2-choice {margin-left: 1px}
+.zamowienie-informacje .prd_dodane .ui-spinner-button {top: -5px}
+.zamowienie-informacje .qty .ui-spinner-button {top: -6px}
+.content {padding-bottom: 10px}
+.komunikator {width: 0%; height: 70%; position: fixed; top: 85px; right: 0px; z-index: 9998 !important;}
+.komunikator .content {height: 100%; border-radius: 6px 0 0 6px; border: 1px solid #006699; border-width: 1px 0 1px 1px; box-shadow: none;}
+.komunikator.active .content {box-shadow: 4px 0 8px 4px #666;}
+.komunikator .widget-content {height: 100%}
+.komunikator .widget-title {border-radius: 8px 0 0 0}
+.komunikator .widget-title span {border-radius: 8px 0 0 0}
+.chat-content {position: relative}
+.chat-content .well {position: absolute; bottom: 15px; left: 10px; right: 10px;}
+.chat-content .well .btn-group {position: absolute; top: -40px}
+.chat-content .well .input-group p {margin-bottom: -20px}
+.chat-content textarea {resize: vertical; max-height: 40%; min-width: 99%}
+.komunikator .panel-right {height: auto; overflow-y: auto}
+.komunikator-switch {position: absolute; top: 4px; right: -3px; z-index: 1000; box-shadow: 0px 1px 10px black}
+.komunikator-switch.active {box-shadow: none}
+.panel-right, .panel-left {padding-top: 0; padding-bottom: 0; margin-top: 0; margin-bottom: 0}
+.panel-left {overflow-y: auto}
+.contact-list li.active {background-color: #0088cc; font-weight: bold; text-shadow: 1px 1px #002a80}
+.contact-list li.active a {color: white}
+.contact-list li.active:hover {background-color: #0088cc}
+#contactFilter {font-size: 11px; margin-left: 5px; height: 20px}
+.selectedContacts {border: 1px solid #D9D9D9; border-radius: 6px; background-color: white; margin: 5px 0 5px 0; text-align: center; padding: 5px; color: #555; font-size: 12px; max-height: 40%; overflow-y: auto}
+.chat-content .alert {margin-top: 5px; margin-bottom: 5px; padding: 3px 26px 3px 8px; font-size: 12px}
+.selectedContacts img {
+	border-radius: 3px;
+   display: inline-block;
+   height: 28px;
+   margin: 5px;
+   vertical-align: middle;
+   width: 28px;
+}
+.selectedContacts span {display: none}
+.brak_zdjecia {
+	width: 28px; 
+	height: 28px; 
+	border: 1px solid #3a87ad; 
+	border-radius: 3px; 
+	line-height: 28px; 
+	text-align: center; 
+	color: white; 
+	background-color: #2F7D33; 
+	display: inline-block !important; 
+	margin-right: 10px; 
+	vertical-align: middle;
+	font-weight: bolder;
+	text-shadow: 1px 1px #255400;
+	font-size: 11px;
+	padding: 0;
+}
+.selectedContacts .brak_zdjecia {margin: 5px;}
+#status > label.fL{
+	margin-left: 10px;
+}
+.no-shadow{
+	text-shadow: none !important; 
+}
+.borderRed2px{
+	border:2px solid #ff0000;
+}
+.chat-message .ajaxLoader {height: 30px}
+.rightImportant{
+	float: right !important;
+}
+a.btn.absolute {position: absolute; top: 16px; margin-left: 16px}
+#dashboard #control1, #dashboard #control2 {}
+.google-visualization-controls-categoryfilter label, .google-visualization-controls-categoryfilter div {display: inline-block}
+.google-visualization-controls-categoryfilter label {padding-top: 5px}
+.fakturanaglowek {display: none}
+.fakturanaglowek.editable {display: block}
+#dashboard #counter {float: right; margin-right: 20px; font-size: 16px}
+.wyszukiwarka-lista .widok-wyszukaj-tytul {margin-top: 10px}
+.tablet .wyszukiwarka-lista .widok-wyszukaj-tytul {margin-top: -3px}
+#wyszukiwarka ul {margin-bottom: 0}
+#wyszukiwarka .help-block {margin: 5px 0 0}
+.formularz_grid #wyszukiwarka li {padding-bottom: 0px}
+.contact-list .historia {font-size: 14px; margin-top: 4px; z-index: 999; padding: 5px}
+.contact-page {background-color: white; border: 1px solid #d9d9d9; border-radius: 6px; padding: 5px}
+.contact-page h3 {margin-bottom: 0}
+.contact-page img {border-radius: 5px; border: 1px solid #006699; box-shadow: 0 2px 5px darkgray}
+.historia table {}
+.historia table tr td {background-color: #f5f5f5; border-bottom: 6px solid white; box-shadow: 0px 1px #666; padding: 5px 8px; font-size: 12px}
+.historia .btn-group span.typ {min-width: 45px}
+.historia input {padding: 3px 6px}
+.historiaWiadomosci .cropText {width: 450px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis}
+.historiaWiadomosci .btn-group > .btn, .historiaWiadomosci .btn-group > .dropdown-menu {font-size: 12px}
+.historia .belka {
+	background-color: #efefef;
+   background-image: -moz-linear-gradient(center top , #fdfdfd 0%, #eaeaea 100%);
+   border-bottom: 1px solid #cdcdcd;
+   height: 36px;
+}
+#historiaLicznik {padding: 3px 6px; margin: 10px}
+.historia .belka .icon {padding: 8px 6px}
+.historia .tresc {margin-top: -5px; overflow-y: auto; width: 100%}
+.historia .empty-row td {color: #888; text-align: center; height: 30px}
+.komunikator .content {margin-bottom: 0; padding: 0}
+.komunikator .overlay {height: 100%; width: 100%; z-index: 1000; background: #666 url(/_system/img/ajax-loader.gif) no-repeat cenurlter center; opacity: 0.5; position: absolute; top: 0px; right: 0px}
+.zakresDat {line-height: 20px; margin: 10px 20px; font-size: 14px;}
+.zakresDat var {font-style: normal;}
+
+.magazyn_tree {
+	min-height:20px;
+	padding:19px;
+	margin-bottom:20px;
+	background-color:#fbfbfb;
+}
+.magazyn_tree li {
+	list-style-type:none;
+	margin:0;
+	padding:10px 5px 0 5px;
+	position:relative;
+}
+.magazyn_tree li::before, .tree li::after {
+	content:'';
+	left:-20px;
+	position:absolute;
+	right:auto
+}
+.magazyn_tree li::before {
+	border-left:1px solid #999;
+	bottom:50px;
+	height:100%;
+	top:0;
+	width:1px
+}
+.magazyn_tree li::after {
+	border-top:1px solid #999;
+	height:20px;
+	top:25px;
+	width:25px
+}
+.magazyn_tree li span {
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+	border:1px solid #999;
+	border-radius:5px;
+	display:inline-block;
+	padding:3px 8px;
+	text-decoration:none
+}
+.magazyn_tree li.parent_li>span {
+	cursor:pointer
+}
+.magazyn_tree>ul>li::before, .tree>ul>li::after {
+	border:0
+}
+.magazyn_tree li:last-child::before {
+	height:30px
+}
+.idKategorii_1::before{
+	border:none !important;
+	border:0px;
+}
+.magazyn_tree li.parent_li>span:hover, .magazyn_tree li.parent_li>span:hover+ul li span {
+	background:#eee;
+	border:1px solid #94a0b4;
+	color:#000
+}
+.magazyn_tree li q{
+	font-size: 14px;
+	width: 500px;
+	display: block  !important;
+	padding: 8px 30px !important;
+	border:1px solid #999 !important;
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	-webkit-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	-moz-box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	box-shadow:inset 0 1px 1px rgba(0, 0, 0, 0.05);
+	cursor: pointer;
+}
+.magazyn_tree li q.ukryj{
+	display: none  !important;
+}
+#drzewoKategorii{ width: 772px; }
+q:hover{
+	background: #A6DBED;
+}
+q:hover:after{
+		content: ' - click to menage - ';
+		color:#FA6632;
+}
+#menuKategorii{
+	position: absolute;
+}
+.btn-xs i{
+	font-size: 12px;
+}
+.selectDrzewo_kategoria, .selectDrzewo, #kategoria_wyniki{
+	width: 81%;
+}
+.kategoria_magazyn{
+	padding: 7px;
+	font-size: 14px;
+}
+.tytul_produkt_magazyn{
+	font-size: 18px;
+}
+input.ilosc{
+	height: 25px;
+	margin-top: 5px;
+	padding: 8px;
+	width: 80px;
+}
+.wyszukiwarka_spinner{
+	margin-right: 100px;
+}
+#kategoriePodglad{
+	background: #fff none repeat scroll 0 0;
+	border: 1px solid #ccc;
+	position: absolute;
+	width: 740px;
+	height: 600px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	z-index: 9999;
+}
+.menuKategorii{
+	
+}
+.menuKategorii li::before{	border: none;}
+.menuKategorii li{padding: 0px; /* border-top:1px solid #ccc; */ }
+.menuKategorii li q{width: 675px; border-radius: 0px; box-shadow:none !important;}
+ul.menuKategorii q.poziom_0 {  width: 597px; }
+ul.menuKategorii q.poziom_1{width: 597px;}
+ul.menuKategorii q.poziom_2{width: 588px;}
+ul.menuKategorii q.poziom_3{width: 569px;}
+ul.menuKategorii q.poziom_4{width: 550px;}
+.menuKategorii q:hover:after{ content: ''; background: #000; }
+.menuKategorii q:hover{  background: linear-gradient(#E1E2E3 ,#ccc, #8EDBF5); }
+.menuKategorii ul{margin-left: 0px;}
+.menuKategorii .idKategorii_1 {
+	border-bottom: 1px solid #ccc;
+   border-left: 1px solid #ccc;
+   border-right: 1px solid #ccc;
+}
+.breadcrumb > li + li:before {
+   color: #CCCCCC;
+   content: "/ ";
+   padding: 0 5px;
+}
+.zmnieszkwote{
+	float: right;
+}
+.wyszukiwarka_spinner a.ui-spinner-button, .wyszukiwarka_spinner a.ui-spinner-up{
+	margin-top: 5px !important;
+   padding: 12px !important;
+}
+.nav-tabs > li.active a , .tabbable.inline .nav-tabs > li.open .dropdown-toggle {
+    background-color: #4f99c6;
+    border-color: #4f99c6;
+    color: #ffffff;
+}
+.tabbable.inline .tab-content {
+    border: 1px solid #dddddd;
+    position: relative;
+	 padding: 10px 0px;
+}
+#ilosc-wynikow{text-align: left;}
+.koszyk{
+	position: absolute;
+	right: 0;
+	top: -55px;
+}
+.koszyk_fixed{
+	position:fixed; 
+	z-index: 999; 
+	right: 40px;
+	top:0px;
+}
+#koszykIlosc{
+	margin: 0px;
+	padding: 0px;
+}
+.koszykWypelniony{
+	background: #5cb85c none repeat scroll 0 0;
+   color: #ffffff !important;
+}
+.breadcrumb{
+	border:1px solid #ccc;
+}
+#podgladKoszyka{
+	left: -410px;
+	margin-top: 45px !important;
+	max-height: 600px;
+	overflow-y: scroll;
+	padding: 10px;
+	width: 550px;
+}
+.tabelkaKoszyk{
+	width: 100%;
+}
+.tabelkaKoszyk tr{
+	border-bottom: 1px solid #ccc;
+}
+.produktIlosc {
+	width: 30px;
+}
+
+.no-overflow{
+	overflow: inherit !important;
+}
+.widget-box .widget-title .buttons .btn {
+    border-left: 1px solid #dddddd;
+    border-radius: 0;
+    box-shadow: 1px 0 0 0 rgba(255, 255, 255, 0.8) inset;
+    color: #555555;
+    font-size: 12px;
+    line-height: 17px;
+    margin: 0;
+    padding: 9px 10px 6px;
+    text-shadow: 0 1px 0 #ffffff;
+}
+.widget-box .widget-title .buttons {
+    float: right;
+    margin: 0;
+}
+.invoice-from, .invoice-to { width: 49%; }
+.invoice-to { float: right; }
+.invoice-from { float: left; }
+.podpis {
+    background-color: #F2F2F2;
+}
+.podpisRodzic{
+    background-color: #D2D5D6;
+    color: darkblue;
+    padding: 5px;
+}
+.podpisNaglowek{ font-size:  23px; margin: 8px 0px; display: block; }
+#podpisForm > .formularz_stopka{ padding-right: 180px; }
+#wyszukiwanieKlientow{ }
+.szukaj-storage{
+	width: 550px !important;
+}
+.szukajMenuKategori{ width: 300px; }
+#myTab{ margin-bottom: 0px;}
+.selectDrzewo, .selectDrzewo_kategoria{margin-top: 7px;}
+
+/* KALENDARZ */
+#kalendarz{}
+#cal-tabela{width: 100%;}
+#cal-data, .cal-data{width: 140px;}
+#cal-tabela th.cal-team{
+	vertical-align: top;
+	padding: 10px;
+	display: none;
+	height: 180px;
+	min-width: 200px;
+	min-height: 30px;
+	border-bottom: 5px solid #5897D6;
+	position: relative;
+}
+#cal-tabela th.cal-team:hover{ border-bottom: 5px solid #D2D658; }
+#cal-menu tr td{
+	width: 200px;
+	border: none;
+	border-bottom: 1px solid #000;
+}
+#cal-tabela th.cal-team-data{
+	display: none;
+}
+td.cal-team-data{
+	height: 70px;
+	position:relative;
+	// padding-top: 28px;
+	color:#ccc;
+}
+#cal-tabela th.cal-data{
+	text-align: left;
+}
+#cal-tabela th.cal-data button{
+	margin-right: 10px;
+}
+.cal-team-zdjecia-wiecej{
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	cursor: pointer;
+}
+.cal-team-kontener{
+	position: relative;
+}
+.cal-team-menu{
+    text-align: left;
+	 margin:-10px -10px 5px -10px;
+}
+.cal-team-caly{
+	background: #fff none repeat scroll 0 0;
+	border: 1px solid #000;
+	left: 210px;
+	padding: 10px;
+	position: absolute;
+	text-align: left;
+	top: 65px;
+	width: 200px;
+	z-index: 99999;
+	display: none;
+}
+
+.cal-przesun{ width: 40px; }
+.cal-przesun:hover{ background: #0088CC; }
+#cal-up{ text-align: right; float: left;}
+#cal-down{ text-align: left; float: right;}
+
+.projekt1{
+	background: #2F7D33 !important;
+}
+.projekt2{
+	background: #0088cc !important;
+}
+select#userSelect{
+	width: 90%;
+}
+#limitDo{width: 60px; margin-top: 6px;}
+.iloscFilter .ui-spinner a.ui-spinner-button{
+	padding: 8px;
+	border: 1px solid #ccc;
+	background-image: linear-gradient(to bottom, #ffffff, #e6e6e6);
+   background-repeat: repeat-x;
+	margin-left: 7px;
+	border-radius: 4px;
+}
+.iloscFilter .ui-widget-content{ border: none;}
+
+#slider{ margin-top:8px; width: 100%; }
+.ui-slider {
+    position: relative;
+    text-align: left;
+}
+.ui-slider-horizontal {
+    height: 0.8em;
+}
+#slider.ui-widget-content, #dateSlider.ui-widget-content {
+   border: 1px solid #aaaaaa;
+   color: #222222;
+	border-radius: 4px;
+	background: #CCC;
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    background: #49afcd repeat-x scroll 50% 50%;
+    border: 1px solid #d3d3d3;
+    color: #555555;
+    font-weight: normal;
+}
+.ui-slider-horizontal .ui-slider-handle {
+    margin-left: -1.1em;
+    top: -0.7em;
+}
+.ui-slider .ui-slider-handle {
+    cursor: default;
+    height: 2.1em;
+    position: absolute;
+    width: 2.1em;
+    z-index: 2;
+	 border-radius: 4px;
+}
+li.lider{background: #FABC02 !important; }
+.resize{ cursor:pointer; width: 10px;  background: #F9F9F9 none; background-image:none; -moz-linear-gradient: none; }
+.cal-team-menu{ border-bottom: 1px solid #ccc; padding: 5px;}
+table.godziny{ width: 100%; height: 100%; margin-top: 20px; }
+table.godziny tr th{ width: 80px; }
+span.godzina{ color: #3CCAFA; left: -4px; position: relative; top: -8px;}
+#dateSlider{ margin-top: 8px; }
+#dateSlider a{ background: #5cb85c; }
+.uzytkownicyTeamuLista{ bottom: 0;
+    margin: 3px -18px 0;
+    padding-top: 5px;
+    position: absolute;
+    width: 100%; }
+.uzytkownicyTeamuLista tr th{width: 33.33%; background: none !important; border-top:1px solid #000 !important; min-height: 90px;}
+.uzytkownicyTeamuListaDat{ height: 40px; margin-bottom: -7px; margin-left: -8px; margin-right: -8px; width: 100%; }
+.uzytkownicyTeamuListaDat tr:nth-child(2n+1) td:not(.selected){ background: transparent !important; }
+#menuPodreczne ul, #menuCopy ul { margin-left: 0px; margin-top:0px;}
+#menuPodreczne ul li, #menuCopy ul li{ margin-top: 5px; list-style: none; }
+#menuPodreczne ul li hr{ border: 1px solid #ccc;  margin:10px 0px;}
+#menuPodreczne ul li a span, #menuCopy ul li a span{ color: #000; margin-left: 7px; }
+.cal-godzina-user{width: 33.3% !important;}
+.lider{border: 1px solid rgb(255, 0, 0); cursor: pointer;}
+.emptyTeam{ border: 1px solid rgb(255, 0, 0); padding: 5px; }
+
+.outer { position:relative; overflow: hidden; }
+.inner {
+	overflow-x:scroll;
+	overflow-y:visible;
+	width: 100%;
+	min-height: 600px;
+	background: #f9f9f9;
+}
+table#cal-tabela{
+	padding-left: 220px;
+	width: 100%;
+	cursor: default;
+}
+table#cal-tabela th.cal-data, th#cal-data{
+	z-index: 999;
+	position:absolute;
+	background: #F9F9F9 none;
+	left:0;
+	width:200px;
+}
+#przykryj{
+	z-index: 999;
+	//height: 94%;
+	height: 100%;
+	position:absolute;
+	background: #F9F9F9 none;
+	left:0;
+	border-right:5px solid #5897d6;
+	margin-top: 200px;
+	width:220px;
+}
+th#cal-data{ height: 200px; }
+
+#cal-menu.move{ position: fixed; z-index: 1000; width: 2576px; top:0px; }
+.moveHead{ 
+	// position: fixed; 
+	width: 99%;
+	position: absolute;
+	z-index: 3;  box-shadow: 0 3px 6px #2f4f4f; }
+
+#do-gory{ 
+	position: fixed; 
+	right: 0;
+	z-index: 999;
+	bottom: 0;
+	width: 80px; 
+	height: 80px;
+	background: url(../img/arrow_up.png) no-repeat #ccc;
+	background-size: contain ;
+	display: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+td.selected{ background: #B9EAFA !important; };
+
+.cal-data-user{ min-height: 30px; }
+.userList, #userListNote{ list-style: none; margin-left:0px;}
+.userList > li, #userListNote >li { margin-bottom: 20px; width: 500px; position: relative;}
+.editableT{ width: 90%; margin: 4px; }
+.border{ background: #fff; }
+.border:hover{ background: #fff !important; }
+#divloader {
+    display: none;
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.9) url(/_system/img/ajax-loader.gif) center center no-repeat;
+    z-index: 1000;
+}
+#komentarzBox{ width: 200px; min-height: 90px; background: #FAD4C8; border: 1px solid #114CFA; border-radius: 10px 10px 0px 10px; display: none; position:absolute; z-index: 9999; opacity: 0.9;}
+#wczytaj-wiecej-dat{ width: 100%; height: 50px; background: #ccc; opacity: 0.8; position: absolute; z-index: 999; cursor: pointer; border-top: 3px solid #000; margin-top:-12px; }
+#wczytaj-wiecej{ margin: 0 auto; width: 200px; 	text-align: center; 	text-shadow: 1px 1px #fff; padding-top: 7px; }
+.event{ padding: 7px; margin-top: 3px;  cursor: pointer; background-image: url(../img/event_bg.png); background-repeat: repeat; font-size: 20px; font-weight: 500; }
+.event:first-child{ margin-top:0px; }
+.table-bordered-strong{ border:1px solid #000; }
+td > .placeholder{ width: 30px; height: 5px; background: #D3DBDE !important; }
+.selectedEvent{ border-left: 30px solid #FA6334; }
+#wyniki{
+	display: none;
+   position: absolute;
+   width: 460px;
+	background: #fff;
+	z-index: 99999;
+	max-height: 400px;
+	overflow-y: scroll;
+	border:1px solid #ccc;
+}
+#wyniki ul{ margin: 0px; }
+#wyniki ul li{
+	cursor: pointer;
+   line-height: 30px;
+   list-style: outside none none;
+   padding: 5px;
+}
+#wyniki ul li:hover{	background: #b9eafa; }
+#wyniki ul li.zaznacz{	background: #3CCAFA; }
+#zamknijWynik{	cursor: pointer; margin-left: 9px; margin-right: 12px; margin-top: -12px; }
+.powiekszTeam{ height: auto !important; padding-top: 0px !important; }
+.info{margin: 0 10px;}
+#runButton{ background:#c13e3e; color:#ffffff;  display: none; position: fixed; right: 21px; z-index: 999999; cursor: pointer; }
+#runButton:hover{ background:#4f99c6 !important; color:#ffffff; }
+.messages-menu{ width: 335px; max-height: 500px !important; overflow-x: hidden !important; overflow-y: auto !important; }
+.message-item{ border-top: 3px solid #eeeeee;  text-align: left; font-size: 12px; }
+.dropdown-menu li.message-item a{ text-shadow: none !important; }
+.dropdown-menu li.message-item a:hover, .dropdown-menu li.title a:hover{ background: transparent !important; text-shadow: none !important; }
+.dropdown-menu li.title a:hover{ color:#000; }
+.dropdown-menu li.message-item:hover{ background: #000; }
+.event-time{ font-style: italic; }
+.event-name{ font-weight: bold; }
+table.userDayOff{  margin: 0 auto; }
+table.userDayOff tbody tr td{  padding: 10px; }
+table.userDayOff tbody tr td .dayOff{ text-align: center; border: 2px solid #FFA44A; border-radius: 8px; padding: 10px; min-height: 250px; font-size: 13px;}
+.imgDayOff{ border: 1px solid #ccc; border-radius: 8px; margin-bottom: 50px; }
+#kartaProduktu-container{ width: 80%; margin: 0 auto; }
+.kartaProduktu-zdjecie{ width: 30%; float: left; }
+.kartaProduktu-opis{ float: left; margin-left: 50px; width: 60%; }
+.tabelaProduktu { min-width: 500px; margin-bottom: 30px; background: #E3E3E3; border: 1px solid #818282; }
+.tabelaProduktu tbody tr{ border-bottom: 1px dashed #818282; }
+.tabelaProduktu tbody tr th { background: #80DFFF; padding: 5px; }
+.tabelaProduktu tbody tr td{ padding: 3px; color:#717475; }
+.zdjecieProduktu{ border: 1px solid #ccc; }
+.nav-tabs > li > a{ border: 1px solid #ccc; }
+.table th a{font-size: 13px;}
+.produktGrupaPoczatek td{
+	border-top:2px solid #000;
+}
+.produktGrupaKoniec td{
+	border-bottom: 2px solid #000;
+}
+#produktInformacje{
+	padding: 20px;
+}
+.wierszAtrybutu{ display: block; }
+.magazynNaglowek{
+	background: #eaf2ff;
+	border: 1px solid #0088cc;
+	border-radius: 10px 10px 0 0;
+	font-size: 15px;
+	margin-bottom: -1px;
+	padding: 10px;
+	width: 280px;
+}
+.podsumowanie_rabat_projekt{
+	text-align:right; 
+	font-size: 18px; 
+	width: 99%; 
+	list-style: none;
+}
+.suma{
+	border: 1px solid greenyellow;
+	border-radius: 3px;
+	color: green;
+	font-size: 14px;
+	padding: 3px;
+}
+.ostatniaFaktura td{
+	background: #f98163 !important;
+}
+.ostatnioPrzegladana td{
+	background: #4bc69b !important;
+}
+.excelReport .editable-buttons {
+	position: absolute;
+	z-index: 100;
+	margin-top: -1px;
+}
+.excelReport .input-medium {
+	width: 39px;
+	padding-left: 4px;
+	height: 17px;
+}
+.excelReport .editable{
+	width: 64px;
+}
+.excelReport td:first-child {width: auto}
+.excelReport td {width: 74px; height: 10px}
+.excelReport .editableform {margin:0; padding:0; min-height: 0px}
+.editFilled {list-style: none; border-bottom: 1px solid #0088cc; margin: 0; margin-bottom: 10px; padding: 10px; padding-top: 0px; box-shadow: #0088CC 1xp 0 1px}
+.editFilled li {display: block}
+h4 button.btn-medium {margin-top: -6px}
+.qq-upload-button{
+	width:96%;
+	padding: 15px;
+}
+.qq-upload-button input {height: 100%}
+tr.niezalogowany td{
+	background: #ebebe0 !important;
+}
+tr.nieaktywny td{
+	background: #A0A0A0 !important;
+}
+#chmurka{
+	border-radius: 0px 20px 20px 20px;
+	box-shadow: 0 3px 6px #2f4f4f;
+	position: absolute;
+	background: #FFFFFF;
+	width: 200px;
+	z-index: 999999;
+	padding: 10px;
+}
+.nastepnyKrok, .poprzedniKrok{
+	margin: 0 auto;
+	display: block !important;
+	width: 300px !important;
+	height: 60px;
+}
+.zalacznikiRegion{
+	padding-bottom: 10px;
+}
+
+#listaDoAkceptacji input[type=checkbox] {
+  outline: none;
+  width: 58px;
+  height: 23px;
+  font-size: 11px;
+  line-height: 2;
+  display: block;
+  font-weight: bold;
+  border-radius: 3px;
+  border: 1px solid #B9B9B9;
+  -webkit-appearance: none;
+
+  background-image: -webkit-gradient( 
+    linear, left top, left bottom,
+    color-stop(0, #E8E8E8),
+    color-stop(0.5, #E8E8E8),
+    color-stop(0.5, #FDFDFD),
+    color-stop(1, #FDFDFD)
+  );
+  box-shadow: 0px 1px 2px #AFAFAF inset;
+  color: #7F7F7F;
+}
+
+#listaDoAkceptacji input[type=checkbox]:checked {
+  background-image: -webkit-gradient( 
+    linear, left top, left bottom,
+    color-stop(0, #367EF8),
+    color-stop(0.5, #367EF8),
+    color-stop(0.5, #66A3F8),
+    color-stop(1, #66A3F8)
+  );
+  box-shadow: 0px 1px 2px #1449A3 inset;
+  color: #fff;
+  text-shadow: 0px -1px 1px #000;
+  border: 1px solid #99B9E8;
+}
+
+#listaDoAkceptacji input[type=checkbox]:before {
+  content: 'OFF';
+  border-radius: 3px;
+  border-top: 1px solid #F7F7F7;
+  border-right: 1px solid #999999;
+  border-bottom: 1px solid: #BABABA;
+  border-left: 1px solid #BDBDBD;
+  background-image: -webkit-gradient( 
+    linear, left top, left bottom,
+    color-stop(0, #D8D8D8),
+    color-stop(1, #FBFBFB)
+  );
+  height: 20px;
+  width: 22px;
+  display: inline-block;
+  text-indent: 27px;
+}
+
+#listaDoAkceptacji input[type=checkbox]:checked:before {
+  content: 'ON';
+  text-indent: -25px;
+  margin-left: 33px;
+}
+.numeryTygodniaLinia > td {
+	padding: 0px;
+}
+.numeryTygodnia{
+	padding: 9px;
+	background: #e0e1e2;
+	border: 1px #fff solid;
+	text-align: center;
+}
+.numeryTygodnia:hover{
+	cursor: pointer;
+}
+.tydzienNieSprawdzony{
+	background: #ff0000;
+	color:#fff;
+}
+.tydzienSprawdzony{
+	background: #42f44e;
+}
+.tydzienObecny{
+	background: #66A3F8;
+	color:#fff;
+}
+.dniTygodnia tr > td{
+	border: 1px solid #000;
+	padding: 0px;
+}
+.uzytkownikDniTygodnia{
+	float: left;
+	padding: 3px;
+}
+.uzytkownikDniTygodnia:hover{
+	cursor: pointer;
+}
+.dataDzien{
+	width: 60px;
+	font-size: 11px;
+}
+.stanDzien{
+	width: 20px;
+	text-align:center;
+	color:#444;
+}
+.sprawdzony{
+	background: #42f44e;
+}
+.nieSprawdzony{
+	background: #ff0000;
+	color: #fff;
+}
+.brakLogowan{
+	background: #ccc;
+}
+.zaznaczonyTydzien{
+	box-shadow: 7px 6px 8px #1449A3 inset;
+	border: 2px solid #fff;
+}
+.infoTidsbankTydzien{
+   padding: 10px !important;
+	border-radius: 8px;
+}
+.infoTydzienSprawdzone{
+	background-color: #42f44e;
+	color:#000 !important;
+}
+.infoTydzienNieSprawdzone{
+	background-color: #ff0000;
+	color:#fff !important;
+}
+
+.pozycja label {margin-top: 10px}
+.pozycja .labTxt {padding-top: 5px; width: 100%}
+.pozycja input[type=radio]{display:none;}
+ 
+.pozycja input[type=radio] + label.btn, .pozycja input[type=checkbox] + label.btn{
+	position: relative;
+	margin: 5px 10px;
+	margin-top: 10px;
+	height: 33px;
+	width: 33px;
+	padding: 0;
+	outline: none;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+	color: #fff;
+	-webkit-transition: none;
+	-moz-transition: none;
+	transition: none;
+	border: 1px solid #2f96b4;
+	border-radius: 40px;
+	cursor: pointer;
+	display: inline-block;
+}
+
+/* Radio */
+.pozycja input[type=radio] + label.btn{text-align: center; vertical-align: middle; position: relative; padding: 0; line-height: 35px; margin-top: -5px}
+.pozycja input[type=radio]:hover + label.btn{
+	box-shadow: 
+	0 0 1px #2f96b4, 
+	inset 0 0 4px #2f96b4;
+}
+
+.pozycja input[type=radio]:checked + label.btn{
+	box-shadow: 0 0 1px #51a351, 
+	inset 0px 0px 14px white;
+	border: 1px solid #51a351;
+	background: #51a351;
+}
+.pozycja input[type=radio]:checked + label.btn i {color: white; font-size: 16px; position: relative; display: inline}
+
+/* Checkbox */
+.pozycja input[type=checkbox]{display:none;}
+.pozycja input[type=checkbox] + label.btn{border-radius: 4px}
+.pozycja input[type=checkbox]:hover + label.btn{
+	box-shadow: 
+	0 0 2px #2f96b4, 
+	inset 0 0 4px #2f96b4;
+}
+.pozycja input[type=checkbox]:checked:hover + label.btn{
+	box-shadow: none;
+}
+.pozycja input[type=checkbox]:checked + label.btn i {position: absolute; left: 0px; top: -2px; font-size: 38px; color: #51a351; display: block; height: 33px; width: 33px; border: none}
+
+.pozycja input[type=checkbox]:checked + label.btn {border: none}
+
+/* Radio & Checkbox */
+.pozycja input[type=checkbox] + label.btn i, .pozycja input[type=radio] + label.btn i {display: none}
+
+.tdSzary > td {
+	background-color: #E3E1E1 !important;
+}
+.tdCzerwony > td {
+	background-color: #f28080 !important;
+}
+
+.tabelaKalendarz{
+	width: 372px;
+	margin: 10px;
+	border: 2px solid;
+	height:280px;
+}
+.tabelaKalendarz tr td{
+	text-align: center;
+}
+.closeLockPodglad {
+	width: 760px;
+	height: 60px;
+	bottom: 12px;
+	left: 0;
+	right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	position: absolute;
+	z-index: 1000;
+}
+.closeLockZamykanie {
+	width: 378px;
+	height: 147px;
+	top: -166px;
+	left: 49%;
+	right: 49%;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: white;
+	opacity: 0.5;
+	position: absolute;
+	z-index: 1000;
+}

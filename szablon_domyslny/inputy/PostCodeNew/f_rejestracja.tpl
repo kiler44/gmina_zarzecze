@@ -1,0 +1,3 @@
+<input type="text" name="{{$nazwa}}_cz1" value="{{$wartosc_cz1}}" size="2" maxlength="2" class="kod_pocztowy_cz1 small2" {{$atrybuty}} id="{{$nazwa}}" onkeyup="nastepnyInput(this, event, 'input[name={{$nazwa}}_cz2]')" />
+<span class="sep"> - </span>
+<input type="text" name="{{$nazwa}}_cz2" value="{{$wartosc_cz2}}" size="3" maxlength="3"  class="kod_pocztowy_cz2 small" {{$atrybuty}} onkeyup="poprzedniInput(this, event, 'input[name={{$nazwa}}_cz1]')" />

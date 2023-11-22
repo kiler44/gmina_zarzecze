@@ -1,0 +1,1 @@
+<span id="{{$nazwa}}" {{$atrybuty}} class="statycznyHtmlInput">{{$wartosc}}</span>

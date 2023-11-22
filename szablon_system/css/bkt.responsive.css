@@ -1,0 +1,99 @@
+@media (max-width: 1025px) {
+	.tablet #user-nav .text {display: none}
+	.projekt .box-naglowek:first-child { width: auto;  /*width: 88%*/ }
+	.tablet .widokZamowien .zamowienie-naglowek .box-naglowek.order {width: 18%}
+	.tablet .widokZamowien .zamowienie-naglowek .box-naglowek.time {width: 10.5%}
+	.tablet .widokZamowien .zamowienie-naglowek .box-naglowek.address {width: 28%}
+	.tablet .widokZamowien .zamowienie-naglowek .box-naglowek.klient {width: 32%}
+	.products p {width: 98%;}
+	.prd_dodane li{width: 98%;}
+}
+@media (max-width: 769px) {
+	.widget-title h5 {width: 75%;}
+	.edit_textarea {display: block}
+	.tablet #content-header {min-height: 46px}
+	#sidebar > ul > li > a > span {
+		display: none;
+	}
+	.tablet #sidebar, .tablet #sidebar > ul {width: 368px}
+	#body.tablet {width: 800px; overflow-x: hidden; overflow-y: auto}
+	.tablet #sidebar {width: 386px}
+	#sidebar > ul ul {left: 50px}
+	#header {height: 64px}
+	#header h1 {height: 27px !important}
+	#content {margin-left: 44px}
+	
+	.sidebarHeader h5 {text-align: center; font-size: 26px; padding: 0; margin: 7px 0}
+	#sidebar h5 a span, #sidebar h5 span {display: none}
+	.sidebarHeader #clip {top: -2px; right: -8px; font-size: 14px}
+	#adminToggle {display: none}
+	#sidebar h5 .icon-suitcase {display: none}
+	#user-nav {top: 7px}
+	.tablet #user-nav .text, .tablet .flag-ico {display: none}
+	.tablet #user-nav .icon-user {padding: 1px 0 2px;}
+	.tablet #sidebar > ul > li {width: 43px;}
+	.tablet #sidebar > ul > li > a {padding: 10px 0 10px 0; width: 43px; text-align: center}
+	.tablet #sidebar > ul > li > a > i {margin: 0; font-size: 18px}
+	.tablet .prd_dodane li {width: 524px; }
+	.tablet li .prd {width: 270px}
+	.tablet .products .select {width: 296px}
+	.tablet .products p {width: 524px}
+	.tablet .menu {float: none}
+	.widokZamowien .zamowienie-opis .opis{ width: 100%}
+	.widokZamowien .pozycja{ width: 100%; padding-right: 0px; border-right: none}
+	.tablet .widokZamowien .zamowienie-naglowek .box-naglowek {padding: 0 1px}
+	.tablet .widokZamowien .zamowienie-naglowek .box-naglowek.order {width: 24%}
+	.tablet .widokZamowien .zamowienie-naglowek .box-naglowek.time {width: 12%}
+	.tablet .widokZamowien .zamowienie-naglowek .box-naglowek.address {width: 22%}
+	.tablet .widokZamowien .zamowienie-naglowek .box-naglowek.klient {width: 26%}
+	.widokZamowien .zamowienie-naglowek .box-naglowek {padding: 0; font-size: 12px}
+	.products p {width: 98%;}
+	.prd_dodane li{width: 98%;}
+	.produkty-wyszukiwarka{width: 210px;}
+	#sidebar, #sidebar > ul {width: 44px}
+	.sidebarHeader #clip {right: 5px; top: -21px;}
+	.projekt .box-naglowek:first-child { width:auto; /*width: 84%*/}
+	.apartamenty .ilosc {width: 96px}
+	input, textarea, .uneditable-input {width: 167px}
+	.panel-right {width: 200px}
+	.panel-left {
+		margin-right: 200px;
+	}
+	
+}
+@media (max-width: 480px) {
+	#sidebar > a {
+		background-image: -moz-linear-gradient(top, #464646 0%, #404040 100%);
+		border-bottom: 1px solid #6e6e6e;
+	}
+	#sidebar > ul {
+		background-color: #444444;
+	}
+}
+@media (min-width: 481px) {
+	#sidebar > ul ul:before {
+		border-right: 7px solid rgba(0, 0, 0, 0.2);
+	}
+	#sidebar > ul ul:after {
+		border-right: 6px solid #222222;
+    }
+}
+@media (min-width: 768px) {
+	#wyszukiwanieZamowien input#fraza{
+		width:100px;
+	}
+}
+@media (max-width: 1600px) {
+	.productsFull p.niestandardowe_projekt {width: 1115px}
+	.productsFull ul.nst li.item_szeroki {
+		width: 1115px;
+		padding-bottom: 0;
+	}
+	label.etykieta.procent {float: right; margin-top: 5px; margin-right: 202px}
+	.procent_wykonania_kontener {float: none}
+	.etykieta.total {right: 58px;}
+	.etykieta.total input {width: 80px !important;}
+	.szukaj-storage{
+		width: 400px !important;
+	}
+}

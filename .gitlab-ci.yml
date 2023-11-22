@@ -1,0 +1,49 @@
+---
+variables:
+  DOCKER_VOLUME_NAME: "http_app"
+  PROJECT_NAME: "norway/trunk/"
+
+#before_script:
+
+stages:
+  - deploy
+
+develop deploy:
+  stage: deploy
+  only:
+    - develop
+  tags:
+    - photon3
+  script:
+    - cd /var/lib/docker/volumes/${DOCKER_VOLUME_NAME}/_data/${PROJECT_NAME}
+    - git config core.sshCommand "ssh -p 223 -i /root/.ssh/gitlab -F /dev/null"
+    - git pull
+    - chown 48:48 -R .
+    - rm -f .gitlab-ci.yml
+    - docker exec www-app cd /www/norway/trunk \&\& /usr/local/bin/composer update
+
+#get deploy:
+#  stage: deploy
+#  only:
+#    - develop
+#  tags:
+#    - get
+#  script:
+#    - cd /www/norway/trunk/
+#    - git config core.sshCommand "ssh -p 223 -i /root/.ssh/gitlab -F /dev/null"
+#    - git pull
+#    - chown luke:apache -R .
+#    - rm -f .gitlab-ci.yml
+
+production deploy:
+  stage: deploy
+  only:
+    - production
+  tags:
+    - photon2
+  script:
+    - cd /var/lib/docker/volumes/${DOCKER_VOLUME_NAME}/_data/${PROJECT_NAME}
+    - git config core.sshCommand "ssh -p 223 -i /root/.ssh/gitlab"
+    - git pull
+    - chown 48:48 -R .
+    - rm -f .gitlab-ci.yml

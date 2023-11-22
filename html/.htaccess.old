@@ -1,0 +1,5 @@
+AuthType Basic
+AuthName "Access restricted"
+AuthUserFile /www/norway/trunk/html/.htbleeeeee
+Require user access
+

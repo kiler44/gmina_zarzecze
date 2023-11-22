@@ -1,0 +1,3 @@
+{{BEGIN formularz}}
+	{{$formatka}}
+{{END}}

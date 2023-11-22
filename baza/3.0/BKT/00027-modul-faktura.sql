@@ -1,0 +1,1 @@
+ALTER TABLE modul_faktura ADD COLUMN naglowek_faktury text;

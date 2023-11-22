@@ -1,0 +1,139 @@
+<?php
+namespace Generic\Model\WierszTlumaczen;
+use Generic\Biblioteka;
+use Generic\Biblioteka\Cms;
+
+
+/**
+ * Klasa obsługująca zapis i odczyt z cache dla obiektów odwzorowujących wiersze tłumaczeń.
+ * @author Krzysztof Lesiczka, Łukasz Wrucha
+ * @package dane
+ */
+class MapperCache extends Biblioteka\Mapper\Tablica
+{
+
+	/**
+	 * nazwa klasy tworzonego obiektu
+	 * @var string
+	 */
+	protected $zwracanyObiekt = 'Generic\Model\WierszTlumaczen\Obiekt';
+
+
+	/**
+	 * tablica tlumaczaca kolumny tabeli na nazwy pol obiektu
+	 * @var array
+	 */
+	protected $polaTabeliObiekt = array(
+		'id' => 'id',
+		'id_projektu' => 'idProjektu',
+		'kod_jezyka' => 'kodJezyka',
+		'kod_modulu' => 'kodModulu',
+		'id_kategorii' => 'idKategorii',
+		'id_bloku' => 'idBloku',
+		'nazwa' => 'nazwa',
+		'typ' => 'typ',
+		'wartosc' => 'wartosc',
+	);
+
+
+
+	/**
+	 * pola tabeli tworzace klucz glowny
+	 * @var array
+	 */
+	protected $polaTabeliKlucz = array('id', 'id_projektu', 'kod_jezyka');
+
+
+
+	/**
+	 * Zwraca instancje obiektu
+	 *
+	 * @return TlumaczeniaMapperCache
+	 */
+	public static function wywolaj($zwracaTablice = false)
+	{
+		parent::$klasa = __CLASS__;
+		return parent::wywolaj($zwracaTablice);
+	}
+
+
+
+	public function zaladujDane()
+	{
+		if ($dane = Cms::inst()->dane()->WierszTlumaczen()->zwracaTablice()->pobierzPelna(KOD_JEZYKA_ITERFEJSU))
+		{
+			$this->przetworzDane($dane);
+			return true;
+		}
+		return false;
+	}
+
+
+
+	function pobierzDlaSystemu($kodJezyka = null)
+	{
+		$kodJezyka = empty($kodJezyka) ? KOD_JEZYKA : $kodJezyka;
+
+		$temp = array();
+		foreach ($this->dane as $klucz => $wiersz)
+		{
+			if ($wiersz['kod_jezyka'] == $kodJezyka && $wiersz['kod_modulu'] === null && $wiersz['id_kategorii'] === null && $wiersz['id_bloku'] === null)
+			{
+				$temp[$klucz] = $wiersz;
+			}
+		}
+
+		return $this->pobierzWiele($temp);
+	}
+
+
+
+	function pobierzDlaModulu($kodModulu, $idKategorii = null, $idBloku = null, $kodJezyka = null)
+	{
+		$kodJezyka = empty($kodJezyka) ? KOD_JEZYKA : $kodJezyka;
+
+		$dane = $this->dane;
+		$dane = $this->kolumnaRowna($dane, 'kod_modulu', array($kodModulu));
+		$dane = $this->kolumnaRowna($dane, 'kod_jezyka', array($kodJezyka));
+
+		$temp = array();
+		if (!empty($idKategorii) && empty($idBloku))
+		{
+			foreach ($dane as $klucz => $wiersz)
+			{
+				if (($wiersz['id_kategorii'] === null || (int)$wiersz['id_kategorii'] == (int)$idKategorii) && $wiersz['id_bloku'] === null)
+				{
+					$temp[$klucz] = $wiersz;
+				}
+			}
+			masort($temp, 'id_kategorii');
+			if (empty($temp[0])) unset($temp[0]);
+		}
+		else if (empty($idKategorii) && !empty($idBloku))
+		{
+			foreach ($dane as $klucz => $wiersz)
+			{
+				if (($wiersz['id_bloku'] === null || (int)$wiersz['id_bloku'] == (int)$idBloku) && $wiersz['id_kategorii'] === null)
+				{
+					$temp[$klucz] = $wiersz;
+				}
+			}
+			masort($temp, 'id_bloku');
+			if (empty($temp[0])) unset($temp[0]);
+		}
+		else
+		{
+			foreach ($dane as $klucz => $wiersz)
+			{
+				if ($wiersz['id_bloku'] === null && $wiersz['id_kategorii'] === null)
+				{
+					$temp[$klucz] = $wiersz;
+				}
+			}
+		}
+		$dane = $temp;
+		unset($temp);
+
+		return $this->pobierzWiele($dane);
+	}
+}

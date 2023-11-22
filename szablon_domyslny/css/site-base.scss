@@ -1,0 +1,118 @@
+$white: #fff;
+$black: #000;
+
+$light: #F5F5F5;
+$body_color: #5A5B69;
+
+$szare_tlo: #F2F2F2;
+
+
+$text_ciemny: #003344;
+$szary_text: #72758F;
+$szary_text2: #5A5B69;
+
+$akcent1: #247A24;
+$akcent2: #FFD800;
+$akcent3: #BC3232;
+$akcent4: #2582D8;
+
+
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;
+
+$font-family: 'Poppins', sans-serif;
+
+body, html {
+    overflow-x: hidden;
+}
+
+body {
+    font-family: $font-family;
+    color: $text_ciemny;
+    
+}
+h1 {
+    font-size: 50px;
+    color: $akcent1;
+}
+
+h2  {
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+/* Marginesy */
+.gz-margin-karuzela {
+    padding-right: 23px!important;
+    padding-left: 23px!important;
+ }
+
+/* Przyciski */
+.btn-primary {
+    background-color: $text_ciemny;
+    border-radius: 8px;
+    border: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 37px;
+    transition: 0.2s;
+    transition-timing-function: ease-out;
+}
+.btn-primary:hover {
+    background-color: #FFD800;
+    color: $text_ciemny;
+}
+.btn-primary:active {
+    background-color: #FFD800!important;
+    color: $text_ciemny!important;  
+}
+
+.btn-outline-primary {
+    border: 2px solid $text_ciemny;
+    color: $text_ciemny;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 10px 25px;
+}
+.btn-outline-primary:hover {
+    background-color: $text_ciemny;
+    border: 2px solid $text_ciemny;
+ }
+
+.btn-outline-primary:active {
+    background-color: $text_ciemny!important;
+    border: 2px solid $text_ciemny!important;
+}
+
+
+
+
+/* Strszalki karuzeli */
+.carousel-control-prev {
+    left: -50px;
+    width: 40px;
+}
+.carousel-control-prev-icon {
+    background-image: url('../images/ico/ico-04.svg');
+    filter: none!important;
+}
+.carousel-control-next {
+    right: -50px;
+    width: 40px;
+}
+.carousel-control-next-icon {
+    background-image: url('../images/ico/ico-05.svg');
+    filter: none!important;
+}
+

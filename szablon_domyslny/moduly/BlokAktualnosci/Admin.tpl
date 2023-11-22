@@ -1,0 +1,3 @@
+{{BEGIN index}}
+{{$formularz}}
+{{END}}

@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl">
+<head>
+	<title>{{ $tytul_strony }}</title>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<meta http-equiv="content-language" content="{{$jezyk_strony}}" />
+
+	<meta name="robots" content="noindex"/>
+
+	<link rel="stylesheet" type="text/css" href="/_system/style.css" />
+	<link rel="stylesheet" type="text/css" href="/_system/jquery-ui-1.7.2.custom.css" />
+	<link rel="stylesheet" type="text/css" href="/_system/_biblioteki/tree_component.css" />
+
+	<script type="text/javascript" src="/_system/_biblioteki/jquery-1.4.2.min.js"></script>
+	<script type="text/javascript" src="/_system/_biblioteki/jquery-ui-1.7.2.custom.min.js"></script>
+	<script type="text/javascript" src="/_system/_biblioteki/jquery.nyroModal-1.3.1.pack.js"></script>
+	<script type="text/javascript" src="/_system/_biblioteki/jquery.Jcrop.min.js"></script>
+	<script type="text/javascript" src="/_system/_biblioteki/jquery.tablesorter.min.js"></script>
+	<script type="text/javascript" src="/_system/_biblioteki/jquery.checkboxes.pack.js"></script>
+	<script type="text/javascript" src="/_system/_biblioteki/jquery.optionTree.js"></script>
+	<script type="text/javascript" src="/_system/_biblioteki/jquery.listen.js"></script>
+	<script type="text/javascript" src="/_system/_biblioteki/jquery.cookie.js"></script>
+	<script type="text/javascript" src="/_system/_biblioteki/jquery.history.js"></script>
+	<script type="text/javascript" src="/_system/_biblioteki/swfupload.js"></script>
+	<script type="text/javascript" src="/_system/_biblioteki/tree_component.min.js"></script>
+	<script type="text/javascript" src="/_system/_biblioteki/css.js"></script>
+	<script type="text/javascript" src="/_system/_biblioteki/i18n/ui.datepicker-pl.js"></script>
+
+	<script type="text/javascript" src="/_system/_biblioteki/funkcje_bazowe.js"></script>
+</head>
+
+<body>
+
+<div id="panel_main">
+	<div class="menu_top">{{ $region_1 }}</div>
+	<div class="pasek">{{ $region_3 }}</div>
+	<div class="site">
+	{{ $region_2 }}
+		<div class="workarea">
+			<div class="margin">
+		{{ BEGIN region_0 }}
+			{{ $region_0_tresc }}
+		{{ END }}
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

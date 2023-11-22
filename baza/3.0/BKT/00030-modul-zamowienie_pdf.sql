@@ -1,0 +1,1 @@
+ALTER TABLE modul_zamowienie_pdf ADD COLUMN druga_tura_apartament integer;

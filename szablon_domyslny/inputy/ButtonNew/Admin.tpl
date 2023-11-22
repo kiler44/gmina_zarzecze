@@ -1,0 +1,2 @@
+{{BEGIN button}}<button type="{{$typ}}" id="{{$nazwa}}" name="{{$nazwa}}" value="{{$wartosc_poczatkowa}}" {{$atrybuty}} class="btn {{$klasa}}" >{{$html}}</button>{{END}}
+{{BEGIN input}}{{$klasa}}<input type="{{$typ}}" id="{{$nazwa}}" name="{{$nazwa}}" value="{{$wartosc_poczatkowa}}" {{$atrybuty}} class="btn {{$klasa}}"  />{{END}}

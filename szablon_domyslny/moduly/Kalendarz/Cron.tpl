@@ -1,0 +1,2 @@
+{{BEGIN index}}
+{{END index}}

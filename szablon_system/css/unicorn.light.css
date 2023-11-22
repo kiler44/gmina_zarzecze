@@ -1,0 +1,106 @@
+/**
+ * Unicorn Admin Template
+ * Diablo9983 -> diablo9983@gmail.com
+**/
+body {
+	background-color: #666;
+}
+
+#header {
+	height: 107px;
+    box-shadow: 0 1px 0 #555;
+	background-color: #555;
+    background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(#BFBFBF), to(#646464));
+    background-image: -webkit-linear-gradient(top, #BFBFBF 0%, #646464 100%);
+    background-image: -moz-linear-gradient(top, #BFBFBF 0%, #646464 100%);
+	background-image: -ms-linear-gradient(top, #BFBFBF 0%, #646464 100%);
+	background-image: -o-linear-gradient(top, #BFBFBF 0%, #646464 100%);
+	background-image: linear-gradient(top, #BFBFBF 0%, #646464 100%);
+    border-bottom: 1px solid #777;
+}
+
+#search input[type=text], #search button {
+	background-color: #222222;
+}
+#search input[type=text]:focus {
+	color: #777777;
+}
+
+#sidebar > ul {
+	border-top: 1px solid #797979;
+	border-bottom: 1px solid #4E4E4E;
+}
+#sidebar > ul > li {
+	border-top: 1px solid #515151;
+	border-bottom: 1px solid #7a7a7a;
+}
+#sidebar > ul > li.active {
+   background-color: #3a3a3a;
+	background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(#333333), to(#3F3F3F));
+	background-image: -webkit-linear-gradient(top, #333333 0%, #3F3F3F 100%);
+	background-image: -moz-linear-gradient(top, #333333 0%, #3F3F3F 100%);
+	background-image: -ms-linear-gradient(top, #333333 0%, #3F3F3F 100%);
+	background-image: -o-linear-gradient(top, #333333 0%, #3F3F3F 100%);
+	background-image: linear-gradient(top, #333333 0%, #3F3F3F 100%);
+	
+}
+
+#sidebar > ul > li.open.submenu > a {
+	border-bottom: 1px solid #393939;
+}
+#sidebar > ul > li.open.active.submenu > a {
+	border-bottom: 1px solid #2A2A2A;
+}
+#sidebar > ul > li > a > .label {
+	background-color: #333333;
+}
+#sidebar > ul > li > a:hover {
+	background-color: #4A4A4A;
+}
+#sidebar > ul ul {
+	border-top: 1px solid #4E4E4E;
+	background-color: #2A2A2A;
+	left: 217px;
+}
+#sidebar > ul ul li a {
+	border-top: 1px solid #333333;
+	border-bottom: 1px solid #202020;
+}
+#sidebar > ul ul li a:hover, #sidebar > ul ul li.active a {
+	color: #CCCCCC;
+	background-color: #272727;
+}
+#sidebar, #sidebar > ul {
+	width: 210px;
+	margin-top: 1px;
+}
+#content {margin-left: 210px}
+#sidebar > ul > li > a > span {
+	display: inline;
+}
+#sidebar > ul ul li a {
+	color: #bbb
+}
+#sidebar > ul > li > a {
+	color: #ededed;
+}
+.dropdown-menu li a:hover, .dropdown-menu .active a, .dropdown-menu .active a:hover {
+    color: #eeeeee;
+	background-color: #666;
+    background-image: -webkit-gradient(linear, 0 0%, 0 100%, #555555, #222222);
+    background-image: -webkit-linear-gradient(top, #555555 0%, #222222 100%);
+    background-image: -moz-linear-gradient(top, #555555 0%, #222222 100%);
+    background-image: -ms-linear-gradient(top, #555555 0%, #222222 100%);
+    background-image: -o-linear-gradient(top, #555555 0%, #222222 100%);
+    background-image: linear-gradient(top, #555555 0%, #222222 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#555555', endColorstr='#222222',GradientType=0 ); /* IE6-9 */
+}
+
+#oknoModalne {top: 40%}
+#oknoModalne .modal-body {
+	max-height: 800px;
+}
+
+.flag-ico {border: 1px solid silver; border-radius: 3px; box-shadow: 1px 1px #000}
+.btn.btn-mini i {font-size: 11px}
+iframe body {margin: 0}
