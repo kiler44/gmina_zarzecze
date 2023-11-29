@@ -116,7 +116,7 @@ class Mapper extends Biblioteka\Mapper\Baza
 			. ' AND akcja = \'' . $kod[3] .'\''
 			. ' AND id_projektu = ' . ID_PROJEKTU;
 
-        dump($sql);
+
 		return $this->pobierzJeden($sql);
 	}
 
