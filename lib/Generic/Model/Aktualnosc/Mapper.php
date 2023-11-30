@@ -48,6 +48,7 @@ class Mapper extends Biblioteka\Mapper\Baza
 		'priorytetowa' => 'priorytetowa',
 		'publikuj' => 'publikuj',
 		'id_galerii' => 'idGalerii',
+        'autor_zdjec' => 'autorZdjec',
 	);
 
 
@@ -100,7 +101,7 @@ class Mapper extends Biblioteka\Mapper\Baza
 		}
 		if (isset($kryteria['priorytetowa']) && intval($kryteria['priorytetowa']) > 0)
 		{
-			$sql .= ' AND priorytetowa = '.intval($kryteria['priorytetowa']);
+			$sql .= ' AND priorytetowa = '.((intval($kryteria['priorytetowa']) > 0) ? 'true' : 'false');
 		}
 		if (isset($kryteria['fraza']) && $kryteria['fraza'] != '')
 		{
@@ -140,11 +141,11 @@ class Mapper extends Biblioteka\Mapper\Baza
 		}
 		if (isset($kryteria['publikuj']) && $kryteria['publikuj'] != '')
 		{
-			$sql .= ' AND publikuj = '.((intval($kryteria['publikuj']) > 0) ? 'true' : 'false');
+			$sql .= ' AND publikuj = '.((boolval($kryteria['publikuj']) > 0) ? 'true' : 'false');
 		}
 		if (isset($kryteria['priorytetowa']) && intval($kryteria['priorytetowa']) > 0)
 		{
-			$sql .= ' AND priorytetowa = '.intval($kryteria['priorytetowa']);
+			$sql .= ' AND priorytetowa = '.((intval($kryteria['priorytetowa']) > 0) ? 'true' : 'false');
 		}
 		if (isset($kryteria['fraza']) && $kryteria['fraza'] != '')
 		{

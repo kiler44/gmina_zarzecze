@@ -74,7 +74,7 @@ class Text extends Input
 {{END}}
 
 {{BEGIN domyslny}}
-<input type="text" name="{{$nazwa}}" id="{{$nazwa}}" value="{{$wartosc}}" {{$atrybuty}} />
+<input type="text" name="{{$nazwa}}" id="{{$nazwa}}" value="{{$wartosc}}" {{$atrybuty}}/>
 
 	{{BEGIN domyslnyNapis}}
 	<script>
@@ -104,16 +104,6 @@ class Text extends Input
 	function pobierzHtml()
 	{
 		$cms = Cms::inst();
-
-		//ustawienie domyślnej klasy css long
-		if (isset($this->parametry['atrybuty']['class']))
-		{
-			$this->parametry['atrybuty']['class'] .= ' long';
-		}
-		else
-		{
-			$this->parametry['atrybuty']['class'] = 'long';
-		}
 
 		$dane = array(
 			'nazwa' => $this->pobierzNazwe(),

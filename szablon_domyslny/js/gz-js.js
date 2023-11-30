@@ -8,14 +8,14 @@ document.addEventListener("DOMContentLoaded", function() {
     toggleButton.addEventListener('click', function() {
         var currentlyHiddenTiles = document.querySelectorAll('#tiles-container .tile.hidden');
 
-        // Jeśli mamy ukryte kafelki, pokażemy je i zmienimy tekst przycisku
+      
         if (currentlyHiddenTiles.length > 0) {
             currentlyHiddenTiles.forEach(function(tile) {
                 tile.classList.remove('hidden');
             });
             toggleButton.textContent = 'Schowaj treści';
         } else {
-            // W przeciwnym razie, ukryjemy kafelki powyżej początkowej liczby widocznych kafelków
+            
             for (var i = initiallyVisibleTilesCount; i < allTiles.length; i++) {
                 allTiles[i].classList.add('hidden');
             }
@@ -27,8 +27,6 @@ document.addEventListener("DOMContentLoaded", function() {
 /* Load more END*/
 
 
-
-/* Odliczanie/counter Homepage - odliczanie zrobiłem dla 3 pozycji ale możemy dodawać kolejne pozycje   */  
     let dataDocelowa1 = new Date("2023-11-15 15:00:00");
     let dataDocelowa2 = new Date("2023-12-01 10:00:00");
     let dataDocelowa3 = new Date("2023-12-15 12:00:00");
@@ -175,6 +173,17 @@ moment.locale('pl');
     displayEventDetails(events[currentEventDate]);
 /* Kalendarz END */
 
+/* Filtrowanie aktualnosci*/
+function filterAktualnosci(tag) {
+    const items = document.querySelectorAll('.aktualnosci-item');
+    items.forEach(item => {
+        if (tag && !item.getAttribute('data-tags').includes(tag)) {
+            item.classList.add('filtered');
+        } else {
+            item.classList.remove('filtered');
+        }
+    });
+}
 /* Galeria hover i filtrowanie*/
 function filterGallery(tag) {
     const items = document.querySelectorAll('.gallery-item');
@@ -195,17 +204,15 @@ function loadMoreBoxes() {
 }
 /* Galeria hover i filtrowanie END */
 
+function openVideoModal(videoSrc) {
+    const videoPlayer = document.getElementById('videoPlayer');
+    const videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
 
+    videoPlayer.src = videoSrc;
+    videoModal.show();
 
-    function openVideoModal(videoSrc) {
-      const videoPlayer = document.getElementById('videoPlayer');
-      const videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
-
-      videoPlayer.src = videoSrc;
-      videoModal.show();
-
-      // Stop video playback when modal is closed
-      videoModal._element.addEventListener('hidden.bs.modal', () => {
-        videoPlayer.src = '';
-      });
-    }
+    // Stop video playback when modal is closed
+    videoModal._element.addEventListener('hidden.bs.modal', () => {
+    videoPlayer.src = '';
+    });
+}

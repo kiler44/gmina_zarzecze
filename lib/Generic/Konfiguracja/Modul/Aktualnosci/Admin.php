@@ -4,6 +4,7 @@ namespace Generic\Konfiguracja\Modul\Aktualnosci;
 use Generic\Konfiguracja\Konfiguracja;
 
 /**
+ * @property boolean $k['modul_admin.czy_kategoria_wydarzen']
  * @property array $k['formularz.dozwolone_formaty_zdjec']
  * @property string $k['formularz.prefix_miniaturki_zdjecia']
  * @property string $k['formularz.prefix_zdjecia']
@@ -17,6 +18,12 @@ use Generic\Konfiguracja\Konfiguracja;
 class Admin extends Konfiguracja
 {
 	protected $konfiguracjaDomyslna = array(
+
+    'modul_admin.czy_kategoria_wydarzen' => array(
+        'opis' => 'Czy dana kategoria jest wydarzeniem w przyszłości zamiast standardowej aktualności',
+        'typ' => 'bool',
+        'wartosc' => false,
+    ),
 
 	'formularz.dozwolone_formaty_zdjec' => array(
 		'opis' => '',

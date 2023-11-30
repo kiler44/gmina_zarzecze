@@ -14,7 +14,7 @@ class Hidden extends Input
 {
 	protected $katalogSzablonu = 'HiddenNew';
 	protected $tpl = '
-	<input type="hidden" name="{{$nazwa}}" value="{{$wartosc}}" id="{{$nazwa}}" />
+	{{BEGIN domyslny}}<input type="hidden" name="{{$nazwa}}" value="{{$wartosc}}" id="{{$nazwa}}" />{{END}}
 	';
 
 
@@ -37,7 +37,6 @@ class Hidden extends Input
 			'wartosc' => $this->pobierzWartosc(),
 		);
 
-		//$this->szablon->ustaw($dane);
 
 		return $this->szablon->parsujBlok('domyslny', $dane);
 	}

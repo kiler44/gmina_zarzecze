@@ -22,8 +22,8 @@ use Generic\Tlumaczenie\Tlumaczenie;
 class Html extends Tlumaczenie
 {
 	protected $tlumaczeniaDomyslne = array(
-		'pager_wstecz' => '&laquo;',
-		'pager_przod' => '&raquo;',
+		'pager_wstecz' => '&laquo; Poprzednia',
+		'pager_przod' => 'Następna &raquo; ',
 		'pager_pierwsza' => '&laquo;',
 		'pager_ostatnia' => '&raquo;',
 		'pager_wybierz_strone' => '',

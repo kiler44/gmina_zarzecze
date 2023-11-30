@@ -51,7 +51,10 @@ class Admin extends Modul\Admin
 
 	public function wykonajIndex()
 	{
-		$this->ustawGlobalne(array('tytul_strony' => $this->j->t['index.tytul_strony']));
+        $wydarzenie = ($this->k->k['modul_admin.czy_kategoria_wydarzen']) ? true : false;
+
+        $tytul_strony = ($wydarzenie) ? $this->j->t['index.tytul_strony_wydarzenia'] : $this->j->t['index.tytul_strony'];
+		$this->ustawGlobalne(array('tytul_strony' => $tytul_strony));
 
 		$formularzObiekt = new \Generic\Formularz\Aktualnosc\Wyszukiwanie();
 		$formularzObiekt->ustawTlumaczenia($this->pobierzBlokTlumaczen('index'));
@@ -60,6 +63,7 @@ class Admin extends Modul\Admin
 		$grid->dodajKolumne('id', '', 0, '', true);
 		$grid->dodajKolumne('tytul', $this->j->t['index.etykieta_tytul'], 0, Router::urlAdmin($this->kategoria, 'edytuj', array('{KLUCZ}' => '{WARTOSC}')));
 		$grid->dodajKolumne('data_dodania', $this->j->t['index.etykieta_data_dodania'], 150);
+        $grid->dodajKolumne('data_waznosci', ($wydarzenie) ? $this->j->t['index.etykieta_data_wydarzenia'] : $this->j->t['index.etykieta_data_waznosci'], 150);
 		$grid->dodajKolumne('autor', $this->j->t['index.etykieta_autor'], 250);
 		$grid->dodajKolumne('publikuj', $this->j->t['index.etykieta_publikuj'], 100);
 
@@ -93,7 +97,7 @@ class Admin extends Modul\Admin
 			);
 
 			foreach ($this->dane()->Aktualnosc()
-						->zwracaTablice(array('id', 'data_dodania', 'tytul', 'autor', 'publikuj'))
+						->zwracaTablice(array('id', 'data_dodania', 'data_waznosci', 'tytul', 'autor', 'publikuj'))
 						->szukaj($kryteria, $pager, $sorter) as $aktualnosc)
 			{
 				$aktualnosc['publikuj'] = $this->j->t['publikuj_statusy'][$aktualnosc['publikuj']];
@@ -104,6 +108,7 @@ class Admin extends Modul\Admin
 		$this->tresc .= $this->szablon->parsujBlok('/index', array(
 			'tabela_danych' => $grid->html(),
 			'link_dodaj' => Router::urlAdmin($this->kategoria, 'dodaj'),
+            'etykieta_dodaj' => ($wydarzenie) ? $this->j->t['index.etykieta_dodaj_wydarzenie'] : $this->j->t['index.etykieta_dodaj'],
 		));
 	}
 
@@ -120,7 +125,8 @@ class Admin extends Modul\Admin
 
 	public function wykonajEdytuj()
 	{
-		$this->ustawGlobalne(array('tytul_strony' => $this->j->t['edytuj.tytul_strony']));
+        $wydarzenie = ($this->k->k['modul_admin.czy_kategoria_wydarzen']) ? true : false;
+		$this->ustawGlobalne(array('tytul_strony' => ($wydarzenie) ? $this->j->t['edytuj.tytul_strony_wydarzenia'] : $this->j->t['edytuj.tytul_strony']));
 
 		$mapper = $this->dane()->Aktualnosc();
 		$aktualnosc = $mapper->pobierzPoId(Zadanie::pobierz('id','intval','abs'));
@@ -301,6 +307,7 @@ class Admin extends Modul\Admin
 
 	private function formularz(Aktualnosc\Obiekt $aktualnosc)
 	{
+
 
         $katalog = $aktualnosc->pobierzKatalog();
         if (!$katalog->doZapisu())

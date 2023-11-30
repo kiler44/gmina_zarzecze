@@ -14,7 +14,7 @@ class EdycjaKategorii extends \Generic\Formularz\Abstrakcja
 	{
 		$this->formularz = new Formularz('', 'edycjaKategorii');
 
-		$this->formularz->input(new Input\Select('idKategorii', $this->tlumaczenia['etykieta_input_kategoria'], array(
+		$this->formularz->input(new Input\Checkbox('idKategorii', $this->tlumaczenia['etykieta_input_kategoria'], array(
 			'lista' => $this->listaKategorii,
 			'wartosc' => $this->obiekt->wartosc,
 			'wybierz' => $this->tlumaczenia['etykieta_input_kateroria_wybierz'],

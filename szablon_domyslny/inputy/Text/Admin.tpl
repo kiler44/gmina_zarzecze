@@ -55,7 +55,7 @@
 {{END}}
 
 {{BEGIN domyslny}}
-<input type="text" name="{{$nazwa}}" id="{{$nazwa}}" value="{{$wartosc}}" {{$atrybuty}} />
+<input type="text" name="{{$nazwa}}" id="{{$nazwa}}" value="{{$wartosc}}" {{$atrybuty}}/>
 
 	{{BEGIN domyslnyNapis}}
 	<script>

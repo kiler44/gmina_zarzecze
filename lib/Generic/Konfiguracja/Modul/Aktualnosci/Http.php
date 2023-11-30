@@ -23,6 +23,12 @@ class Http extends Konfiguracja
 {
 	protected $konfiguracjaDomyslna = array(
 
+    'aktualnosci.czy_kategoria_wydarzen' => array(
+        'opis' => 'Czy dana kategoria jest wydarzeniem w przyszłości (zapowiedzią czegoś co się wydarzy) zamiast standardowej aktualności',
+        'typ' => 'bool',
+        'wartosc' => false,
+    ),
+
 	'aktualnosc.format_daty' => array(
 		'opis' => 'Format wyswietlanej daty. Aby poprawnie określić sprawdź http://www.php.net/manual/pl/function.date.php',
 		'typ' => 'varchar',
@@ -62,11 +68,21 @@ class Http extends Konfiguracja
 		'wartosc' => 1,
 		),
 
+    'listaAktualnosci.format_daty_po_polsku' => array(
+        'opis' => 'Czy data ma być wyświetlana po polsku np 1 stycznia 2000',
+        'typ' => 'bool',
+        'wartosc' => 0,
+    ),
 	'listaAktualnosci.format_daty' => array(
 		'opis' => 'Format wyswietlanej daty. Aby poprawnie określić sprawdź http://www.php.net/manual/pl/function.date.php',
 		'typ' => 'varchar',
 		'wartosc' => 'd.m.Y @ H.i',
 		),
+    'listaAktualnosci.format_daty_datetime' => array(
+        'opis' => 'Format daty w znaczniku "datetime". Aby poprawnie określić sprawdź http://www.php.net/manual/pl/function.date.php',
+        'typ' => 'varchar',
+        'wartosc' => 'Y-m-d',
+    ),
 
 	'listaAktualnosci.pager' => array(
 		'opis' => 'Kompletna konfiguracja pagera (stronicowanie)',

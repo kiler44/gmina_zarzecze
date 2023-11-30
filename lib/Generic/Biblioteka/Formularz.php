@@ -904,6 +904,7 @@ class Formularz implements Tlumaczenia\Interfejs, \Iterator
 				$input->ustawWartosc($this->sesja->wartosciFormularzy[$this->nazwa][$input->pobierzNazwe()]);
 			}
 		}
+
 		$formularz->ustawBlok('/formularz_start', array(
 			'akcja' => $this->akcja,
 			'typ' => $this->typ,
@@ -965,8 +966,15 @@ class Formularz implements Tlumaczenia\Interfejs, \Iterator
 					continue;
 				}
 
+
 				$blad = ($input->sprawdzony()) ? $input->pobierzBladWalidacji() : null;
 				$klasa = ($formularz_wypelniony && $blad != null) ? 'input_blad error' : 'input_ok';
+
+                if ($input instanceof Input\Text)
+                    $klasa = $klasa.' col-md-6';
+                if ($input instanceof Input\TextArea)
+                    $klasa = $klasa.' col-md-12';
+
 
 				if ($input->pobierzEtykiete() != '' || $input->pobierzOpis() != '')
 				{

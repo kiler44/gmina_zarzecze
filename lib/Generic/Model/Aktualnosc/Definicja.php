@@ -30,6 +30,7 @@ class Definicja extends Biblioteka\DefinicjaObiektu
 		'priorytetowa' => self::_BOOLEAN,
 		'publikuj' => self::_BOOLEAN,
 		'idGalerii' => self::_INTEGER,
+        'autorZdjec' => self::_STRING,
 	);
 
 

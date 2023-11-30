@@ -9,6 +9,7 @@ use Generic\Konfiguracja\Konfiguracja;
  * @property string $k['formularz.tekst_za_formularzem']
  * @property bool $k['formularz.wiele_tematow']
  * @property string $k['szablon.formularz']
+ * @property bool $k['formularz.czy_button_wstecz']
  */
 
 class Http extends Konfiguracja
@@ -38,7 +39,11 @@ class Http extends Konfiguracja
 		'typ' => 'bool',
 		'wartosc' => 1,
 		),
-
+    'formularz.czy_button_wstecz' => array(
+        'opis' => 'Czy wyświtlać button wstecz obok wyślij',
+        'typ' => 'bool',
+        'wartosc' => 1,
+    ),
 	'szablon.formularz' => array(
 		'opis' => '',
 		'typ' => 'varchar',
