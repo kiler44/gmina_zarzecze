@@ -59,7 +59,8 @@ class Http extends Modul\Http
 	{
 		$cms = Cms::inst();
 		$this->ustawGlobalne(array(
-			'tytul_strony' => $this->kategoria->tytulStrony,
+			'tytul_strony' => $this->kategoria->nazwa,
+            'podtytul_strony' => $this->kategoria->nazwaPrzyjazna[KOD_JEZYKA],
 			'tytul_modulu' => $this->j->t['listaAktualnosci.tytul_modulu'],
 		));
 
@@ -101,7 +102,8 @@ class Http extends Modul\Http
 				$tresc['link'] = Router::urlHttp($this->kategoria, array('aktualnosc', $aktualnosc->id));
 				$tresc['zajawka'] = $aktualnosc->zajawka;
 				$tresc['autor'] = $aktualnosc->autor;
-				$tresc['data'] = date($this->k->k['listaAktualnosci.format_daty'], strtotime($aktualnosc->dataDodania));
+                $tresc['data'] = $this->k->k['listaAktualnosci.format_daty_po_polsku'] ? dataGramatyczniePL(strtotime($aktualnosc->dataDodania)) : date($this->k->k['listaAktualnosci.format_daty'], strtotime($aktualnosc->dataDodania));
+                $tresc['datetime'] = date($this->k->k['listaAktualnosci.format_daty_datetime'], strtotime($aktualnosc->dataDodania));
 				$tresc['klasa_wiersza'] = ($licznik_aktualnosci % 2) ? 'nieparzysty ' : 'parzysty ';
 				$tresc['priorytetowa'] = $aktualnosc->priorytetowa;
 
@@ -109,7 +111,7 @@ class Http extends Modul\Http
 
 				if ($aktualnosc->zdjecieGlowne != '')
 				{
-					$tresc['zdjecie'] = Cms::inst()->url('aktualnosci', $aktualnosc->id).$prefix.$aktualnosc->zdjecieGlowne;
+					$tresc['zdjecie'] = Cms::inst()->url('aktualnosci', $aktualnosc->id).'/'.$prefix.$aktualnosc->zdjecieGlowne;
 					$this->szablon->ustawBlok('/listaAktualnosci/lista/zdjecie_glowne', $tresc);
 				}
 				else
@@ -119,7 +121,6 @@ class Http extends Modul\Http
 
 				$licznik_aktualnosci++;
 			}
-
 
 			$tresc['pager'] = $pager->html(Router::urlHttp($this->kategoria, array('', '{NR_STRONY}', '{NA_STRONIE}')));
 
@@ -147,10 +148,11 @@ class Http extends Modul\Http
              * tutaj masz metody do pobrania załączników
              *******************************************
              *******************************************/
-		    dump($aktualnosc->pobierzKatalog());
-		    dump($aktualnosc->pobierzZalaczniki());
+		    //dump($aktualnosc->pobierzKatalog());
+		    //dump($aktualnosc->pobierzZalaczniki());
 
 			$this->ustawGlobalne(array(
+                
 				'tytul_strony' => sprintf($this->j->t['aktualnosc.tytul_strony'], $aktualnosc->tytul),
 				'tytul_modulu' => sprintf($this->j->t['aktualnosc.tytul_modulu'], $aktualnosc->tytul),
 			));
@@ -164,12 +166,15 @@ class Http extends Modul\Http
 			$tresc['tresc_krotka'] = $aktualnosc->zajawka;
 			$tresc['tresc_pelna'] = $aktualnosc->tresc;
 			$tresc['autor'] = $aktualnosc->autor;
-			$tresc['data'] = date($this->k->k['aktualnosc.format_daty'], strtotime($aktualnosc->dataDodania));
+            $tresc['etykieta_autor_zdjec'] = $this->j->t['aktualnosc.etykieta_autor_zdjec'];
+            $tresc['autor_zdjec'] = $aktualnosc->autorZdjec;
+            $tresc['data'] = $this->k->k['listaAktualnosci.format_daty_po_polsku'] ? dataGramatyczniePL(strtotime($aktualnosc->dataDodania)) : date($this->k->k['listaAktualnosci.format_daty'], strtotime($aktualnosc->dataDodania));
+            $tresc['datetime'] = date($this->k->k['listaAktualnosci.format_daty_datetime'], strtotime($aktualnosc->dataDodania));
 			$tresc['link_wstecz'] = Router::urlHttp($this->kategoria);
 
 			if ($aktualnosc->idGalerii > 0)
 			{
-				$mapper_zdjecia = $this->dane()->GaleriaZdjecia();
+				$mapper_zdjecia = $this->dane()->GaleriaZdjecie();
 				$zdjecia = $mapper_zdjecia->pobierzOpublikowane($aktualnosc->idGalerii);
 
 				if (count($zdjecia) > 0)
@@ -207,8 +212,8 @@ class Http extends Modul\Http
 				$prefix = (empty($this->k->k['aktualnosc.prefix_miniaturki'])) ? null : $this->k->k['aktualnosc.prefix_miniaturki'].'-';
 				$prefix_pelne_zdjecie = (empty($this->k->k['aktualnosc.prefix_pelne_zdjecie'])) ? null : $this->k->k['aktualnosc.prefix_pelne_zdjecie'].'-';
 
-				$tresc_zdjecie['zdjecie'] = Cms::inst()->url('aktualnosci', $aktualnosc->id).$prefix.$aktualnosc->zdjecieGlowne;
-				$tresc_zdjecie['link'] = Cms::inst()->url('aktualnosci', $aktualnosc->id).$prefix_pelne_zdjecie.$aktualnosc->zdjecieGlowne;
+				$tresc_zdjecie['zdjecie'] = Cms::inst()->url('aktualnosci', $aktualnosc->id).'/'.$prefix.$aktualnosc->zdjecieGlowne;
+				$tresc_zdjecie['link'] = Cms::inst()->url('aktualnosci', $aktualnosc->id).'/'.$prefix_pelne_zdjecie.$aktualnosc->zdjecieGlowne;
 				$tresc_zdjecie['uzyj_lightbox'] = (int)$this->k->k['aktualnosc.uzyj_lightbox'];
 				$tresc_zdjecie['tytul'] = $aktualnosc->tytul;
 
