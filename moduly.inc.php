@@ -372,6 +372,19 @@ array(
 ),
 
 array(
+    'kod' => 'Wyszukiwarka',
+    'nazwa' => 'Wyszukiwarka',
+    'opis' => 'Wyświetla wyniki wyszukiwania',
+    'typ' => 'jednorazowy',
+    'wymagane' => array(),
+    'dla_zalogowanych' => false,
+    'uslugi' => array('Admin', 'Http'),
+    'cache' => false,
+    'katalog_szablon' => '',
+    //'katalog_szablon' => '',
+),
+
+array(
 	'kod' => 'StronaOpisowa',
 	'nazwa' => 'Strona Opisowa',
 	'opis' => 'Strona z dowolną treścią, zdjęciami i dodatkowymi plikami',
@@ -658,6 +671,18 @@ array(
 	'cache' => true,
 	'katalog_szablon' => '',
 	//'katalog_szablon' => 'UserPresenceBlock',
+),
+array(
+    'kod' => 'BlokWyszukiwarki',
+    'nazwa' => 'Blok z wyszukiwarka',
+    'opis' => 'Blok z formularzem wyszukiwarki',
+    'typ' => 'blok',
+    'wymagane' => array(),
+    'dla_zalogowanych' => false,
+    'uslugi' => array('Admin','Http'),
+    'cache' => true,
+    'katalog_szablon' => '',
+    //'katalog_szablon' => 'UserPresenceBlock',
 ),
 
 

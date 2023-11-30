@@ -75,8 +75,6 @@ class Mapper extends Biblioteka\Mapper\Baza
 		return $this->pobierzJeden($sql);
 	}
 
-
-
 	public function szukaj($kryteria, Pager $pager = null, Biblioteka\Sorter $sorter = null)
 	{
 		$sql = 'SELECT * FROM ' . $this->tabela

@@ -25,6 +25,5 @@
 	<div id="loginbox">
 		{{ $region_0 }}
 	</div>
-
 </body>
 </html>
