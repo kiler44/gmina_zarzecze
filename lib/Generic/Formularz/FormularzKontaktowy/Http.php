@@ -25,6 +25,7 @@ class Http extends \Generic\Formularz\Abstrakcja
 		if ($wybrany_temat < 1) $wybrany_temat = 1;
 
 		$this->formularz = new Formularz('', 'regForm');
+        dump($this->formularz);
 		if (count($this->tematy) > 0)
 		{
 			foreach($this->tematy as $temat)
@@ -99,11 +100,12 @@ class Http extends \Generic\Formularz\Abstrakcja
 			'wartosc' => $this->tlumaczenia['etykieta_zapisz'],
 			'atrybuty' => array('class' => 'buttonSet buttonRed'),
 		)));
-		$this->formularz->stopka(new Input\Button('wstecz', '&nbsp;', array(
-			'wartosc' => $this->tlumaczenia['etykieta_reset'],
-			'typ' => 'reset',
-			'atrybuty' => array('class' => 'buttonSet buttonLight'),
-		)));
+
+            $this->formularz->stopka(new Input\Button('wstecz', '&nbsp;', array(
+                'wartosc' => $this->tlumaczenia['etykieta_reset'],
+                'typ' => 'reset',
+                'atrybuty' => array('class' => 'buttonSet buttonLight'),
+            )));
 
 		$this->formularz->ustawTlumaczenia($this->tlumaczenia);
 	}

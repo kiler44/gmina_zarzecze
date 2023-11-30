@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
+    
+  <!-- Bootstrap css -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css " rel="stylesheet">
+  <title>Gmina Zarzecz</title>
+
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/pl.min.js"></script>
+</head>
+<body>
+<!-- Header START -->
+<header class="gz-header">
+  <div class="container">
+    <div class=""><a href="index.html" class="herb"><img src="images/svg/img-svg-01.svg" alt="Herb Gminy Zarzecze"></a></div>
+      <div class="row gz-navbar-top align-items-center">
+        <div class="col-md-8 col-sm-6 col-8 gz-navbar-title">
+          <h2>Zarzecze</h2>
+          <span id="gz-span-text-change" data-md-text="Oficjalny serwis informacyjny Urzędu Gminy Zarzecze" data-xs-text="Urząd Gminy Zarzecze"></span>
+        </div>
+        <div class="col-md-4 col-sm-6 col-4 d-flex justify-content-end flex-column flex-sm-row align-items-end align-items-sm-start">
+          <a href="#" class="gz-epuap-cta mb-2 mb-sm-0">
+            <img src="images/png/img-png-01.png" width="108" height="22" alt="ePUAP">
+          </a>
+          <a href="#" class="gz-bip-cta">
+            <img src="images/png/img-png-02.png" width="74" height="32" alt="bip">
+          </a>
+        </div>
+    </div>
+  </div>
+</header>
+<!-- Header END -->
+
+<!-- Navbar START --> 
+<nav class="navbar navbar-dark navbar-expand-lg gz-navbar" aria-label="Ninth navbar example">
+  <div class="container-xl justify-content-end">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gz-Nav-Dropdown" aria-controls="gz-Nav-Dropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="gz-Nav-Dropdown">
+      <ul class="navbar-nav gz-ul-navbar">
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Strony</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="index.html">Strona główna</a></li>
+            <li><a class="dropdown-item" href="strona-opisowa.html">Strona opisowa</a></li>
+            <li><a class="dropdown-item" href="aktualnosc-wpis.html">Aktualność Wpis</a></li>
+            <li><a class="dropdown-item" href="lista-aktualnosci.html">Lista Aktualności</a></li>
+            <li><a class="dropdown-item" href="lista-galerii.html">Lista Galerii</a></li>
+            <li><a class="dropdown-item" href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Na bieżąco</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dla mieszkańców</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Gmina Zarzecze</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Urząd gminy</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Kultura i oświata</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Gospodarka</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+
+      </ul>
+      
+      <a class="gz-nav-kontakt-cta ms-auto" href="#">Kontakt</a>
+    </div>
+  </div>
+</nav>
+<!-- Navbar END -->
+
+<!-- Sekcja 1 -->
+<section class="gz-section">
+  <div class="container" >
+    <div class="row">
+      <!-- Page title -->
+      <div class="col-12 text-lg-start text-center">
+        <!-- Okruszki -->
+        <div class="gz-breadcrumb">
+          <nav aria-label="">
+            <ol class="breadcrumb">
+              <li><a href="#">Strona główna</a></li>
+              <li><a href="#">Aktualności</a></li>
+              <li class="active" aria-current="page">Program „laptop dla ucznia”</li>
+            </ol>
+          </nav>
+        </div>
+        <!-- Okruszki End-->
+      </div>
+      <!-- Page title End-->
+
+      <!-- Content Strony -->
+      <div class="col-lg-9 col-12">
+        <h1>Gmina Zarzecze - Strona opisowa</h1>
+        <p>Sed ac lorem lacinia, venenatis sem id, rhoncus orci. Quisque sollicitudin porta elit in porta. In hac habitasse platea dictumst. Vivamus vulputate rhoncus porta. Nam at nunc scelerisque, malesuada massa eget, porttitor felis. Curabitur ornare feugiat est at porttitor. Morbi vehicula auctor vehicula.</p>
+        <h1>Przykładowy tytuł H1</h1>
+        <h2>Przykładowy tytuł H2</h2>
+        <h3>Przykładowy tytuł H3</h3>
+        <h4>Przykładowy tytuł H4</h4>
+        <h5>Przykładowy tytuł H5</h5>
+        
+        <figure class="figure">
+          <img src="images/jpg/img-jpg-27.jpg" class="figure-img img-fluid rounded" alt="Obrazek">
+          <figcaption class="">Fotografia własna</figcaption>
+        </figure>
+
+        <p>Aliquam sodales, dolor id porta condimentum, neque augue hendrerit felis, non pretium lectus eros sit amet orci. Phasellus dignissim nulla vitae neque commodo tristique. Aliquam vitae sem rhoncus, auctor nulla nec, porttitor lectus. Pellentesque nisi nibh, mollis ut ullamcorper et, feugiat ut metus</p>
+        <h5>Aliquam sodales, dolor id porta:</h5>
+
+        <ul>
+          <li>Condimentum, neque augue hendrerit felis;</li>
+          <li>Aliquam vitae sem rhoncus;</li>
+          <li>Auctor nulla nec, porttitor lectus;</li>
+          <li>Pellentesque nisi nibh.</li>
+        </ul>
+
+        <!-- Tabelka -->
+        <table>
+          <thead>
+            <tr>
+              <th>Lp.</th>
+              <th>Imię i Nazwisko</th>
+              <th>Dziedzina sportu</th>
+              <th>Specjalizacja</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Artur Jazgarz</td>
+              <td>Siatkówka</td>
+              <td>Siatkówka</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Michał Bociań</td>
+              <td>Piłka nożna</td>
+              <td>Trener</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Jan Kowal</td>
+              <td>Gimnastyka</td>
+              <td>Poręcz</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Anna Sobieł</td>
+              <td>Pływanie</td>
+              <td>Trener</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Jan Kowal</td>
+              <td>Gimnastyka</td>
+              <td>Skok przez kozła</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Robert Winnicki</td>
+              <td>Piłka nożna</td>
+              <td>Trener</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Tabelka End-->
+        
+        <h5>Dokumenty do pobrania:</h5>
+
+        
+
+        <ul class="gz-download list-unstyled">
+          <li><a href="#" class="gz-pdf">Oświadczenie o zarobkach.pdf</a></li>
+          <li><a href="#" class="gz-xls">Status mieszkaniowy.xls</a></li>
+          <li><a href="#" class="gz-ppt">Wyniki przetargu na zakup ciepła 2022/2023.ppt</a></li>
+          <li><a href="#" class="gz-doc">Zarządzenia Rady 2023r.doc</a></li>
+          
+        </ul> 
+        
+        
+      </div>
+      <!-- Content End-->
+      <!-- Menu boczne -->
+      <div class="col-3">
+        <nav>
+          <ul class="list-unstyled">
+            <li class="gz-nawigacja-boczna">
+              <button class="" data-bs-toggle="collapse" data-bs-target="#na-biezaco-collapse" aria-expanded="false">Na bieżąco</button>
+              <div class="collapse" id="na-biezaco-collapse">
+                <ul class="list-unstyled">
+                  <li><a href="#" class="link-dark">Ogłoszenia</a></li>
+                  <li><a href="#" class="link-dark">Przetargi</a></li>
+                  <li><a href="#" class="link-dark">OZE</a></li>
+                  <li><a href="#" class="link-dark">Kurier Zarzecki</a></li>
+                  <li><a href="#" class="link-dark">Wybory Sołtysów</a></li>
+                  <li><a href="#" class="link-dark">Wybory Parlamentarne</a></li>
+                  <li><a href="#" class="link-dark">Konsultacje społeczne</a></li>
+                  <li><a href="#" class="link-dark">Petycje i wnioski</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="gz-nawigacja-boczna">
+              <button class="" data-bs-toggle="collapse" data-bs-target="#dla-mieszkancow-collapse" aria-expanded="false">Dla mieszkańców</button>
+              <div class="collapse" id="dla-mieszkancow-collapse">
+                <ul class="list-unstyled">
+                  <li><a href="#" class="link-dark">Ogłoszenia</a></li>
+                  <li><a href="#" class="link-dark">Przetargi</a></li>
+                  <li><a href="#" class="link-dark">OZE</a></li>
+                  <li><a href="#" class="link-dark">Kurier Zarzecki</a></li>
+                  <li><a href="#" class="link-dark">Wybory Sołtysów</a></li>
+                  <li><a href="#" class="link-dark">Wybory Parlamentarne</a></li>
+                  <li><a href="#" class="link-dark">Konsultacje społeczne</a></li>
+                  <li><a href="#" class="link-dark">Petycje i wnioski</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="gz-nawigacja-boczna">
+              <button class="" data-bs-toggle="collapse" data-bs-target="#gmina-zarzecze-collapse" aria-expanded="false">Gmina Zarzecze</button>
+              <div class="collapse" id="gmina-zarzecze-collapse">
+                <ul class="list-unstyled">
+                  <li><a href="#" class="link-dark">Ogłoszenia</a></li>
+                  <li><a href="#" class="link-dark">Przetargi</a></li>
+                  <li><a href="#" class="link-dark">OZE</a></li>
+                  <li><a href="#" class="link-dark">Kurier Zarzecki</a></li>
+                  <li><a href="#" class="link-dark">Wybory Sołtysów</a></li>
+                  <li><a href="#" class="link-dark">Wybory Parlamentarne</a></li>
+                  <li><a href="#" class="link-dark">Konsultacje społeczne</a></li>
+                  <li><a href="#" class="link-dark">Petycje i wnioski</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="gz-nawigacja-boczna">
+              <button class="" data-bs-toggle="collapse" data-bs-target="#urzad-gminy-collapse" aria-expanded="false">Urząd gminy</button>
+              <div class="collapse" id="urzad-gminy-collapse">
+                <ul class="list-unstyled">
+                  <li><a href="#" class="link-dark">Ogłoszenia</a></li>
+                  <li><a href="#" class="link-dark">Przetargi</a></li>
+                  <li><a href="#" class="link-dark">OZE</a></li>
+                  <li><a href="#" class="link-dark">Kurier Zarzecki</a></li>
+                  <li><a href="#" class="link-dark">Wybory Sołtysów</a></li>
+                  <li><a href="#" class="link-dark">Wybory Parlamentarne</a></li>
+                  <li><a href="#" class="link-dark">Konsultacje społeczne</a></li>
+                  <li><a href="#" class="link-dark">Petycje i wnioski</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="gz-nawigacja-boczna">
+              <button class="" data-bs-toggle="collapse" data-bs-target="#kultura-i-oswiata-collapse" aria-expanded="false">Kultura i oświata</button>
+              <div class="collapse" id="kultura-i-oswiata-collapse">
+                <ul class="list-unstyled">
+                  <li><a href="#" class="link-dark">Ogłoszenia</a></li>
+                  <li><a href="#" class="link-dark">Przetargi</a></li>
+                  <li><a href="#" class="link-dark">OZE</a></li>
+                  <li><a href="#" class="link-dark">Kurier Zarzecki</a></li>
+                  <li><a href="#" class="link-dark">Wybory Sołtysów</a></li>
+                  <li><a href="#" class="link-dark">Wybory Parlamentarne</a></li>
+                  <li><a href="#" class="link-dark">Konsultacje społeczne</a></li>
+                  <li><a href="#" class="link-dark">Petycje i wnioski</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="gz-nawigacja-boczna">
+              <button class="" data-bs-toggle="collapse" data-bs-target="#gospodarka-collapse" aria-expanded="false">Gospodarka</button>
+              <div class="collapse" id="gospodarka-collapse">
+                <ul class="list-unstyled">
+                  <li><a href="#" class="link-dark">Ogłoszenia</a></li>
+                  <li><a href="#" class="link-dark">Przetargi</a></li>
+                  <li><a href="#" class="link-dark">OZE</a></li>
+                  <li><a href="#" class="link-dark">Kurier Zarzecki</a></li>
+                  <li><a href="#" class="link-dark">Wybory Sołtysów</a></li>
+                  <li><a href="#" class="link-dark">Wybory Parlamentarne</a></li>
+                  <li><a href="#" class="link-dark">Konsultacje społeczne</a></li>
+                  <li><a href="#" class="link-dark">Petycje i wnioski</a></li>
+                </ul>
+              </div>
+            </li>
+            <!-- More menu items -->
+          </ul>
+        </nav>
+      </div>
+      <!-- Menu boczne END-->
+    </div> 
+  </div>
+</section>
+<!-- Sekcja 1 -->
+
+<!-- Sekcja 9 Banery-01 -->
+<section class="gz-section gz-banery-01">
+  <div class="container gz-mt-40 ">
+    <div class="row">
+      <div class="col-12">
+        <!-- Karuzela -->
+        <div id="gz-slider-homepage-5" class="carousel slide carousel-dark" data-bs-ride="carousel">
+          <!-- Karuzela nawigacja-->
+          <button class="carousel-control-prev" type="button" data-bs-target="#gz-slider-homepage-5" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#gz-slider-homepage-5" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          <!-- Karuzela nawigacja END-->
+          <div class="carousel-inner gz-margin-karuzela">
+            <!-- bloczek karuzeli 1 -->
+            <div class="carousel-item active" data-bs-interval="3000">
+              <div class="row align-items-center gz-counter-container">
+
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-23.jpg" alt="">
+                    <h4>Raport ostanie Gminy Zarzecz</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-24.jpg" alt="">
+                    <h4>ZS Zarzecz</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-25.jpg" alt="">
+                    <h4>OZE</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-26.jpg" alt="">
+                    <h4>Czyste pwietrze</h4>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            <!-- bloczek karuzeli 1 END -->
+            <!-- bloczek karuzeli 2 -->
+            <div class="carousel-item" data-bs-interval="3000">
+              <div class="row align-items-center gz-counter-container">
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-23.jpg" alt="">
+                    <h4>Raport ostanie Gminy Zarzecz</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-24.jpg" alt="">
+                    <h4>ZS Zarzecz</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-25.jpg" alt="">
+                    <h4>OZE</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-26.jpg" alt="">
+                    <h4>Czyste pwietrze</h4>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            <!-- bloczek karuzeli 2 END -->
+          </div>
+        <!-- Karuzela END-->
+        </div>
+      </div>  
+    </div>
+  </div>  
+</section>
+<!-- Sekcja 9 Banery-01 END -->
+<!-- Footer -->
+<section class="gz-footer">
+  <div class="container">
+    <footer class="row">
+      <div class="col-3 text-center">
+        <img src="images/svg/img-svg-02.svg" alt="">
+        <h2>Gmina Zarzecze</h2>
+        <h3>Wójt gminy: Tomasz Bury</h3>
+        <p>Urzęduje od 2018r.</p>
+      </div>
+      <div class="col-3">
+        <h5>Adres:</h5>
+        <p>ul. Długa 7</p>
+        <p>37-205 Zarzecze,</p>
+        <p>Powiat Przeworski</p>
+        <p>Województwo Podkarpackie</p>
+      </div>
+      <div class="col-3">
+        <h5>Godziny otwarcia:</h5>
+        <p>Poniedziałek 7:00 – 15:00</p>
+        <p>Wtorek 7:00 – 17:00</p>
+        <p>Środa 7:00 – 15:00</p>
+        <p>Czwartek 7:00 – 15:00</p>
+        <p>Piątek 7:00 – 13:00</p>
+      </div>
+      <div class="col-3">
+        <h5>Dane:</h5>
+        <p>tel. 16 640-15-28</p>
+        <p>tel. 16 640-15-29</p>
+        <p>tel. GOPS: 16 640 11 86</p>
+        <a href="mailto:przyklad@example.com">ugzarzecze@post.pl</a>
+        <h6>Numer konta:</h6>
+        <p>27 9106 0008 2002 0000 0794 0002</p>
+      </div>
+    </footer>
+  </div>
+</section>
+<section class="gz-footer-copyright">
+  <div class="container">
+    <footer class="row">
+      <div class="col-12 text-center">
+        Copyright © Urząd Gminy Zarzecze
+      </div>
+    </footer>
+  </div>
+</section>
+<!-- Footer End -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/gz-js.js"></script>
+</body>
+</html>

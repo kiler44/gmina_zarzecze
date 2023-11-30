@@ -30,6 +30,39 @@
 	<script src="/_szablon/js/jquery-3.6.0.min.js"></script>
 	<script src="/_szablon/js/moment.min.js"></script>
 	<script src="/_szablon/js/pl.min.js"></script>
+	<script>
+		function checkOpeningStatus(schedule) {
+			var now = new Date();
+			var currentHour = now.getHours();
+			var currentMinute = now.getMinutes();
+
+			for (var className in schedule) {
+				var times = schedule[className];
+				var [godzinaOtwarcia, minutaOtwarcia] = times.otwarcie.split(':').map(Number);
+				var [godzinaZamkniecia, minutaZamkniecia] = times.zamkniecie.split(':').map(Number);
+
+				var isOpen = (currentHour > godzinaOtwarcia || (currentHour === godzinaOtwarcia && currentMinute >= minutaOtwarcia)) &&
+						(currentHour < godzinaZamkniecia || (currentHour === godzinaZamkniecia && currentMinute < minutaZamkniecia));
+
+				var status = isOpen ? `Dziś czynne do ${times.zamkniecie}` : "Obecnie nieczynne";
+
+				var elements = document.getElementsByClassName(className);
+				for (var i = 0; i < elements.length; i++) {
+					elements[i].textContent = status;
+				}
+			}
+		}
+
+		var schedule = {
+			"otwarcie_8-00_16-30": { otwarcie: "8:00", zamkniecie: "16:30" },
+			"otwarcie_9-00_17-30": { otwarcie: "9:00", zamkniecie: "17:30" },
+			"otwarcie_18-00_24-00": { otwarcie: "18:00", zamkniecie: "00:00" },
+		};
+
+		window.onload = function() {
+			checkOpeningStatus(schedule);
+		};
+	</script>
 	{{$naglowek_html}}
 	{{BEGIN rss}}<link rel="alternate" type="application/rss+xml" title="{{$tytul}}" href="{{$url}}" />
 	{{END}}
@@ -62,17 +95,38 @@
 	</div>
 </nav>
 <!-- Navbar END -->
-
-
-
-<!-- Sekcja 1 -->
-
 <section class="gz-section gz-page-title">
 	<div class="container">
 		<div class="row">
-			{{ $region_0 }}
+			{{ $region_3 }}
 		</div>
 </section>
+
+
+<!-- Sekcja 1 -->
+<section class="gz-section gz-kontakt ">
+	<div class="container" >
+		<div class="row">
+			<div class="col-lg-8 col-12 gz-kontakt">
+				{{ $region_0 }}
+			</div>
+			<div class="col-lg-4 col-12 gz-info-section">
+				{{ $region_4 }}
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Sekcja 1 END -->
+
+<section class="gz-section gz-kontakt">
+	<div class="container" >
+		<div class="row">
+			<div class="col-12"><hr></div>
+				{{ $region_5 }}
+		</div>
+	</div>
+</section>
+
 <!-- Sekcja 9 Banery-01 -->
 <section class="gz-section gz-banery-01">
 	<div class="container gz-mt-40 ">
@@ -164,7 +218,7 @@
 <section class="gz-footer">
 	<div class="container">
 		<footer class="row">
-			{{ $region_3 }}
+			{{ $region_6 }}
 		</footer>
 	</div>
 </section>

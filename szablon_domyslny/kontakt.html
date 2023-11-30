@@ -1,0 +1,2029 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet"> 
+  <!-- Bootstrap css -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css " rel="stylesheet">
+  <title>Gmina Zarzecz</title>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/pl.min.js"></script>
+  <script>
+    function checkOpeningStatus(schedule) {
+        var now = new Date();
+        var currentHour = now.getHours();
+        var currentMinute = now.getMinutes();
+
+        for (var className in schedule) {
+            var times = schedule[className];
+            var [godzinaOtwarcia, minutaOtwarcia] = times.otwarcie.split(':').map(Number);
+            var [godzinaZamkniecia, minutaZamkniecia] = times.zamkniecie.split(':').map(Number);
+
+            var isOpen = (currentHour > godzinaOtwarcia || (currentHour === godzinaOtwarcia && currentMinute >= minutaOtwarcia)) && 
+                        (currentHour < godzinaZamkniecia || (currentHour === godzinaZamkniecia && currentMinute < minutaZamkniecia));
+
+            var status = isOpen ? `Dziś czynne do ${times.zamkniecie}` : "Obecnie nieczynne";
+            
+            var elements = document.getElementsByClassName(className);
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].textContent = status;
+            }
+        }
+    }
+
+    var schedule = {
+        "otwarcie_8-00_16-30": { otwarcie: "8:00", zamkniecie: "16:30" },
+        "otwarcie_9-00_17-30": { otwarcie: "9:00", zamkniecie: "17:30" },
+        "otwarcie_18-00_24-00": { otwarcie: "18:00", zamkniecie: "00:00" },
+    };
+
+    window.onload = function() {
+        checkOpeningStatus(schedule);
+    };
+  </script>
+</head>
+<body>
+  
+<!-- Header START -->
+<header class="gz-header">
+  <div class="container">
+    <div class=""><a href="index.html" class="herb"><img src="images/svg/img-svg-01.svg" alt="Herb Gminy Zarzecze"></a></div>
+      <div class="row gz-navbar-top align-items-center">
+        <div class="col-md-8 col-sm-6 col-8 gz-navbar-title">
+          <h2>Zarzecze</h2>
+          <span id="gz-span-text-change" data-md-text="Oficjalny serwis informacyjny Urzędu Gminy Zarzecze" data-xs-text="Urząd Gminy Zarzecze"></span>
+        </div>
+        <div class="col-md-4 col-sm-6 col-4 d-flex justify-content-end flex-column flex-sm-row align-items-end align-items-sm-start">
+          <a href="#" class="gz-epuap-cta mb-2 mb-sm-0">
+            <img src="images/png/img-png-01.png" width="108" height="22" alt="ePUAP">
+          </a>
+          <a href="#" class="gz-bip-cta">
+            <a href="#" class="gz-bip-cta"></a>
+            <img src="images/png/img-png-02.png" width="74" height="32" alt="bip">
+          </a>
+        </div>
+    </div>
+  </div>
+</header>
+<!-- Header END -->
+
+<!-- Navbar START --> 
+<nav class="navbar navbar-dark navbar-expand-lg gz-navbar" aria-label="Ninth navbar example">
+  <div class="container-xl justify-content-end">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gz-Nav-Dropdown" aria-controls="gz-Nav-Dropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="gz-Nav-Dropdown">
+      <ul class="navbar-nav gz-ul-navbar">
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Strony</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="index.html">Strona główna</a></li>
+            <li><a class="dropdown-item" href="strona-opisowa.html">Strona opisowa</a></li>
+            <li><a class="dropdown-item" href="aktualnosc-wpis.html">Aktualność Wpis</a></li>
+            <li><a class="dropdown-item" href="lista-aktualnosci.html">Lista Aktualności</a></li>
+            <li><a class="dropdown-item" href="lista-galerii.html">Lista Galerii</a></li>
+            <li><a class="dropdown-item" href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Na bieżąco</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dla mieszkańców</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Gmina Zarzecze</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Urząd gminy</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Kultura i oświata</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Gospodarka</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+
+      </ul>
+      
+      <a class="gz-nav-kontakt-cta ms-auto" href="#">Kontakt</a>
+    </div>
+  </div>
+</nav>
+<!-- Navbar END -->
+
+<!-- Formularz kontaktowy / dane teleadresowe -->
+<section class="gz-section gz-kontakt ">
+  <div class="container" >
+    <div class="row">
+      <div class="col-12 text-lg-start text-center">
+        <!-- Okruszki -->
+        <div class="gz-breadcrumb">
+          <nav aria-label="">
+            <ol class="breadcrumb">
+              <li><a href="#">Strona główna</a></li>
+              <li class="active" aria-current="page">Kontakt</li>
+            </ol>
+          </nav>
+        </div>
+        <!-- Okruszki End-->
+      </div>
+      <!-- Content Strony -->
+      <div class="col-lg-8 col-12 gz-kontakt">
+        <h1>Kontakt</h1>
+        <h2>Napisz do nas za pomocą formularza</h2>
+        <span>Odpiszemy do Ciebie najszybciej jak to będzie możliwe</span>
+        <form class="row g-3 needs-validation" novalidate>
+          <div class="col-md-6">
+            <label for="name" class="form-label">Imię i nazwisko*</label>
+            <input type="text" class="form-control" id="name" required>
+            <div class="invalid-feedback">
+                Proszę podać imię i nazwisko.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="email" class="form-label">Adres email*</label>
+            <input type="email" class="form-control" id="email" required>
+            <div class="invalid-feedback">
+                Proszę podać poprawny adres email.
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="phone" class="form-label">Telefon</label>
+            <input type="tel" class="form-control" id="phone">
+          </div>
+          <div class="col-md-6">
+            <label for="subject" class="form-label">Temat*</label>
+            <select class="form-select" id="subject" required>
+              <option value="">Wybierz...</option>
+              <option value="1">Wydział spraw socjalnych</option>
+              <option value="2">Sprawy formalne</option>
+              <option value="3">Zaświadczenia</option>
+              <option value="4">Skarga</option>
+            </select>
+            <div class="invalid-feedback">
+                Proszę wybrać temat wiadomości.
+            </div>
+          </div>
+          <div class="col-md-12">
+            <label for="message" class="form-label">Treść wiadomości*</label>
+            <textarea class="form-control" id="message" required></textarea>
+            <div class="invalid-feedback">
+                Proszę wpisać treść wiadomości.
+            </div>
+          </div>
+          <div class="col-md-12" style="position: relative;">
+            <label for="file" class="form-label gz-form-control">Dodaj plik do wysłania:</label>
+            <input class="form-control" type="file" id="file">
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+              <label class="form-check-label" for="invalidCheck">
+                Zgodnie z art. 13 ogólnego rozporządzenia o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (Dz. Urz. UE L 119 z 04.05.2016) informuję, iż: Administratorem Pani/Pana danych osobowych jest Gmina Zarzecz. więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+              </label>
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+              <label class="form-check-label" for="invalidCheck">
+                Zgadzam się na przetwarzanie moich danych osobowych w celu przesyłania przez Gminę Zarzecze, 33-163 Rzepiennik Strzyżewski, informacji handlowych w tym: o promocjach, nowościach, na mój adres e-mail lub nr telefonu. Wiem, że mogę w każdej chwili wycofać zgodę co nie wpływa na dokonane wcześniej czynności. Więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+              </label>
+              <div class="invalid-feedback">
+                You must agree before submitting.
+              </div>
+            </div>
+          </div>
+          <div class="col-12 text-lg-end text-center">
+            <button class="btn btn-primary" type="submit">Wyślij Wiadomość</button>
+          </div>
+        </form>
+      </div>
+      <!-- Content End-->
+      <!-- Menu boczne -->
+      <div class="col-lg-4 col-12 gz-info-section">
+          <div class="gz-ingo-img">
+              <h5>Adres:</h5>
+              <p>Urząd Gminy Zarzecze<br>
+              ul. Długa 7<br>
+              37-205 Zarzecze<br>
+              Powiat Przeworski<br>
+              Województwo Podkarpackie</p>
+              <img src="/_szablon/images/ico/ico-16.svg" alt="">
+          </div>
+          <div class="gz-ingo-img">
+              <h5>Dane kontaktowe:</h5>
+              <p>tel. 16 640-15-28<br>
+              tel. 16 640-15-29<br>
+              tel. GOPS: 16 640 11 86<br>
+              email: ugzarzecze@post.pl</p>
+              <img src="images/ico/ico-17.svg" alt="">
+          </div>
+          <div class="gz-ingo-img">
+              <h5>Dane:</h5>
+              <p>Nip gminy: 7941671210<br>
+              REGON: 650900542</p>
+              <img src="images/ico/ico-18.svg" alt="">
+          </div>
+      </div>
+      <!-- Menu boczne END-->
+    </div> 
+  </div>
+</section>
+<!-- Formularz kontaktowy / dane teleadresowe END -->
+
+<!-- Bloczki Kontaktowe -->
+<section class="gz-section gz-kontakt">
+  <div class="container" >
+    <div class="row">
+      <div class="col-12"><hr></div>
+      <!-- Bloczek kontaktu 1 -->
+      <div class="col-xxl-4 col-md-6 col-12">
+        <div class="bloczek-kontakt bloczek-kontakt-img">
+          <h5>Urząd Miejski w Zarzeczu na platformie ePuap</h5>
+          <img src="images/jpg/img-jpg-36.jpg" >
+          <a href="tel:+48166401528" class="btn btn-primary align-self-center" type="button">Przejdź do platformy</a>
+        </div> 
+      </div>
+      <!-- Bloczek kontaktu 2 -->
+      <div class="col-xxl-4 col-md-6 col-12">
+        <div class="bloczek-kontakt">
+          <div class="gz-info">
+            <div class="pokoj">pokój 9</div>
+            <div class="godziny">
+              <div class="godziny-content otwarcie_8-00_16-30"></div>
+            </div>
+          </div>
+          <h5>Sekretariat</h5>
+          <p class="stanowisko">mgr. Anna Kowalska</p>
+          <div class="phone justify-content-between">
+            <div>
+              <span>Telefon:</span>
+              <p>16 640 15 28</p>
+            </div>
+            <a href="tel:+48166401528" class="btn btn-primary align-self-center" type="button">Zadzwoń</a>
+          </div>
+          <div class="mail justify-content-between ">
+            <div>
+              <span>Adres e-mail:</span>
+              <a href="mailto:sekretariat@ugzarzecze.pl">sekretariat@ugzarzecze.pl</a>
+            </div>
+            <button class="btn btn-outline-primary  align-self-center" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Napisz</button>
+          </div>
+          <div class="godziny-urzedowania">
+            <span>Godziny urzędowania:</span>
+            <ul>
+              <li>Poniedziałek: <b>od 8:00 do 18:00</b></li>
+              <li>Wtorek: <b>od 8:00 do 18:00</b></li>
+              <li>Środa: <b>od 8:00 do 18:00</b></li>
+              <li>Czwartek: <b>od 8:00 do 18:00</b></li>
+              <li>Piątek: <b>od 8:00 do 18:00</b></li>
+            </ul>
+            <p>W sobotę oraz niedziele urząd gminy pozostaje nieczynny</p>
+          </div>
+          <!-- Modal -->
+          <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sekretariat</h5>
+                  <span>mgr. Anna Kowalska</span>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" id="name" placeholder="Imię i nazwisko*" required >
+                      <div class="invalid-feedback">
+                          Proszę podać imię i nazwisko.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="email" class="form-control" id="email" placeholder="Adres email*" required>
+                      <div class="invalid-feedback">
+                          Proszę podać poprawny adres email.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="tel" class="form-control" id="phone" placeholder="pomocą">
+                    </div>
+                    <div class="col-md-6">
+                      <select class="form-select" id="subject" required>
+                        <option value="">Wybierz temat*</option>
+                        <option value="1">Wydział spraw socjalnych</option>
+                        <option value="2">Sprawy formalne</option>
+                        <option value="3">Zaświadczenia</option>
+                        <option value="4">Skarga</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Proszę wybrać temat wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <textarea class="form-control" id="message" placeholder="Treść wiadomości*" required></textarea>
+                      <div class="invalid-feedback">
+                        Proszę wpisać treść wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12" style="position: relative;">
+                      <input class="form-control" type="file" id="file" placeholder="Dodaj plik do wysłania:">
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgodnie z art. 13 ogólnego rozporządzenia o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (Dz. Urz. UE L 119 z 04.05.2016) informuję, iż: Administratorem Pani/Pana danych osobowych jest Gmina Zarzecz. więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgadzam się na przetwarzanie moich danych osobowych w celu przesyłania przez Gminę Zarzecze, 33-163 Rzepiennik Strzyżewski, informacji handlowych w tym: o promocjach, nowościach, na mój adres e-mail lub nr telefonu. Wiem, że mogę w każdej chwili wycofać zgodę co nie wpływa na dokonane wcześniej czynności. Więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 text-center gz-modal-cta">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                      <button class="btn btn-primary" type="submit">Wyślij</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <!-- Modal END-->
+        </div> 
+      </div>
+      <!-- Bloczek kontaktu 3 -->
+      <div class="col-xxl-4 col-md-6 col-12">
+        <div class="bloczek-kontakt">
+          <div class="gz-info">
+            <div class="pokoj">pokój 118</div>
+            <div class="godziny">
+              <div class="godziny-content otwarcie_9-00_17-30"></div>
+            </div>
+          </div>
+          <h5>Sekretarz</h5>
+          <p class="stanowisko">mgr. Jan Kowalski</p>
+          <div class="phone justify-content-between">
+            <div>
+              <span>Telefon:</span>
+              <p>16 640 15 28</p>
+            </div>
+            <a href="tel:+48166401528" class="btn btn-primary align-self-center" type="button">Zadzwoń</a>
+          </div>
+          <div class="mail justify-content-between ">
+            <div>
+              <span>Adres e-mail:</span>
+              <a href="mailto:sekretariat@ugzarzecze.pl">sekretariat@ugzarzecze.pl</a>
+            </div>
+            <button class="btn btn-outline-primary  align-self-center" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Napisz</button>
+          </div>
+          <div class="godziny-urzedowania">
+            <span>Godziny urzędowania:</span>
+            <ul>
+              <li>Poniedziałek: <b>od 8:00 do 18:00</b></li>
+              <li>Wtorek: <b>od 8:00 do 18:00</b></li>
+              <li>Środa: <b>od 8:00 do 18:00</b></li>
+              <li>Czwartek: <b>od 8:00 do 18:00</b></li>
+              <li>Piątek: <b>od 8:00 do 18:00</b></li>
+            </ul>
+            <p>W sobotę oraz niedziele urząd gminy pozostaje nieczynny</p>
+          </div>
+          <!-- Modal -->
+          <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sekretariat</h5>
+                  <span>mgr. Anna Kowalska</span>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" id="name" placeholder="Imię i nazwisko*" required >
+                      <div class="invalid-feedback">
+                          Proszę podać imię i nazwisko.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="email" class="form-control" id="email" placeholder="Adres email*" required>
+                      <div class="invalid-feedback">
+                          Proszę podać poprawny adres email.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="tel" class="form-control" id="phone" placeholder="pomocą">
+                    </div>
+                    <div class="col-md-6">
+                      <select class="form-select" id="subject" required>
+                        <option value="">Wybierz temat*</option>
+                        <option value="1">Wydział spraw socjalnych</option>
+                        <option value="2">Sprawy formalne</option>
+                        <option value="3">Zaświadczenia</option>
+                        <option value="4">Skarga</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Proszę wybrać temat wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <textarea class="form-control" id="message" placeholder="Treść wiadomości*" required></textarea>
+                      <div class="invalid-feedback">
+                        Proszę wpisać treść wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12" style="position: relative;">
+                      <input class="form-control" type="file" id="file" placeholder="Dodaj plik do wysłania:">
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgodnie z art. 13 ogólnego rozporządzenia o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (Dz. Urz. UE L 119 z 04.05.2016) informuję, iż: Administratorem Pani/Pana danych osobowych jest Gmina Zarzecz. więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgadzam się na przetwarzanie moich danych osobowych w celu przesyłania przez Gminę Zarzecze, 33-163 Rzepiennik Strzyżewski, informacji handlowych w tym: o promocjach, nowościach, na mój adres e-mail lub nr telefonu. Wiem, że mogę w każdej chwili wycofać zgodę co nie wpływa na dokonane wcześniej czynności. Więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 text-center gz-modal-cta">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                      <button class="btn btn-primary" type="submit">Wyślij</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <!-- Modal END-->
+        </div> 
+      </div>
+      <!-- Bloczek kontaktu 4 -->
+      <div class="col-xxl-4 col-md-6 col-12">
+        <div class="bloczek-kontakt">
+          <div class="gz-info">
+            <div class="pokoj">pokój 13</div>
+            <div class="godziny">
+              <div class="godziny-content otwarcie_18-00_24-00"></div>
+            </div>
+          </div>
+          <h5>Skarbnik</h5>
+          <p class="stanowisko">mgr. Anna Kowalska</p>
+          <div class="phone justify-content-between">
+            <div>
+              <span>Telefon:</span>
+              <p>16 640 15 28</p>
+            </div>
+            <a href="tel:+48166401528" class="btn btn-primary align-self-center" type="button">Zadzwoń</a>
+          </div>
+          <div class="mail justify-content-between ">
+            <div>
+              <span>Adres e-mail:</span>
+              <a href="mailto:sekretariat@ugzarzecze.pl">sekretariat@ugzarzecze.pl</a>
+            </div>
+            <button class="btn btn-outline-primary  align-self-center" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Napisz</button>
+          </div>
+          <div class="godziny-urzedowania">
+            <span>Godziny urzędowania:</span>
+            <ul>
+              <li>Poniedziałek: <b>od 8:00 do 18:00</b></li>
+              <li>Wtorek: <b>od 8:00 do 18:00</b></li>
+              <li>Środa: <b>od 8:00 do 18:00</b></li>
+              <li>Czwartek: <b>od 8:00 do 18:00</b></li>
+              <li>Piątek: <b>od 8:00 do 18:00</b></li>
+            </ul>
+            <p>W sobotę oraz niedziele urząd gminy pozostaje nieczynny</p>
+          </div>
+          <!-- Modal -->
+          <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sekretariat</h5>
+                  <span>mgr. Anna Kowalska</span>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" id="name" placeholder="Imię i nazwisko*" required >
+                      <div class="invalid-feedback">
+                          Proszę podać imię i nazwisko.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="email" class="form-control" id="email" placeholder="Adres email*" required>
+                      <div class="invalid-feedback">
+                          Proszę podać poprawny adres email.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="tel" class="form-control" id="phone" placeholder="pomocą">
+                    </div>
+                    <div class="col-md-6">
+                      <select class="form-select" id="subject" required>
+                        <option value="">Wybierz temat*</option>
+                        <option value="1">Wydział spraw socjalnych</option>
+                        <option value="2">Sprawy formalne</option>
+                        <option value="3">Zaświadczenia</option>
+                        <option value="4">Skarga</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Proszę wybrać temat wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <textarea class="form-control" id="message" placeholder="Treść wiadomości*" required></textarea>
+                      <div class="invalid-feedback">
+                        Proszę wpisać treść wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12" style="position: relative;">
+                      <input class="form-control" type="file" id="file" placeholder="Dodaj plik do wysłania:">
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgodnie z art. 13 ogólnego rozporządzenia o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (Dz. Urz. UE L 119 z 04.05.2016) informuję, iż: Administratorem Pani/Pana danych osobowych jest Gmina Zarzecz. więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgadzam się na przetwarzanie moich danych osobowych w celu przesyłania przez Gminę Zarzecze, 33-163 Rzepiennik Strzyżewski, informacji handlowych w tym: o promocjach, nowościach, na mój adres e-mail lub nr telefonu. Wiem, że mogę w każdej chwili wycofać zgodę co nie wpływa na dokonane wcześniej czynności. Więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 text-center gz-modal-cta">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                      <button class="btn btn-primary" type="submit">Wyślij</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <!-- Modal END-->
+        </div> 
+      </div>
+      <!-- Bloczek kontaktu 5 -->
+      <div class="col-xxl-4 col-md-6 col-12">
+        <div class="bloczek-kontakt">
+          <div class="gz-info">
+            <div class="pokoj">pokój 9</div>
+            <div class="godziny">
+              <div class="godziny-content otwarcie_8-00_16-30"></div>
+            </div>
+          </div>
+          <h5>Ewindecja Ludności</h5>
+          <p class="stanowisko">mgr. Anna Kowalska</p>
+          <div class="phone justify-content-between">
+            <div>
+              <span>Telefon:</span>
+              <p>16 640 15 28</p>
+            </div>
+            <a href="tel:+48166401528" class="btn btn-primary align-self-center" type="button">Zadzwoń</a>
+          </div>
+          <div class="mail justify-content-between ">
+            <div>
+              <span>Adres e-mail:</span>
+              <a href="mailto:sekretariat@ugzarzecze.pl">sekretariat@ugzarzecze.pl</a>
+            </div>
+            <button class="btn btn-outline-primary  align-self-center" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Napisz</button>
+          </div>
+          <div class="godziny-urzedowania">
+            <span>Godziny urzędowania:</span>
+            <ul>
+              <li>Poniedziałek: <b>od 8:00 do 18:00</b></li>
+              <li>Wtorek: <b>od 8:00 do 18:00</b></li>
+              <li>Środa: <b>od 8:00 do 18:00</b></li>
+              <li>Czwartek: <b>od 8:00 do 18:00</b></li>
+              <li>Piątek: <b>od 8:00 do 18:00</b></li>
+            </ul>
+            <p>W sobotę oraz niedziele urząd gminy pozostaje nieczynny</p>
+          </div>
+          <!-- Modal -->
+          <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sekretariat</h5>
+                  <span>mgr. Anna Kowalska</span>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" id="name" placeholder="Imię i nazwisko*" required >
+                      <div class="invalid-feedback">
+                          Proszę podać imię i nazwisko.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="email" class="form-control" id="email" placeholder="Adres email*" required>
+                      <div class="invalid-feedback">
+                          Proszę podać poprawny adres email.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="tel" class="form-control" id="phone" placeholder="pomocą">
+                    </div>
+                    <div class="col-md-6">
+                      <select class="form-select" id="subject" required>
+                        <option value="">Wybierz temat*</option>
+                        <option value="1">Wydział spraw socjalnych</option>
+                        <option value="2">Sprawy formalne</option>
+                        <option value="3">Zaświadczenia</option>
+                        <option value="4">Skarga</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Proszę wybrać temat wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <textarea class="form-control" id="message" placeholder="Treść wiadomości*" required></textarea>
+                      <div class="invalid-feedback">
+                        Proszę wpisać treść wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12" style="position: relative;">
+                      <input class="form-control" type="file" id="file" placeholder="Dodaj plik do wysłania:">
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgodnie z art. 13 ogólnego rozporządzenia o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (Dz. Urz. UE L 119 z 04.05.2016) informuję, iż: Administratorem Pani/Pana danych osobowych jest Gmina Zarzecz. więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgadzam się na przetwarzanie moich danych osobowych w celu przesyłania przez Gminę Zarzecze, 33-163 Rzepiennik Strzyżewski, informacji handlowych w tym: o promocjach, nowościach, na mój adres e-mail lub nr telefonu. Wiem, że mogę w każdej chwili wycofać zgodę co nie wpływa na dokonane wcześniej czynności. Więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 text-center gz-modal-cta">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                      <button class="btn btn-primary" type="submit">Wyślij</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <!-- Modal END-->
+        </div> 
+      </div>
+      <!-- Bloczek kontaktu 6 -->
+      <div class="col-xxl-4 col-md-6 col-12">
+        <div class="bloczek-kontakt">
+          <div class="gz-info">
+            <div class="pokoj">pokój 118</div>
+            <div class="godziny">
+              <div class="godziny-content otwarcie_9-00_17-30"></div>
+            </div>
+          </div>
+          <h5>Urząd Stanu Cywilnego</h5>
+          <p class="stanowisko">mgr. Jan Kowalski</p>
+          <div class="phone justify-content-between">
+            <div>
+              <span>Telefon:</span>
+              <p>16 640 15 28</p>
+            </div>
+            <a href="tel:+48166401528" class="btn btn-primary align-self-center" type="button">Zadzwoń</a>
+          </div>
+          <div class="mail justify-content-between ">
+            <div>
+              <span>Adres e-mail:</span>
+              <a href="mailto:sekretariat@ugzarzecze.pl">sekretariat@ugzarzecze.pl</a>
+            </div>
+            <button class="btn btn-outline-primary  align-self-center" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Napisz</button>
+          </div>
+          <div class="godziny-urzedowania">
+            <span>Godziny urzędowania:</span>
+            <ul>
+              <li>Poniedziałek: <b>od 8:00 do 18:00</b></li>
+              <li>Wtorek: <b>od 8:00 do 18:00</b></li>
+              <li>Środa: <b>od 8:00 do 18:00</b></li>
+              <li>Czwartek: <b>od 8:00 do 18:00</b></li>
+              <li>Piątek: <b>od 8:00 do 18:00</b></li>
+            </ul>
+            <p>W sobotę oraz niedziele urząd gminy pozostaje nieczynny</p>
+          </div>
+          <!-- Modal -->
+          <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sekretariat</h5>
+                  <span>mgr. Anna Kowalska</span>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" id="name" placeholder="Imię i nazwisko*" required >
+                      <div class="invalid-feedback">
+                          Proszę podać imię i nazwisko.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="email" class="form-control" id="email" placeholder="Adres email*" required>
+                      <div class="invalid-feedback">
+                          Proszę podać poprawny adres email.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="tel" class="form-control" id="phone" placeholder="pomocą">
+                    </div>
+                    <div class="col-md-6">
+                      <select class="form-select" id="subject" required>
+                        <option value="">Wybierz temat*</option>
+                        <option value="1">Wydział spraw socjalnych</option>
+                        <option value="2">Sprawy formalne</option>
+                        <option value="3">Zaświadczenia</option>
+                        <option value="4">Skarga</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Proszę wybrać temat wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <textarea class="form-control" id="message" placeholder="Treść wiadomości*" required></textarea>
+                      <div class="invalid-feedback">
+                        Proszę wpisać treść wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12" style="position: relative;">
+                      <input class="form-control" type="file" id="file" placeholder="Dodaj plik do wysłania:">
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgodnie z art. 13 ogólnego rozporządzenia o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (Dz. Urz. UE L 119 z 04.05.2016) informuję, iż: Administratorem Pani/Pana danych osobowych jest Gmina Zarzecz. więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgadzam się na przetwarzanie moich danych osobowych w celu przesyłania przez Gminę Zarzecze, 33-163 Rzepiennik Strzyżewski, informacji handlowych w tym: o promocjach, nowościach, na mój adres e-mail lub nr telefonu. Wiem, że mogę w każdej chwili wycofać zgodę co nie wpływa na dokonane wcześniej czynności. Więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 text-center gz-modal-cta">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                      <button class="btn btn-primary" type="submit">Wyślij</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <!-- Modal END-->
+        </div> 
+      </div>
+      <!-- Bloczek kontaktu 7 -->
+      <div class="col-xxl-4 col-md-6 col-12">
+        <div class="bloczek-kontakt">
+          <div class="gz-info">
+            <div class="pokoj">pokój 13</div>
+            <div class="godziny">
+              <div class="godziny-content otwarcie_18-00_24-00"></div>
+            </div>
+          </div>
+          <h5>Promocja</h5>
+          <p class="stanowisko">mgr. Anna Kowalska</p>
+          <div class="phone justify-content-between">
+            <div>
+              <span>Telefon:</span>
+              <p>16 640 15 28</p>
+            </div>
+            <a href="tel:+48166401528" class="btn btn-primary align-self-center" type="button">Zadzwoń</a>
+          </div>
+          <div class="mail justify-content-between ">
+            <div>
+              <span>Adres e-mail:</span>
+              <a href="mailto:sekretariat@ugzarzecze.pl">sekretariat@ugzarzecze.pl</a>
+            </div>
+            <button class="btn btn-outline-primary  align-self-center" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Napisz</button>
+          </div>
+          <div class="godziny-urzedowania">
+            <span>Godziny urzędowania:</span>
+            <ul>
+              <li>Poniedziałek: <b>od 8:00 do 18:00</b></li>
+              <li>Wtorek: <b>od 8:00 do 18:00</b></li>
+              <li>Środa: <b>od 8:00 do 18:00</b></li>
+              <li>Czwartek: <b>od 8:00 do 18:00</b></li>
+              <li>Piątek: <b>od 8:00 do 18:00</b></li>
+            </ul>
+            <p>W sobotę oraz niedziele urząd gminy pozostaje nieczynny</p>
+          </div>
+          <!-- Modal -->
+          <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sekretariat</h5>
+                  <span>mgr. Anna Kowalska</span>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" id="name" placeholder="Imię i nazwisko*" required >
+                      <div class="invalid-feedback">
+                          Proszę podać imię i nazwisko.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="email" class="form-control" id="email" placeholder="Adres email*" required>
+                      <div class="invalid-feedback">
+                          Proszę podać poprawny adres email.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="tel" class="form-control" id="phone" placeholder="pomocą">
+                    </div>
+                    <div class="col-md-6">
+                      <select class="form-select" id="subject" required>
+                        <option value="">Wybierz temat*</option>
+                        <option value="1">Wydział spraw socjalnych</option>
+                        <option value="2">Sprawy formalne</option>
+                        <option value="3">Zaświadczenia</option>
+                        <option value="4">Skarga</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Proszę wybrać temat wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <textarea class="form-control" id="message" placeholder="Treść wiadomości*" required></textarea>
+                      <div class="invalid-feedback">
+                        Proszę wpisać treść wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12" style="position: relative;">
+                      <input class="form-control" type="file" id="file" placeholder="Dodaj plik do wysłania:">
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgodnie z art. 13 ogólnego rozporządzenia o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (Dz. Urz. UE L 119 z 04.05.2016) informuję, iż: Administratorem Pani/Pana danych osobowych jest Gmina Zarzecz. więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgadzam się na przetwarzanie moich danych osobowych w celu przesyłania przez Gminę Zarzecze, 33-163 Rzepiennik Strzyżewski, informacji handlowych w tym: o promocjach, nowościach, na mój adres e-mail lub nr telefonu. Wiem, że mogę w każdej chwili wycofać zgodę co nie wpływa na dokonane wcześniej czynności. Więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 text-center gz-modal-cta">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                      <button class="btn btn-primary" type="submit">Wyślij</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <!-- Modal END-->
+        </div> 
+      </div>
+      <!-- Bloczek kontaktu 8 -->
+      <div class="col-xxl-4 col-md-6 col-12">
+        <div class="bloczek-kontakt">
+          <div class="gz-info">
+            <div class="pokoj">pokój 56</div>
+            <div class="godziny">
+              <div class="godziny-content otwarcie_8-00_16-30"></div>
+            </div>
+          </div>
+          <h5>Kadry</h5>
+          <p class="stanowisko">mgr. Anna Kowalska</p>
+          <div class="phone justify-content-between">
+            <div>
+              <span>Telefon:</span>
+              <p>16 640 15 28</p>
+            </div>
+            <a href="tel:+48166401528" class="btn btn-primary align-self-center" type="button">Zadzwoń</a>
+          </div>
+          <div class="mail justify-content-between ">
+            <div>
+              <span>Adres e-mail:</span>
+              <a href="mailto:sekretariat@ugzarzecze.pl">sekretariat@ugzarzecze.pl</a>
+            </div>
+            <button class="btn btn-outline-primary  align-self-center" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Napisz</button>
+          </div>
+          <div class="godziny-urzedowania">
+            <span>Godziny urzędowania:</span>
+            <ul>
+              <li>Poniedziałek: <b>od 8:00 do 18:00</b></li>
+              <li>Wtorek: <b>od 8:00 do 18:00</b></li>
+              <li>Środa: <b>od 8:00 do 18:00</b></li>
+              <li>Czwartek: <b>od 8:00 do 18:00</b></li>
+              <li>Piątek: <b>od 8:00 do 18:00</b></li>
+            </ul>
+            <p>W sobotę oraz niedziele urząd gminy pozostaje nieczynny</p>
+          </div>
+          <!-- Modal -->
+          <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sekretariat</h5>
+                  <span>mgr. Anna Kowalska</span>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" id="name" placeholder="Imię i nazwisko*" required >
+                      <div class="invalid-feedback">
+                          Proszę podać imię i nazwisko.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="email" class="form-control" id="email" placeholder="Adres email*" required>
+                      <div class="invalid-feedback">
+                          Proszę podać poprawny adres email.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="tel" class="form-control" id="phone" placeholder="pomocą">
+                    </div>
+                    <div class="col-md-6">
+                      <select class="form-select" id="subject" required>
+                        <option value="">Wybierz temat*</option>
+                        <option value="1">Wydział spraw socjalnych</option>
+                        <option value="2">Sprawy formalne</option>
+                        <option value="3">Zaświadczenia</option>
+                        <option value="4">Skarga</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Proszę wybrać temat wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <textarea class="form-control" id="message" placeholder="Treść wiadomości*" required></textarea>
+                      <div class="invalid-feedback">
+                        Proszę wpisać treść wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12" style="position: relative;">
+                      <input class="form-control" type="file" id="file" placeholder="Dodaj plik do wysłania:">
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgodnie z art. 13 ogólnego rozporządzenia o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (Dz. Urz. UE L 119 z 04.05.2016) informuję, iż: Administratorem Pani/Pana danych osobowych jest Gmina Zarzecz. więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgadzam się na przetwarzanie moich danych osobowych w celu przesyłania przez Gminę Zarzecze, 33-163 Rzepiennik Strzyżewski, informacji handlowych w tym: o promocjach, nowościach, na mój adres e-mail lub nr telefonu. Wiem, że mogę w każdej chwili wycofać zgodę co nie wpływa na dokonane wcześniej czynności. Więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 text-center gz-modal-cta">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                      <button class="btn btn-primary" type="submit">Wyślij</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <!-- Modal END-->
+        </div> 
+      </div>
+      <!-- Bloczek kontaktu 9 -->
+      <div class="col-xxl-4 col-md-6 col-12">
+        <div class="bloczek-kontakt">
+          <div class="gz-info">
+            <div class="pokoj">pokój 34</div>
+            <div class="godziny">
+              <div class="godziny-content otwarcie_9-00_17-30"></div>
+            </div>
+          </div>
+          <h5>Główny księgowy</h5>
+          <p class="stanowisko">mgr. Jan Kowalski</p>
+          <div class="phone justify-content-between">
+            <div>
+              <span>Telefon:</span>
+              <p>16 640 15 28</p>
+            </div>
+            <a href="tel:+48166401528" class="btn btn-primary align-self-center" type="button">Zadzwoń</a>
+          </div>
+          <div class="mail justify-content-between ">
+            <div>
+              <span>Adres e-mail:</span>
+              <a href="mailto:sekretariat@ugzarzecze.pl">sekretariat@ugzarzecze.pl</a>
+            </div>
+            <button class="btn btn-outline-primary  align-self-center" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Napisz</button>
+          </div>
+          <div class="godziny-urzedowania">
+            <span>Godziny urzędowania:</span>
+            <ul>
+              <li>Poniedziałek: <b>od 8:00 do 18:00</b></li>
+              <li>Wtorek: <b>od 8:00 do 18:00</b></li>
+              <li>Środa: <b>od 8:00 do 18:00</b></li>
+              <li>Czwartek: <b>od 8:00 do 18:00</b></li>
+              <li>Piątek: <b>od 8:00 do 18:00</b></li>
+            </ul>
+            <p>W sobotę oraz niedziele urząd gminy pozostaje nieczynny</p>
+          </div>
+          <!-- Modal -->
+          <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sekretariat</h5>
+                  <span>mgr. Anna Kowalska</span>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" id="name" placeholder="Imię i nazwisko*" required >
+                      <div class="invalid-feedback">
+                          Proszę podać imię i nazwisko.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="email" class="form-control" id="email" placeholder="Adres email*" required>
+                      <div class="invalid-feedback">
+                          Proszę podać poprawny adres email.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="tel" class="form-control" id="phone" placeholder="pomocą">
+                    </div>
+                    <div class="col-md-6">
+                      <select class="form-select" id="subject" required>
+                        <option value="">Wybierz temat*</option>
+                        <option value="1">Wydział spraw socjalnych</option>
+                        <option value="2">Sprawy formalne</option>
+                        <option value="3">Zaświadczenia</option>
+                        <option value="4">Skarga</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Proszę wybrać temat wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <textarea class="form-control" id="message" placeholder="Treść wiadomości*" required></textarea>
+                      <div class="invalid-feedback">
+                        Proszę wpisać treść wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12" style="position: relative;">
+                      <input class="form-control" type="file" id="file" placeholder="Dodaj plik do wysłania:">
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgodnie z art. 13 ogólnego rozporządzenia o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (Dz. Urz. UE L 119 z 04.05.2016) informuję, iż: Administratorem Pani/Pana danych osobowych jest Gmina Zarzecz. więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgadzam się na przetwarzanie moich danych osobowych w celu przesyłania przez Gminę Zarzecze, 33-163 Rzepiennik Strzyżewski, informacji handlowych w tym: o promocjach, nowościach, na mój adres e-mail lub nr telefonu. Wiem, że mogę w każdej chwili wycofać zgodę co nie wpływa na dokonane wcześniej czynności. Więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 text-center gz-modal-cta">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                      <button class="btn btn-primary" type="submit">Wyślij</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <!-- Modal END-->
+        </div> 
+      </div>
+      <!-- Bloczek kontaktu 10 -->
+      <div class="col-xxl-4 col-md-6 col-12">
+        <div class="bloczek-kontakt">
+          <div class="gz-info">
+            <div class="pokoj">pokój 153</div>
+            <div class="godziny">
+              <div class="godziny-content otwarcie_18-00_24-00"></div>
+            </div>
+          </div>
+          <h5>Insp. ds. Oświaty</h5>
+          <p class="stanowisko">mgr. Anna Kowalska</p>
+          <div class="phone justify-content-between">
+            <div>
+              <span>Telefon:</span>
+              <p>16 640 15 28</p>
+            </div>
+            <a href="tel:+48166401528" class="btn btn-primary align-self-center" type="button">Zadzwoń</a>
+          </div>
+          <div class="mail justify-content-between ">
+            <div>
+              <span>Adres e-mail:</span>
+              <a href="mailto:sekretariat@ugzarzecze.pl">sekretariat@ugzarzecze.pl</a>
+            </div>
+            <button class="btn btn-outline-primary  align-self-center" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Napisz</button>
+          </div>
+          <div class="godziny-urzedowania">
+            <span>Godziny urzędowania:</span>
+            <ul>
+              <li>Poniedziałek: <b>od 8:00 do 18:00</b></li>
+              <li>Wtorek: <b>od 8:00 do 18:00</b></li>
+              <li>Środa: <b>od 8:00 do 18:00</b></li>
+              <li>Czwartek: <b>od 8:00 do 18:00</b></li>
+              <li>Piątek: <b>od 8:00 do 18:00</b></li>
+            </ul>
+            <p>W sobotę oraz niedziele urząd gminy pozostaje nieczynny</p>
+          </div>
+          <!-- Modal -->
+          <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sekretariat</h5>
+                  <span>mgr. Anna Kowalska</span>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" id="name" placeholder="Imię i nazwisko*" required >
+                      <div class="invalid-feedback">
+                          Proszę podać imię i nazwisko.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="email" class="form-control" id="email" placeholder="Adres email*" required>
+                      <div class="invalid-feedback">
+                          Proszę podać poprawny adres email.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="tel" class="form-control" id="phone" placeholder="pomocą">
+                    </div>
+                    <div class="col-md-6">
+                      <select class="form-select" id="subject" required>
+                        <option value="">Wybierz temat*</option>
+                        <option value="1">Wydział spraw socjalnych</option>
+                        <option value="2">Sprawy formalne</option>
+                        <option value="3">Zaświadczenia</option>
+                        <option value="4">Skarga</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Proszę wybrać temat wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <textarea class="form-control" id="message" placeholder="Treść wiadomości*" required></textarea>
+                      <div class="invalid-feedback">
+                        Proszę wpisać treść wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12" style="position: relative;">
+                      <input class="form-control" type="file" id="file" placeholder="Dodaj plik do wysłania:">
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgodnie z art. 13 ogólnego rozporządzenia o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (Dz. Urz. UE L 119 z 04.05.2016) informuję, iż: Administratorem Pani/Pana danych osobowych jest Gmina Zarzecz. więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgadzam się na przetwarzanie moich danych osobowych w celu przesyłania przez Gminę Zarzecze, 33-163 Rzepiennik Strzyżewski, informacji handlowych w tym: o promocjach, nowościach, na mój adres e-mail lub nr telefonu. Wiem, że mogę w każdej chwili wycofać zgodę co nie wpływa na dokonane wcześniej czynności. Więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 text-center gz-modal-cta">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                      <button class="btn btn-primary" type="submit">Wyślij</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <!-- Modal END-->
+        </div> 
+      </div>
+      <!-- Bloczek kontaktu 11 -->
+      <div class="col-xxl-4 col-md-6 col-12">
+        <div class="bloczek-kontakt">
+          <div class="gz-info">
+            <div class="pokoj">pokój 95</div>
+            <div class="godziny">
+              <div class="godziny-content otwarcie_8-00_16-30"></div>
+            </div>
+          </div>
+          <h5>Stanowisko do spraw oświaty</h5>
+          <p class="stanowisko">mgr. Anna Kowalska</p>
+          <div class="phone justify-content-between">
+            <div>
+              <span>Telefon:</span>
+              <p>16 640 15 28</p>
+            </div>
+            <a href="tel:+48166401528" class="btn btn-primary align-self-center" type="button">Zadzwoń</a>
+          </div>
+          <div class="mail justify-content-between ">
+            <div>
+              <span>Adres e-mail:</span>
+              <a href="mailto:sekretariat@ugzarzecze.pl">sekretariat@ugzarzecze.pl</a>
+            </div>
+            <button class="btn btn-outline-primary  align-self-center" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Napisz</button>
+          </div>
+          <div class="godziny-urzedowania">
+            <span>Godziny urzędowania:</span>
+            <ul>
+              <li>Poniedziałek: <b>od 8:00 do 18:00</b></li>
+              <li>Wtorek: <b>od 8:00 do 18:00</b></li>
+              <li>Środa: <b>od 8:00 do 18:00</b></li>
+              <li>Czwartek: <b>od 8:00 do 18:00</b></li>
+              <li>Piątek: <b>od 8:00 do 18:00</b></li>
+            </ul>
+            <p>W sobotę oraz niedziele urząd gminy pozostaje nieczynny</p>
+          </div>
+          <!-- Modal -->
+          <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sekretariat</h5>
+                  <span>mgr. Anna Kowalska</span>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" id="name" placeholder="Imię i nazwisko*" required >
+                      <div class="invalid-feedback">
+                          Proszę podać imię i nazwisko.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="email" class="form-control" id="email" placeholder="Adres email*" required>
+                      <div class="invalid-feedback">
+                          Proszę podać poprawny adres email.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="tel" class="form-control" id="phone" placeholder="pomocą">
+                    </div>
+                    <div class="col-md-6">
+                      <select class="form-select" id="subject" required>
+                        <option value="">Wybierz temat*</option>
+                        <option value="1">Wydział spraw socjalnych</option>
+                        <option value="2">Sprawy formalne</option>
+                        <option value="3">Zaświadczenia</option>
+                        <option value="4">Skarga</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Proszę wybrać temat wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <textarea class="form-control" id="message" placeholder="Treść wiadomości*" required></textarea>
+                      <div class="invalid-feedback">
+                        Proszę wpisać treść wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12" style="position: relative;">
+                      <input class="form-control" type="file" id="file" placeholder="Dodaj plik do wysłania:">
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgodnie z art. 13 ogólnego rozporządzenia o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (Dz. Urz. UE L 119 z 04.05.2016) informuję, iż: Administratorem Pani/Pana danych osobowych jest Gmina Zarzecz. więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgadzam się na przetwarzanie moich danych osobowych w celu przesyłania przez Gminę Zarzecze, 33-163 Rzepiennik Strzyżewski, informacji handlowych w tym: o promocjach, nowościach, na mój adres e-mail lub nr telefonu. Wiem, że mogę w każdej chwili wycofać zgodę co nie wpływa na dokonane wcześniej czynności. Więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 text-center gz-modal-cta">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                      <button class="btn btn-primary" type="submit">Wyślij</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <!-- Modal END-->
+        </div> 
+      </div>
+      <!-- Bloczek kontaktu 12 -->
+      <div class="col-xxl-4 col-md-6 col-12">
+        <div class="bloczek-kontakt">
+          <div class="gz-info">
+            <div class="pokoj">pokój 35</div>
+            <div class="godziny">
+              <div class="godziny-content otwarcie_9-00_17-30"></div>
+            </div>
+          </div>
+          <h5>Podinsp. ds. Budownictwa</h5>
+          <p class="stanowisko">mgr. Jan Kowalski</p>
+          <div class="phone justify-content-between">
+            <div>
+              <span>Telefon:</span>
+              <p>16 640 15 28</p>
+            </div>
+            <a href="tel:+48166401528" class="btn btn-primary align-self-center" type="button">Zadzwoń</a>
+          </div>
+          <div class="mail justify-content-between ">
+            <div>
+              <span>Adres e-mail:</span>
+              <a href="mailto:sekretariat@ugzarzecze.pl">sekretariat@ugzarzecze.pl</a>
+            </div>
+            <button class="btn btn-outline-primary  align-self-center" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Napisz</button>
+          </div>
+          <div class="godziny-urzedowania">
+            <span>Godziny urzędowania:</span>
+            <ul>
+              <li>Poniedziałek: <b>od 8:00 do 18:00</b></li>
+              <li>Wtorek: <b>od 8:00 do 18:00</b></li>
+              <li>Środa: <b>od 8:00 do 18:00</b></li>
+              <li>Czwartek: <b>od 8:00 do 18:00</b></li>
+              <li>Piątek: <b>od 8:00 do 18:00</b></li>
+            </ul>
+            <p>W sobotę oraz niedziele urząd gminy pozostaje nieczynny</p>
+          </div>
+          <!-- Modal -->
+          <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sekretariat</h5>
+                  <span>mgr. Anna Kowalska</span>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" id="name" placeholder="Imię i nazwisko*" required >
+                      <div class="invalid-feedback">
+                          Proszę podać imię i nazwisko.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="email" class="form-control" id="email" placeholder="Adres email*" required>
+                      <div class="invalid-feedback">
+                          Proszę podać poprawny adres email.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="tel" class="form-control" id="phone" placeholder="pomocą">
+                    </div>
+                    <div class="col-md-6">
+                      <select class="form-select" id="subject" required>
+                        <option value="">Wybierz temat*</option>
+                        <option value="1">Wydział spraw socjalnych</option>
+                        <option value="2">Sprawy formalne</option>
+                        <option value="3">Zaświadczenia</option>
+                        <option value="4">Skarga</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Proszę wybrać temat wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <textarea class="form-control" id="message" placeholder="Treść wiadomości*" required></textarea>
+                      <div class="invalid-feedback">
+                        Proszę wpisać treść wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12" style="position: relative;">
+                      <input class="form-control" type="file" id="file" placeholder="Dodaj plik do wysłania:">
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgodnie z art. 13 ogólnego rozporządzenia o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (Dz. Urz. UE L 119 z 04.05.2016) informuję, iż: Administratorem Pani/Pana danych osobowych jest Gmina Zarzecz. więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgadzam się na przetwarzanie moich danych osobowych w celu przesyłania przez Gminę Zarzecze, 33-163 Rzepiennik Strzyżewski, informacji handlowych w tym: o promocjach, nowościach, na mój adres e-mail lub nr telefonu. Wiem, że mogę w każdej chwili wycofać zgodę co nie wpływa na dokonane wcześniej czynności. Więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 text-center gz-modal-cta">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                      <button class="btn btn-primary" type="submit">Wyślij</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <!-- Modal END-->
+        </div> 
+      </div>
+      <!-- Bloczek kontaktu 13 -->
+      <div class="col-xxl-4 col-md-6 col-12">
+        <div class="bloczek-kontakt">
+          <div class="gz-info">
+            <div class="pokoj">pokój 231</div>
+            <div class="godziny">
+              <div class="godziny-content otwarcie_18-00_24-00"></div>
+            </div>
+          </div>
+          <h5>Radca prawny</h5>
+          <p class="stanowisko">mgr. Anna Kowalska</p>
+          <div class="phone justify-content-between">
+            <div>
+              <span>Telefon:</span>
+              <p>16 640 15 28</p>
+            </div>
+            <a href="tel:+48166401528" class="btn btn-primary align-self-center" type="button">Zadzwoń</a>
+          </div>
+          <div class="mail justify-content-between ">
+            <div>
+              <span>Adres e-mail:</span>
+              <a href="mailto:sekretariat@ugzarzecze.pl">sekretariat@ugzarzecze.pl</a>
+            </div>
+            <button class="btn btn-outline-primary  align-self-center" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Napisz</button>
+          </div>
+          <div class="godziny-urzedowania">
+            <span>Godziny urzędowania:</span>
+            <ul>
+              <li>Poniedziałek: <b>od 8:00 do 18:00</b></li>
+              <li>Wtorek: <b>od 8:00 do 18:00</b></li>
+              <li>Środa: <b>od 8:00 do 18:00</b></li>
+              <li>Czwartek: <b>od 8:00 do 18:00</b></li>
+              <li>Piątek: <b>od 8:00 do 18:00</b></li>
+            </ul>
+            <p>W sobotę oraz niedziele urząd gminy pozostaje nieczynny</p>
+          </div>
+          <!-- Modal -->
+          <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sekretariat</h5>
+                  <span>mgr. Anna Kowalska</span>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" id="name" placeholder="Imię i nazwisko*" required >
+                      <div class="invalid-feedback">
+                          Proszę podać imię i nazwisko.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="email" class="form-control" id="email" placeholder="Adres email*" required>
+                      <div class="invalid-feedback">
+                          Proszę podać poprawny adres email.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="tel" class="form-control" id="phone" placeholder="pomocą">
+                    </div>
+                    <div class="col-md-6">
+                      <select class="form-select" id="subject" required>
+                        <option value="">Wybierz temat*</option>
+                        <option value="1">Wydział spraw socjalnych</option>
+                        <option value="2">Sprawy formalne</option>
+                        <option value="3">Zaświadczenia</option>
+                        <option value="4">Skarga</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Proszę wybrać temat wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <textarea class="form-control" id="message" placeholder="Treść wiadomości*" required></textarea>
+                      <div class="invalid-feedback">
+                        Proszę wpisać treść wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12" style="position: relative;">
+                      <input class="form-control" type="file" id="file" placeholder="Dodaj plik do wysłania:">
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgodnie z art. 13 ogólnego rozporządzenia o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (Dz. Urz. UE L 119 z 04.05.2016) informuję, iż: Administratorem Pani/Pana danych osobowych jest Gmina Zarzecz. więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgadzam się na przetwarzanie moich danych osobowych w celu przesyłania przez Gminę Zarzecze, 33-163 Rzepiennik Strzyżewski, informacji handlowych w tym: o promocjach, nowościach, na mój adres e-mail lub nr telefonu. Wiem, że mogę w każdej chwili wycofać zgodę co nie wpływa na dokonane wcześniej czynności. Więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 text-center gz-modal-cta">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                      <button class="btn btn-primary" type="submit">Wyślij</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <!-- Modal END-->
+        </div> 
+      </div>
+      <!-- Bloczek kontaktu 14 -->
+      <div class="col-xxl-4 col-md-6 col-12">
+        <div class="bloczek-kontakt">
+          <div class="gz-info">
+            <div class="pokoj">pokój 231</div>
+            <div class="godziny">
+              <div class="godziny-content otwarcie_18-00_24-00"></div>
+            </div>
+          </div>
+          <h5>Insp. ds. ewidencji i budżetu</h5>
+          <p class="stanowisko">mgr. Anna Kowalska</p>
+          <div class="phone justify-content-between">
+            <div>
+              <span>Telefon:</span>
+              <p>16 640 15 28</p>
+            </div>
+            <a href="tel:+48166401528" class="btn btn-primary align-self-center" type="button">Zadzwoń</a>
+          </div>
+          <div class="mail justify-content-between ">
+            <div>
+              <span>Adres e-mail:</span>
+              <a href="mailto:sekretariat@ugzarzecze.pl">sekretariat@ugzarzecze.pl</a>
+            </div>
+            <button class="btn btn-outline-primary  align-self-center" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">Napisz</button>
+          </div>
+          <div class="godziny-urzedowania">
+            <span>Godziny urzędowania:</span>
+            <ul>
+              <li>Poniedziałek: <b>od 8:00 do 18:00</b></li>
+              <li>Wtorek: <b>od 8:00 do 18:00</b></li>
+              <li>Środa: <b>od 8:00 do 18:00</b></li>
+              <li>Czwartek: <b>od 8:00 do 18:00</b></li>
+              <li>Piątek: <b>od 8:00 do 18:00</b></li>
+            </ul>
+            <p>W sobotę oraz niedziele urząd gminy pozostaje nieczynny</p>
+          </div>
+          <!-- Modal -->
+          <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Sekretariat</h5>
+                  <span>mgr. Anna Kowalska</span>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <form class="row g-3 needs-validation" novalidate>
+                    <div class="col-md-6">
+                      <input type="text" class="form-control" id="name" placeholder="Imię i nazwisko*" required >
+                      <div class="invalid-feedback">
+                          Proszę podać imię i nazwisko.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="email" class="form-control" id="email" placeholder="Adres email*" required>
+                      <div class="invalid-feedback">
+                          Proszę podać poprawny adres email.
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <input type="tel" class="form-control" id="phone" placeholder="pomocą">
+                    </div>
+                    <div class="col-md-6">
+                      <select class="form-select" id="subject" required>
+                        <option value="">Wybierz temat*</option>
+                        <option value="1">Wydział spraw socjalnych</option>
+                        <option value="2">Sprawy formalne</option>
+                        <option value="3">Zaświadczenia</option>
+                        <option value="4">Skarga</option>
+                      </select>
+                      <div class="invalid-feedback">
+                        Proszę wybrać temat wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12">
+                      <textarea class="form-control" id="message" placeholder="Treść wiadomości*" required></textarea>
+                      <div class="invalid-feedback">
+                        Proszę wpisać treść wiadomości.
+                      </div>
+                    </div>
+                    <div class="col-md-12" style="position: relative;">
+                      <input class="form-control" type="file" id="file" placeholder="Dodaj plik do wysłania:">
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgodnie z art. 13 ogólnego rozporządzenia o ochronie danych osobowych z dnia 27 kwietnia 2016 r. (Dz. Urz. UE L 119 z 04.05.2016) informuję, iż: Administratorem Pani/Pana danych osobowych jest Gmina Zarzecz. więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                          Zgadzam się na przetwarzanie moich danych osobowych w celu przesyłania przez Gminę Zarzecze, 33-163 Rzepiennik Strzyżewski, informacji handlowych w tym: o promocjach, nowościach, na mój adres e-mail lub nr telefonu. Wiem, że mogę w każdej chwili wycofać zgodę co nie wpływa na dokonane wcześniej czynności. Więcej informacji o przysługujących Pani/Panu prawach w związku z przetwarzaniem danych osobowych w naszej „Polityce Prywatności”.
+                        </label>
+                        <div class="invalid-feedback">
+                          You must agree before submitting.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 text-center gz-modal-cta">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                      <button class="btn btn-primary" type="submit">Wyślij</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div> 
+          <!-- Modal END-->
+        </div> 
+      </div>
+    </div> 
+  </div>
+</section>
+<!-- Bloczki Kontaktowe END -->
+
+<!-- Banery-Bottom -->
+<section class="gz-section gz-banery-01">
+  <div class="container gz-mt-40 ">
+    <div class="row">
+      <div class="col-12">
+        <!-- Karuzela -->
+        <div id="gz-slider-homepage-5" class="carousel slide carousel-dark" data-bs-ride="carousel">
+          <!-- Karuzela nawigacja-->
+          <button class="carousel-control-prev" type="button" data-bs-target="#gz-slider-homepage-5" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#gz-slider-homepage-5" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          <!-- Karuzela nawigacja END-->
+          <div class="carousel-inner gz-margin-karuzela">
+            <!-- bloczek karuzeli 1 -->
+            <div class="carousel-item active" data-bs-interval="3000">
+              <div class="row align-items-center gz-counter-container">
+
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-23.jpg" alt="">
+                    <h4>Raport ostanie Gminy Zarzecz</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-24.jpg" alt="">
+                    <h4>ZS Zarzecz</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-25.jpg" alt="">
+                    <h4>OZE</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-26.jpg" alt="">
+                    <h4>Czyste pwietrze</h4>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            <!-- bloczek karuzeli 1 END -->
+            <!-- bloczek karuzeli 2 -->
+            <div class="carousel-item" data-bs-interval="3000">
+              <div class="row align-items-center gz-counter-container">
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-23.jpg" alt="">
+                    <h4>Raport ostanie Gminy Zarzecz</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-24.jpg" alt="">
+                    <h4>ZS Zarzecz</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-25.jpg" alt="">
+                    <h4>OZE</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-26.jpg" alt="">
+                    <h4>Czyste pwietrze</h4>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            <!-- bloczek karuzeli 2 END -->
+          </div>
+        <!-- Karuzela END-->
+        </div>
+      </div>  
+    </div>
+  </div>  
+</section>
+<!-- Banery-Bottom END -->
+<!-- Footer -->
+<section class="gz-footer">
+  <div class="container">
+    <footer class="row">
+      <div class="col-3 text-center">
+        <img src="images/svg/img-svg-02.svg" alt="">
+        <h2>Gmina Zarzecze</h2>
+        <h3>Wójt gminy: Tomasz Bury</h3>
+        <p>Urzęduje od 2018r.</p>
+      </div>
+      <div class="col-3">
+        <h5>Adres:</h5>
+        <p>ul. Długa 7</p>
+        <p>37-205 Zarzecze,</p>
+        <p>Powiat Przeworski</p>
+        <p>Województwo Podkarpackie</p>
+      </div>
+      <div class="col-3">
+        <h5>Godziny otwarcia:</h5>
+        <p>Poniedziałek 7:00 – 15:00</p>
+        <p>Wtorek 7:00 – 17:00</p>
+        <p>Środa 7:00 – 15:00</p>
+        <p>Czwartek 7:00 – 15:00</p>
+        <p>Piątek 7:00 – 13:00</p>
+      </div>
+      <div class="col-3">
+        <h5>Dane:</h5>
+        <p>tel. 16 640-15-28</p>
+        <p>tel. 16 640-15-29</p>
+        <p>tel. GOPS: 16 640 11 86</p>
+        <a href="mailto:przyklad@example.com">ugzarzecze@post.pl</a>
+        <h6>Numer konta:</h6>
+        <p>27 9106 0008 2002 0000 0794 0002</p>
+      </div>
+    </footer>
+  </div>
+</section>
+<section class="gz-footer-copyright">
+  <div class="container">
+    <footer class="row">
+      <div class="col-12 text-center">
+        Copyright © Urząd Gminy Zarzecze
+      </div>
+    </footer>
+  </div>
+</section>
+<!-- Footer End -->
+<script>
+  // walidacji formularza Bootstrap
+  (function () {
+    'use strict'
+  
+    var forms = document.querySelectorAll('.needs-validation')
+  
+    Array.prototype.slice.call(forms)
+      .forEach(function (form) {
+        form.addEventListener('submit', function (event) {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
+  
+          form.classList.add('was-validated')
+        }, false)
+      })
+  })()
+</script>
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/gz-js.js"></script>
+
+</body>
+</html>

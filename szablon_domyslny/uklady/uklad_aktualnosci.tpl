@@ -70,9 +70,13 @@
 <section class="gz-section gz-page-title">
 	<div class="container">
 		<div class="row">
-			{{ $region_0 }}
+			{{ $region_3 }}
 		</div>
 </section>
+
+{{ $region_0 }}
+
+
 <!-- Sekcja 9 Banery-01 -->
 <section class="gz-section gz-banery-01">
 	<div class="container gz-mt-40 ">
@@ -164,7 +168,7 @@
 <section class="gz-footer">
 	<div class="container">
 		<footer class="row">
-			{{ $region_3 }}
+			{{ $region_4 }}
 		</footer>
 	</div>
 </section>
