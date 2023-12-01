@@ -72,7 +72,7 @@ class Http extends Modul\Http
                 $kategoriaMapper = $this->dane()->Kategoria();
                 $aktualnosciKryteria['id_kategorii'] = $gdzieSzukac;
                 $kat = $kategoriaMapper->pobierzPoId($gdzieSzukac);
-                $info =  str_replace($this->j->t['wyniki_kategoria'], '{KATEGORIA}', $kat->nazwa);
+                $info =  str_replace('{KATEGORIA}', $kat->nazwa, $this->j->t['wyniki_kategoria']);
 
                 $sortowanie = explode('.', $this->k->k['listaWynikow.sortowanie']);
                 $sorter = new Aktualnosc\Sorter($sortowanie[0], $sortowanie[1]);
@@ -119,7 +119,7 @@ class Http extends Modul\Http
                 }
             }
             else
-                $info = str_replace($this->j->t['brak_wynikow'], '{FRAZA}', $fraza);
+                $info = str_replace('{FRAZA}', $fraza, $this->j->t['brak_wynikow']);
 
 
             $this->szablon->ustawBlok('index/pagerSekcja', [
