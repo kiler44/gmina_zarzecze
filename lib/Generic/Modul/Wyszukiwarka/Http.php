@@ -5,6 +5,7 @@ use Generic\Biblioteka\Cms;
 use Generic\Biblioteka\Modul;
 use Generic\Biblioteka\Pager;
 use Generic\Biblioteka\Router;
+use Generic\Biblioteka\Zadanie;
 use Generic\Model\Aktualnosc;
 use Generic\Model\StronaOpisowa;
 use \Generic\Biblioteka\Wyszukiwarka\Tabela;
@@ -38,8 +39,22 @@ class Http extends Modul\Http
 	protected $j;
 
 
-	
-	public function wykonajIndex()
+    public function wykonajIndex()
+    {
+        $akcja = Zadanie::pobierz('url_parametr_0', 'strval');
+
+        switch($akcja)
+        {
+            case 'wyszukiwarka':
+                $this->wykonajAkcje('wyszukiwarka');
+                break;
+            default:
+                $this->wykonajAkcje('wyszukiwarka');
+                break;
+        }
+    }
+
+	public function wykonajWyszukiwarka()
 	{
 
         $fraza = $this->pobierzParametr('fraza', null, true, ['strval']);
