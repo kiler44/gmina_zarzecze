@@ -1,13 +1,11 @@
 <?php
 namespace Generic\Modul\Wyszukiwarka;
 
-use Generic\Biblioteka\Cms;
 use Generic\Biblioteka\Modul;
 use Generic\Biblioteka\Pager;
 use Generic\Biblioteka\Router;
 use Generic\Biblioteka\Zadanie;
 use Generic\Model\Aktualnosc;
-use Generic\Model\StronaOpisowa;
 use \Generic\Biblioteka\Wyszukiwarka\Tabela;
 use Generic\Biblioteka\Wyszukiwarka;
 
@@ -23,7 +21,6 @@ class Http extends Modul\Http
 
 	protected $uprawnienia = array(
 		'wykonajIndex',
-		
 	);
 
 
@@ -79,8 +76,8 @@ class Http extends Modul\Http
 
                 $sortowanie = explode('.', $this->k->k['listaWynikow.sortowanie']);
                 $sorter = new Aktualnosc\Sorter($sortowanie[0], $sortowanie[1]);
-                $aktualnosci = new Tabela\Aktualnosc($sorter);
-                $aktualnosci->ustawKryteria($aktualnosciKryteria);
+                $tabela = new Tabela\Aktualnosc($sorter);
+                $tabela->ustawKryteria($aktualnosciKryteria);
             }
             else
             {
