@@ -13,6 +13,8 @@ use Generic\Tlumaczenie\Tlumaczenie;
  * @property string $t['edytuj.tytul_strony']
  * @property string $t['formularz.autor.etykieta']
  * @property string $t['formularz.autor.opis']
+ * @property string $t['formularz.autorZdjec.etykieta']
+ * @property string $t['formularz.autorZdjec.opis']
  * @property string $t['formularz.blad_katalog_niedostepny']
  * @property string $t['formularz.dataDodania.etykieta']
  * @property string $t['formularz.dataDodania.opis']
@@ -87,8 +89,10 @@ class Admin extends Tlumaczenie
 		'edytuj.blad_nie_mozna_zapisac_aktualnosci' => 'Błąd przy zapisie aktualności',
 		'edytuj.info_aktualnosc_zapisana' => 'Dane aktualności zostały zapisane',
 		'edytuj.tytul_strony' => 'Edycja aktualności',
+        'edytuj.tytul_strony_wydarzenia' => 'Edycja wydarzenia',
 
 		'formularz.autor.etykieta' => 'Autor',
+        'formularz.autorZdjec.etykieta' => 'Autor zdjęć',
 		'formularz.pliki.zakladka' => 'Pliki',
 		'formularz.glowna.zakladka' => 'Informacje',
 		'formularz.autor.opis' => 'Jeśli nie wypełnisz, pole zostanie wypełnione<br/> Twoim Imieniem i Nazwiskiem',
@@ -118,9 +122,13 @@ class Admin extends Tlumaczenie
 
 		'index.blad_nie_mozna_zapisac_strony' => 'Nie można zapisać danych strony!',
 		'index.data_dodania.etykieta' => 'Data dodania',
+        'index.data_wydarzenia.etykieta' => 'Data wydarzenia',
 		'index.etykieta_autor' => 'Autor',
 		'index.etykieta_data_dodania' => 'Data dodania',
+        'index.etykieta_data_waznosci' => 'Data ważności',
+        'index.etykieta_data_wydarzenia' => 'Data wydarzenia',
 		'index.etykieta_dodaj' => 'Dodaj aktualność',
+        'index.etykieta_dodaj_wydarzenie' => 'Dodaj wydarzenie',
 		'index.etykieta_publikuj' => 'Opublikowana',
 		'index.etykieta_select_wybierz' => '- wybierz -',
 		'index.etykieta_tytul' => 'Tytuł',
@@ -129,6 +137,7 @@ class Admin extends Tlumaczenie
 		'index.publikuj.etykieta' => 'Tylko opublikowane',
 		'index.szukaj.wartosc' => 'Szukaj',
 		'index.tytul_strony' => 'Lista aktualności',
+        'index.tytul_strony_wydarzenia' => 'Lista wydarzeń',
 
 		'poprawMiniaturke.blad_nie_mozna_pobrac_aktualnosci' => 'Nie można pobrać danych aktualności',
 		'poprawMiniaturke.blad_nie_mozna_poprawic_miniaturki' => 'Nie można poprawić miniaturki',

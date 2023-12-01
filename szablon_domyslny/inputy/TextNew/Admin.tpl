@@ -17,7 +17,7 @@
 {{END}}
 
 {{BEGIN dlugoscBezSpacji}}
-<input type="text" name="{{$nazwa}}" id="{{$nazwa}}" value="{{$wartosc}}" {{$atrybuty}} />
+<input type="text" name="{{$nazwa}}" id="{{$nazwa}}" value="{{$wartosc}}" class="form-control" {{$atrybuty}}/>
 				<p><span id="lim_{{$nazwa}}"></span>&nbsp;</p>
 <script type="text/javascript">
 	var limit{{$nazwa}} = {{$dlugosc_bez_spacjis}};

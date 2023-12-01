@@ -81,7 +81,12 @@ class Edycja extends \Generic\Formularz\Abstrakcja
 		$this->formularz->input(new Input\Text('autor', '', array(
 			'atrybuty' => array('maxlength' => 255),
 		)));
-		$this->formularz->autor->dodajFiltr('strip_tags', 'filtr_xss', 'trim');
+        $this->formularz->autor->dodajFiltr('strip_tags', 'filtr_xss', 'trim');
+
+        $this->formularz->input(new Input\Text('autorZdjec', '', array(
+            'atrybuty' => array('maxlength' => 255),
+        )));
+        $this->formularz->autorZdjec->dodajFiltr('strip_tags', 'filtr_xss', 'trim');
 
 		$this->formularz->input(new Input\Checkbox('priorytetowa'));
         $this->formularz->priorytetowa->dodajFiltr('boolval');
@@ -89,17 +94,11 @@ class Edycja extends \Generic\Formularz\Abstrakcja
 		$this->formularz->input(new Input\Checkbox('publikuj'));
         $this->formularz->publikuj->dodajFiltr('boolval');
 
-		$this->formularz->input(new Input\DataCzasSelect('dataDodania', '', array(
-			'wybierz' => $this->tlumaczenia['etykieta_data_wybierz'],
-			'datepicker' => true,
-		)));
-		$this->formularz->dataDodania->dodajWalidator(new Walidator\DataCzasIso);
-		$this->formularz->dataDodania->dodajWalidator(new Walidator\MniejszeOd(date("Y-m-d H:i:s"),true));
+		$this->formularz->input(new Input\DataCzasSelect('dataDodania', '', array('wartosc' => $this->tlumaczenia['etykieta_data_wybierz'])));
+		$this->formularz->dataDodania->dodajWalidator(new Walidator\DataCzasIso());
+		//$this->formularz->dataDodania->dodajWalidator(new Walidator\MniejszeOd(date("Y-m-d H:i:s"),true));
 
-		$this->formularz->input(new Input\DataCzasSelect('dataWaznosci', '', array(
-			'wybierz' => $this->tlumaczenia['etykieta_data_wybierz'],
-			'datepicker' => true,
-		)));
+		$this->formularz->input(new Input\DataCzasSelect('dataWaznosci', '', array('wartosc' => $this->tlumaczenia['etykieta_data_wybierz'])));
 		$this->formularz->dataWaznosci->dodajWalidator(new Walidator\DataCzasIso);
 
 		if (count($this->listaGalerii) > 0)

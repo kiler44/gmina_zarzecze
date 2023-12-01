@@ -28,7 +28,7 @@ class Aktualnosc implements TabelaInterface
 
     public function pobierzWyniki():array
     {
-        $aktualnosci = $this->mapper->szukaj($this->kryteria);
+        $aktualnosci = $this->mapper->szukaj($this->kryteria, $this->pager, $this->sorter);
         $kategoriaMapper = new Kategoria\Mapper();
         $wyniki = [];
         $kategorieAktualnosci = [];
@@ -45,7 +45,7 @@ class Aktualnosc implements TabelaInterface
             $oWynik->kategoria = $kategoria;
             $oWynik->data = $aktualnosc->dataDodania;
             $oWynik->link = Router::urlHttp($aktualnosc->idKategorii, ['aktualnosc' => $aktualnosc->id]);
-            $wynik[] = $oWynik;
+            $wyniki[] = $oWynik;
         }
         return $wyniki;
     }

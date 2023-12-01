@@ -393,8 +393,8 @@ return array(
 
 'pagery' => array
 (
-	'pager_wstecz' => '&laquo;',
-	'pager_przod' => '&raquo;',
+	'pager_wstecz' => '&laquo; Poprzednia',
+	'pager_przod' => '&raquo; Następna',
 	'pager_pierwsza' => 'Pierwsza strona',
 	'pager_ostatnia' => 'Ostatnia strona',
 	'pager_poprzednia' => 'Poprzednia strona',

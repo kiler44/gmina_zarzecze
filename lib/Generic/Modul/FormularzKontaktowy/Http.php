@@ -37,7 +37,6 @@ class Http extends Modul\Http
 		'firmaNazwa' => array('klasa'=> 'Input_Text', 'atrybuty' => array('maxlength' => 128)),
 		'nadawca' => array('klasa'=> 'Input_Text', 'atrybuty' => array('maxlength' => 128)),
 		'stronaWWW' => array('klasa'=> 'Input_Text', 'atrybuty' => array('maxlength' => 128)),
-		'gg' => array('klasa'=> 'Input_Text', 'atrybuty' => array('maxlength' => 20)),
 		'skype' => array('klasa'=> 'Input_Text', 'atrybuty' => array('maxlength' => 128)),
 		'telefon' => array('klasa'=> 'Input_Text', 'atrybuty' => array('maxlength' => 15)),
 		'komorka' => array('klasa'=> 'Input_Text', 'atrybuty' => array('maxlength' => 15)),
@@ -73,8 +72,8 @@ class Http extends Modul\Http
 	public function wykonajFormularz()
 	{
 		$this->ustawGlobalne(array(
-			'tytul_strony' => $this->kategoria->tytulStrony,
-			'tytul_modulu' => $this->j->t['index.tytul_modulu'],
+			'tytul_strony' => $this->kategoria->nazwa,
+			'tytul_modulu' => $this->kategoria->tytulStrony,// $this->j->t['index.tytul_modulu'],
 		));
 
 		$mapper = $this->dane()->FormularzKontaktowyTemat();
@@ -87,12 +86,13 @@ class Http extends Modul\Http
 		{
 			$tematy[] = $mapper->pobierzPoId(1);
 		}
-		$obiektFormularza = new \Generic\Formularz\FormularzKontaktowy\Http();
+        $obiektFormularza = new \Generic\Formularz\FormularzKontaktowy\Http();
 		$obiektFormularza->ustawTematy($tematy)
 			->ustawTlumaczenia($this->pobierzBlokTlumaczen('formularz'))
 			->ustawKonfiguracje(array(
 				'wiele_tematow' => $this->k->k['formularz.wiele_tematow'],
 				'dane_osobowe_tresc' => $this->k->k['formularz.dane_osobowe_tresc'],
+                'czy_button_wstecz' =>$this->k->k['formularz.czy_button_wstecz']
 			))
 			->ustawListaPol($this->lista_pol);
 

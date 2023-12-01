@@ -16,7 +16,7 @@
 {{BEGIN brak_zakladek}}<div class="round_container brak_zakladek"><b class="l"></b><b class="r"></b></div>{{END}}
 <div>
 
-<form enctype="{{$typ}}" id="{{$nazwa}}" name="{{$nazwa}}" method="{{$metoda}}" action="{{$akcja}}">
+<form enctype="{{$typ}}" id="{{$nazwa}}" name="{{$nazwa}}" method="{{$metoda}}" action="{{$akcja}}" class="row g-3 needs-validation {{$klasa_css_formularza}}">
 	<input type="hidden" name="__{{$nazwa}}" value="wypelniony" />
 {{BEGIN token}}
 	<input type="hidden" name="__token" value="{{$token}}" />
@@ -54,13 +54,13 @@
 {{END}}
 
 {{BEGIN input}}
-<div class="hR mbDimA {{$klasa}}">
+<div class="{{$klasa}}">
 		{{BEGIN etykieta}}
-		<label for="{{$nazwa}}" class="textLabel {{$klasa}} {{if($wymagany,'wymagany')}}">{{$etykieta}}{{if($wymagany,' <strong>*</strong>')}}</label>
+		<label for="{{$nazwa}}" class="form-label {{$klasa}} {{if($wymagany,'wymagany')}}">{{$etykieta}}{{if($wymagany,' <strong>*</strong>')}}</label>
 		{{END}}
 		{{$html}}
 		<span class="descLabel">{{$opis}}</span>
-		{{BEGIN blad}}<div class="errorLabel">{{$tresc}}</div>{{END}}
+		{{BEGIN blad}}<div class="invalid-feedback">{{$tresc}}</div>{{END}}
 </div>
 {{END}}
 
@@ -106,7 +106,7 @@
 
 {{BEGIN formularz_stop}}
 {{BEGIN stopka}}
-<div class="submitArea">
+<div class="col-12 text-lg-end text-center">
 	{{$input_html}}
 </div>
 {{END}}

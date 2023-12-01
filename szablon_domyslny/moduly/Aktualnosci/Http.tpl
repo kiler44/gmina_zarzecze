@@ -1,59 +1,127 @@
 
 {{BEGIN listaAktualnosci}}
-<div class="listaAktualnosci listaOgloszen">
-{{$pager}}
-<table border="0" width="100%">
+<!-- Aktualności Content -->
+<section class="gz-section gz-page-title">
+	<div class="container" >
+		<div class="row">
+			<!-- Page title -->
+			<div class="col-12 text-center">
+				<h1>{{$tytul_strony}}</h1>
+				<h5>{{$tytul_modulu}}</h5>
+			</div>
+			<!-- Page title End-->
+		</div>
+	</div>
+</section>
+<section class="gz-section gz-aktualnosci gz-mt-20">
+	<div class="container">
+		<div class="row">
+			<!-- Sorter -->
+			<!--
+			<div class="col-12 text-center">
+				<div class="gz-sorter" role="group" aria-label="Tagi">
+					<button type="button" class="btn btn-primary btn-sm" onclick="filterAktualnosci('')">Wszystko</button>
+					<button type="button" class="btn btn-outline-primary btn-sm" onclick="filterAktualnosci('nowe')">Nowe</button>
+					<button type="button" class="btn btn-outline-primary btn-sm" onclick="filterAktualnosci('zdrowie')">Zdrowie</button>
+					<button type="button" class="btn btn-outline-primary btn-sm" onclick="filterAktualnosci('sport')">Sport</button>
+					<button type="button" class="btn btn-outline-primary btn-sm" onclick="filterAktualnosci('przetargi')">Przetargi</button>
+					<button type="button" class="btn btn-outline-primary btn-sm" onclick="filterAktualnosci('aktualnosci')">Aktualności</button>
+					<button type="button" class="btn btn-outline-primary btn-sm" onclick="filterAktualnosci('ogloszenia')">Ogłoszenia</button>
+					<button type="button" class="btn btn-outline-primary btn-sm" onclick="filterAktualnosci('wydarzenia')">Wydarzenia</button>
+					<button type="button" class="btn btn-outline-primary btn-sm" onclick="filterAktualnosci('kultura')">Kultura</button>
+					<button type="button" class="btn btn-outline-primary btn-sm" onclick="filterAktualnosci('nauka')">Nauka</button>
+					<button type="button" class="btn btn-outline-primary btn-sm" onclick="filterAktualnosci('inwestycje')">Inwestycje</button>
+				</div>
+			</div>
+			-->
+			<!-- Sorter END-->
+				<div class="row">
 {{ BEGIN lista }}
-<tr class="{{ if($priorytetowa, 'important') }}">
-	<td class="zdjecie">
-	{{BEGIN zdjecie_glowne}}
-		<a href="{{ $link }}" class="thumb"><img src="{{ $zdjecie }}" alt="{{escape($tytul)}}"/></a>
-	{{END}}
-	{{BEGIN brak_zdjecia}}
-		<div class="brak_zdjecia">{{$etykieta_brak_zdjecia}}</div>
-	{{END}}
-	</td>
-	<td class="tresc">
-		<table cellpadding="0" cellspacing="0" border="0" width="100%" height="100%">
-			<tr>
-				<th class="tytul"><a href="{{ $link }}">{{ $tytul }}</a><span>{{ $autor }}@{{ $data }}</span></th>
-			</tr>
-			<tr class="wiersz_opis">
-				<td>{{ $zajawka }}</td>
-			</tr>
-			<tr>
-				<td class="wiecej"><a href="{{ $link }}" class="wiecej">{{ $etykieta_wiecej }}</a></td>
-			</tr>
-		</table>
-	</td>
-</tr>
+					<div class="col-lg-3 col-6 aktualnosci-item {{ if($priorytetowa, 'priority') }}" data-tags="nowe sport wydarzenia kultura">
+						<div class="aktualnosci-image-content ">
+							<!--
+							<div class="aktualnosci-tags-info">
+								<ul>
+									<li class="pilne">Pilne</li>
+									<li class="nowe">Nowe</li>
+								</ul>
+							</div>
+							<div class="aktualnosci-tags">
+								<ul>
+									<li>Aktualności</li>
+									<li>Zdrowie</li>
+								</ul>
+							</div>
+							-->
+							<button class="aktualnosci-button"><a href="{{ $link }}">{{ $etykieta_wiecej }}</a></button>
+							<div class="aktualnosci-overlay"></div>
+							{{BEGIN zdjecie_glowne}}
+							<img src="{{ $zdjecie }}" alt="{{escape($tytul)}}"/>
+							{{END}}
+							{{BEGIN brak_zdjecia}}
+							<div class="brak_zdjecia">{{$etykieta_brak_zdjecia}}</div>
+							{{END}}
+						</div>
+						<div class="aktualnosci-content">
+							<time datetime="{{ $datetime }}">{{ $data }}</time>
+							<a href="{{ $link }}"><h4>{{ $tytul }}</h4></a>
+						</div>
+					</div>
 {{ END }}
-</table>
+				</div>
+		</div>
+	</div>
+</section>
 {{$pager}}
-</div>
+
 {{END}}
 
 
-
 {{ BEGIN aktualnosc }}
-<div class="aktualnosc">
-	<h1><span class="tytul">{{ $tytul }}</span><span class="podpis">{{ $autor }}@{{ $data }}</span></h1>
-	<div class="opis">
-		<p><strong>{{ $tresc_krotka }}</strong></p>
-		<div class="r_clear"></div>
-		{{BEGIN zdjecie_glowne}}
-		<div class="opis_zdjecie">
-			<a href="{{$link}}" class="block" title="{{escape($tytul)}}" rel="{{if($uzyj_lightbox, 'lightbox')}}"><img src="{{$zdjecie}}" alt="{{escape($tytul)}}"/></a>
+<section class="gz-section gz-aktualnosc-wpis">
+	<div class="container" >
+		<div class="row">
+			<div class="col-lg-2 col-12 gz-top">
+				<a href="{{ $link_wstecz }}" class="btn">{{ $etykieta_wstecz }}</a>
+			</div>
+			<!-- Content Strony -->
+			<div class="col-lg-8 col-12">
+				<div class="page-title text-center">
+					<h1>{{ $tytul }}</h1>
+					<time datetime="{{ $datetime }}">{{ $data }}</time>
+				</div>
+				<figure class="figure">
+					<!--
+					<div class="tag">
+						<div class="aktualnosc-wpis-tags-info">
+							<ul>
+								<li class="pilne">Pilne</li>
+								<li class="nowe">Nowe</li>
+								<li class="wydarzenie">Wydarzania</li>
+								<li class="inwestycje">Inwestycje</li>
+							</ul>
+						</div>
+						<div class="aktualnosc-wpis-tags ">
+							<ul>
+								<li>Aktualności</li>
+								<li>Zdrowie</li>
+							</ul>
+						</div>
+					</div>
+					-->
+					{{BEGIN zdjecie_glowne}}
+					<img src="{{$zdjecie}}" class="figure-img img-fluid rounded" alt="{{escape($tytul)}}"/>
+					{{END}}
+					<figcaption class="">{{ $etykieta_autor_zdjec }} {{ $autor_zdjec }}</figcaption>
+				</figure>
+				{{$tresc_pelna}}
+				{{$galeria}}
+				{{$zalaczniki}}
+			</div>
+			<!-- Content End-->
 		</div>
-		{{END}}
-		{{$tresc_pelna}}
-		<div class="opcje">
-			<a href="{{ $link_wstecz }}" class="wstecz">{{ $etykieta_wstecz }}</a>
-		</div>
-		<div class="r_clear"></div>
 	</div>
-	{{$galeria}}
-</div>
+</section>
 {{ END }}
 
 
@@ -63,7 +131,7 @@
 	{{ BEGIN miniaturka }}
 	<div class="miniaturka">
 		<div class="image">
-			<a title="{{ $tytul }}" href="{{ $zdjecie_link }}" {{ if($lightbox, 'rel="lightbox"') }}><img alt="{{escape($tytul)}}" src="{{ $miniaturka }}"/></a>
+			<a title="{{ $tytul }}" href="{{ $zdjecie_link }}" {{ if($lightbox, 'data-toggle="lightbox"') }}><img alt="{{escape($tytul)}}" src="{{ $miniaturka }}"/></a>
 		</div>
 		<div class="caption">{{ $opis }}</div>
 	</div>

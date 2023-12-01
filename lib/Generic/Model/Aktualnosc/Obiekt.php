@@ -25,6 +25,7 @@ use Generic\Biblioteka\ObiektDanych;
  * @property string $dataDodania
  * @property int $priorytetowa
  * @property int $publikuj
+ * @property string $autorZdjec
  */
 class Obiekt extends ObiektDanych
 {
@@ -49,6 +50,7 @@ class Obiekt extends ObiektDanych
 		'priorytetowa',
 		'publikuj',
 		'idGalerii',
+        'autorZdjec',
 	);
 
 	private $zalaczniki;

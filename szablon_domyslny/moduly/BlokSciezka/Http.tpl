@@ -1,6 +1,10 @@
 {{BEGIN index}}
-<ul id="path">
-	{{BEGIN link}}<li><a href="{{$url}}"><span>{{$nazwa}}</span></a><var>{{$znak_rozdzielajacy}}<br /></var></li>{{END}}
-{{BEGIN tekst}}<li><span>{{$nazwa}}</span></li>{{END}}
-</ul>
+<div class="gz-breadcrumb text-lg-start text-center gz-page-title">
+	<nav aria-label="">
+		<ol class="breadcrumb">
+	{{BEGIN link}}<li><a href="{{$url}}">{{$nazwa}}</a><var>{{$znak_rozdzielajacy}}</var></li>{{END}}
+{{BEGIN tekst}}<li class="active" aria-current="page">{{$nazwa}}</li>{{END}}
+		</ol>
+	</nav>
+</div>
 {{END}}

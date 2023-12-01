@@ -1838,3 +1838,9 @@ function getModelClassNameWithouNamespace($class)
     $path = explode('\\', get_class($class));
     return ($path[count($path)-2]);
 }
+
+function dataGramatyczniePL($data)
+{
+    $m = array('stycznia','lutego','marca','kwietnia','maja','czerwca','lipca','sierpnia','września','października','listopada','grudnia');
+    return date('j', $data) . ' ' . $m[date('n') - 1] . ' ' . date('Y', $data) ;
+}

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="pl">
+<head>
+	<meta charset="utf-8">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Google font -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
+
+	<!-- Bootstrap css -->
+	<link href="/_szablon/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/_szablon/css/style.css " rel="stylesheet">
+	<title>{{$tytul_strony}}</title>
+
+	<meta name="description" content="{{$opis_strony}}" />
+	<link rel="canonical" href="https://gminazarzecze.pl/" />
+	<meta property="og:locale" content="pl_PL" />
+
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="{{$tytul_strony}}" />
+	<meta property="og:description" content="{{$opis_strony}}" />
+	<meta property="og:url" content="https://gminazarzecze.pl/" />
+	<meta property="og:site_name" content="{{$tytul_strony}}" />
+
+
+
+	<script src="/_szablon/js/jquery-3.6.0.min.js"></script>
+	<script src="/_szablon/js/moment.min.js"></script>
+	<script src="/_szablon/js/pl.min.js"></script>
+	<script>
+		function checkOpeningStatus(schedule) {
+			var now = new Date();
+			var currentHour = now.getHours();
+			var currentMinute = now.getMinutes();
+
+			for (var className in schedule) {
+				var times = schedule[className];
+				var [godzinaOtwarcia, minutaOtwarcia] = times.otwarcie.split(':').map(Number);
+				var [godzinaZamkniecia, minutaZamkniecia] = times.zamkniecie.split(':').map(Number);
+
+				var isOpen = (currentHour > godzinaOtwarcia || (currentHour === godzinaOtwarcia && currentMinute >= minutaOtwarcia)) &&
+						(currentHour < godzinaZamkniecia || (currentHour === godzinaZamkniecia && currentMinute < minutaZamkniecia));
+
+				var status = isOpen ? `Dziś czynne do ${times.zamkniecie}` : "Obecnie nieczynne";
+
+				var elements = document.getElementsByClassName(className);
+				for (var i = 0; i < elements.length; i++) {
+					elements[i].textContent = status;
+				}
+			}
+		}
+
+		var schedule = {
+			"otwarcie_8-00_16-30": { otwarcie: "8:00", zamkniecie: "16:30" },
+			"otwarcie_9-00_17-30": { otwarcie: "9:00", zamkniecie: "17:30" },
+			"otwarcie_18-00_24-00": { otwarcie: "18:00", zamkniecie: "00:00" },
+		};
+
+		window.onload = function() {
+			checkOpeningStatus(schedule);
+		};
+	</script>
+	{{$naglowek_html}}
+	{{BEGIN rss}}<link rel="alternate" type="application/rss+xml" title="{{$tytul}}" href="{{$url}}" />
+	{{END}}
+</head>
+<body>
+<!-- Header START -->
+<header class="gz-header">
+	<div class="container">
+		<div><a class="herb" href="{$URL}"><img alt="{$alt_herb}" src="/_szablon/images/svg/img-svg-01.svg" /></a></div>
+		<div class="row gz-navbar-top align-items-center">
+			<div class="col-md-8 col-sm-6 col-8 gz-navbar-title">
+				<h2>Zarzecze</h2>
+				<span id="gz-span-text-change" data-md-text="Oficjalny serwis informacyjny Urzędu Gminy Zarzecze" data-xs-text="Urząd Gminy Zarzecze"></span>
+			</div>
+			<div class="col-md-4 col-sm-6 col-4 d-flex justify-content-end flex-column flex-sm-row align-items-end align-items-sm-start">
+				{{ $region_1 }}
+			</div>
+		</div>
+	</div>
+</header>
+<!-- Header END -->
+
+<!-- Navbar START -->
+<nav class="navbar navbar-dark navbar-expand-lg gz-navbar" aria-label="Ninth navbar example">
+	<div class="container-xl justify-content-end">
+		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gz-Nav-Dropdown" aria-controls="gz-Nav-Dropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		{{$region_2 }}
+	</div>
+</nav>
+<!-- Navbar END -->
+<section class="gz-section gz-page-title">
+	<div class="container">
+		<div class="row">
+			{{ $region_3 }}
+		</div>
+</section>
+
+
+<!-- Sekcja 1 -->
+<section class="gz-section gz-kontakt ">
+	<div class="container" >
+		<div class="row">
+			<div class="col-lg-8 col-12 gz-kontakt">
+				{{ $region_0 }}
+			</div>
+			<div class="col-lg-4 col-12 gz-info-section">
+				{{ $region_4 }}
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Sekcja 1 END -->
+
+<section class="gz-section gz-kontakt">
+	<div class="container" >
+		<div class="row">
+			<div class="col-12"><hr></div>
+				{{ $region_5 }}
+		</div>
+	</div>
+</section>
+
+<!-- Sekcja 9 Banery-01 -->
+<section class="gz-section gz-banery-01">
+	<div class="container gz-mt-40 ">
+		<div class="row">
+			<div class="col-12">
+				<!-- Karuzela -->
+				<div id="gz-slider-homepage-5" class="carousel slide carousel-dark" data-bs-ride="carousel">
+					<!-- Karuzela nawigacja-->
+					<button class="carousel-control-prev" type="button" data-bs-target="#gz-slider-homepage-5" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#gz-slider-homepage-5" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+					<!-- Karuzela nawigacja END-->
+					<div class="carousel-inner gz-margin-karuzela">
+						<!-- bloczek karuzeli 1 -->
+						<div class="carousel-item active" data-bs-interval="3000">
+							<div class="row align-items-center gz-counter-container">
+
+								<div class="col-md-3 col-6">
+									<div class="gz-banery-item">
+										<img src="/_szablon/images/jpg/img-jpg-23.jpg" alt="">
+										<h4>Raport ostanie Gminy Zarzecz</h4>
+									</div>
+								</div>
+								<div class="col-md-3 col-6">
+									<div class="gz-banery-item">
+										<img src="/_szablon/images/jpg/img-jpg-24.jpg" alt="">
+										<h4>ZS Zarzecz</h4>
+									</div>
+								</div>
+								<div class="col-md-3 col-6">
+									<div class="gz-banery-item">
+										<img src="/_szablon/images/jpg/img-jpg-25.jpg" alt="">
+										<h4>OZE</h4>
+									</div>
+								</div>
+								<div class="col-md-3 col-6">
+									<div class="gz-banery-item">
+										<img src="/_szablon/images/jpg/img-jpg-26.jpg" alt="">
+										<h4>Czyste pwietrze</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- bloczek karuzeli 1 END -->
+						<!-- bloczek karuzeli 2 -->
+						<div class="carousel-item" data-bs-interval="3000">
+							<div class="row align-items-center gz-counter-container">
+								<div class="col-md-3 col-6">
+									<div class="gz-banery-item">
+										<img src="/_szablon/images/jpg/img-jpg-23.jpg" alt="">
+										<h4>Raport ostanie Gminy Zarzecz</h4>
+									</div>
+								</div>
+								<div class="col-md-3 col-6">
+									<div class="gz-banery-item">
+										<img src="/_szablon/images/jpg/img-jpg-24.jpg" alt="">
+										<h4>ZS Zarzecz</h4>
+									</div>
+								</div>
+								<div class="col-md-3 col-6">
+									<div class="gz-banery-item">
+										<img src="/_szablon/images/jpg/img-jpg-25.jpg" alt="">
+										<h4>OZE</h4>
+									</div>
+								</div>
+								<div class="col-md-3 col-6">
+									<div class="gz-banery-item">
+										<img src="/_szablon/images/jpg/img-jpg-26.jpg" alt="">
+										<h4>Czyste pwietrze</h4>
+									</div>
+								</div>
+							</div>
+						</div>
+						<!-- bloczek karuzeli 2 END -->
+					</div>
+					<!-- Karuzela END-->
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- Sekcja 9 Banery-01 END -->
+<!-- Footer -->
+<section class="gz-footer">
+	<div class="container">
+		<footer class="row">
+			{{ $region_6 }}
+		</footer>
+	</div>
+</section>
+<section class="gz-footer-copyright">
+	<div class="container">
+		<footer class="row">
+			<div class="col-12 text-center">
+				{$podpis_stopka}
+			</div>
+		</footer>
+	</div>
+</section>
+<!-- Footer End -->
+<script src="/_szablon/js/bootstrap.bundle.min.js"></script>
+<script src="/_szablon/js/gz-js.js"></script>
+</body>
+</html>

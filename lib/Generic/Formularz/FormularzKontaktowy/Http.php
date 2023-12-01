@@ -57,6 +57,7 @@ class Http extends \Generic\Formularz\Abstrakcja
 			}
 		}
 
+
 		foreach($this->listaPol as $nazwa => $ustawieniePola)
 		{
 			if (isset($konfiguracja[$nazwa]))
@@ -65,12 +66,15 @@ class Http extends \Generic\Formularz\Abstrakcja
 					'wymagany' => ($konfiguracja[$nazwa] == 2) ? true : false,
 					'atrybuty' => $ustawieniePola['atrybuty'],
 				);
+                $ustawienia['atrybuty']['class'] = 'form-control';
 
 				if ($nazwa == 'daneOsobowe') $ustawienia['opis'] = $this->konfiguracja['dane_osobowe_tresc'];
+
 
 				$klasa = '\\Generic\\Biblioteka\\' . str_replace('_', '\\', $ustawieniePola['klasa']);
 
 				$this->formularz->input(new $klasa($nazwa, $this->tlumaczenia['etykieta_input_'.$nazwa], $ustawienia));
+
 				$this->formularz->$nazwa->dodajFiltr('strip_tags', 'filtr_xss', 'trim');
 
 				if ($konfiguracja[$nazwa] == 2)
@@ -97,13 +101,17 @@ class Http extends \Generic\Formularz\Abstrakcja
 		}
 		$this->formularz->stopka(new Input\Submit('zapisz', '&nbsp;', array(
 			'wartosc' => $this->tlumaczenia['etykieta_zapisz'],
-			'atrybuty' => array('class' => 'buttonSet buttonRed'),
+			'atrybuty' => array('class' => 'btn btn-primary'),
 		)));
-		$this->formularz->stopka(new Input\Button('wstecz', '&nbsp;', array(
-			'wartosc' => $this->tlumaczenia['etykieta_reset'],
-			'typ' => 'reset',
-			'atrybuty' => array('class' => 'buttonSet buttonLight'),
-		)));
+        if ($this->konfiguracja['czy_button_wstecz'])
+        {
+            $this->formularz->stopka(new Input\Button('wstecz', '&nbsp;', array(
+                'wartosc' => $this->tlumaczenia['etykieta_reset'],
+                'typ' => 'reset',
+                'atrybuty' => array('class' => 'buttonSet buttonLight'),
+            )));
+        }
+
 
 		$this->formularz->ustawTlumaczenia($this->tlumaczenia);
 	}

@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
+  <!-- Bootstrap css -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/style.css " rel="stylesheet">
+  <title>Gmina Zarzecz</title>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script src="js/moment.min.js"></script>
+  <script src="js/pl.min.js"></script>
+</head>
+<body>
+<!-- Header START -->
+<header class="gz-header">
+  <div class="container">
+    <div class=""><a href="index.html" class="herb"><img src="images/svg/img-svg-01.svg" alt="Herb Gminy Zarzecze"></a></div>
+      <div class="row gz-navbar-top align-items-center">
+        <div class="col-md-8 col-sm-6 col-8 gz-navbar-title">
+          <h2>Zarzecze</h2>
+          <span id="gz-span-text-change" data-md-text="Oficjalny serwis informacyjny Urzędu Gminy Zarzecze" data-xs-text="Urząd Gminy Zarzecze"></span>
+        </div>
+        <div class="col-md-4 col-sm-6 col-4 d-flex justify-content-end flex-column flex-sm-row align-items-end align-items-sm-start">
+          <a href="#" class="gz-epuap-cta mb-2 mb-sm-0">
+            <img src="images/png/img-png-01.png" width="108" height="22" alt="ePUAP">
+          </a>
+          <a href="#" class="gz-bip-cta">
+            <img src="images/png/img-png-02.png" width="74" height="32" alt="bip">
+          </a>
+        </div>
+    </div>
+  </div>
+</header>
+<!-- Header END -->
+
+<!-- Navbar START --> 
+<nav class="navbar navbar-dark navbar-expand-lg gz-navbar" aria-label="Ninth navbar example">
+  <div class="container-xl justify-content-end">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gz-Nav-Dropdown" aria-controls="gz-Nav-Dropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="gz-Nav-Dropdown">
+      <ul class="navbar-nav gz-ul-navbar">
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Strony</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="index.html">Strona główna</a></li>
+            <li><a class="dropdown-item" href="strona-opisowa.html">Strona opisowa</a></li>
+            <li><a class="dropdown-item" href="aktualnosc-wpis.html">Aktualność Wpis</a></li>
+            <li><a class="dropdown-item" href="lista-aktualnosci.html">Lista Aktualności</a></li>
+            <li><a class="dropdown-item" href="lista-galerii.html">Lista Galerii</a></li>
+            <li><a class="dropdown-item" href="kontakt.html">Kontakt</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Na bieżąco</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Dla mieszkańców</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Gmina Zarzecze</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Urząd gminy</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Kultura i oświata</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Gospodarka</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Ogłoszenia</a></li>
+            <li><a class="dropdown-item" href="#">Przetargi</a></li>
+            <li><a class="dropdown-item" href="#">OZE - Odnawialne Źródła Energii</a></li>
+            <li><a class="dropdown-item" href="#">Kurier Zarzecki</a></li>
+            <li><a class="dropdown-item" href="#">Ostrzeżenia meteorologiczne</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Sołtysów</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Parlamentarne 2019</a></li>
+            <li><a class="dropdown-item" href="#">Wybory Prezydent RP 2020</a></li>
+            <li><a class="dropdown-item" href="#">Wybory uzupełniające do Rady Gminy</a></li>
+            <li><a class="dropdown-item" href="#">Wybory do Podkarpackiej Izby Rolniczej</a></li>
+            <li><a class="dropdown-item" href="#">Konsultacje społeczne</a></li>
+            <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
+          </ul>
+        </li>
+
+      </ul>
+      
+      <a class="gz-nav-kontakt-cta ms-auto" href="#">Kontakt</a>
+    </div>
+  </div>
+</nav>
+<!-- Navbar END -->
+
+<!-- Sekcja 1 -->
+<section class="gz-section gz-aktualnosc-wpis">
+  <div class="container" >
+    <div class="row">
+      <!-- Okruszki -->
+      <div class="col-12 ">
+        <div class="gz-breadcrumb">
+          <nav aria-label="">
+            <ol class="breadcrumb">
+              <li><a href="#">Strona główna</a></li>
+              <li><a href="#">Aktualności</a></li>
+              <li class="active" aria-current="page">Program „laptop dla ucznia”</li>
+            </ol>
+          </nav>
+        </div>
+      </div>
+      <!-- Okruszki End--> 
+      <div class="col-lg-2 col-12 gz-top">
+       <a href="lista-aktualnosci.html" class="btn">Wróć do listy aktualności</a>
+      </div>
+      <!-- Content Strony -->
+      <div class="col-lg-8 col-12">
+        <div class="page-title text-center">
+          <h1>Program „laptop dla ucznia”</h1>
+          <time datetime="2023-11-16">16 listopada 2023</time>
+        </div> 
+        <figure class="figure">
+          <div class="tag">
+            <div class="aktualnosc-wpis-tags-info">
+              <ul>
+                <li class="pilne">Pilne</li>
+                <li class="nowe">Nowe</li>
+                <li class="wydarzenie">Wydarzania</li>
+                <li class="inwestycje">Inwestycje</li>
+              </ul>
+            </div>
+            <div class="aktualnosc-wpis-tags ">
+              <ul>
+                <li>Aktualności</li>
+                <li>Zdrowie</li>
+              </ul>
+            </div>
+          </div>
+          <img src="images/jpg/img-jpg-27.jpg" class="figure-img img-fluid rounded" alt="Obrazek">
+          <figcaption class="">Fotografia własna</figcaption>
+        </figure>
+        <h3>Warunki uczestnictwa</h3>
+        <p>Uczniowie klas IV szkół podstawowych w gminie Zarzecze do końca września otrzymają na własność bezpłatne laptopy. Sprzęt będzie przekazywany przez dyrektorów szkół na podstawie umowy z rodzicem (opiekunem prawnym) ucznia i protokołem przekazania.Program „Laptop dla ucznia” to rządowa inicjatywa, której celem jest wsparcie dzieci i młodzieży w rozwoju kompetencji cyfrowych. Realizowany przez Ministerstwo Cyfryzacji program zakłada, że każdy uczeń IV klasy szkoły podstawowej w Polsce otrzyma na własność bezpłatny laptop. Sprzęt może być wykorzystany do nauki, rozwoju kompetencji cyfrowych oraz talentów i zainteresowań.</p>
+        <p>Aliquam sodales, dolor id porta condimentum, neque augue hendrerit felis, non pretium lectus eros sit amet orci. Phasellus dignissim nulla vitae neque commodo tristique. Aliquam vitae sem rhoncus, auctor nulla nec, porttitor lectus. Pellentesque nisi nibh, mollis ut ullamcorper et, feugiat ut metus</p>
+        <h5>Aliquam sodales, dolor id porta:</h5>
+        <ul>
+          <li>Condimentum, neque augue hendrerit felis;</li>
+          <li>Aliquam vitae sem rhoncus;</li>
+          <li>Auctor nulla nec, porttitor lectus;</li>
+          <li>Pellentesque nisi nibh.</li>
+        </ul>
+
+        <!-- Tabelka -->
+        <table>
+          <thead>
+            <tr>
+              <th>Lp.</th>
+              <th>Imię i Nazwisko</th>
+              <th>Dziedzina sportu</th>
+              <th>Specjalizacja</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Artur Jazgarz</td>
+              <td>Siatkówka</td>
+              <td>Siatkówka</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Michał Bociań</td>
+              <td>Piłka nożna</td>
+              <td>Trener</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Jan Kowal</td>
+              <td>Gimnastyka</td>
+              <td>Poręcz</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Anna Sobieł</td>
+              <td>Pływanie</td>
+              <td>Trener</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Jan Kowal</td>
+              <td>Gimnastyka</td>
+              <td>Skok przez kozła</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>Robert Winnicki</td>
+              <td>Piłka nożna</td>
+              <td>Trener</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Tabelka End-->
+        
+        <h5>Dokumenty do pobrania:</h5>
+
+        
+
+        <ul class="gz-download list-unstyled">
+          <li><a href="#" class="gz-pdf">Oświadczenie o zarobkach.pdf</a></li>
+          <li><a href="#" class="gz-xls">Status mieszkaniowy.xls</a></li>
+          <li><a href="#" class="gz-ppt">Wyniki przetargu na zakup ciepła 2022/2023.ppt</a></li>
+          <li><a href="#" class="gz-doc">Zarządzenia Rady 2023r.doc</a></li>
+          
+        </ul> 
+        
+        
+      </div>
+      <!-- Content End-->
+    
+    </div> 
+  </div>
+</section>
+<!-- Sekcja 1 -->
+<!-- Sekcja 2 aktualności karuzela -->
+<section class="gz-section gz-mt-30 gz-aktualnosci-karuzela">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <h3>Najnowsze Aktualności:</h3>
+      </div>
+      <div class="col-12">
+        <!-- Karuzela -->
+        <div id="gz-aklualnosci-slider" class="carousel slide carousel-dark" data-bs-ride="carousel">
+          <!-- Karuzela nawigacja-->
+          <button class="carousel-control-prev" type="button" data-bs-target="#gz-aklualnosci-slider" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#gz-aklualnosci-slider" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          <!-- Karuzela nawigacja END-->
+          <div class="carousel-inner gz-margin-karuzela gz-aktualnosci">
+            <!-- bloczek karuzeli 1 -->
+            <div class="carousel-item active" data-bs-interval="3000">
+              <div class="row ">
+
+                <div class="col-lg-3 col-6 aktualnosci-item" data-tags="nowe sport wydarzenia kultura">
+                  <div class="aktualnosci-image-content ">
+                    <div class="aktualnosci-tags-info">
+                      <ul>
+                        <li class="pilne">Pilne</li>
+                        <li class="nowe">Nowe</li>
+                      </ul>
+                    </div>
+                    <div class="aktualnosci-tags">
+                      <ul>
+                        <li>Aktualności</li>
+                        <li>Zdrowie</li>
+                      </ul>
+                    </div>
+                    <button class="aktualnosci-button">Czytaj więcej »</button>
+                    <div class="aktualnosci-overlay"></div>
+                    <img src="images/jpg/img-jpg-28.jpg" alt="opis zdjęcia">
+                  </div>
+                  <div class="aktualnosci-content">
+                    <time datetime="2023-11-16">16 listopada 2023</time> 
+                    <h4>Światowy dzień bezpieczeństwa pacjenta – jak skutecznie i bezpiecznie stosować leki</h4>
+                  </div>
+                </div>
+        
+                <div class="col-lg-3 col-6 aktualnosci-item" data-tags="zdrowie przetargi nauka">
+                  <div class="aktualnosci-image-content ">
+                    <div class="aktualnosci-tags">
+                      <ul>
+                        <li>Zdrowie</li>
+                      </ul>
+                    </div>
+                    <button class="aktualnosci-button">Czytaj więcej »</button>
+                    <div class="aktualnosci-overlay"></div>
+                    <img src="images/jpg/img-jpg-29.jpg" alt="opis zdjęcia">
+                  </div>
+                  <div class="aktualnosci-content">
+                    <time datetime="2023-07-27">27 lipca 2023</time> 
+                    <h4>Kampania „bezpieczne wakacje” z mocnym przekazem na na instagramie i tiktoku</h4>
+                  </div>
+                </div>
+        
+                <div class="col-lg-3 col-6 aktualnosci-item" data-tags="kultura ogloszenia inwestycje">
+                  <div class="aktualnosci-image-content ">
+                    <div class="aktualnosci-tags-info">
+                      <ul>
+                        <li class="wydarzenie">Wdarzenie</li>
+                      </ul>
+                    </div>
+                    <div class="aktualnosci-tags">
+                      <ul>
+                        <li>Kultura</li>
+                        <li>Wydarzenia</li>
+                      </ul>
+                    </div>
+                    <button class="aktualnosci-button">Czytaj więcej »</button>
+                    <div class="aktualnosci-overlay"></div>
+                    <img src="images/jpg/img-jpg-30.jpg" alt="opis zdjęcia">
+                  </div>
+                  <div class="aktualnosci-content">
+                    <time datetime="2023-08-17">17 sierpnia 2023</time> 
+                    <h4>Autorski recital małgorzaty kustosik przy gościnnym występie pianisty włodzimierza sieczkowskiego</h4>
+                  </div>
+                </div>
+        
+                <div class="col-lg-3 col-6 aktualnosci-item" data-tags="aktualnosci sport">
+                  <div class="aktualnosci-image-content ">
+                    <div class="aktualnosci-tags">
+                      <ul>
+                        <li>Aktualności</li>
+                        <li>Nauka</li>
+                      </ul>
+                    </div>
+                    <button class="aktualnosci-button">Czytaj więcej »</button>
+                    <div class="aktualnosci-overlay"></div>
+                    <img src="images/jpg/img-jpg-31.jpg" alt="opis zdjęcia">
+                  </div>
+                  <div class="aktualnosci-content">
+                    <time datetime="2023-03-13">13 marca 2023</time> 
+                    <h4>Kolejny etap profilaktyki w szkołach trwa…</h4>
+                  </div>
+                </div>
+        
+              </div>
+            </div>
+            <!-- bloczek karuzeli 1 END -->
+            <!-- bloczek karuzeli 2 -->
+            <div class="carousel-item" data-bs-interval="3000">
+              <div class="row ">
+
+                <div class="col-lg-3 col-6 aktualnosci-item">
+                  <div class="aktualnosci-image-content ">
+                    <div class="aktualnosci-tags-info">
+                      <ul>
+                        <li class="wydarzenie">Wdarzenie</li>
+                      </ul>
+                    </div>
+                    <div class="aktualnosci-tags">
+                      <ul>
+                        <li>Aktualności</li>
+                        <li>Kultura</li>
+                        <li>Wydarzenia</li>
+                        <li>nowe</li>
+                      </ul>
+                    </div>
+                    <button class="aktualnosci-button">Czytaj więcej »</button>
+                    <div class="aktualnosci-overlay"></div>
+                    <img src="images/jpg/img-jpg-33.jpg" alt="opis zdjęcia">
+                  </div>
+                  <div class="aktualnosci-content">
+                    <time datetime="2022-12-23">23 grudnia 2022</time> 
+                    <h4>Wigilia klubu seniora, wesołe jest życie staruszka”</h4>
+                  </div>
+                </div>
+        
+                <div class="col-lg-3 col-6 aktualnosci-item">
+                  <div class="aktualnosci-image-content">
+                    <div class="aktualnosci-tags-info">
+                      <ul>
+                        <li class="pilne">Pilne</li>
+                      </ul>
+                    </div>
+                    <div class="aktualnosci-tags">
+                      <ul>
+                        <li>Ogłoszenia</li>
+                      </ul>
+                    </div>
+                    <button class="aktualnosci-button">Czytaj więcej »</button>
+                    <div class="aktualnosci-overlay"></div>
+                    <img src="images/jpg/img-jpg-34.jpg" alt="opis zdjęcia">
+                  </div>
+                  <div class="aktualnosci-content">
+                    <time datetime="2022-08-18">18 sierpnia 2022</time> 
+                    <h4>Wniosek o dodatek węglowy- informacje</h4>
+                  </div>
+                </div>
+        
+                <div class="col-lg-3 col-6 aktualnosci-item">
+                  <div class="aktualnosci-image-content ">
+                    <div class="aktualnosci-tags">
+                      <ul>
+                        <li>Sport</li>
+                        <li>Nauka</li>
+                      </ul>
+                    </div>
+                    <button class="aktualnosci-button">Czytaj więcej »</button>
+                    <div class="aktualnosci-overlay"></div>
+                    <img src="images/jpg/img-jpg-35.jpg" alt="opis zdjęcia">
+                  </div>
+                  <div class="aktualnosci-content">
+                    <time datetime="2022-12-14">14 grudnia 2022</time> 
+                    <h4>XXVII międzynarodowy mikołajkowy turniej piłki ręcznej</h4>
+                  </div>
+                </div>
+        
+                <div class="col-lg-3 col-6 aktualnosci-item">
+                  <div class="aktualnosci-image-content ">
+                    <div class="aktualnosci-tags-info">
+                      <ul>
+                        <li class="inwestycje">Inwestycje</li>
+                      </ul>
+                    </div>
+                    <div class="aktualnosci-tags">
+                      <ul>
+                        <li>Aktualności</li>
+                        <li>inwestycje</li>
+                      </ul>
+                    </div>
+                    <button class="aktualnosci-button">Czytaj więcej »</button>
+                    <div class="aktualnosci-overlay"></div>
+                    <img src="images/jpg/img-jpg-32.jpg" alt="opis zdjęcia">
+                  </div>
+                  <div class="aktualnosci-content">
+                    <time datetime="2022-01-21">21 lutego 2022</time> 
+                    <h4>Wymiana oświetlenia ulicznego na terenie gminy zarzecze- część 1</h4>
+                  </div>
+                </div>
+        
+              </div>
+            </div>
+            <!-- bloczek karuzeli 2 END -->
+          </div>
+        <!-- Karuzela END-->
+        </div>
+      </div>  
+    </div>
+  </div>  
+</section>
+<!-- Sekcja 2 aktualności karuzela END -->
+
+
+<!-- Banery-Bottom -->
+<section class="gz-section gz-banery-01 gz-mt-20">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <!-- Karuzela -->
+        <div id="gz-slider-homepage-5" class="carousel slide carousel-dark" data-bs-ride="carousel">
+          <!-- Karuzela nawigacja-->
+          <button class="carousel-control-prev" type="button" data-bs-target="#gz-slider-homepage-5" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#gz-slider-homepage-5" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+          <!-- Karuzela nawigacja END-->
+          <div class="carousel-inner gz-margin-karuzela">
+            <!-- bloczek karuzeli 1 -->
+            <div class="carousel-item active" data-bs-interval="3000">
+              <div class="row align-items-center gz-counter-container">
+
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-23.jpg" alt="">
+                    <h4>Raport ostanie Gminy Zarzecz</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-24.jpg" alt="">
+                    <h4>ZS Zarzecz</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-25.jpg" alt="">
+                    <h4>OZE</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-26.jpg" alt="">
+                    <h4>Czyste pwietrze</h4>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            <!-- bloczek karuzeli 1 END -->
+            <!-- bloczek karuzeli 2 -->
+            <div class="carousel-item" data-bs-interval="3000">
+              <div class="row align-items-center gz-counter-container">
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-23.jpg" alt="">
+                    <h4>Raport ostanie Gminy Zarzecz</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-24.jpg" alt="">
+                    <h4>ZS Zarzecz</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-25.jpg" alt="">
+                    <h4>OZE</h4>
+                  </div>  
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="gz-banery-item">
+                    <img src="images/jpg/img-jpg-26.jpg" alt="">
+                    <h4>Czyste pwietrze</h4>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            <!-- bloczek karuzeli 2 END -->
+          </div>
+        <!-- Karuzela END-->
+        </div>
+      </div>  
+    </div>
+  </div>  
+</section>
+<!-- Banery-Bottom END -->
+<!-- Footer -->
+<section class="gz-footer">
+  <div class="container">
+    <footer class="row">
+      <div class="col-3 text-center">
+        <img src="images/svg/img-svg-02.svg" alt="">
+        <h2>Gmina Zarzecze</h2>
+        <h3>Wójt gminy: Tomasz Bury</h3>
+        <p>Urzęduje od 2018r.</p>
+      </div>
+      <div class="col-3">
+        <h5>Adres:</h5>
+        <p>ul. Długa 7</p>
+        <p>37-205 Zarzecze,</p>
+        <p>Powiat Przeworski</p>
+        <p>Województwo Podkarpackie</p>
+      </div>
+      <div class="col-3">
+        <h5>Godziny otwarcia:</h5>
+        <p>Poniedziałek 7:00 – 15:00</p>
+        <p>Wtorek 7:00 – 17:00</p>
+        <p>Środa 7:00 – 15:00</p>
+        <p>Czwartek 7:00 – 15:00</p>
+        <p>Piątek 7:00 – 13:00</p>
+      </div>
+      <div class="col-3">
+        <h5>Dane:</h5>
+        <p>tel. 16 640-15-28</p>
+        <p>tel. 16 640-15-29</p>
+        <p>tel. GOPS: 16 640 11 86</p>
+        <a href="mailto:przyklad@example.com">ugzarzecze@post.pl</a>
+        <h6>Numer konta:</h6>
+        <p>27 9106 0008 2002 0000 0794 0002</p>
+      </div>
+    </footer>
+  </div>
+</section>
+<section class="gz-footer-copyright">
+  <div class="container">
+    <footer class="row">
+      <div class="col-12 text-center">
+        Copyright © Urząd Gminy Zarzecze
+      </div>
+    </footer>
+  </div>
+</section>
+<!-- Footer End -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/gz-js.js"></script>
+</body>
+</html>

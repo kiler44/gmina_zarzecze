@@ -261,6 +261,8 @@ class Mappery extends Kontener
         return $this->pobierz('Generic\Model\Galeria\Mapper');
     }
 
+    /* @return \Generic\Model\GaleriaZdjecie\Mapper
+     */
     public function GaleriaZdjecie()
     {
         return $this->pobierz('Generic\Model\GaleriaZdjecie\Mapper');

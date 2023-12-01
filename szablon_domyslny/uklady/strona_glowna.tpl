@@ -63,90 +63,13 @@
 	</div>
 </nav>
 <!-- Navbar END -->
-{{ $region_0 }}
+<!-- Sekcja 1 -->
+
+<!-- Sekcja 1 END-->
+
 
 <!-- Sekcja 2 -->
-<section class="gz-newscenter">
-	<div class="container">
-		<div class="row">
-			<div class="col-12" id="czytaj-wiecej">
-				<!-- Karuzela -->
-				<div id="carouselExampleInterval" class="carousel slide carousel-dark" data-bs-ride="carousel">
-					<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Previous</span>
-					</button>
-					<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">Next</span>
-					</button>
-					<div class="carousel-inner ">
-						<div class="carousel-item active" data-bs-interval="3000">
-							<div class="row">
-								<div class="col-md-6 col-12 gz-newscenter-left order-md-1 order-2">
-									<span class="badge bg-danger">Pilne</span>
-									<h3>Program „laptop dla ucznia”</h3>
-									<p class="blog-post-meta">12.05.2023</p>
-									<p>Uczniowie klas IV szkół podstawowych w gminie Zarzecze do końca września otrzymają na własność bezpłatne laptopy. Sprzęt będzie przekazywany przez dyrektorów szkół na podstawie umowy z rodzicem...</p>
-									<button class="btn btn-primary btn-lg ">Czytaj więcej</button>
-								</div>
-								<div class="col-md-6 col-12 gz-newscenter-right order-md-2 order-1">
-									<img src="/_szablon/images/jpg/img-jpg-02.jpg" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="carousel-item" data-bs-interval="3000">
-							<div class="row">
-								<div class="col-md-6 col-12 gz-newscenter-left order-md-1 order-2">
-									<span class="badge text-bg-success">Przetarg</span>
-									<h3>Szkolenie dla spółek i firm z gospodarki obiegu zamkniętego
-									</h3>
-									<p class="blog-post-meta">12.05.2023</p>
-									<p>Szanowni Państwo, w imieniu Polskiej Agencji Rozwoju Przedsiębiorczości (PARP) oraz Instytutu Innowacji i Odpowiedzialnego Rozwoju INNOWO mamy przyjemność zaprosić Państwa na warsztaty poświęcone ...</p>
-									<button class="btn btn-primary btn-lg">Czytaj więcej</button>
-								</div>
-								<div class="col-md-6 col-12 gz-newscenter-right order-md-2 order-1">
-									<img src="/_szablon/images/jpg/img-jpg-03.jpg" alt="">
-								</div>
-							</div>
-						</div>
-						<div class="carousel-item" data-bs-interval="3000">
-							<div class="row">
-								<div class="col-md-6 col-12 gz-newscenter-left order-md-1 order-2">
-									<h3>Usuwanie wyrobów zawierających azbest z terenu gminy zarzecze w 2023 r.
-									</h3>
-									<p class="blog-post-meta">12.05.2023</p>
-									<p>Uprzejmie informujemy, iż kolejny raz Gmina Zarzecze decyzją Zarządu Wojewódzkiego Funduszu Ochrony Środowiska i Gospodarki Wodnej w Rzeszowie otrzymała...</p>
-									<button class="btn btn-primary btn-lg">Czytaj więcej</button>
-								</div>
-								<div class="col-md-6 col-12 gz-newscenter-right order-md-2 order-1">
-									<img src="/_szablon/images/jpg/img-jpg-04.jpg" alt="">
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- Karuzela END-->
-			</div>
-		</div>
-		<div class="row g-0">
-			<div class="col-lg-8 col-12 gz-newscenter-sorter text-lg-start text-center g-0">
-				<button type="button" class="btn btn-outline-primary btn-sm gz-sorter">Sport</button>
-				<button type="button" class="btn btn-outline-primary btn-sm gz-sorter-przetarg">Przetargi</button>
-				<button type="button" class="btn btn-outline-primary btn-sm">Aktualności</button>
-				<button type="button" class="btn btn-outline-primary btn-sm">Ogłosznia</button>
-				<button type="button" class="btn btn-outline-primary btn-sm">Wydarzenia</button>
-				<button type="button" class="btn btn-outline-primary btn-sm">Kultura</button>
-				<button type="button" class="btn btn-outline-primary btn-sm">Nauka</button>
-				<button type="button" class="btn btn-outline-primary btn-sm">Inwestycje</button>
-				<button type="button" class="btn btn-outline-primary btn-sm gz-sorter-allert">Ostatnia chwila</button>
-			</div>
-			<div class="col-lg-4 col 12 d-flex justify-content-lg-end justify-content-center g-0">
-				<button class="btn btn-outline-primary sorter-more">Wszystkie Informacje</button>
-			</div>
-		</div>
-	</div>
-</section>
+{{ $region_0 }}
 <!-- Sekcja 2 END-->
 
 <!-- Sekcja 3 Icon box 01 -->
@@ -906,39 +829,9 @@
 <!-- Sekcja 9 Banery-01 END -->
 <!-- Footer -->
 <section class="gz-footer">
-	{{ $region_3 }}
 	<div class="container">
 		<footer class="row">
-			<div class="col-3 text-center">
-				<img src="/_szablon/images/svg/img-svg-02.svg" alt="">
-				<h2>Gmina Zarzecze</h2>
-				<h3>Wójt gminy: Tomasz Bury</h3>
-				<p>Urzęduje od 2018r.</p>
-			</div>
-			<div class="col-3">
-				<h5>Adres:</h5>
-				<p>ul. Długa 7</p>
-				<p>37-205 Zarzecze,</p>
-				<p>Powiat Przeworski</p>
-				<p>Województwo Podkarpackie</p>
-			</div>
-			<div class="col-3">
-				<h5>Godziny otwarcia:</h5>
-				<p>Poniedziałek 7:00 – 15:00</p>
-				<p>Wtorek 7:00 – 17:00</p>
-				<p>Środa 7:00 – 15:00</p>
-				<p>Czwartek 7:00 – 15:00</p>
-				<p>Piątek 7:00 – 13:00</p>
-			</div>
-			<div class="col-3">
-				<h5>Dane:</h5>
-				<p>tel. 16 640-15-28</p>
-				<p>tel. 16 640-15-29</p>
-				<p>tel. GOPS: 16 640 11 86</p>
-				<a href="mailto:przyklad@example.com">ugzarzecze@post.pl</a>
-				<h6>Numer konta:</h6>
-				<p>27 9106 0008 2002 0000 0794 0002</p>
-			</div>
+			{{ $region_3 }}
 		</footer>
 	</div>
 </section>
@@ -946,7 +839,7 @@
 	<div class="container">
 		<footer class="row">
 			<div class="col-12 text-center">
-				Copyright © Urząd Gminy Zarzecze
+				{$podpis_stopka}
 			</div>
 		</footer>
 	</div>

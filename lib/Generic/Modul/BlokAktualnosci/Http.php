@@ -98,6 +98,7 @@ class Http extends Modul\Http
 					}
 				}
 
+                $dane['lp'] = $licznik;
 				$dane['klasa'] = ($licznik % 2) ? 'parzysty' : 'nieparzysty';
 				$dane['tytul'] = str_cut($aktualnosc['tytul'], $this->k->k['index.znakow_w_tytule']);
 				$dane['url'] = Router::urlHttp($kategoriaUrl, array('aktualnosc', $aktualnosc['id']));
@@ -109,7 +110,7 @@ class Http extends Modul\Http
 
 				if ($this->k->k['index.pokazuj_zdjecie'] && $aktualnosc['zdjecie_glowne'] != '')
 				{
-					$dane['zdjecie'] = str_replace('{ID_AKTUALNOSCI}', $aktualnosc['id'], Cms::inst()->url('aktualnosci')).$prefix.$aktualnosc['zdjecie_glowne'];
+					$dane['zdjecie'] = Cms::inst()->url('aktualnosci',$aktualnosc['id']).'/'.$prefix.$aktualnosc['zdjecie_glowne'];
 					$this->szablon->ustawBlok('/index/wiersz/zdjecie_glowne', $dane);
 				}
 

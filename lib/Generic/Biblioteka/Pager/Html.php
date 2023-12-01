@@ -24,10 +24,10 @@ class Html extends Pager implements Tlumaczenia\Interfejs, Konfiguracja\Interfej
 	 * @var array
 	 */
 	protected $tlumaczenia = array(
-		'pager_wstecz' => '&laquo;',
-		'pager_przod' => '&raquo;',
-		'pager_pierwsza' => '&laquo;',
-		'pager_ostatnia' => '&raquo;',
+		'pager_wstecz' => '&laquo; Poprzednia',
+		'pager_przod' => '&raquo; Następna',
+		'pager_pierwsza' => '&laquo; Poprzednia',
+		'pager_ostatnia' => '&raquo; Następna',
 		'pager_wybierz_strone' => '',
 		'pager_wybierz_przedzial' => 'Przedział: ',
 		'pager_wybierz_zakres' => 'Na stronie: ',
@@ -291,7 +291,6 @@ $(document).ready(function(){
 		$nazwaKlasy = explode('\\', get_class($this));
 		$namespaceJezyka = '\\Generic\\Tlumaczenie\\'.ucfirst(KOD_JEZYKA_ITERFEJSU).'\\Biblioteka\\Pager\\'.end($nazwaKlasy);
 		$this->j = new $namespaceJezyka;
-		
 		$this->ustawTlumaczenia(Cms::inst()->lang['pagery']);
 		$this->ustawSzablon(CMS_KATALOG . '/szablon_system/pager_bootstrap.tpl');
 	}
@@ -884,6 +883,7 @@ $(document).ready(function(){
 			return false;
 		}
 		$this->szablon = $nowySzablon;
+
 		$this->szablon->ustawGlobalne($this->j->t);
 		$this->szablon->ustawGlobalne(array(
 			'pager_wartosc_nrStrony' => $this->_nrStrony,

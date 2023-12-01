@@ -1,21 +1,34 @@
+
+
+
+			<li class="page-item gz-item"><a class="page-link" href="#">1</a></li>
+
+			<li class="page-item gz-item"><a class="page-link" href="#">3</a></li>
+
+
+
 {{BEGIN html}}
 	{{$wyborZakresu}}
 	{{$skoczDo}}
-<p class="pager">
+<div class="col-12">
+	<nav class="gz-pagination">
+		<ul class="pagination justify-content-center">
 	{{$wyborStrony}}
-</p>
+		</ul>
+	</nav>
+</div>
 {{END}}
 
 {{BEGIN linkiWyborStrony}}
-	{{BEGIN skokPoprzednia}} <a href="{{escape($link)}}" class="prev"></a> {{END}}
-	{{BEGIN pierwszaStrona}} <a href="{{escape($link)}}" class="first">{{$nrStrony}}</a> .. {{END}}
-	{{BEGIN skokWstecz}} <a href="{{escape($link)}}" class="">{{$nrStrony}}</a> .. {{END}}
-	{{BEGIN poprzedzajacaStrona}} <a href="{{escape($link)}}" class="">{{$nrStrony}}</a> | {{END}}
-	{{BEGIN biezacaStrona}} <a class="current">{{$nrStrony}}</a> {{END}}
-	{{BEGIN nastepujacaStrona}} | <a href="{{escape($link)}}" class="">{{$nrStrony}}</a> {{END}}
-	{{BEGIN skokNaprzod}} .. <a href="{{escape($link)}}" class="">{{$nrStrony}}</a> {{END}}
-	{{BEGIN ostatniaStrona}} .. <a href="{{escape($link)}}" class="last">{{$nrStrony}}</a> {{END}}
-	{{BEGIN skokNastepna}} <a href="{{escape($link)}}" class="next"></a> {{END}}
+	{{BEGIN skokPoprzednia}}<li class="page-item nav-arrow"><a class="page-link" href="{{escape($link)}}" tabindex="-1" aria-disabled="true">{{ $pager_wstecz }}</a></li>{{END}}
+			{{BEGIN pierwszaStrona}} <li class="page-item gz-item"><a href="{{escape($link)}}" class="page-link">{{$nrStrony}}</a></li>{{END}}
+			{{BEGIN skokWstecz}} <li class="page-item nav-arrow"><a href="{{escape($link)}}" class="">{{$nrStrony}}</a></li>{{END}}
+			{{BEGIN poprzedzajacaStrona}} <li class="page-item gz-item"><a href="{{escape($link)}}" class="page-link">{{$nrStrony}}</a></li>{{END}}
+			{{BEGIN biezacaStrona}} <li class="page-item active"><a class="page-link">{{$nrStrony}}</a></li> {{END}}
+			{{BEGIN nastepujacaStrona}}<li class="page-item gz-item"><a href="{{escape($link)}}" class="page-link">{{$nrStrony}}</a></li> {{END}}
+			{{BEGIN skokNaprzod}}<li class="page-item gz-item"><a href="{{escape($link)}}" class="page-link">{{$nrStrony}}</a></li> {{END}}
+			{{BEGIN ostatniaStrona}}<li class="page-item gz-item"><a href="{{escape($link)}}" class="page-link">{{$nrStrony}}</a></li> {{END}}
+	{{BEGIN skokNastepna}}<li class="page-item nav-arrow"><a class="page-link" href="{{escape($link)}}">{{ $pager_przod }}</a></li>{{END}}
 </span></span>
 {{END}}
 
