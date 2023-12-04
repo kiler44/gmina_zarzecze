@@ -1,22 +1,12 @@
 {{BEGIN komunikat}}
-<div class="r_clear"></div>
-	<div class="komunikat {{$klasa}}">
-		<div class="box {{$typ}}">
-			<div class="top_left">
-				<div class="top_right">
-					<div class="bottom_right">
-						<div class="bottom_left">
-							<span class="komunikat_tresc">{{$tresc}}</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-<div class="r_clear"></div>
+<div class="alert alert-warning {{$klasa}} {{$typ}}" role="alert">
+	{{$tresc}}
+</div>
 {{END}}
 
 {{BEGIN index}}
+<h1>{{$tytul_modulu}}</h1>
+<div class="col-lg-9 col-12">
 {{$tresc}}
-<div class="clear"></div>
+</div>
 {{END}}

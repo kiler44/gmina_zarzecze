@@ -39,7 +39,7 @@ class Admin extends Tlumaczenie
 		'usun.blad_nie_mozna_usunac_kategorii' => 'Nie można usunąć kategorii!',
 		'usun.info_usunieto_kategorie' => 'Kategoria została usunięta',
 			'_akcje_etykiety_' => array(
-			'wykonajIndex' => 'Edycja treści bloku',
+			'wykonajIndex' => 'Edycja treści bloku opisowego',
 		),
 	);
 }
