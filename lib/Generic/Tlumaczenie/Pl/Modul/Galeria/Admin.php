@@ -79,6 +79,7 @@ class Admin extends Tlumaczenie
         'formularz.zdjecia.zakladka' => 'Zdjęcia',
 		'formularz.dodaj_zdjecia.etykieta' => 'Wybierz zdjęcia, które zostaną dodane do galerii',
 		'formularz.etykieta_data_dodania' => 'Data dodania',
+		'formularz.zdjecieGlowne.etykieta' => 'Zdjęcie główne',
 		'formularz.etykieta_dodaj_zdjecia_przycisk' => 'Wybierz pliki',
 		'formularz.etykieta_katalog' => 'Katalog galerii',
 		'formularz.info_dodano_galerie' => 'Galeria została utworzona - teraz możesz dodawać zdjęcia.</a>',

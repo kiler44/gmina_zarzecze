@@ -35,6 +35,7 @@ class Obiekt extends ObiektDanych
 		'dataDodania',
 		'zdjecieGlowne',
 		'publikuj',
+		'idKategorii',
 	);
 
 
@@ -47,6 +48,12 @@ class Obiekt extends ObiektDanych
 		$this->_cache['zdjecia'] = $zdjeciaMapper->pobierzDlaGalerii($this->_wartosci['id']);
 		return $this->_cache['zdjecia'];
 	}
+
+	public function pobierzKategorie():\Generic\Model\Kategoria\Obiekt
+    {
+        $kategoriaMapper = new \Generic\Model\Kategoria\Mapper();
+        return $kategoriaMapper->pobierzPoId($this->idKategorii);
+    }
 
 	public function dodajZdjecie(string $nazwaPliku, string $opis):bool
     {

@@ -459,7 +459,7 @@ class Edycja extends \Generic\Formularz\Abstrakcja
 			
 			if (strpos($nazwaInputa, 'nazwaPrzyjazna') !== false)
 			{
-				if (count($this->obiekt->nazwaPrzyjazna) > 1)
+				if (is_array($this->obiekt->nazwaPrzyjazna) && count($this->obiekt->nazwaPrzyjazna) > 1)
 				{
 					foreach ($this->obiekt->nazwaPrzyjazna as $kod => $nazwaJezyka)
 					{

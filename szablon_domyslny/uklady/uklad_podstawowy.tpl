@@ -13,6 +13,7 @@
 	<!-- Bootstrap css -->
 	<link href="/_szablon/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/_szablon/css/style.css " rel="stylesheet">
+	<script src="/_szablon/lightbox/css/lightbox.css"></script>
 	<title>{{$tytul_strony}}</title>
 
 	<meta name="description" content="{{$opis_strony}}" />
@@ -30,6 +31,13 @@
 	<script src="/_szablon/js/jquery-3.6.0.min.js"></script>
 	<script src="/_szablon/js/moment.min.js"></script>
 	<script src="/_szablon/js/pl.min.js"></script>
+	<script src="/_szablon/lightbox/js/lightbox.js"></script>
+	<script>
+		lightbox.option({
+			'resizeDuration': 200,
+			'wrapAround': true
+		})
+	</script>
 	{{$naglowek_html}}
 	{{BEGIN rss}}<link rel="alternate" type="application/rss+xml" title="{{$tytul}}" href="{{$url}}" />
 	{{END}}

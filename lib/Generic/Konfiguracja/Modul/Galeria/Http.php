@@ -84,7 +84,7 @@ class Http extends Konfiguracja
 	'listaGalerii.prefix_miniaturki' => array(
 		'opis' => '',
 		'typ' => 'varchar',
-		'wartosc' => 'small',
+		'wartosc' => 'miniaturka-podglad',
 		),
 
 	'listaGalerii.wierszy_na_stronie' => array(
