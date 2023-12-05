@@ -388,7 +388,9 @@ class Router
 		
 		if ($domena == true)
 		{
-			$url = Zadanie::protokol().'://';
+			//$url = Zadanie::protokol().'://';
+
+            $url = $protokol = (Cms::inst()->config['router']['caly_serwis_https'] || ($cel instanceof Kategoria\Obiekt && $cel->wymagaHttps) ) ? 'https' : 'http';
 			$url .= WWW_PREF.Cms::inst()->projekt->domena.'/ajax/?';
 		}
 		else

@@ -17,35 +17,74 @@
 {{END}}
 
 {{BEGIN listaGalerii}}
-	{{ BEGIN galeria_wylistowanie }}
-		<div class="galeria">
-			<div class="content">
-				<div class="zdjecie_glowne_miniaturka"><a href="{{ $link }}" title="{{escape($zdjecie_alt)}}"><img src="{{$zdjecie}}" alt="{{escape($zdjecie_alt)}}"/></a></div>
-				<div class="dane">
-					<h4 class="nazwa"><a href="{{ $link }}">{{ $nazwa }}</a></h4>
-					<p class="opis">{{ $opis }}</p>
+<div class="col-12 text-center">
+<h1>{{$tytul_strony}}</h1>
+</div>
+<div class="gz-section gz-aktualnosci gz-mt-20">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center">
+				<div class="gz-sorter">
+					{{BEGIN kategoriaGalerii}}
+					<a href="{{$link}}" type="button" class="btn {{IF aktywna}}btn-primary{{ELSE}}btn-outline-primary{{END}} btn-sm" onclick="filterGallery('')">{{$nazwa}}</a>
+					{{END}}
+				</div>
+				<div class="row gz-gallery-section">
+					{{ BEGIN galeria_wylistowanie }}
+					<div class="col-lg-4 col-6 gallery-item" data-tags="sport">
+						<img src="{{$zdjecie}}" alt="{{escape($zdjecie_alt)}}" >
+						<div class="gallery-overlay"></div>
+						<div class="gallery-content">
+							<div class="gallery-tags">
+								<ul>
+									<li>{{$kategoria}}</li>
+								</ul>
+							</div>
+							<h4 class="gallery-title">{{ $nazwa }}</h4>
+						</div>
+						<a href="{{ $link }}"  title="{{escape($zdjecie_alt)}}" class="gallery-button">Cała galeria »</a>
+					</div>
+					{{ END }}
 				</div>
 			</div>
 		</div>
-	{{ END }}
+	</div>
+</div>
 	<div class="r_clear s20"></div>
 	{{$pager}}
 {{END}}
 
 
 {{BEGIN galeria}}
-<h1 class="tytul">{{$tytul_strony}}</h1>
-<div class="lista_miniaturek">
-	{{ BEGIN miniaturka }}
-	<div class="miniaturka">
-		<div class="image"><a href="{{ $zdjecie_link }}" title="{{ $tytul }}" {{ $lightbox }}><img src="{{ $miniaturka }}" alt="{{escape($tytul)}}"/></a></div>
-		<div class="caption"><a href="{{ $zdjecie_link }}" title="{{ $tytul }}" {{ $lightbox }}>{{ $tytul }}</a></div>
-	</div>
-	{{ END }}
-	<div class="r_clear"></div>
-	{{$pager}}
+<div class="col-12 text-center">
+	<h1>{{$tytul_strony}}</h1>
 </div>
-<div class="back"><a href="{{ $wstecz_link }}">{{ $wstecz_etykieta }}</a></div>
+<div class="gz-section gz-aktualnosci gz-mt-20">
+	<div class="container">
+		<div class="row">
+			<div class="row gz-gallery-section">
+				{{ BEGIN miniaturka }}
+				<div class="col-lg-4 col-6 gallery-item" data-tags="sport">
+					<img src="{{ $miniaturka }}" data-lightbox="roadtrip" alt="{{escape($tytul)}}"" >
+					<div class="gallery-overlay"></div>
+					<div class="gallery-content">
+						<h4 class="gallery-title">{{ $opis }}</h4>
+					</div>
+				</div>
+				<!--
+					<div class="caption"><a href="{{ $zdjecie_link }}" title="{{ $tytul }}" {{ $lightbox }}>{{ $tytul }}</a></div>
+					-->
+				{{ END }}
+				<div class="r_clear"></div>
+				{{$pager}}
+			</div>
+			<div class="back">
+			<a href="{{ $wstecz_link }}" class="btn">{{ $wstecz_etykieta }}</a>
+			</div>
+		</div>
+	</div>
+</div>
+
 {{END}}
 
 

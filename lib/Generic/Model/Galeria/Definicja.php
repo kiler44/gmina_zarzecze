@@ -27,12 +27,13 @@ class Definicja extends Biblioteka\DefinicjaObiektu
 	public $polaObiektuTypy = array(
         'id' => self::_INTEGER,
         'idProjektu' => self::_INTEGER,
+        'idKategorii' => self::_INTEGER,
         'kodJezyka' => self::_STRING,
         'nazwa' => self::_STRING,
         'opis' => self::_STRING,
         'autor' => self::_STRING,
         'dataDodania' => self::_DATETIME,
-        'zdjecieGlowne' => self::_BOOLEAN,
+        'zdjecieGlowne' => self::_STRING,
         'publikuj' => self::_BOOLEAN,
 	);
 

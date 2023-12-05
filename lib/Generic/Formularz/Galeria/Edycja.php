@@ -58,13 +58,12 @@ class Edycja extends \Generic\Formularz\Abstrakcja
                     'prefix' => 'miniaturka-podglad',
                     'lista' => $lista_zdjec,
                     'wyswietlaj_drop_area' => 0,
-                    'rozmiary_miniaturek' => $this->konfiguracja['kody_miniatur']
+                    'rozmiary_miniaturek' => $this->konfiguracja['kody_miniatur'],
+                    'dozwolone_rozszerzenia' => $this->konfiguracja['formularz.dozwolone_formaty_zdjec'],
                 )
             ));
             $this->formularz->zamknijZakladke('zdjecia');
 		}
-
-
 
 		$this->formularz->otworzZakladke('dane_opisowe');
 
@@ -83,6 +82,37 @@ class Edycja extends \Generic\Formularz\Abstrakcja
 			'atrybuty' => array('maxlength' => 128),
 		)));
 		$this->formularz->autor->dodajFiltr('strip_tags', 'filtr_xss', 'trim');
+
+		/**  START ZDJECE GLOWNE */
+        $kategorieMapper = new \Generic\Model\Kategoria\Mapper();
+        $kategoriaCropper = $kategorieMapper->pobierzDlaModulu('CropperZdjec');
+
+        $linkCropper = '';
+        $prefix = (isset($this->konfiguracja['formularz.prefix_zdjecia'])) ? $this->konfiguracja['formularz.prefix_zdjecia'].'-' : '';
+        $prefix_miniaturki = (isset($this->konfiguracja['formularz.prefix_miniaturki_zdjecia'])) ? $this->konfiguracja['formularz.prefix_miniaturki_zdjecia'].'-' : '';
+        if (isset($kategoriaCropper[0]) && $kategoriaCropper[0] instanceof \Generic\Model\Kategoria\Obiekt && $this->obiekt->id > 0)
+        {
+            $zdjecieDoCroppera = Cms::inst()->url('galeria', $this->obiekt->id).'/'. $prefix.trim($this->obiekt->zdjecieGlowne);
+            $sciezkaZdjecia = Cms::inst()->katalog('galeria', $this->obiekt->id);
+
+            $linkCropper = Router::urlAjax('Http', $kategoriaCropper[0], 'formularz', array(
+                'obraz' => urlencode(zakoduj($zdjecieDoCroppera, Cms::inst()->config['cropper']['klucz_szyfrowania'])),
+                'sciezka' => urlencode(zakoduj($sciezkaZdjecia, Cms::inst()->config['cropper']['klucz_szyfrowania'])),
+            ));
+        }
+
+        $this->formularz->input(new Input\ZdjecieCropowane('zdjecieGlowne', '', array(
+            'wartosc' => array('name' => (($this->obiekt->zdjecieGlowne != '') ? $prefix.$this->obiekt->zdjecieGlowne : '')),
+            'sciezka_plikow' => Cms::inst()->url('galeria', $this->obiekt->id).'/',
+            'link_usun' => (($this->obiekt->id > 0) ? Router::urlAdmin($this->kategoriaLinkow, 'usunZdjecie', array('id' => $this->obiekt->id, 'glowne' => 1)) : ''),
+            'link_miniaturka' => ($this->obiekt->zdjecieGlowne != '') ? $prefix_miniaturki.$this->obiekt->zdjecieGlowne : '',
+            //'link_popraw_miniaturke' => (($this->obiekt->id > 0) ? Router::urlAdmin($this->kategoriaLinkow, 'poprawMiniaturke', array('id' => $this->obiekt->id, 'kod' => '{KOD}', 'x1' => '{X1}', 'x2' => '{X2}', 'y1' => '{Y1}', 'y2' => '{Y2}')) : ''),
+            'link_popraw_miniaturke' => $linkCropper,
+            'rozmiary_miniaturek' => $this->konfiguracja['kody_miniatur'],
+        )));
+        $this->formularz->zdjecieGlowne->dodajWalidator(new Walidator\PoprawnyUpload());
+        $this->formularz->zdjecieGlowne->dodajWalidator(new Walidator\RozszerzeniePliku($this->konfiguracja['formularz.dozwolone_formaty_zdjec']));
+        /** koniec zdjecie glowne */
 
 		$this->formularz->input(new Input\Checkbox('publikuj'));
 		$this->formularz->publikuj->dodajFiltr('intval','abs');

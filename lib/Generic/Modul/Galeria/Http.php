@@ -8,6 +8,7 @@ use Generic\Biblioteka\Cms;
 use Generic\Model\Galeria;
 use Generic\Biblioteka\Okruszki;
 use Generic\Model\GaleriaZdjecie;
+use Generic\Model\Kategoria;
 
 
 /**
@@ -65,18 +66,34 @@ class Http extends Modul\Http
 	}
 
 
-
 	public function wykonajListaGalerii()
 	{
 		$this->ustawGlobalne(array(
-			'tytul_modulu' => $this->j->t['listaGalerii.tytul_modulu']
+			'tytul_modulu' => $this->j->t['listaGalerii.tytul_modulu'],
+			'tytul_strony' => $this->j->t['listaGalerii.tytul_modulu']
 		));
 
 		$mapper = $this->dane()->Galeria();
-		$ilosc = $mapper->iloscWszystkoOpublikowane();
+		$ilosc = $mapper->iloscWszystkoOpublikowane(['id_kategorii' => $this->kategoria->id]);
+
+        $kategorieGaleri = $this->dane()->Kategoria()->pobierzDlaModulu('Galeria');
+        /**
+         * @var Kategoria\Obiekt $kategoria
+         */
+        foreach ($kategorieGaleri as $kategoria)
+        {
+            if(!$kategoria->czyWidoczna) continue;
+
+            $this->szablon->ustawBlok('listaGalerii/kategoriaGalerii', [
+                'nazwa' => $kategoria->nazwa,
+                'link' => Router::urlHttp($kategoria->id),
+                'aktywna' => ($kategoria->id == $this->kategoria->id)
+            ]);
+        }
 
 		if ($ilosc > 0)
 		{
+
 			$nrStrony = $this->pobierzParametr('url_parametr_1', 1, true, array('intval','abs'));
 			$naStronie = $this->pobierzParametr('url_parametr_2', $this->k->k['listaGalerii.wierszy_na_stronie'], true, array('intval','abs'));
 
@@ -85,7 +102,10 @@ class Http extends Modul\Http
 			$pager->ustawTlumaczenia($this->j->t['listaGalerii.pager']);
 			$pager->ustawSzablon($this->ladujSzablonZewnetrzny($this->k->k['szablon.pager']), false);
 
-			foreach ($mapper->pobierzWszystkoOpublikowane($pager) as $galeria)
+            /**
+             * @var Galeria\Obiekt $galeria
+             */
+			foreach ($mapper->pobierzWszystkoOpublikowane(['id_kategorii' => $this->kategoria->id], $pager) as $galeria)
 			{
 				if ($galeria->publikuj == 0) continue;
 
@@ -103,8 +123,9 @@ class Http extends Modul\Http
 				if ($galeria->zdjecieGlowne != '')
 				{
 					$prefix = (empty($this->k->k['listaGalerii.prefix_miniaturki'])) ? null : $this->k->k['listaGalerii.prefix_miniaturki'].'-';
-					$tresc['zdjecie'] = Cms::inst()->url('galeria', $galeria->id).$prefix.$galeria->zdjecieGlowne;
+					$tresc['zdjecie'] = Cms::inst()->url('galeria', $galeria->id).'/'.$prefix.$galeria->zdjecieGlowne;
 					$tresc['zdjecie_alt'] = $galeria->nazwa;
+                    $tresc['kategoria'] = $galeria->pobierzKategorie()->nazwa;
 
 					$this->szablon->ustawBlok('listaGalerii/galeria_wylistowanie/zdjecie_glowne', $tresc);
 				}
@@ -121,7 +142,9 @@ class Http extends Modul\Http
 			$podsumowanie['pager'] = $pager->html(Router::urlHttp($this->kategoria, array('', '{NR_STRONY}', '{NA_STRONIE}')));
 
 			$this->szablon->ustawBlok('listaGalerii/podsumowanie', $podsumowanie);
-			$this->tresc .= $this->szablon->parsujBlok('listaGalerii', ['pager' => $pager->html(Router::urlHttp($this->kategoria))]);
+			$this->tresc .= $this->szablon->parsujBlok('listaGalerii', [
+			    'pager' => $pager->html(Router::urlHttp($this->kategoria)),
+            ]);
 		}
 		else
 		{
