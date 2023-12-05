@@ -4,6 +4,7 @@ use Generic\Biblioteka\Input\MultiUploadZdjec;
 use Generic\Biblioteka\Modul;
 use Generic\Biblioteka\Cms;
 use Generic\Biblioteka\Plik\MultiUpload;
+use Generic\Biblioteka\Sterownik;
 use Generic\Biblioteka\TabelaDanych;
 use Generic\Biblioteka\Router;
 use Generic\Biblioteka\Pager;
@@ -35,8 +36,6 @@ class Admin extends Modul\Admin
 	 */
 	protected $j;
 
-
-
 	protected $urlZdjec;
 
 	protected $uprawnienia = array(
@@ -50,11 +49,12 @@ class Admin extends Modul\Admin
 		'wykonajUsunPlik',
 	);
 
-
-
 	public function wykonajIndex()
 	{
-		$this->ustawGlobalne(array('tytul_strony' => $this->j->t['index.tytul_strony']));
+        $this->ustawGlobalne(array(
+            'tytul_strony' => $this->j->t['index.tytul_strony'],
+            'tytul_modulu' => $this->j->t['index.tytul_strony'].' '.$this->kategoria->nazwa,
+        ));
 
 		$obiektFormularza = new \Generic\Formularz\Galeria\Wyszukiwanie();
 
@@ -75,6 +75,7 @@ class Admin extends Modul\Admin
 		);
 
 		$kryteria = array_merge(array(), $obiektFormularza->pobierzZmienioneWartosci());
+        $kryteria['id_kategorii'] = $this->kategoria->id;
 
 		$mapper = $this->dane()->Galeria();
 		$ilosc = $mapper->iloscSzukaj($kryteria);
@@ -120,6 +121,7 @@ class Admin extends Modul\Admin
 
 		$galeria = new Galeria\Obiekt();
 		$galeria->katalog = '';
+		$galeria->idKategorii = $this->kategoria->id;
 
 		$dane['form'] = $this->formularz($galeria);
 
@@ -183,69 +185,89 @@ class Admin extends Modul\Admin
 	public function wykonajUsunZdjecie()
 	{
 		$baza = Cms::inst()->Baza();
-		$mapper = new GaleriaZdjecie\Mapper();
-		$zdjecie = $mapper->pobierzPoId(Zadanie::pobierz('id', 'intval','abs'));
+		$glowne = Zadanie::pobierz('glowne');
+        $id = Zadanie::pobierz('id', 'intval','abs');
+        $galeria_mapper = $this->dane()->Galeria();
 
-		if ($zdjecie instanceof GaleriaZdjecie\Obiekt)
-		{
-			$nazwa_pliku = $zdjecie->nazwaPliku;
-			$id_galerii = $zdjecie->idGalerii;
+        if($glowne)
+        {
+            $galeria = $this->dane()->Galeria()->pobierzPoId($id);
+            if($galeria instanceof Galeria\Obiekt)
+            {
+                $id_galerii = $id;
+                $nazwa_pliku = $galeria->zdjecieGlowne;
+                $galeria->zdjecieGlowne = '';
+                $galeria->zapisz($galeria_mapper);
+            }
+        }
+        else
+        {
+            $mapper = new GaleriaZdjecie\Mapper();
+            $zdjecie = $mapper->pobierzPoId($id);
+            if ($zdjecie instanceof GaleriaZdjecie\Obiekt) {
+                $nazwa_pliku = $zdjecie->nazwaPliku;
+                $id_galerii = $zdjecie->idGalerii;
 
-			$galeria_mapper = $this->dane()->Galeria();
-			$galeria = $galeria_mapper->pobierzPoId($id_galerii);
+                $galeria = $galeria_mapper->pobierzPoId($id_galerii);
+                $galeria_zmien = true;
 
-			$galeria_zmien = true;
+                $baza->transakcjaStart();
+                if ($galeria->zdjecieGlowne == $nazwa_pliku) {
+                    $galeria->zdjecieGlowne = '';
+                    $galeria_zmien = $galeria->zapisz($galeria_mapper);
+                }
+                $zdjecie_usun = $zdjecie->usun($mapper);
+            }
+            else
+            {
+                $this->komunikat($this->j->t['usun.blad_brak_zdjecia'],'error', 'sesja');
+            }
+        }
 
-			$baza->transakcjaStart();
-			if($galeria->zdjecieGlowne == $nazwa_pliku)
-			{
-				$galeria->zdjecieGlowne = '';
-				$galeria_zmien = $galeria->zapisz($galeria_mapper);
-			}
-			$zdjecie_usun = $zdjecie->usun($mapper);
+        if($nazwa_pliku != '')
+        {
+            $doUsuniecia = 0;
+            $usuniete = 0;
+            foreach ($this->k->k['upload.miniaturki_kody'] as $prefix => $kod)
+            {
+                if ($prefix == '')
+                {
+                    continue;
+                }
+                else
+                {
+                    $doUsuniecia++;
+                    dump(Cms::inst()->katalog('galeria', $id_galerii).$prefix.'-'.$nazwa_pliku);
+                    $plik = new Plik(Cms::inst()->katalog('galeria', $id_galerii).$prefix.'-'.$nazwa_pliku);
+                    if ( ! $plik->istnieje() || $plik->usun()) $usuniete++;
+                }
+            }
 
-			$doUsuniecia = 0;
-			$usuniete = 0;
-			foreach ($this->k->k['upload.miniaturki_kody'] as $prefix => $kod)
-			{
-				if ($prefix == '')
-				{
-					continue;
-				}
-				else
-				{
-					$doUsuniecia++;
-					$plik = new Plik(Cms::inst()->katalog('galeria', $id_galerii).$prefix.'-'.$nazwa_pliku);
-					if ( ! $plik->istnieje() || $plik->usun()) $usuniete++;
-				}
-			}
-			$doUsuniecia++;
-			$plik = new Plik(Cms::inst()->katalog('galeria', $id_galerii).$nazwa_pliku);
-			if ( ! $plik->istnieje() || $plik->usun()) $usuniete++;
-			$doUsuniecia++;
-			$plik = new Plik(Cms::inst()->katalog('galeria', $id_galerii).'kopia_'.$nazwa_pliku);
-			if ( ! $plik->istnieje() || $plik->usun()) $usuniete++;
+            $doUsuniecia++;
+            $plik = new Plik(Cms::inst()->katalog('galeria', $id_galerii).$nazwa_pliku);
+            if ( ! $plik->istnieje() || $plik->usun()) $usuniete++;
+            $doUsuniecia++;
+            $plik = new Plik(Cms::inst()->katalog('galeria', $id_galerii).'kopia_'.$nazwa_pliku);
+            if ( ! $plik->istnieje() || $plik->usun()) $usuniete++;
 
-			if ($doUsuniecia != $usuniete)
-			{
-				$this->komunikat($this->j->t['usun.blad_nie_mozna_usunac_plikow_zdjecia'], 'warning', 'sesja');
-			}
+            if ($doUsuniecia != $usuniete)
+            {
+                $this->komunikat($this->j->t['usun.blad_nie_mozna_usunac_plikow_zdjecia'], 'warning', 'sesja');
+            }
 
-			if ($galeria_zmien && $zdjecie_usun)
-			{
-				$baza->transakcjaPotwierdz();
-				$this->komunikat($this->j->t['usun.info_usunieto_zdjecie'], 'info', 'sesja');
-			}
-			else
-			{
-				$baza->transakcjaCofnij();
-				$this->komunikat($this->j->t['usun.blad_nie_mozna_usunac_zdjecia'], 'error', 'sesja');
-			}
-		}
-		else
-		{
-			$this->komunikat($this->j->t['usun.blad_brak_zdjecia'],'error', 'sesja');
-		}
+            if ($galeria_zmien && $zdjecie_usun)
+            {
+                $baza->transakcjaPotwierdz();
+                $this->komunikat($this->j->t['usun.info_usunieto_zdjecie'], 'info', 'sesja');
+            }
+            else
+            {
+                $baza->transakcjaCofnij();
+                $this->komunikat($this->j->t['usun.blad_nie_mozna_usunac_zdjecia'], 'error', 'sesja');
+            }
+        }
+
+
 		Router::przekierujDo(Router::urlAdmin($this->kategoria, 'edytuj', array('id' => $id_galerii)));
 	}
 
@@ -318,16 +340,16 @@ class Admin extends Modul\Admin
 		$obiektFormularza->ustawTlumaczenia($this->pobierzBlokTlumaczen('formularz'))
 			->ustawObiekt($galeria)
 			->ustawKategorieLinkow($this->kategoria)
-			->ustawKonfiguracje(array(
+			->ustawKonfiguracje(array_merge(array(
 			    'wymagane_pola' => $this->k->k['formularz.wymagane_pola'],
                 'urlZalacznikow' => Cms::inst()->url('galeria' ,$galeria->id),
                 'kody_miniatur' => $rozmiaryMiniatur = $this->k->k['upload.miniaturki_kody'],
-                ));
+
+                ), $this->pobierzKonfiguracje()));
 
 		if ($obiektFormularza->wypelniony() && $obiektFormularza->danePoprawne())
-		{
 			$this->zapiszGalerie($galeria, $obiektFormularza->pobierzWartosci());
-		}
+
 		return $obiektFormularza->html();
 	}
 
@@ -348,6 +370,11 @@ class Admin extends Modul\Admin
 	    
         foreach ($wartosci as $klucz => $wartosc)
         {
+            if ($klucz == 'zdjecieGlowne')
+            {
+                $zdjecieGlowne = $wartosc;
+                continue;
+            }
             $galeria->$klucz = $wartosc;
         }
 
@@ -380,6 +407,25 @@ class Admin extends Modul\Admin
 		$mapper = $this->dane()->Galeria();
 		if ($galeria->zapisz($mapper))
 		{
+            if (is_array($zdjecieGlowne) && isset($zdjecieGlowne['error']) && $zdjecieGlowne['error'] === UPLOAD_ERR_OK)
+            {
+                $katalog = Cms::inst()->katalog('galeria', $galeria->id);
+                $k = new Katalog($katalog, true);
+
+                $nazwa_pliku = Plik::unifikujNazwe($zdjecieGlowne['name']);
+                $zdjecie = new Plik\Zdjecie($zdjecieGlowne['tmp_name']);
+                $zdjecie->przeniesDo($katalog.$nazwa_pliku);
+
+                foreach ($this->k->k['upload.miniaturki_kody'] as $prefix => $kod)
+                {
+                    $zdjecie->tworzMiniaturke($katalog.$prefix.'-'.$nazwa_pliku, $kod);
+                }
+
+                $zdjecie->usun();
+
+                $galeria->zdjecieGlowne = $nazwa_pliku;
+                $galeria->zapisz($mapper);
+            }
 			$this->komunikat($trescKomunikatu, 'info', 'sesja');
 			Router::przekierujDo(str_replace('{ID_GALERII}', $galeria->id, $przekierujUrl));
 		}

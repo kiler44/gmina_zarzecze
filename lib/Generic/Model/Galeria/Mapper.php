@@ -28,6 +28,7 @@ class Mapper extends Biblioteka\Mapper\Baza
 		'data_dodania' => 'dataDodania',
 		'zdjecie_glowne' => 'zdjecieGlowne',
 		'publikuj' => 'publikuj',
+		'id_kategorii' => 'idKategorii',
 	);
 
 	// pola tabeli tworzace klucz glowny
@@ -56,12 +57,16 @@ class Mapper extends Biblioteka\Mapper\Baza
 
 
 
-	public function pobierzWszystkoOpublikowane(Pager $pager = null, Sorter $sorter = null)
+	public function pobierzWszystkoOpublikowane(array $kryteria = [], Pager $pager = null, Sorter $sorter = null)
 	{
 		$sql = 'SELECT * FROM ' . $this->tabela
 			. ' WHERE id_projektu = ' . ID_PROJEKTU
 			. ' AND kod_jezyka = \'' . KOD_JEZYKA .'\''
 			. ' AND publikuj = true';
+        if (isset($kryteria['id_kategorii']) && $kryteria['id_kategorii'] > 0)
+        {
+            $sql .= ' AND id_kategorii = '. (int)$kryteria['id_kategorii'];
+        }
 
 		return $this->pobierzWiele($sql, $pager, $sorter);
 	}
@@ -79,12 +84,16 @@ class Mapper extends Biblioteka\Mapper\Baza
 
 
 
-	public function iloscWszystkoOpublikowane()
+	public function iloscWszystkoOpublikowane(array $kryteria = [])
 	{
 		$sql = 'SELECT COUNT(*) AS ilosc FROM ' . $this->tabela
 			. ' WHERE id_projektu = ' . ID_PROJEKTU
 			. ' AND kod_jezyka = \'' . KOD_JEZYKA .'\''
 			. ' AND publikuj = true';
+        if (isset($kryteria['id_kategorii']) && $kryteria['id_kategorii'] > 0)
+        {
+            $sql .= ' AND id_kategorii = '. (int)$kryteria['id_kategorii'];
+        }
 
 		return $this->pobierzWartosc($sql);
 	}
@@ -110,6 +119,10 @@ class Mapper extends Biblioteka\Mapper\Baza
 		{
 			$sql .= ' AND publikuj = '. (bool)$kryteria['publikuj'];
 		}
+        if (isset($kryteria['id_kategorii']) && $kryteria['id_kategorii'] > 0)
+        {
+            $sql .= ' AND id_kategorii = '. (int)$kryteria['id_kategorii'];
+        }
 		if (isset($kryteria['fraza']) && $kryteria['fraza'] != '')
 		{
 			$fraza = addslashes($kryteria['fraza']);
@@ -145,6 +158,10 @@ class Mapper extends Biblioteka\Mapper\Baza
 				$zdjecia[] = $zdjecie['id_galerii'];
 			}
 		}
+        if (isset($kryteria['id_kategorii']) && $kryteria['id_kategorii'] > 0)
+        {
+            $sql .= ' AND id_kategorii = '. (int)$kryteria['id_kategorii'];
+        }
 		if (isset($kryteria['publikuj']))
 		{
 			$sql .= ' AND publikuj = '. (bool)$kryteria['publikuj'];

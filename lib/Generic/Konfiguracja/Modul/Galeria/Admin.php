@@ -23,6 +23,30 @@ class Admin extends Konfiguracja
 			),
 		),
 
+        'formularz.dozwolone_formaty_zdjec' => array(
+            'opis' => '',
+            'typ' => 'list',
+            'wartosc' => array(
+                'jpg',
+                'png',
+                'jpeg',
+                'gif',
+                'jpe',
+            ),
+        ),
+
+        'formularz.prefix_miniaturki_zdjecia' => array(
+            'opis' => 'Rozmiar pełnego zdjęcia. Wartość musi się znajdować w określonych w polu [rozmiary_miniaturek]',
+            'typ' => 'varchar',
+            'wartosc' => 'miniaturka-podglad',
+        ),
+
+        'formularz.prefix_zdjecia' => array(
+            'opis' => 'Rozmiar zdjęcia wyświetlany w podglądzie. Wartość musi się znajdować w określonych w polu [rozmiary_miniaturek]',
+            'typ' => 'varchar',
+            'wartosc' => 'mid',
+        ),
+
 	'index.domyslne_sortowanie' => array(
 		'opis' => '',
 		'typ' => 'select',
@@ -58,7 +82,7 @@ class Admin extends Konfiguracja
 		'typ' => 'array',
 		'wartosc' => array(
             '' => '800.600.scale',
-            'miniaturka-podglad' => '200.200.crop',
+            'miniaturka-podglad' => '400.250.crop',
             'mid' => '200.200.crop',
             'min' => '120.120.crop',
             'xs' => '30.30.crop',

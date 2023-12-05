@@ -1,5 +1,5 @@
 <?php
-namespace Generic\Modul\BlokOpisowy;
+namespace Generic\Modul\BlokGalerii;
 use Generic\Biblioteka\Modul;
 use Generic\Biblioteka\Zadanie;
 use Generic\Model\BlokOpisowy;

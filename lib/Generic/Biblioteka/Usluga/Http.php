@@ -416,6 +416,7 @@ class Http extends Usluga
 	 */
 	protected function obslugaPrzekierowanDlaKategorii(Kategoria\Obiekt $kategoria, Uzytkownik\Obiekt $uzytkownik = null)
 	{
+	    dump('tutaj');
 		if ($kategoria->typ == 'link_zewnetrzny')
 		{
 			Router::przekierujDo($kategoria->adresZewnetrzny);
