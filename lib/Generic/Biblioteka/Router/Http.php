@@ -501,7 +501,7 @@ class Http
 			$protokol = (substr($protokol, -3) == '://') ? $protokol : $protokol.'://';
 			$url = str_replace('{{protokol}}', $protokol, $url);
 		}
-		$dodacWWW = true;
+		$dodacWWW = false;
 		if (strpos($url, '{{subdomena}}') !== false)
 		{
 			if (isset($parametryUrl['subdomena']) && $parametryUrl['subdomena'] != '')

@@ -1,5 +1,4 @@
 {{BEGIN index}}
-	<h2 class="fontReplace">{{$tytul_modulu}}</h2>
 	{{$drzewo}}
 {{END}}
 
