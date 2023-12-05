@@ -111,8 +111,9 @@
 					-->
 					{{BEGIN zdjecie_glowne}}
 					<img src="{{$zdjecie}}" class="figure-img img-fluid rounded" alt="{{escape($tytul)}}"/>
-					{{END}}
 					<figcaption class="">{{ $etykieta_autor_zdjec }} {{ $autor_zdjec }}</figcaption>
+					{{END}}
+
 				</figure>
 				{{$tresc_pelna}}
 				{{$galeria}}

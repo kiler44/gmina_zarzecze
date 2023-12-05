@@ -8,6 +8,5 @@ use Generic\Tlumaczenie\Tlumaczenie;
 
 class Http extends Tlumaczenie
 {
-	protected $tlumaczeniaDomyslne = array(
-			);
+	protected $tlumaczeniaDomyslne = array();
 }

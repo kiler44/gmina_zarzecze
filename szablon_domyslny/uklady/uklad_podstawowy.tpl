@@ -75,7 +75,7 @@
 
 <!-- Sekcja 1 -->
 
-<section class="gz-section gz-page-title">
+<section class="gz-section">
 	<div class="container">
 		<div class="row">
 			{{ $region_0 }}

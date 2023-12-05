@@ -216,6 +216,8 @@ class Http extends Modul\Http
 				$tresc_zdjecie['link'] = Cms::inst()->url('aktualnosci', $aktualnosc->id).'/'.$prefix_pelne_zdjecie.$aktualnosc->zdjecieGlowne;
 				$tresc_zdjecie['uzyj_lightbox'] = (int)$this->k->k['aktualnosc.uzyj_lightbox'];
 				$tresc_zdjecie['tytul'] = $aktualnosc->tytul;
+                $tresc_zdjecie['autor_zdjec'] = $aktualnosc->autorZdjec;
+                $tresc_zdjecie['etykieta_autor_zdjec'] = $this->j->t['aktualnosc.etykieta_autor_zdjec'];
 
 				$this->szablon->ustawBlok('/aktualnosc/zdjecie_glowne', $tresc_zdjecie);
 			}
