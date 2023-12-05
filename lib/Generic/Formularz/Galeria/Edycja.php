@@ -58,7 +58,8 @@ class Edycja extends \Generic\Formularz\Abstrakcja
                     'prefix' => 'miniaturka-podglad',
                     'lista' => $lista_zdjec,
                     'wyswietlaj_drop_area' => 0,
-                    'rozmiary_miniaturek' => $this->konfiguracja['kody_miniatur']
+                    'rozmiary_miniaturek' => $this->konfiguracja['kody_miniatur'],
+                    'dozwolone_rozszerzenia' => $this->konfiguracja['formularz.dozwolone_formaty_zdjec'],
                 )
             ));
             $this->formularz->zamknijZakladke('zdjecia');
