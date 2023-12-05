@@ -76,23 +76,23 @@ class Http extends Modul\Http
 		$mapper = $this->dane()->Galeria();
 		$ilosc = $mapper->iloscWszystkoOpublikowane(['id_kategorii' => $this->kategoria->id]);
 
+        $kategorieGaleri = $this->dane()->Kategoria()->pobierzDlaModulu('Galeria');
+        /**
+         * @var Kategoria\Obiekt $kategoria
+         */
+        foreach ($kategorieGaleri as $kategoria)
+        {
+            if(!$kategoria->czyWidoczna) continue;
+
+            $this->szablon->ustawBlok('listaGalerii/kategoriaGalerii', [
+                'nazwa' => $kategoria->nazwa,
+                'link' => Router::urlHttp($kategoria->id),
+                'aktywna' => ($kategoria->id == $this->kategoria->id)
+            ]);
+        }
+
 		if ($ilosc > 0)
 		{
-		    $kategorieGaleri = $this->dane()->Kategoria()->pobierzDlaModulu('Galeria');
-
-            /**
-             * @var Kategoria\Obiekt $kategoria
-             */
-		    foreach ($kategorieGaleri as $kategoria)
-            {
-                if(!$kategoria->czyWidoczna) continue;
-
-                $this->szablon->ustawBlok('listaGalerii/kategoriaGalerii', [
-                    'nazwa' => $kategoria->nazwa,
-                    'link' => Router::urlHttp($kategoria->id),
-                    'aktywna' => ($kategoria->id == $this->kategoria->id)
-                ]);
-            }
 
 			$nrStrony = $this->pobierzParametr('url_parametr_1', 1, true, array('intval','abs'));
 			$naStronie = $this->pobierzParametr('url_parametr_2', $this->k->k['listaGalerii.wierszy_na_stronie'], true, array('intval','abs'));
