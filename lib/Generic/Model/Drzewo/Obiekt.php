@@ -194,7 +194,6 @@ class Obiekt
 				//. ' AND ' . $this->tabela_kod_jezyka . ' = \'' . $this->kod_jezyka . '\''
 				. $warunek
 				. ' ORDER BY ' . $this->tabela_lewy;
-
 			$this->baza->zapytanie($sql);
 
 			return $this->baza->pobierzWynik();

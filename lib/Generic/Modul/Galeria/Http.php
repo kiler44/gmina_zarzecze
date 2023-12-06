@@ -74,20 +74,37 @@ class Http extends Modul\Http
 		));
 
 		$mapper = $this->dane()->Galeria();
-		$ilosc = $mapper->iloscWszystkoOpublikowane(['id_kategorii' => $this->kategoria->id]);
+		$maperKategoria = $this->dane()->Kategoria();
+        $dzieci = $maperKategoria->zwracaTablice(['id', 'nazwa', 'czy_widoczna'])->pobierzGalaz($this->kategoria->id);
 
-        $kategorieGaleri = $this->dane()->Kategoria()->pobierzDlaModulu('Galeria');
+        if(count($dzieci) > 1)
+        {
+            $kategorieGaleri = $dzieci;
+            $kategriaGlowna = $this->kategoria;
+            $idKategorii = array_keys(listaZTablicy($dzieci, 'id', 'id'));
+        }
+        else
+        {
+            $idKategorii = $this->kategoria->id;
+            $rodzic = $maperKategoria->zwracaObiekt()->pobierzRodzica($idKategorii);
+            $kategriaGlowna = $rodzic;
+            $kategorieGaleri = $maperKategoria->zwracaTablice(['id', 'nazwa', 'czy_widoczna'])->pobierzGalaz($kategriaGlowna->id);
+        }
+
+        $ilosc = $mapper->iloscWszystkoOpublikowane(['id_kategorii' => $idKategorii]);
+
+
         /**
          * @var Kategoria\Obiekt $kategoria
          */
         foreach ($kategorieGaleri as $kategoria)
         {
-            if(!$kategoria->czyWidoczna) continue;
+            if(!$kategoria['czy_widoczna']) continue;
 
             $this->szablon->ustawBlok('listaGalerii/kategoriaGalerii', [
-                'nazwa' => $kategoria->nazwa,
-                'link' => Router::urlHttp($kategoria->id),
-                'aktywna' => ($kategoria->id == $this->kategoria->id)
+                'nazwa' => $kategoria['nazwa'],
+                'link' => Router::urlHttp($kategoria['id']),
+                'aktywna' => ($kategoria['id'] == $this->kategoria->id)
             ]);
         }
 
@@ -105,7 +122,7 @@ class Http extends Modul\Http
             /**
              * @var Galeria\Obiekt $galeria
              */
-			foreach ($mapper->pobierzWszystkoOpublikowane(['id_kategorii' => $this->kategoria->id], $pager) as $galeria)
+			foreach ($mapper->pobierzWszystkoOpublikowane(['id_kategorii' => $idKategorii], $pager) as $galeria)
 			{
 				if ($galeria->publikuj == 0) continue;
 
@@ -142,14 +159,15 @@ class Http extends Modul\Http
 			$podsumowanie['pager'] = $pager->html(Router::urlHttp($this->kategoria, array('', '{NR_STRONY}', '{NA_STRONIE}')));
 
 			$this->szablon->ustawBlok('listaGalerii/podsumowanie', $podsumowanie);
-			$this->tresc .= $this->szablon->parsujBlok('listaGalerii', [
-			    'pager' => $pager->html(Router::urlHttp($this->kategoria)),
-            ]);
+
 		}
 		else
 		{
 			$this->komunikat($this->j->t['listaGalerii.info_brak_galerii'],'info');
 		}
+        $this->tresc .= $this->szablon->parsujBlok('listaGalerii', [
+
+        ]);
 	}
 
 
