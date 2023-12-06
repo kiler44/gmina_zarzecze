@@ -110,7 +110,6 @@ class Http extends Modul\Http
 
 		if ($ilosc > 0)
 		{
-
 			$nrStrony = $this->pobierzParametr('url_parametr_1', 1, true, array('intval','abs'));
 			$naStronie = $this->pobierzParametr('url_parametr_2', $this->k->k['listaGalerii.wierszy_na_stronie'], true, array('intval','abs'));
 
