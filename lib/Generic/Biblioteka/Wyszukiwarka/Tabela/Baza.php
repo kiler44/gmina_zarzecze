@@ -89,10 +89,10 @@ class Baza implements TabelaInterface
         $fraza = addslashes($this->kryteria['fraza']);
         $sql = "( 
             SELECT id, 'aktualnosci' as modul, tytul, ma.zajawka as zajawka, tresc, id_kategorii, data_dodania FROM modul_aktualnosci as ma WHERE ma.id_projektu = ".ID_PROJEKTU." AND  (
-                        ma.tytul LIKE '%".$fraza."%' OR ma.zajawka LIKE '%".$fraza."%' OR ma.tresc LIKE '%".$fraza."%') AND ma.publikuj = true
+                        ma.tytul ILIKE '%".$fraza."%' OR ma.zajawka ILIKE '%".$fraza."%' OR ma.tresc LIKE '%".$fraza."%') AND ma.publikuj = true
             UNION ALL 
             SELECT id, 'strona' as modul, tytul, ms.tresc as zajawka, tresc, id_kategorii, data_dodania FROM modul_strona_opisowa as ms  WHERE ms.id_projektu = ".ID_PROJEKTU." AND (
-                            ms.tytul LIKE '%".$fraza."%' OR ms.tresc LIKE '%".$fraza."%'
+                            ms.tytul ILIKE '%".$fraza."%' OR ms.tresc ILIKE '%".$fraza."%'
                         )
         )";
 

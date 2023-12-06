@@ -61,7 +61,7 @@ class Http extends Modul\Http
         {
             $this->szablon->ustawBlok('index/naglowek', ['fraza' => $fraza,]);
 
-            $aktualnosciKryteria['fraza'] = $fraza;
+            $aktualnosciKryteria['fraza'] = trim($fraza);
             $aktualnosciKryteria['publikuj'] = 1;
 
             $wyszukiwarkaSql = new Wyszukiwarka\Sql();
