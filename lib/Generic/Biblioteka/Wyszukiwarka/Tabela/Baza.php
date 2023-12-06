@@ -76,7 +76,7 @@ class Baza implements TabelaInterface
         $link = '';
         switch($wiersz['modul'])
         {
-            case 'aktualnosci' :  $link = Router::urlHttp($wiersz['id_kategorii'], ['aktualnosc' => $wiersz['id']]);
+            case 'aktualnosci' :  $link = Router::urlHttp($wiersz['id_kategorii'], ['aktualnosc', $wiersz['id']]);
             break;
             case 'strona' : $link = Router::urlHttp($wiersz['id_kategorii']);
             break;

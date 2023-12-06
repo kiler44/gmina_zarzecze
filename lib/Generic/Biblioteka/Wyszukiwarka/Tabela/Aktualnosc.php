@@ -44,7 +44,7 @@ class Aktualnosc implements TabelaInterface
             $oWynik->tresc = $aktualnosc->zajawka;
             $oWynik->kategoria = $kategoria;
             $oWynik->data = $aktualnosc->dataDodania;
-            $oWynik->link = Router::urlHttp($aktualnosc->idKategorii, ['aktualnosc' => $aktualnosc->id]);
+            $oWynik->link = Router::urlHttp($aktualnosc->idKategorii, ['aktualnosc', $aktualnosc->id]);
             $wyniki[] = $oWynik;
         }
         return $wyniki;
