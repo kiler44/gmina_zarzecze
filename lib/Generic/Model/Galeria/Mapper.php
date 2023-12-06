@@ -63,9 +63,12 @@ class Mapper extends Biblioteka\Mapper\Baza
 			. ' WHERE id_projektu = ' . ID_PROJEKTU
 			. ' AND kod_jezyka = \'' . KOD_JEZYKA .'\''
 			. ' AND publikuj = true';
-        if (isset($kryteria['id_kategorii']) && $kryteria['id_kategorii'] > 0)
+        if (isset($kryteria['id_kategorii']))
         {
-            $sql .= ' AND id_kategorii = '. (int)$kryteria['id_kategorii'];
+            if(is_array($kryteria['id_kategorii']))
+                $sql .= ' AND id_kategorii IN ('. implode(',', $kryteria['id_kategorii']).')';
+            else
+                $sql .= ' AND id_kategorii = '. (int)$kryteria['id_kategorii'];
         }
 
 		return $this->pobierzWiele($sql, $pager, $sorter);
@@ -90,9 +93,12 @@ class Mapper extends Biblioteka\Mapper\Baza
 			. ' WHERE id_projektu = ' . ID_PROJEKTU
 			. ' AND kod_jezyka = \'' . KOD_JEZYKA .'\''
 			. ' AND publikuj = true';
-        if (isset($kryteria['id_kategorii']) && $kryteria['id_kategorii'] > 0)
+        if (isset($kryteria['id_kategorii']))
         {
-            $sql .= ' AND id_kategorii = '. (int)$kryteria['id_kategorii'];
+            if(is_array($kryteria['id_kategorii']))
+                $sql .= ' AND id_kategorii IN ('. implode(',', $kryteria['id_kategorii']).')';
+            else
+                $sql .= ' AND id_kategorii = '. (int)$kryteria['id_kategorii'];
         }
 
 		return $this->pobierzWartosc($sql);
