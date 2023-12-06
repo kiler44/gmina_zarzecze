@@ -5,6 +5,8 @@ For licensing, see LICENSE.html or http://ckeditor.com/license
 
 CKEDITOR.editorConfig = function( config )
 {
+
+
 	config.toolbar_Http =
 		[
 			{ name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Source'] },
@@ -16,13 +18,16 @@ CKEDITOR.editorConfig = function( config )
 			{ name: 'colors', items: [ 'TextColor', 'BGColor' ] },
 			{ name: 'tools', items: [ 'Maximize', 'ShowBlocks' ] },
 			{ name: 'others', items: [ '-' ] },
-			{ name: 'insert', items: ['Image'] },
+			{ name: 'insert', items: ['Image', 'Video'] },
 			{ name: 'about', items: [ 'About' ] }
 		];
 	config.toolbar = 'Http';
-	config.contentsCss = '/_szablon/iqcms.css';
+	//config.contentsCss = '/_szablon/iqcms.css';
+
 	config.entities_latin = false;
 	config.disableNativeSpellChecker = false;
 	config.forcePasteAsPlainText = true;
 	config.height = '800px';
+	config.extraPlugins = 'html5audio';
+	config.extraAllowedContent = 'video [*]{*}(*);source [*]{*}(*);';
 };

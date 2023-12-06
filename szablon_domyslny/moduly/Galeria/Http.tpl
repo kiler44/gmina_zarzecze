@@ -51,7 +51,9 @@
 	</div>
 </div>
 	<div class="r_clear s20"></div>
+	{{BEGIN podsumowanie}}
 	{{$pager}}
+	{{END}}
 {{END}}
 
 
