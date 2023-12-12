@@ -111,17 +111,13 @@ class Http extends Modul\Http
 
                 foreach ($listaWynikow as $wpis)
                 {
-                    if($wpis->zdjecie != '')
-                        $this->szablon->ustawBlok('index/wynik/zdjecie', [
-                            'url_zdjecia' => $wpis->zdjecie
-                        ]);
-
                     $this->szablon->ustawBlok('index/wynik', [
                         'tytul' => $wpis->tytul,
                         'data' => $wpis->data,
                         'tresc' => str_cut($wpis->tresc, 250, true),
                         'link' => $wpis->link,
-                        'kategoria' => $wpis->kategoria
+                        'kategoria' => $wpis->kategoria,
+                        'url_zdjecia' => $wpis->zdjecie
                     ]);
                 }
             }
