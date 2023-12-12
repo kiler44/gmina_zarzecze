@@ -1,6 +1,7 @@
 <?php
 namespace Generic\Modul\Wyszukiwarka;
 
+use Generic\Biblioteka\Cms;
 use Generic\Biblioteka\Modul;
 use Generic\Biblioteka\Pager;
 use Generic\Biblioteka\Router;
@@ -103,18 +104,24 @@ class Http extends Modul\Http
             $listaWynikow = $wyszukiwarka->pobierzWyniki();
 
             /**
-             * @var Aktualnosc\Obiekt $aktualnosc
+             * @var Wyszukiwarka\Wynik $wpis
              */
             if(count($listaWynikow) > 0)
             {
-                foreach ($listaWynikow as $aktualnosc)
+
+                foreach ($listaWynikow as $wpis)
                 {
+                    if($wpis->zdjecie != '')
+                        $this->szablon->ustawBlok('index/wynik/zdjecie', [
+                            'url_zdjecia' => $wpis->zdjecie
+                        ]);
+
                     $this->szablon->ustawBlok('index/wynik', [
-                        'tytul' => $aktualnosc->tytul,
-                        'data' => $aktualnosc->data,
-                        'tresc' => str_cut($aktualnosc->tresc, 250, true),
-                        'link' => $aktualnosc->link,
-                        'kategoria' => $aktualnosc->kategoria
+                        'tytul' => $wpis->tytul,
+                        'data' => $wpis->data,
+                        'tresc' => str_cut($wpis->tresc, 250, true),
+                        'link' => $wpis->link,
+                        'kategoria' => $wpis->kategoria
                     ]);
                 }
             }

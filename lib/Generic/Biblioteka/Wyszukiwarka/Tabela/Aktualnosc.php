@@ -1,6 +1,7 @@
 <?php
 namespace Generic\Biblioteka\Wyszukiwarka\Tabela;
 
+use Generic\Biblioteka\Cms;
 use Generic\Biblioteka\Pager;
 use Generic\Biblioteka\Router;
 use Generic\Biblioteka\Sorter;
@@ -33,7 +34,7 @@ class Aktualnosc implements TabelaInterface
         $wyniki = [];
         $kategorieAktualnosci = [];
         /**
-         * @var Strona\Obiekt $strona
+         * @var mAktualnosc\Obiekt $aktualnosc
          */
         foreach ($aktualnosci as $aktualnosc) {
 
@@ -44,10 +45,20 @@ class Aktualnosc implements TabelaInterface
             $oWynik->tresc = $aktualnosc->zajawka;
             $oWynik->kategoria = $kategoria;
             $oWynik->data = $aktualnosc->dataDodania;
+
+            if($aktualnosc->zdjecieGlowne != '')
+                $oWynik->zdjecie = $aktualnosc->pobierzUrlZdjecia($aktualnosc);
+
             $oWynik->link = Router::urlHttp($aktualnosc->idKategorii, ['aktualnosc', $aktualnosc->id]);
             $wyniki[] = $oWynik;
         }
         return $wyniki;
+    }
+
+    protected function pobierzUrlZdjecia(mAktualnosc\Obiekt $aktualnosc):string
+    {
+        $prefix = 'mid-';
+        return Cms::inst()->url('aktualnosci', $aktualnosc->id).'/'.$prefix.$aktualnosc->zdjecieGlowne;
     }
 
     public function pobierzIlosc():int
