@@ -22,14 +22,16 @@
             {{BEGIN wynik}}
                 <div class="col-lg-6 col-6">
                     <div class="gz-wyszukiwanie-bloczek">
+                        {{IF $kategoria}}
                         <div class="info-tags">
                             <ul>
                                 <li class="wydarzenia" >{{$kategoria}}</li>
                             </ul>
                         </div>
-                        {{BEGIN zdjecie}}
+                        {{END IF}}
+                        {{IF $url_zdjecia}}
                         <img src="{{$url_zdjecia}}" />
-                        {{END}}
+                        {{END IF}}
                         <div class="content">
                             <!--
                             <div class="tags">
