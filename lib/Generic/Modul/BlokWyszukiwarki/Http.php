@@ -43,19 +43,38 @@ class Http extends Modul\Http
 
             if (count($opcje) > 0)
             {
-                /**
-                 * @var Kategoria\Obiekt $opcja
-                 */
-                foreach ($opcje as $opcja)
-                    $this->szablon->ustawBlok('/index/opcja', array('wartosc' => $opcja->id, 'etykieta' => $opcja->nazwa));
+                if($this->k->k['wyszukiwarka_schowana'])
+                {
+                    /**
+                     * @var Kategoria\Obiekt $opcja
+                     */
+                    foreach ($opcje as $opcja)
+                        $this->szablon->ustawBlok('/buttonWysun/opcja', array('wartosc' => $opcja->id, 'etykieta' => $opcja->nazwa));
 
-                $this->tresc .= $this->szablon->parsujBlok('/index', [
-                    'akcjaWyszukiwarki' => $urlAkcjaWyszukiwarki,
-                    'placeholder_szukaj' => $this->j->t['placeholder_szukaj'],
-                    'placeholder_gdzie_szukac' => $this->j->t['placeholder_gdzie_szukac'],
-                    'szukaj_button' => $this->j->t['szukaj_button'],
-                    'czytaj_wiecej_input' => $this->j->t['czytaj_wiecej_input'],
-                ]);
+                    $this->tresc .= $this->szablon->parsujBlok('/buttonWysun', [
+                        'akcjaWyszukiwarki' => $urlAkcjaWyszukiwarki,
+                        'placeholder_szukaj' => $this->j->t['placeholder_szukaj'],
+                        'placeholder_gdzie_szukac' => $this->j->t['placeholder_gdzie_szukac'],
+                        'szukaj_button' => $this->j->t['szukaj_button'],
+                        'czytaj_wiecej_input' => $this->j->t['czytaj_wiecej_input'],
+                    ]);
+                }
+                else
+                {
+                    /**
+                     * @var Kategoria\Obiekt $opcja
+                     */
+                    foreach ($opcje as $opcja)
+                        $this->szablon->ustawBlok('/index/opcja', array('wartosc' => $opcja->id, 'etykieta' => $opcja->nazwa));
+
+                    $this->tresc .= $this->szablon->parsujBlok('/index', [
+                        'akcjaWyszukiwarki' => $urlAkcjaWyszukiwarki,
+                        'placeholder_szukaj' => $this->j->t['placeholder_szukaj'],
+                        'placeholder_gdzie_szukac' => $this->j->t['placeholder_gdzie_szukac'],
+                        'szukaj_button' => $this->j->t['szukaj_button'],
+                        'czytaj_wiecej_input' => $this->j->t['czytaj_wiecej_input'],
+                    ]);
+                }
             }
             else
             {

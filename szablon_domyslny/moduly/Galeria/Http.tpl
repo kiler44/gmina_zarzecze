@@ -66,12 +66,9 @@
 		<div class="row">
 			<div class="row gz-gallery-section">
 				{{ BEGIN miniaturka }}
-				<div class="col-lg-4 col-6 gallery-item" data-tags="sport">
-					<img src="{{ $miniaturka }}" data-lightbox="roadtrip" alt="{{escape($tytul)}}"" >
-					<div class="gallery-overlay"></div>
-					<div class="gallery-content">
-						<h4 class="gallery-title">{{ $opis }}</h4>
-					</div>
+				<div class="col-lg-4 col-6 gallery-item" data-tags="{{escape($tytul)}}" >
+					<img src="{{ $miniaturka }}"  alt="{{escape($tytul)}}" >
+					<div class="gallery-overlay" onclick="openVideoModal("{{ $miniaturka }}")" ></div>
 				</div>
 				<!--
 					<div class="caption"><a href="{{ $zdjecie_link }}" title="{{ $tytul }}" {{ $lightbox }}>{{ $tytul }}</a></div>
