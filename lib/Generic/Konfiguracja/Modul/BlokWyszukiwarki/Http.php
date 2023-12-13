@@ -15,5 +15,10 @@ class Http extends Konfiguracja
             'typ' => 'int',
             'wartosc' => 3,
         ],
+        'wyszukiwarka_schowana' => [
+            'opis' => 'Przycisk do chowania wyszukiwarki',
+            'typ' => 'bool',
+            'wartosc' => false,
+        ]
 	);
 }
