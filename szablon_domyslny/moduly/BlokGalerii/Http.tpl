@@ -29,7 +29,9 @@
                 {{END galeriaKategoria}}
 
                 <div class="col-12 text-center">
+                    {{BEGIN wiecej}}
                     <button onclick="loadMoreBoxes()" class="btn btn-outline-primary gz-cta-more"> {{$czytaj_wiecej}} </button>
+                    {{END wicej}}
                 </div>
             </div>
         </div>
