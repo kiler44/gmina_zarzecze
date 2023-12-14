@@ -117,11 +117,12 @@ class Http extends Modul\Http
 			$pager->ustawKonfiguracje($this->k->k['listaGalerii.pager']);
 			$pager->ustawTlumaczenia($this->j->t['listaGalerii.pager']);
 			$pager->ustawSzablon($this->ladujSzablonZewnetrzny($this->k->k['szablon.pager']), false);
+			$sorter = new Galeria\Sorter('data_dodania');
 
             /**
              * @var Galeria\Obiekt $galeria
              */
-			foreach ($mapper->pobierzWszystkoOpublikowane(['id_kategorii' => $idKategorii], $pager) as $galeria)
+			foreach ($mapper->pobierzWszystkoOpublikowane(['id_kategorii' => $idKategorii], $pager, $sorter) as $galeria)
 			{
 				if ($galeria->publikuj == 0) continue;
 

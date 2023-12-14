@@ -1,5 +1,5 @@
 <?php
-namespace Generic\Tlumaczenie\\Modul\BlokGalerii;
+namespace Generic\Tlumaczenie\Pl\Modul\BlokGalerii;
 
 use Generic\Tlumaczenie\Tlumaczenie;
 
@@ -13,12 +13,11 @@ class Http extends Tlumaczenie
 	* @var array
 	*/
 	protected $tlumaczeniaDomyslne = array(
-
-	);
-
-	/**
-	* Typy pól tłumaczeń
-	*/
-	protected $typyPolTlumaczen = array(
+	    'galeria_naglowek' => 'Galeria',
+        'galeria_naglowek_dwa' => 'Wybierz jedno najczęściej wybieranych zagadnień',
+        'czytaj_wiecej' => 'Wczytaj więcej',
+        'brak_kategorii_galerii' => 'Brak kategorii galerii',
+        'brak_galerii' => 'Brak galerii',
+        'etykieta_link_wiecej' => 'Cała galeria »',
 	);
 }
