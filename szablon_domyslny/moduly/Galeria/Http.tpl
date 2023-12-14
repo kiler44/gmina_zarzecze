@@ -60,6 +60,7 @@
 {{BEGIN galeria}}
 <div class="col-12 text-center">
 	<h1>{{$tytul_strony}}</h1>
+	<h5>{{$opis}}</h5>
 </div>
 <div class="gz-section gz-aktualnosci gz-mt-20">
 	<div class="container">
@@ -74,6 +75,10 @@
 					<div class="caption"><a href="{{ $zdjecie_link }}" title="{{ $tytul }}" {{ $lightbox }}>{{ $tytul }}</a></div>
 					-->
 				{{ END }}
+				<div class="r_clear"></div>
+				<div class="text-center">
+					<small>{{$autor}} {{$data_dodania}}</small>
+				</div>
 				<div class="r_clear"></div>
 				{{$pager}}
 			</div>

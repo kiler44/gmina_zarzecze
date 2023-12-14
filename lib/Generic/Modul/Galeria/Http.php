@@ -240,6 +240,9 @@ class Http extends Modul\Http
 
 				$this->tresc .= $this->szablon->parsujBlok('galeria', array(
 					'pager' => $pager->html(Router::urlHttp($this->kategoria, array('galeria' ,$id ,'{NR_STRONY}', '{NA_STRONIE}'))),
+                    'opis' => $galeria->opis,
+                    'autor' => $galeria->autor,
+                    'data_dodania' => $galeria->dataDodania->format('Y-m-d')
 				));
 			}
 			else

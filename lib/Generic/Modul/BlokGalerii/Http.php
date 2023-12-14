@@ -120,9 +120,10 @@ class Http extends Modul\Http
         else
             $this->komunikat($this->j->t['brak_galerii'],'info');
 
+        if($ilosc >= $this->k->k['max_ilosc_wyswietlaj'])
+            $this->szablon->ustawBlok('index/wiecej', ['czytaj_wiecej' => $this->j->t['czytaj_wiecej'],]);
 
         $this->tresc .= $this->szablon->parsujBlok('index', array(
-            'czytaj_wiecej' => $this->j->t['czytaj_wiecej'],
             'galeria_naglowek' => $this->j->t['galeria_naglowek'],
             'galeria_naglowek_dwa' => $this->j->t['galeria_naglowek_dwa'],
         ));
