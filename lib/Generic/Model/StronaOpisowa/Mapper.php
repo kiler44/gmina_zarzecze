@@ -85,8 +85,8 @@ class Mapper extends Biblioteka\Mapper\Baza
 		{
 			$fraza = addslashes($kryteria['fraza']);
 			$sql .= ' AND (
-					tytul LIKE \'%'.$fraza.'%\''
-				. ' OR tresc LIKE \'%'.$fraza.'%\''
+					tytul ILIKE \'%'.$fraza.'%\''
+				. ' OR tresc ILIKE \'%'.$fraza.'%\''
 				. ')';
 		}
 		if (isset($kryteria['data_dodania']) && $kryteria['data_dodania'] != '')
@@ -109,8 +109,8 @@ class Mapper extends Biblioteka\Mapper\Baza
 		{
 			$fraza = addslashes($kryteria['fraza']);
 			$sql .= ' AND (
-					tytul LIKE \'%'.$fraza.'%\''
-				. ' OR tresc LIKE \'%'.$fraza.'%\''
+					tytul ILIKE \'%'.$fraza.'%\''
+				. ' OR tresc ILIKE \'%'.$fraza.'%\''
 				. ')';
 		}
 		if (isset($kryteria['data_dodania']) && $kryteria['data_dodania'] != '')

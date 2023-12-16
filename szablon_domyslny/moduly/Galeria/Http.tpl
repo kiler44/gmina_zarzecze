@@ -51,30 +51,34 @@
 	</div>
 </div>
 	<div class="r_clear s20"></div>
+	{{BEGIN podsumowanie}}
 	{{$pager}}
+	{{END}}
 {{END}}
 
 
 {{BEGIN galeria}}
 <div class="col-12 text-center">
 	<h1>{{$tytul_strony}}</h1>
+	<h5>{{$opis}}</h5>
 </div>
 <div class="gz-section gz-aktualnosci gz-mt-20">
 	<div class="container">
 		<div class="row">
 			<div class="row gz-gallery-section">
 				{{ BEGIN miniaturka }}
-				<div class="col-lg-4 col-6 gallery-item" data-tags="sport">
-					<img src="{{ $miniaturka }}" data-lightbox="roadtrip" alt="{{escape($tytul)}}"" >
-					<div class="gallery-overlay"></div>
-					<div class="gallery-content">
-						<h4 class="gallery-title">{{ $opis }}</h4>
-					</div>
+				<div class="col-lg-4 col-6 gallery-item" data-tags="{{escape($tytul)}}" >
+					<img src="{{ $miniaturka }}"  alt="{{escape($tytul)}}" >
+					<div class="gallery-overlay" onclick="openVideoModal("{{ $miniaturka }}")" ></div>
 				</div>
 				<!--
 					<div class="caption"><a href="{{ $zdjecie_link }}" title="{{ $tytul }}" {{ $lightbox }}>{{ $tytul }}</a></div>
 					-->
 				{{ END }}
+				<div class="r_clear"></div>
+				<div class="text-center">
+					<small>{{$autor}} {{$data_dodania}}</small>
+				</div>
 				<div class="r_clear"></div>
 				{{$pager}}
 			</div>

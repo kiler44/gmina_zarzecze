@@ -31,13 +31,7 @@
 	<script src="/_szablon/js/jquery-3.6.0.min.js"></script>
 	<script src="/_szablon/js/moment.min.js"></script>
 	<script src="/_szablon/js/pl.min.js"></script>
-	<script src="/_szablon/lightbox/js/lightbox.js"></script>
-	<script>
-		lightbox.option({
-			'resizeDuration': 200,
-			'wrapAround': true
-		})
-	</script>
+
 	{{$naglowek_html}}
 	{{BEGIN rss}}<link rel="alternate" type="application/rss+xml" title="{{$tytul}}" href="{{$url}}" />
 	{{END}}
@@ -185,7 +179,19 @@
 		</footer>
 	</div>
 </section>
+
 <!-- Footer End -->
+<!-- Video Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered gz-modal-lg">
+		<div class="modal-content">
+			<div class="modal-body">
+				<video controls id="videoPlayer"></video>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
 <script src="/_szablon/js/bootstrap.bundle.min.js"></script>
 <script src="/_szablon/js/gz-js.js"></script>
 </body>

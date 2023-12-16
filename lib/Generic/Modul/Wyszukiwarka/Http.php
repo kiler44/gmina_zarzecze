@@ -1,6 +1,7 @@
 <?php
 namespace Generic\Modul\Wyszukiwarka;
 
+use Generic\Biblioteka\Cms;
 use Generic\Biblioteka\Modul;
 use Generic\Biblioteka\Pager;
 use Generic\Biblioteka\Router;
@@ -61,7 +62,7 @@ class Http extends Modul\Http
         {
             $this->szablon->ustawBlok('index/naglowek', ['fraza' => $fraza,]);
 
-            $aktualnosciKryteria['fraza'] = $fraza;
+            $aktualnosciKryteria['fraza'] = trim($fraza);
             $aktualnosciKryteria['publikuj'] = 1;
 
             $wyszukiwarkaSql = new Wyszukiwarka\Sql();
@@ -103,18 +104,20 @@ class Http extends Modul\Http
             $listaWynikow = $wyszukiwarka->pobierzWyniki();
 
             /**
-             * @var Aktualnosc\Obiekt $aktualnosc
+             * @var Wyszukiwarka\Wynik $wpis
              */
             if(count($listaWynikow) > 0)
             {
-                foreach ($listaWynikow as $aktualnosc)
+
+                foreach ($listaWynikow as $wpis)
                 {
                     $this->szablon->ustawBlok('index/wynik', [
-                        'tytul' => $aktualnosc->tytul,
-                        'data' => $aktualnosc->data,
-                        'tresc' => str_cut($aktualnosc->tresc, 250, true),
-                        'link' => $aktualnosc->link,
-                        'kategoria' => $aktualnosc->kategoria
+                        'tytul' => $wpis->tytul,
+                        'data' => $wpis->data,
+                        'tresc' => str_cut($wpis->tresc, 250, true),
+                        'link' => $wpis->link,
+                        'kategoria' => $wpis->kategoria,
+                        'url_zdjecia' => $wpis->zdjecie
                     ]);
                 }
             }

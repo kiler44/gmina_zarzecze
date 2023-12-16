@@ -267,10 +267,10 @@ class Admin extends Modul\System
 		{
 			if (!in_array($wartosc, $moduly)) unset($cron[$klucz]);
 		}
-		$projekt->przypisaneModuly = (count($moduly) > 0) ? ','.implode(',',$moduly).',' : '';
-		$projekt->modulyRss = (count($rss) > 0) ? ','.implode(',',$rss).',' : '';
-		$projekt->modulyApi = (count($api) > 0) ? ','.implode(',',$api).',' : '';
-		$projekt->modulyCron = (count($cron) > 0) ? ','.implode(',',$cron).',' : '';
+		$projekt->przypisaneModuly = (is_array($moduly) && count($moduly) > 0) ? ','.implode(',',$moduly).',' : '';
+		$projekt->modulyRss = (is_array($rss) && count($rss) > 0) ? ','.implode(',',$rss).',' : '';
+		$projekt->modulyApi = (is_array($api) && count($api) > 0) ? ','.implode(',',$api).',' : '';
+		$projekt->modulyCron = (is_array($cron) && count($cron) > 0) ? ','.implode(',',$cron).',' : '';
 
 		if ($projekt->id < 1)
 		{

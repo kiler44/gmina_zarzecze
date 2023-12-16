@@ -1,5 +1,5 @@
 <?php
-namespace Generic\Tlumaczenie\\Modul\BlokGalerii;
+namespace Generic\Tlumaczenie\Pl\Modul\BlokGalerii;
 
 use Generic\Tlumaczenie\Tlumaczenie;
 

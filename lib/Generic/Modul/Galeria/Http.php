@@ -110,7 +110,6 @@ class Http extends Modul\Http
 
 		if ($ilosc > 0)
 		{
-
 			$nrStrony = $this->pobierzParametr('url_parametr_1', 1, true, array('intval','abs'));
 			$naStronie = $this->pobierzParametr('url_parametr_2', $this->k->k['listaGalerii.wierszy_na_stronie'], true, array('intval','abs'));
 
@@ -118,11 +117,12 @@ class Http extends Modul\Http
 			$pager->ustawKonfiguracje($this->k->k['listaGalerii.pager']);
 			$pager->ustawTlumaczenia($this->j->t['listaGalerii.pager']);
 			$pager->ustawSzablon($this->ladujSzablonZewnetrzny($this->k->k['szablon.pager']), false);
+			$sorter = new Galeria\Sorter('data_dodania');
 
             /**
              * @var Galeria\Obiekt $galeria
              */
-			foreach ($mapper->pobierzWszystkoOpublikowane(['id_kategorii' => $idKategorii], $pager) as $galeria)
+			foreach ($mapper->pobierzWszystkoOpublikowane(['id_kategorii' => $idKategorii], $pager, $sorter) as $galeria)
 			{
 				if ($galeria->publikuj == 0) continue;
 
@@ -240,6 +240,9 @@ class Http extends Modul\Http
 
 				$this->tresc .= $this->szablon->parsujBlok('galeria', array(
 					'pager' => $pager->html(Router::urlHttp($this->kategoria, array('galeria' ,$id ,'{NR_STRONY}', '{NA_STRONIE}'))),
+                    'opis' => $galeria->opis,
+                    'autor' => $galeria->autor,
+                    'data_dodania' => $galeria->dataDodania->format('Y-m-d')
 				));
 			}
 			else

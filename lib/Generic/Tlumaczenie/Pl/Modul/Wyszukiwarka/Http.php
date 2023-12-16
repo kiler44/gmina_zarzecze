@@ -23,7 +23,7 @@ class Http extends Tlumaczenie
 		'brak_wynikow' => '[ETYKIETA:brak_wynikow]',	//TODO
 		'index.brak_frazy' => 'Nie wprowadziłęś żadnej frazy wyszukiwania.',
 		'index.kategoria_stron_opisowa' => 'Strona opisowa',
-		'index.tag_wyniki_wyszukiwania' => 'Wyniki wyszukiwania dla frazy : ',
+		'index.tag_wyniki_wyszukiwania' => 'Wyniki wyszukiwania',
 		'listaWynikow.pager' => '[ETYKIETA:listaWynikow.pager]',	//TODO
 		'lista_wynikow' => '[ETYKIETA:lista_wynikow]',	//TODO
 		'wyniki_kategoria' => '[ETYKIETA:wyniki_kategoria]',	//TODO
