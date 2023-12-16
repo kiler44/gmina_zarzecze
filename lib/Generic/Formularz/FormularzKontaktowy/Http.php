@@ -56,8 +56,7 @@ class Http extends \Generic\Formularz\Abstrakcja
 				$this->formularz->input(new Input\Hidden('idTematu', $ostatnie_id_tematu));
 			}
 		}
-
-
+        
 		foreach($this->listaPol as $nazwa => $ustawieniePola)
 		{
 			if (isset($konfiguracja[$nazwa]))

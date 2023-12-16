@@ -30,6 +30,6 @@
 			limitZnakow("{{$nazwa}}", '{{$maxlength}}', "lim_{{$nazwa}}", "{{$etykieta_limit}}");
 		});
 		</script>
-		<p><span id="lim_{{$nazwa}}" {{IF $chowaj_licznik}}hide{{END}}></span>&nbsp;</p>
+		<!--<p><span id="lim_{{$nazwa}}" {{IF $chowaj_licznik}}hide{{END}}></span>&nbsp;</p>-->
 	{{END licznik}}
 {{END textarea}}

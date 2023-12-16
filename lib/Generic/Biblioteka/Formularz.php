@@ -968,7 +968,11 @@ class Formularz implements Tlumaczenia\Interfejs, \Iterator
 
 
 				$blad = ($input->sprawdzony()) ? $input->pobierzBladWalidacji() : null;
-				$klasa = ($formularz_wypelniony && $blad != null) ? 'input_blad error' : 'input_ok';
+                $klasa = '';
+                if ($formularz_wypelniony)
+                {
+                    $klasa .= ($formularz_wypelniony && $blad != null) ? 'input_blad error' : 'input_ok';
+                }
 
                 if ($input instanceof Input\Text)
                     $klasa = $klasa.' col-md-6';

@@ -59,7 +59,7 @@
 		<label for="{{$nazwa}}" class="form-label {{$klasa}} {{if($wymagany,'wymagany')}}">{{$etykieta}}{{if($wymagany,' <strong>*</strong>')}}</label>
 		{{END}}
 		{{$html}}
-		<span class="descLabel">{{$opis}}</span>
+
 		{{BEGIN blad}}<div class="invalid-feedback">{{$tresc}}</div>{{END}}
 </div>
 {{END}}

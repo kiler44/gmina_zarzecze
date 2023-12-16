@@ -59,7 +59,7 @@
 							<img src="{{ $zdjecie }}" alt="{{escape($tytul)}}"/>
 							{{END}}
 							{{BEGIN brak_zdjecia}}
-							<div class="brak_zdjecia">{{$etykieta_brak_zdjecia}}</div>
+							<div style="min-height: 290px; background: center / 50% no-repeat url(/_szablon/images/svg/img-svg-02.svg); text-align: center; padding-top: 235px">{{$etykieta_brak_zdjecia}}</div>
 							{{END}}
 						</div>
 						<div class="aktualnosci-content">

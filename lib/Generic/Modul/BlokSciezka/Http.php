@@ -78,19 +78,20 @@ class Http extends Modul\Http
 					}
 					if ($url != '')
 					{
-						if ($kategoria->id == $this->kategoria->id && !$okruszkiDodatkowe && !$this->k->k['ostatnia_linkiem'])
+						if (($kategoria->id == $this->kategoria->id && !$okruszkiDodatkowe && !$this->k->k['ostatnia_linkiem']))
 						{
-							$this->szablon->ustawBlok('/index/tekst', array(
-								'nazwa' => $kategoria->nazwa,
-							));
+                            $this->szablon->ustawBlok('/index/tekst', array(
+                                'nazwa' => $kategoria->nazwa,
+                            ));
 						}
 						else
 						{
-							$this->szablon->ustawBlok('/index/link', array(
-								'url' => $url,
-								'nazwa' => $kategoria->nazwa,
-								'znak_rozdzielajacy' => ($okruszkiDodatkowe || (!$okruszkiDodatkowe && $kategoria->id != $this->kategoria->id)) ? $this->j->t['index.znak_rozdzielajacy'] : '',
-							));
+                            $this->szablon->ustawBlok('/index/link', array(
+                                'url' => $url,
+                                'nazwa' => $kategoria->nazwa,
+                                'znak_rozdzielajacy' => ($okruszkiDodatkowe || (!$okruszkiDodatkowe && $kategoria->id != $this->kategoria->id)) ? $this->j->t['index.znak_rozdzielajacy'] : '',
+                                'bez_linku' => $kategoria->blokada,
+                            ));
 						}
 					}
 				}

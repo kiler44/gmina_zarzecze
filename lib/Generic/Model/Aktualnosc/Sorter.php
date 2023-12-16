@@ -17,6 +17,7 @@ class Sorter extends Biblioteka\Sorter
 		'tytul' => array('tytul','data_dodania' => 'DESC', 'autor' => 'ASC'),
 		'autor' => array('autor', 'tytul' => 'ASC', 'data_dodania' => 'DESC'),
 		'data_dodania' => array('data_dodania', 'tytul' => 'ASC', 'autor' => 'ASC'),
+        'data_waznosci' => array('data_waznosci', 'tytul' => 'ASC', 'autor' => 'ASC'),
 		'priorytetowa' => array('priorytetowa', 'data_dodania' => 'DESC', 'tytul' => 'ASC', 'autor' => 'ASC'),
 	);
 
