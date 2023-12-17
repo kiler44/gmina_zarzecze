@@ -19,8 +19,9 @@ use Generic\Biblioteka\ObiektDanych;
  * @property string $dataWyslania
  * @property string $imie
  * @property string $nazwisko
+ * @property string $email
  * @property string $firmaNazwa
- * @property string $stronaWWW
+ * @property string $stronaWww
  * @property string $gg
  * @property string $skype
  * @property string $telefon
@@ -46,9 +47,9 @@ class Obiekt extends ObiektDanych
 		'dataWyslania',
 		'imie',
 		'nazwisko',
-		'nadawca',
+		'email',
 		'firmaNazwa',
-		'stronaWWW',
+		'stronaWww',
 		'gg',
 		'skype',
 		'telefon',

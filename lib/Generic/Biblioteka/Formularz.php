@@ -974,10 +974,16 @@ class Formularz implements Tlumaczenia\Interfejs, \Iterator
                     $klasa .= ($formularz_wypelniony && $blad != null) ? 'input_blad error' : 'input_ok';
                 }
 
+                $klasa_wewnetrzna = '';
                 if ($input instanceof Input\Text)
                     $klasa = $klasa.' col-md-6';
                 if ($input instanceof Input\TextArea)
                     $klasa = $klasa.' col-md-12';
+                if ($input instanceof Input\CheckboxOpis)
+                {
+                    $klasa = $klasa.' col-md-12';
+                    $klasa_wewnetrzna = 'form-check';
+                }
 
 
 				if ($input->pobierzEtykiete() != '' || $input->pobierzOpis() != '')
@@ -1010,6 +1016,7 @@ class Formularz implements Tlumaczenia\Interfejs, \Iterator
 					'opis' => $input->pobierzOpis(),
 					'html' => $input->pobierzHtml(),
 					'klasa' => $klasa . ($input->pobierzEtykiete() == '' ? ' no-label' : ''),
+                    'klasa_wew' => $klasa_wewnetrzna,
 				));
 			}
 			else if (stripos($nazwa, '__pole__html__') !== false)

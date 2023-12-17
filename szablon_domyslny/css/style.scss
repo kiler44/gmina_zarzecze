@@ -8,6 +8,21 @@
 @import 'footer';
 @import 'aktualnosci';
 
+.gz-text-link  {
+    color: $akcent1;
+    text-decoration: underline 2px dotted $akcent1!important;
+    font-weight: 500;   
+  }
+
+  .gz-text-link::after  {
+    content: " »";   
+  }
+.gz-text-link:hover  {
+    color: $akcent4;
+    text-decoration: underline 2px  solid $akcent4!important;
+    font-weight: 500;   
+}
+
 
 /* Zmiana treści RWD */
 #gz-span-text-change::before {
@@ -446,6 +461,7 @@
 
 /* -=== Kontakt ===- */
 .gz-kontakt {
+
     h2 {
         font-size: 26px;
         padding-top: 20px;
@@ -488,341 +504,394 @@
             width: 20px!important;
             padding: 0;
             height: 20px;
-            size: 10px;
-            
+            size: 10px; 
         }
+
         .form-check-input:checked {
             background-color: $text_ciemny;
             border: 1px solid $text_ciemny;
         }
+
         .form-check-label {
             color: $szary_text;
             font-size: 12px;
             font-weight: 400;
             padding-left: 10px;
         }
-        .form-check-input:focus {
-            
+
+        .form-check-input:focus { 
             box-shadow: 0 0 0 0.25rem rgba(0, 51, 68, 0.2)
         }
-        
-       
-        
+        .ok-feedback, .send-ok {
+            display: none;
+        }
+        .input_ok {
+            .form-control, .form-select {
+                border: 2px solid $akcent1;
+            }
+            .ok-feedback {
+                display: block;
+                background-color: $akcent1;
+                color: $white;
+                margin-top: 0px;
+                margin-left: 8px;
+                width: fit-content;
+                padding: 3px 15px 5px 15px;
+                border-radius: 0px 0px 5px 5px;
+                font-size: 12px;
+                font-weight: 500;
+            }
+            .send-ok {
+                display: block;
+                background-color: $akcent1;
+                text-align: center;
+                color: $white;
+                border-radius: 5px;
+                padding: 15px 30px; 
+                width: 100%;
+            }
+        }
+        .error {
+            .form-control, .form-select {
+                border: 2px solid $akcent3;
+            }
+            .invalid-feedback {
+                display: block;
+                background-color: $akcent3;
+                color: $white;
+                margin-top: 0px;
+                margin-left: 8px;
+                width: fit-content;
+                padding: 3px 15px 5px 15px;
+                border-radius: 0px 0px 5px 5px;
+                font-size: 12px;
+                font-weight: 500;
+            }
+
+            .form-check {
+                .invalid-feedback {
+                    margin-top: 5px;
+                    margin-left: 8px;
+                    border-radius: 5px; 
+                }
+            }
+        }
     }
-    
-    .bloczek-kontakt {
-        border: 1px solid $ramka-szara;
-        border-radius: 10px;
-        text-align: center;
+}
+
+.bloczek-kontakt {
+    border: 1px solid $ramka-szara;
+    border-radius: 10px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    height: fit-content;
+    position: relative;
+    padding: 20px 15px 25px 35px;
+    transition: all 0.3s ease-out;
+    margin-top: 20px;
+
+    h5 {
+        font-size: 23px;
+        font-weight: 600;
         margin: 0;
         padding: 0;
-        height: fit-content;
-        position: relative;
-        padding: 20px 15px 25px 35px;
-        transition: all 0.3s ease-out;
-        margin-top: 20px;
-
-        h5 {
-            font-size: 23px;
-            font-weight: 600;
-            margin: 0;
-            padding: 0;
-            margin-bottom: -5px;
-        }
-        .stanowisko {
-            font-size: 16px;
-            font-weight: 400;
+        margin-bottom: -5px;
+    }
+    .stanowisko {
+        font-size: 16px;
+        font-weight: 400;
+        color: $szary_text;
+        margin: 0;
+        padding: 0;
+    }
+    .phone {
+        display: flex;
+        text-align: left;
+        span {
             color: $szary_text;
+            font-size: 14px;
+            font-weight: 400;
+            display: inline;
+            margin: 0;
+            padding: 0; 
+        }
+
+        p {
+            color: $text_ciemny;
+            font-size: 18px;
+            font-weight: 600;
+            margin: 0;
+            margin-top: -3px;
+            padding: 0;
+        }
+    }
+    .mail {
+        display: flex;
+        text-align: left;
+        span {
+            color: $szary_text;
+            font-size: 14px;
+            font-weight: 400;
+            display: inline;
             margin: 0;
             padding: 0;
         }
-        .phone {
-            display: flex;
-            text-align: left;
-            span {
-                color: $szary_text;
-                font-size: 14px;
-                font-weight: 400;
-                display: inline;
-                margin: 0;
-                padding: 0; 
-            }
-
-            p {
-                color: $text_ciemny;
-                font-size: 18px;
-                font-weight: 600;
-                margin: 0;
-                margin-top: -3px;
-                padding: 0;
-            }
-        }
-        .mail {
-            display: flex;
-            text-align: left;
-            span {
-                color: $szary_text;
-                font-size: 14px;
-                font-weight: 400;
-                display: inline;
-                margin: 0;
-                padding: 0;
-            }
-            a {
-                display: block;
-                color: $text_ciemny;
-                font-size: 15px;
-                font-weight: 500;
-                margin: 0;
-                margin-top: -3px;
-                padding: 0;
-                transition: all 0.2s ease-out;
-            }
-            a:hover {
-                border: 0;
-                text-decoration: underline;
-                color: $akcent1;
-            }
-        }
-        .btn {
-            min-width: 110px;
+        a {
+            display: block;
+            color: $text_ciemny;
+            font-size: 15px;
+            font-weight: 500;
             margin: 0;
-            padding: 11px 15px;
-            line-height: 1;
-            font-size: 14px;
-            font-weight: 600;
-            border: 2px solid $text_ciemny;
+            margin-top: -3px;
+            padding: 0;
+            transition: all 0.2s ease-out;
         }
-
         a:hover {
-            border: 2px solid $akcent2;
+            border: 0;
+            text-decoration: underline;
+            color: $akcent1;
         }
-        @media (max-width: 1199px) {
-            .btn {
-              
-              min-width: fit-content;
-              padding: 7px 12px;
-            }
-          }
-        .gz-info {
-            position: absolute;
-            top: -17px;
-            display: flex;
-            overflow: hidden;
-            transform: rotateX(90deg);
-            transition: all 0.3s ease-out;
-        }
-        .pokoj {
-            background-color: $akcent1;
-            color: $white;
-            padding: 6px 15px 6px 15px;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: 600;
-            display: inline-block;
-            min-width: fit-content;
-            z-index: 1;
-        }
-        
-        .godziny {
-            position: relative;
-            display: block;
-            width: 200px;
-            height: fit-content;
-        }
-        .godziny-content {
-            position: absolute;
-            left: calc(-100% - 20px);
-            font-size: 14px;
-            padding: 5px 15px 5px 45px;
-            font-weight: 600;
-            border: 1px solid $text_ciemny;
-            border-radius: 5px;
-            background-color: $white;
-            opacity: 0;
-            transition: all 0.5s ease-out;
-            transition-delay: 200ms
-        }
-        .godziny-urzedowania {
-            
-            text-align: left;
-            width: 100%;
-            display: block;
-            height: 0;
-            overflow: hidden;
-            transition: all 0.5s ease-out;
+    }
+    .btn {
+        min-width: 110px;
+        margin: 0;
+        padding: 11px 15px;
+        line-height: 1;
+        font-size: 14px;
+        font-weight: 600;
+        border: 2px solid $text_ciemny;
+    }
 
-            span {
-                color: $szary_text;
-                font-size: 14px;
-                font-weight: 400;
-                padding-top: 15px;
-                padding-bottom: 5px;
-                display: inline-block;
-            }
-            p {
-                text-align: center;
-                font-size: 12px;
-                font-weight: 600;
-                margin-top: 5px;
-            }
-
-            ul {
-                list-style: none; 
-                font-size: 12px;
-                font-style: normal;
-                font-weight: 500;
-                padding: 0; 
-                margin: 0; 
-              }
-        } 
+    a:hover {
+        border: 2px solid $akcent2;
     }
     @media (max-width: 1199px) {
-        .bloczek-kontakt {
-          padding: 15px;
-        }
-    }
-    .bloczek-kontakt:hover {
-        border: 1px solid #72D872;
-        border-radius: 6px;
-        box-shadow: 0px 5px 11px 0px rgba(0, 0, 0, 0.05), 0px 20px 20px 0px rgba(0, 0, 0, 0.04), 0px 46px 28px 0px rgba(0, 0, 0, 0.03), 0px 82px 33px 0px rgba(0, 0, 0, 0.01), 0px 128px 36px 0px rgba(0, 0, 0, 0.00);
-        .godziny-urzedowania {
-            height: 160px;
-        }
-        .godziny-content {
-            left: -35px;
-            opacity: 1;
-        }
-        .gz-info {
-            transform: rotateX(0deg);
-        }
-    }
-    .bloczek-kontakt-img {
-        min-height: 190px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        h5 {
-            font-size: 15px;
-            font-weight: 600;
-        }
-        img {
-            scale: 0.3;
-        }
-    }
-    .gz-info-section {
-        padding-top: 80px;
-        margin-bottom: 15px;
-        padding-left: 50px;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        .gz-ingo-img {
-            position: relative;
-        }
-        h5 {
-            color: $text_ciemny;
-            font-size: 24px;
-            font-weight: 600;
-            padding-bottom: 5px;
-        }
-        p {
-            color: $szary_text;
-            font-size: 16px;
-            font-weight: 400;
-            line-height: 28px;
-        }
-        img {
-            position: absolute;
-            left: -33px;
-            top: 3px;
-        }
-
-    }
-    @media (max-width: 991px) {
-        .gz-info-section {
-            padding-top: 0px;
-            flex-direction: row;
-            padding-left: 10px;
-            justify-content: space-between;
-            padding-top: 80px;
-            img {
-                height: 30px;
-                left: 50%;
-                top: -40px;
-                transform: translateX(-50%);
-            }
-        }
-    }
-    @media (max-width: 767px) {
-        
-        .gz-info-section {
-            flex-direction: column;
-            padding-top: 40px;
-            .gz-ingo-img {
-                margin-top: 50px;
-            }
+        .btn {
             
+            min-width: fit-content;
+            padding: 7px 12px;
         }
+        }
+    .gz-info {
+        position: absolute;
+        top: -17px;
+        display: flex;
+        overflow: hidden;
+        transform: rotateX(90deg);
+        transition: all 0.3s ease-out;
+    }
+    .pokoj {
+        background-color: $akcent1;
+        color: $white;
+        padding: 6px 15px 6px 15px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 600;
+        display: inline-block;
+        min-width: fit-content;
+        z-index: 1;
     }
     
-    .modal-content {
-        padding: 25px;
-
-        select, #file, ::placeholder  {
-            font-size: 12px;
-            color: $text_ciemny;
-            font-weight: 600;
-        }
-        
-        textarea {
-            min-height: 150px;
-        }
-        .modal-header {
-            border-bottom: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            padding: 0;
-           
-            button {
-                position: absolute;
-                right: 15px;
-                top: 15px;
-            }
-        }
-        .gz-modal-cta button {
-            width: 45px;
-            margin: 0 8px!important;
-        }
-        .btn-secondary {
-            background-color: $white;
-            color: $text_ciemny;
-            border-radius: 8px;
-        }
-        .btn-secondary:hover {
-            background-color: $text_ciemny;
-            color: $white;
-        }
-        .btn-primary:hover {
-            border: 2px solid $akcent2;
-        }
-        form {
-            margin-top: 0;
-        }
-        .modal-body {
-            padding: 0;
-        }
-        .modal-lg {
-            --bs-modal-width: 950px; 
-            text-align: left; 
-        }
+    .godziny {
+        position: relative;
+        display: block;
+        width: 200px;
+        height: fit-content;
     }
-    .show {
-        background: rgba(0, 51, 68, 0.80);
-        backdrop-filter: blur(10px);
+    .godziny-content {
+        position: absolute;
+        left: calc(-100% - 20px);
+        font-size: 14px;
+        padding: 5px 15px 5px 45px;
+        font-weight: 600;
+        border: 1px solid $text_ciemny;
+        border-radius: 5px;
+        background-color: $white;
+        opacity: 0;
+        transition: all 0.5s ease-out;
+        transition-delay: 200ms
+    }
+    .godziny-urzedowania {
+        
+        text-align: left;
+        width: 100%;
+        display: block;
+        height: 0;
+        overflow: hidden;
+        transition: all 0.5s ease-out;
+
+        span {
+            color: $szary_text;
+            font-size: 14px;
+            font-weight: 400;
+            padding-top: 15px;
+            padding-bottom: 5px;
+            display: inline-block;
+        }
+        p {
+            text-align: center;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        ul {
+            list-style: none; 
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 500;
+            padding: 0; 
+            margin: 0; 
+            }
     } 
 }
+@media (max-width: 1199px) {
+    .bloczek-kontakt {
+        padding: 15px;
+    }
+}
+.bloczek-kontakt:hover {
+    border: 1px solid #72D872;
+    border-radius: 6px;
+    box-shadow: 0px 5px 11px 0px rgba(0, 0, 0, 0.05), 0px 20px 20px 0px rgba(0, 0, 0, 0.04), 0px 46px 28px 0px rgba(0, 0, 0, 0.03), 0px 82px 33px 0px rgba(0, 0, 0, 0.01), 0px 128px 36px 0px rgba(0, 0, 0, 0.00);
+    .godziny-urzedowania {
+        height: 160px;
+    }
+    .godziny-content {
+        left: -35px;
+        opacity: 1;
+    }
+    .gz-info {
+        transform: rotateX(0deg);
+    }
+}
+.bloczek-kontakt-img {
+    min-height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h5 {
+        font-size: 15px;
+        font-weight: 600;
+    }
+    img {
+        scale: 0.3;
+    }
+}
+.gz-info-section {
+    padding-top: 80px;
+    margin-bottom: 15px;
+    padding-left: 50px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .gz-ingo-img {
+        position: relative;
+    }
+    h5 {
+        color: $text_ciemny;
+        font-size: 24px;
+        font-weight: 600;
+        padding-bottom: 5px;
+    }
+    p {
+        color: $szary_text;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 28px;
+    }
+    img {
+        position: absolute;
+        left: -33px;
+        top: 3px;
+    }
+
+}
+@media (max-width: 991px) {
+    .gz-info-section {
+        padding-top: 0px;
+        flex-direction: row;
+        padding-left: 10px;
+        justify-content: space-between;
+        padding-top: 80px;
+        img {
+            height: 30px;
+            left: 50%;
+            top: -40px;
+            transform: translateX(-50%);
+        }
+    }
+}
+@media (max-width: 767px) {
+    
+    .gz-info-section {
+        flex-direction: column;
+        padding-top: 40px;
+        .gz-ingo-img {
+            margin-top: 50px;
+        }
+        
+    }
+}
+
+.modal-content {
+    padding: 25px;
+
+    select, #file, ::placeholder  {
+        font-size: 12px;
+        color: $text_ciemny;
+        font-weight: 600;
+    }
+    
+    textarea {
+        min-height: 150px;
+    }
+    .modal-header {
+        border-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0;
+        
+        button {
+            position: absolute;
+            right: 15px;
+            top: 15px;
+        }
+    }
+    .gz-modal-cta button {
+        width: 45px;
+        margin: 0 8px!important;
+    }
+    .btn-secondary {
+        background-color: $white;
+        color: $text_ciemny;
+        border-radius: 8px;
+    }
+    .btn-secondary:hover {
+        background-color: $text_ciemny;
+        color: $white;
+    }
+    .btn-primary:hover {
+        border: 2px solid $akcent2;
+    }
+    form {
+        margin-top: 0;
+    }
+    .modal-body {
+        padding: 0;
+    }
+    .modal-lg {
+        --bs-modal-width: 950px; 
+        text-align: left; 
+    }
+}
+.show {
+    background: rgba(0, 51, 68, 0.80);
+    backdrop-filter: blur(10px);
+} 
+
 
 
 .gz-wyszukiwanie-bloczek {

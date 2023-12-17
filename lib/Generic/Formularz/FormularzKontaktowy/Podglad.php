@@ -22,9 +22,11 @@ class Podglad extends \Generic\Formularz\Abstrakcja
 		$temat = $tematy_mapper->pobierzPoId($this->obiekt->idTematu);
 		$konfiguracja = unserialize($temat->konfiguracja);
 
+        $konfiguracja['email'] = $konfiguracja['nadawca'];
 		foreach ($this->listaPol as $nazwa => $pole)
 		{
 			if ($nazwa == 'daneOsobowe') continue;
+            if ($nazwa == 'nadawca') $nazwa = 'email';
 			if (isset($konfiguracja[$nazwa]) && $this->obiekt->$nazwa != '')
 			{
 				$this->formularz->input(new Input\Html('pole_'.$nazwa, '', array(
@@ -38,6 +40,7 @@ class Podglad extends \Generic\Formularz\Abstrakcja
 			'atrybuty' => array('onclick' => 'window.location = \''.Router::urlAdmin($this->kategoriaLinkow, 'index').'\'' )
 		)));
 
+        $this->tlumaczenia['pole_email'] = $this->tlumaczenia['pole_nadawca'];
 		$this->formularz->ustawTlumaczenia($this->tlumaczenia);
 	}
 

@@ -55,12 +55,13 @@
 
 {{BEGIN input}}
 <div class="{{$klasa}}">
+	{{IF $klasa_wew}}<div class="{{$klasa_wew}}">{{END}}
 		{{BEGIN etykieta}}
 		<label for="{{$nazwa}}" class="form-label {{$klasa}} {{if($wymagany,'wymagany')}}">{{$etykieta}}{{if($wymagany,' <strong>*</strong>')}}</label>
 		{{END}}
 		{{$html}}
-
 		{{BEGIN blad}}<div class="invalid-feedback">{{$tresc}}</div>{{END}}
+	{{IF $klasa_wew}}</div>{{END}}
 </div>
 {{END}}
 
