@@ -19,6 +19,20 @@
 
 </head>
 <body>
+<header class="gz-header">
+	<div class="container">
+		<div><a class="herb" href="{$URL}"><img alt="{$alt_herb}" src="/_szablon/images/svg/img-svg-01.svg" /></a></div>
+		<div class="row gz-navbar-top align-items-center">
+			<div class="col-md-8 col-sm-6 col-8 gz-navbar-title">
+				<h2>{$TOP_TYTUL}</h2>
+				<span id="gz-span-text-change" data-md-text="{$TOP_HASLO}" data-xs-text="{$TOP_HASLO}"></span>
+			</div>
+			<div class="col-md-4 col-sm-6 col-4 d-flex justify-content-end flex-column flex-sm-row align-items-end align-items-sm-start">
+				{{ $region_1 }}
+			</div>
+		</div>
+	</div>
+</header>
 	<div class="row">
 		<div class="col-md-3">{{ $region_2 }}</div>
 		<div class="col-md-9">{{ $region_3 }}</div>

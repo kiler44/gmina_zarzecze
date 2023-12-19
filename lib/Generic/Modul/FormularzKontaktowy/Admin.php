@@ -147,6 +147,7 @@ class Admin extends Modul\Admin
 			{
 				$wiersz['tresc'] = str_cut($wiersz['tresc'], 100);
 				$wiersz['temat'] = $tematy[$wiersz['id_tematu']];
+                $wiersz['nadawca'] = $wiersz['email'];
 				$grid->dodajWiersz($wiersz);
 			}
 		}

@@ -57,7 +57,6 @@ class Http extends \Generic\Formularz\Abstrakcja
 			}
 		}
 
-
 		foreach($this->listaPol as $nazwa => $ustawieniePola)
 		{
 			if (isset($konfiguracja[$nazwa]))
@@ -77,13 +76,20 @@ class Http extends \Generic\Formularz\Abstrakcja
 
 				$this->formularz->$nazwa->dodajFiltr('strip_tags', 'filtr_xss', 'trim');
 
-				if ($konfiguracja[$nazwa] == 2)
-				{
+				if ($konfiguracja[$nazwa] == 2) {
+                    if ($klasa == '\Generic\Biblioteka\Input\CheckboxOpis')
+                    {
+                        $walidator = new Walidator\RozneOd(0);
+                        $walidator->ustawTlumaczenia($this->tlumaczenia);
+                        $this->formularz->$nazwa->dodajWalidator($walidator);
+                    }
 					$this->formularz->$nazwa->dodajWalidator(new Walidator\NiePuste());
 				}
 				if ($nazwa == 'nadawca')
 				{
-					$this->formularz->$nazwa->dodajWalidator(new Walidator\Email());
+                    $walidator = new Walidator\Email();
+                    $walidator->ustawTlumaczenia();
+					$this->formularz->$nazwa->dodajWalidator($walidator);
 				}
 				if ($nazwa == 'stronaWWW')
 				{
@@ -111,7 +117,6 @@ class Http extends \Generic\Formularz\Abstrakcja
                 'atrybuty' => array('class' => 'buttonSet buttonLight'),
             )));
         }
-
 
 		$this->formularz->ustawTlumaczenia($this->tlumaczenia);
 	}

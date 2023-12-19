@@ -142,6 +142,10 @@ class Http extends Modul\Http
 		$tresc_html = '';
 		foreach ($dane as $pole => $wartosc)
 		{
+            if ($pole == 'nadawca') {
+                $dane['email'] = $wartosc;
+                $obiektDanych->email = $wartosc;
+            }
 			if ($pole == 'daneOsobowe' || $pole == '_spacer_') continue;
 			$obiektDanych->$pole = $wartosc;
 

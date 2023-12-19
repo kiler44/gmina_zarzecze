@@ -103,7 +103,8 @@ class Http extends Modul\Http
 				$dane['tytul'] = str_cut($aktualnosc['tytul'], $this->k->k['index.znakow_w_tytule']);
 				$dane['url'] = Router::urlHttp($kategoriaUrl, array('aktualnosc', $aktualnosc['id']));
 				$dane['tytul_alt'] = $aktualnosc['tytul'];
-				$dane['data_dodania'] = date($this->k->k['index.format_daty'], strtotime($aktualnosc['data_dodania']));
+				//$dane['data_dodania'] = date($this->k->k['index.format_daty'], strtotime($aktualnosc['data_dodania']));
+                $dane['data_dodania'] = $this->k->k['index.format_daty_po_polsku'] ? dataGramatyczniePL(strtotime($aktualnosc['data_dodania'])) : date($this->k->k['index.format_daty'], strtotime($aktualnosc['data_dodania']));
 				$dane['url_wiecej'] = Router::urlHttp($kategoriaUrl);
 
 				$this->szablon->ustawBlok('/index/wiersz', $dane);

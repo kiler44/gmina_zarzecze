@@ -6,6 +6,7 @@ use Generic\Konfiguracja\Konfiguracja;
 /**
  * @property string $k['idKategorii']
  * @property int $k['index.dlugosc_zajawki']
+ * @property bool $k['index.format_daty_po_polsku']
  * @property string $k['index.format_daty']
  * @property int $k['index.ilosc_na_liscie']
  * @property string $k['index.klasa_nadrzedna_listy']
@@ -36,7 +37,11 @@ class Http extends Konfiguracja
 		'typ' => 'int',
 		'wartosc' => 200,
 		),
-
+    'index.format_daty_po_polsku' => array(
+        'opis' => 'Jeśli zaznaczone data będzie się wyświetlała gramatycznie np. 10 września 2022',
+        'typ' => 'bool',
+        'wartosc' => false,
+    ),
 	'index.format_daty' => array(
 		'opis' => 'Format wyswietlanej daty. Aby poprawnie określić sprawdź http://www.php.net/manual/pl/function.date.php',
 		'typ' => 'varchar',

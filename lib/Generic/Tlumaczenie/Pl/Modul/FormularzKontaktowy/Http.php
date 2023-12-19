@@ -55,6 +55,7 @@ class Http extends Tlumaczenie
 		'formularz.etykieta_zapisz' => 'Wyślij',
 		'formularz.info_zapisano_waidomosc' => 'Wiadomość została wysłana. Dziękujemy!',
 		'formularz.warning_formularz_niewypelniony' => '<strong>Uwaga!</strong> Nie wszystkie wymagane pola zostały poprawnie wypełnione!',
+        'formularz.walidator_rozne_od_nie_jest_rozne' => 'Zgoda na przetwarzanie danych osobowych jest obowiązkowa.',
 
 		'index.blad_brak_strony' => 'Nie można pobrać treści strony',
 		'index.tytul_modulu' => 'Formularz kontaktowy',

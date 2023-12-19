@@ -276,8 +276,8 @@ class Mapper extends Biblioteka\Mapper\Baza
 
 		$sql = 'SELECT * FROM ' . $this->tabela
 			. ' WHERE typ = \'' . addslashes($typ) . '\''
-			. ' AND id_projektu = ' . ID_PROJEKTU;
-		//	. ' AND kod_jezyka = \'' . KOD_JEZYKA . '\'';
+			. ' AND id_projektu = ' . ID_PROJEKTU . '\''
+			. ' AND kod_jezyka = \'' . KOD_JEZYKA . '\'';
 
 		return $this->pobierzWiele($sql);
 	}

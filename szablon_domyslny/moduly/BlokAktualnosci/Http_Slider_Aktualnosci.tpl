@@ -37,16 +37,17 @@
 				{{BEGIN link_wiecej}}<a href="{{$url}}" title="{{escape($tytul_alt)}}" class="more"><button class="btn btn-primary btn-lg ">{{$etykieta_link_wiecej}}</button></a>{{END}}
 				{{END}}
 			</div>
-			<div class="col-md-6 col-12 gz-newscenter-right order-md-2 order-1">
-				{{BEGIN zdjecie_glowne}}<img src="{{$zdjecie}}" alt="{{escape($tytul_alt)}}"/>
-				{{END}}
+			<div class="col-md-6 col-12 gz-newscenter-right order-md-2 order-1"">
+				{{BEGIN zdjecie_glowne}}<img src="{{$zdjecie}}" alt="{{escape($tytul_alt)}}"/>{{END}}
 			</div>
 		</div>
 	</div>
 {{END}}
 </div>
 						<div class="row g-0">
+
 							<div class="col-lg-8 col-12 gz-newscenter-sorter text-lg-start text-center g-0">
+								<!--
 								<button type="button" class="btn btn-outline-primary btn-sm gz-sorter">Sport</button>
 								<button type="button" class="btn btn-outline-primary btn-sm gz-sorter-przetarg">Przetargi</button>
 								<button type="button" class="btn btn-outline-primary btn-sm">Aktualności</button>
@@ -56,7 +57,9 @@
 								<button type="button" class="btn btn-outline-primary btn-sm">Nauka</button>
 								<button type="button" class="btn btn-outline-primary btn-sm">Inwestycje</button>
 								<button type="button" class="btn btn-outline-primary btn-sm gz-sorter-allert">Ostatnia chwila</button>
+								-->
 							</div>
+
 							{{BEGIN link_wiecej}}
 							<div class="col-lg-4 col 12 d-flex justify-content-lg-end justify-content-center g-0">
 								<a title="{{escape($etykieta_link_wiecej_aktualnosci)}}" href="{{$url_wiecej}}"><button class="btn btn-outline-primary sorter-more">{{$etykieta_link_wiecej_aktualnosci}}</button></a>

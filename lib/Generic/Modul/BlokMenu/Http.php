@@ -190,6 +190,12 @@ class Http extends Modul\Http
 						}
 						if ($kategoria->czyWidoczna)
 						{
+                            if ($kategoria->blokada)
+                            {
+                                $url = '';
+                            }
+                            //dump($kategoria);
+                            //dump('Czy blokada: '.$kategoria->blokada.', URL: '.$url);
 							if ($url != '')
 							{
 								$szablonLink = ($linkiSeoWlaczone) ? '/drzewo/elementTrescLinkSeo' : '/drzewo/elementTrescLink';

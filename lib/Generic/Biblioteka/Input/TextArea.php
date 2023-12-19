@@ -52,7 +52,7 @@ class TextArea extends Input
 					limitZnakow("{{$nazwa}}", \'{{$maxlength}}\', "lim_{{$nazwa}}", "{{$etykieta_limit}}");
 				});
 			</script>
-			<p><span id="lim_{{$nazwa}}" class="hide"></span>&nbsp;</p>
+			<p class="hidden" id="lim_{{$nazwa}}"><span></span>&nbsp;</p>
 		{{END licznik}}
 	{{END textarea}}
 	';
@@ -73,7 +73,7 @@ class TextArea extends Input
 					$config = array(
 						'customConfig' => 'config_bkt.js',
 						//'extraPlugins' => 'privatefiles',
-						'removePlugins' => 'scayt,smiley,templates,wsc',
+						'removePlugins' => 'scayt,smiley,templates,wsc,charcount',
 						'filebrowserBrowseUrl' => Router::urlPopup('admin', 'PlikiPubliczne', 'index'),
 						'filebrowserImageBrowseUrl' => Router::urlPopup('admin', 'PlikiPubliczne', 'index', array('tryb' => 'Obrazy')),
 						'filebrowserFlashBrowseUrl' => Router::urlPopup('admin', 'PlikiPubliczne', 'index', array('tryb' => 'Flash')),

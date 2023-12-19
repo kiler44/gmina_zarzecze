@@ -92,7 +92,7 @@ class Admin extends Modul\Admin
 			$grid->pager($pager->html(Router::urlAdmin($this->kategoria, '', array('nrStrony' => '{NR_STRONY}', 'naStronie' => '{NA_STRONIE}'))));
 
 			$sorter = new Aktualnosc\Sorter($kolumna, $kierunek);
-			$grid->ustawSortownie(array('data_dodania', 'tytul'), $kolumna, $kierunek,
+			$grid->ustawSortownie(array('data_dodania', 'data_waznosci', 'tytul'), $kolumna, $kierunek,
 				Router::urlAdmin($this->kategoria, '', array('kolumna' => '{KOLUMNA}', 'kierunek' => '{KIERUNEK}'))
 			);
 
