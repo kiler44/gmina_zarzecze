@@ -216,3 +216,17 @@ function openVideoModal(videoSrc) {
     videoPlayer.src = '';
     });
 }
+
+
+function openImageModal(imageSrc) {
+    const image = document.getElementById('img');
+    const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+
+    image.src = imageSrc;
+    imageModal.show();
+
+    // Stop video playback when modal is closed
+    imageModal._element.addEventListener('hidden.bs.modal', () => {
+        image.src = '';
+    });
+}

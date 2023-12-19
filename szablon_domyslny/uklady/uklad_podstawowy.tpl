@@ -191,6 +191,16 @@
 		</div>
 	</div>
 </div>
+<!-- Image Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered gz-modal-lg">
+		<div class="modal-content">
+			<div class="modal-body">
+				<img id="img" src="" />
+			</div>
+		</div>
+	</div>
+</div>
 </section>
 <script src="/_szablon/js/bootstrap.bundle.min.js"></script>
 <script src="/_szablon/js/gz-js.js"></script>

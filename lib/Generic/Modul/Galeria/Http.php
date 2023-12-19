@@ -223,7 +223,8 @@ class Http extends Modul\Http
 					$tresc['opis'] = $zdjecie->opis;
 					$tresc['data_dodania'] = $zdjecie->dataDodania->format($this->k->k['galeria.format_daty']);
 					$tresc['autor'] = ($zdjecie->autor != '') ? $zdjecie->autor : $this->j->t['galeria.brak_autora'];
-
+                    $tresc['zdjecie_link'] = Cms::inst()->url('galeria', $id).'/'.$zdjecie->nazwaPliku;
+					/*
 					if($this->k->k['galeria.uzyj_lightbox'])
 					{
 						$tresc['zdjecie_link'] = Cms::inst()->url('galeria', $id).$zdjecie->nazwaPliku;
@@ -234,6 +235,7 @@ class Http extends Modul\Http
 						$tresc['zdjecie_link'] = Router::urlHttp($this->kategoria, array('zdjecie', $zdjecie->id));
 						$tresc['lightbox'] = null;
 					}
+					*/
 
 					$this->szablon->ustawBlok('galeria/miniaturka', $tresc);
 				}
