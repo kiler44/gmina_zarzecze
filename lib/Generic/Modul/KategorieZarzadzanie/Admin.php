@@ -171,15 +171,15 @@ class Admin extends Modul\System
 
 		$formularz = $this->budujFormularz($kategoria);
       
-      $komunikaty = Cms::inst()->temp('komunikaty');
+        $komunikaty = Cms::inst()->temp('komunikaty');
       
-      if (is_array($komunikaty) && !empty($komunikaty))
-      {
-         foreach ($komunikaty as $komunikat)
-         {
-            $this->komunikat($komunikat['tresc'], $komunikat['typ']);
-         }
-      }
+        if (is_array($komunikaty) && !empty($komunikaty))
+        {
+            foreach ($komunikaty as $komunikat)
+            {
+                $this->komunikat($komunikat['tresc'], $komunikat['typ']);
+            }
+        }
       
 		$this->tresc .= $this->szablon->parsujBlok('edytuj', array(
 			'formularz' => $formularz->html(),
@@ -328,7 +328,7 @@ class Admin extends Modul\System
 				if ($kategoria->modul instanceof DostepnyModul\Obiekt && $kategoria->modul->dlaZalogowanych) $kategoria->dlaZalogowanych = 1;
 			break;
 		}
-
+        $kategoria->generujPelnyLink();
 		if ($kategoria->id > 0)
 		{
 			$info = $this->j->t['edytuj.info_zapisano_dane_kategorii'];

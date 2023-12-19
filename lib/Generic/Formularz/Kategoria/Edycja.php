@@ -147,6 +147,7 @@ class Edycja extends \Generic\Formularz\Abstrakcja
 
 			$this->formularz->zamknijZbiorowyInput('link');
 
+			/*
 			$this->formularz->otworzZbiorowyInput('staryUrlZbiorowy');
 
 				$this->formularz->input(new Input\Text('staryUrl', array(
@@ -160,6 +161,7 @@ class Edycja extends \Generic\Formularz\Abstrakcja
 				)));
 
 			$this->formularz->zamknijZbiorowyInput('staryUrlZbiorowy');
+			*/
 
 			$this->formularz->input(new Input\Checkbox('czyWidoczna'));
 			$this->formularz->czyWidoczna->dodajFiltr('intval');

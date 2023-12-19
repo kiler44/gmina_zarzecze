@@ -69,7 +69,9 @@
 				{{ BEGIN miniaturka }}
 				<div class="col-lg-4 col-6 gallery-item" data-tags="{{escape($tytul)}}" >
 					<img src="{{ $miniaturka }}"  alt="{{escape($tytul)}}" >
-					<div class="gallery-overlay" onclick="openVideoModal("{{ $miniaturka }}")" ></div>
+
+					<div class="gallery-overlay" onclick="openImageModal('{{ $zdjecie_link }}')" ></div>
+
 				</div>
 				<!--
 					<div class="caption"><a href="{{ $zdjecie_link }}" title="{{ $tytul }}" {{ $lightbox }}>{{ $tytul }}</a></div>
@@ -77,7 +79,9 @@
 				{{ END }}
 				<div class="r_clear"></div>
 				<div class="text-center">
+					<p>
 					<small>{{$autor}} {{$data_dodania}}</small>
+					</p>
 				</div>
 				<div class="r_clear"></div>
 				{{$pager}}
