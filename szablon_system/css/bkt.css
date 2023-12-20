@@ -22,14 +22,14 @@ button.btn.btn-medium, input[type="submit"].btn.btn-medium {
 .region_tytul {cursor:pointer;}
 .region_zamkniety {display: none}
 .form-horizontal .no-label .controls{margin-left:10px;}
-.treeLvl1 {padding-left:15px;}
-.treeLvl2 {padding-left:25px;}
-.treeLvl3 {padding-left:35px;}
-.treeLvl4 {padding-left:45px;}
-.treeLvl5 {padding-left:55px;}
-.treeLvl6 {padding-left:65px;}
-.treeLvl7 {padding-left:75px;}
-.treeLvl8 {padding-left:85px;}
+.treeLvl1 {padding-left:30px;}
+.treeLvl2 {padding-left:50px;}
+.treeLvl3 {padding-left:70px;}
+.treeLvl4 {padding-left:90px;}
+.treeLvl5 {padding-left:110px;}
+.treeLvl6 {padding-left:130px;}
+.treeLvl7 {padding-left:150px;}
+.treeLvl8 {padding-left:170px;}
 .treeLvl1:before, .treeLvl2:before, .treeLvl3:before, .treeLvl4:before, .treeLvl5:before, .treeLvl6:before, .treeLvl7:before, .treeLvl8:before {content: "\f061"; font-family: FontAwesome; padding-right:5px;}
 .form-horizontal .control-group {min-height: 60px; position: relative}
 .form-horizontal .control-group .control-label {word-wrap:break-word}
@@ -62,7 +62,7 @@ select {width:auto;}
 	overflow: hidden;
 	position: relative;
 	width:340px; height:65px;
-	padding: 0 40px 10px 0; 
+	padding: 0 40px 10px 0;
 	background-color: #f5f5f5;
 	*background-color: #e6e6e6;
 	background-image: -moz-linear-gradient(top, #fff, #ededed);
@@ -305,7 +305,7 @@ doesnotexist:-o-prefocus, .tworzenieKatalogow .input-append .btn {padding-top:6p
 .nazwaZdjecia {margin-left: 20px}
 .sidebarHeader {
 	clear: both;
-	
+
 	background-color: #999;
     background-image: -webkit-gradient(linear, 0 0%, 0 100%, from(#BFBFBF), to(#646464));
     background-image: -webkit-linear-gradient(top, #BFBFBF 0%, #646464 100%);
@@ -359,7 +359,7 @@ doesnotexist:-o-prefocus, .tworzenieKatalogow .input-append .btn {padding-top:6p
 #lang a:hover img {border: 1px solid #0088CC;}
 
 #content-header .btn-group {
-	padding-left: 20px; 
+	padding-left: 20px;
 	border-left: 1px solid silver;
 	box-shadow: 1px 0 0 white inset;
 }
@@ -475,7 +475,7 @@ img.tabela_lista{
 .apartamenty a {color: black; font-weight: bold}
 .apartamenty .ilosc {width: 96px}
 .zamowienie{
-	
+
 }
 
 .zamowienie-naglowek {
@@ -661,19 +661,19 @@ a.ui-spinner-button{
 .orderAssignment {padding: 25px 0 0 0}
 #zbiorowy_appointedTime .help-block {display: inline}
 
-#zbiorowy_directAssignment .control-label, 
-#zbiorowy_appointedTime .control-label, 
+#zbiorowy_directAssignment .control-label,
+#zbiorowy_appointedTime .control-label,
 #zbiorowy_assignToCoordinator .control-label,
 #zbiorowy_assignToTeam .control-label {//width: auto; //height: 100px;
 					margin-right: 10px}
 
-#zbiorowy_directAssignment .controls, 
-#zbiorowy_appointedTime .controls, 
+#zbiorowy_directAssignment .controls,
+#zbiorowy_appointedTime .controls,
 #zbiorowy_assignToCoordinator .controls,
 #zbiorowy_assignToTeam .controls {margin-left: auto; float: left;}
 
-#zamowienie.form-horizontal #zbiorowy_directAssignment, 
-#zamowienie.form-horizontal #zbiorowy_appointedTime, 
+#zamowienie.form-horizontal #zbiorowy_directAssignment,
+#zamowienie.form-horizontal #zbiorowy_appointedTime,
 #zamowienie.form-horizontal #zbiorowy_assignToCoordinator,
 #zamowienie.form-horizontal #zbiorowy_assignToTeam {width: auto !important; border: none; margin-right: 20px}
 .form-horizontal .bootstrap-timepicker input.input-small {width: 40px}
@@ -766,7 +766,7 @@ a.ui-spinner-button{
 .qty_kreditnota .ui-spinner .ui-spinner-up, .qty_kreditnota .ui-spinner .ui-spinner-down,
 label.etykieta .ui-spinner .ui-spinner-up, label.etykieta .ui-spinner .ui-spinner-down,
 .qty_full .ui-spinner .ui-spinner-up, .qty_full .ui-spinner .ui-spinner-down {
-	position: absolute; 
+	position: absolute;
 	right: -50px;
 	-moz-border-bottom-colors: none;
     -moz-border-left-colors: none;
@@ -799,10 +799,10 @@ label.etykieta .ui-spinner .ui-spinner-up, label.etykieta .ui-spinner .ui-spinne
 	text-decoration: none;
 	transition: background-position 0.1s linear 0s;
 }
-.qty_full .ui-spinner .ui-spinner-up {right: 55px} 
+.qty_full .ui-spinner .ui-spinner-up {right: 55px}
 .qty_full .ui-spinner .ui-spinner-down {right: 7px}
 label.etykieta .ui-spinner-button {position: relative !important}
-label.etykieta .ui-spinner .ui-spinner-up {right: auto; margin: -3px 9px 5px} 
+label.etykieta .ui-spinner .ui-spinner-up {right: auto; margin: -3px 9px 5px}
 label.etykieta .ui-spinner .ui-spinner-down {right: auto; margin: -3px 0 5px}
 .prd_dodane.productsFull .ui-spinner-button {top: 1px}
 
@@ -823,7 +823,7 @@ label.etykieta .ui-spinner .ui-spinner-down {right: auto; margin: -3px 0 5px}
    line-height: 20px;
    margin-bottom: 0;
    text-align: center;
-   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75); 
+   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
 	margin-top: 1px
 }
 .formularz_region .qty input.spn, .tabelaDanych .qty input.spn {
@@ -1353,7 +1353,7 @@ li.add:hover{
 	padding: 3px 22px 3px 3px;
 }
 .no-border{
-	border: none !important; 
+	border: none !important;
 }
 .dodaj-wiersz, .wyczysc, .zapisz-adres, .dodaj-notatke, .podglad, .user, .dodaj-wiersz-dziecka{
 	margin-right: 5px;
@@ -1408,7 +1408,7 @@ tr.tableError{
 	background: #ff0000 !important;
 }
 .select2-duzy{
-	min-width: 450px; 
+	min-width: 450px;
 }
 #wyszukiwanieProjekt{
 	width: 950px;
@@ -1481,8 +1481,8 @@ td.wycentrujTabele > table{
 .container_get_project .widget-title h5 {width: 75%}
 .team .installation .box-naglowek {width: auto !important; margin: 0 5px 0 5px}
 .naglowki {width: 90%; float: left}
-.get_project .naglowki {width: auto; display: inline-block} 
-.team .naglowki {width: 84%; display: inline-block} 
+.get_project .naglowki {width: auto; display: inline-block}
+.team .naglowki {width: 84%; display: inline-block}
 .container_get_project #listaZamowien .naglowkiAkcje {width: 235px; display: inline-block; float: right}
 .container_get_project .box-naglowek:first-child {width: auto}
 .przyciski-margines-lewy .btn{ margin-left: 5px; }
@@ -1598,7 +1598,7 @@ td.wycentrujTabele > table{
 .szerokosc{ width: 40% !important;}
 
 .podglad-zamowienia-apartamenty{
-	height: 500px; 
+	height: 500px;
 	overflow-x: auto;
 }
 #numberCustomer{
@@ -1643,16 +1643,16 @@ td.wycentrujTabele > table{
 }
 .selectedContacts span {display: none}
 .brak_zdjecia {
-	width: 28px; 
-	height: 28px; 
-	border: 1px solid #3a87ad; 
-	border-radius: 3px; 
-	line-height: 28px; 
-	text-align: center; 
-	color: white; 
-	background-color: #2F7D33; 
-	display: inline-block !important; 
-	margin-right: 10px; 
+	width: 28px;
+	height: 28px;
+	border: 1px solid #3a87ad;
+	border-radius: 3px;
+	line-height: 28px;
+	text-align: center;
+	color: white;
+	background-color: #2F7D33;
+	display: inline-block !important;
+	margin-right: 10px;
 	vertical-align: middle;
 	font-weight: bolder;
 	text-shadow: 1px 1px #255400;
@@ -1664,7 +1664,7 @@ td.wycentrujTabele > table{
 	margin-left: 10px;
 }
 .no-shadow{
-	text-shadow: none !important; 
+	text-shadow: none !important;
 }
 .borderRed2px{
 	border:2px solid #ff0000;
@@ -1829,7 +1829,7 @@ input.ilosc{
 	z-index: 9999;
 }
 .menuKategorii{
-	
+
 }
 .menuKategorii li::before{	border: none;}
 .menuKategorii li{padding: 0px; /* border-top:1px solid #ccc; */ }
@@ -1876,8 +1876,8 @@ ul.menuKategorii q.poziom_4{width: 550px;}
 	top: -55px;
 }
 .koszyk_fixed{
-	position:fixed; 
-	z-index: 999; 
+	position:fixed;
+	z-index: 999;
 	right: 40px;
 	top:0px;
 }
@@ -2125,18 +2125,18 @@ table#cal-tabela th.cal-data, th#cal-data{
 th#cal-data{ height: 200px; }
 
 #cal-menu.move{ position: fixed; z-index: 1000; width: 2576px; top:0px; }
-.moveHead{ 
-	// position: fixed; 
+.moveHead{
+	// position: fixed;
 	width: 99%;
 	position: absolute;
 	z-index: 3;  box-shadow: 0 3px 6px #2f4f4f; }
 
-#do-gory{ 
-	position: fixed; 
+#do-gory{
+	position: fixed;
 	right: 0;
 	z-index: 999;
 	bottom: 0;
-	width: 80px; 
+	width: 80px;
 	height: 80px;
 	background: url(../img/arrow_up.png) no-repeat #ccc;
 	background-size: contain ;
@@ -2233,9 +2233,9 @@ table.userDayOff tbody tr td .dayOff{ text-align: center; border: 2px solid #FFA
 	width: 280px;
 }
 .podsumowanie_rabat_projekt{
-	text-align:right; 
-	font-size: 18px; 
-	width: 99%; 
+	text-align:right;
+	font-size: 18px;
+	width: 99%;
 	list-style: none;
 }
 .suma{
@@ -2312,7 +2312,7 @@ tr.nieaktywny td{
   border: 1px solid #B9B9B9;
   -webkit-appearance: none;
 
-  background-image: -webkit-gradient( 
+  background-image: -webkit-gradient(
     linear, left top, left bottom,
     color-stop(0, #E8E8E8),
     color-stop(0.5, #E8E8E8),
@@ -2324,7 +2324,7 @@ tr.nieaktywny td{
 }
 
 #listaDoAkceptacji input[type=checkbox]:checked {
-  background-image: -webkit-gradient( 
+  background-image: -webkit-gradient(
     linear, left top, left bottom,
     color-stop(0, #367EF8),
     color-stop(0.5, #367EF8),
@@ -2344,7 +2344,7 @@ tr.nieaktywny td{
   border-right: 1px solid #999999;
   border-bottom: 1px solid: #BABABA;
   border-left: 1px solid #BDBDBD;
-  background-image: -webkit-gradient( 
+  background-image: -webkit-gradient(
     linear, left top, left bottom,
     color-stop(0, #D8D8D8),
     color-stop(1, #FBFBFB)
@@ -2433,7 +2433,7 @@ tr.nieaktywny td{
 .pozycja label {margin-top: 10px}
 .pozycja .labTxt {padding-top: 5px; width: 100%}
 .pozycja input[type=radio]{display:none;}
- 
+
 .pozycja input[type=radio] + label.btn, .pozycja input[type=checkbox] + label.btn{
 	position: relative;
 	margin: 5px 10px;
@@ -2458,13 +2458,13 @@ tr.nieaktywny td{
 /* Radio */
 .pozycja input[type=radio] + label.btn{text-align: center; vertical-align: middle; position: relative; padding: 0; line-height: 35px; margin-top: -5px}
 .pozycja input[type=radio]:hover + label.btn{
-	box-shadow: 
-	0 0 1px #2f96b4, 
+	box-shadow:
+	0 0 1px #2f96b4,
 	inset 0 0 4px #2f96b4;
 }
 
 .pozycja input[type=radio]:checked + label.btn{
-	box-shadow: 0 0 1px #51a351, 
+	box-shadow: 0 0 1px #51a351,
 	inset 0px 0px 14px white;
 	border: 1px solid #51a351;
 	background: #51a351;
@@ -2475,8 +2475,8 @@ tr.nieaktywny td{
 .pozycja input[type=checkbox]{display:none;}
 .pozycja input[type=checkbox] + label.btn{border-radius: 4px}
 .pozycja input[type=checkbox]:hover + label.btn{
-	box-shadow: 
-	0 0 2px #2f96b4, 
+	box-shadow:
+	0 0 2px #2f96b4,
 	inset 0 0 4px #2f96b4;
 }
 .pozycja input[type=checkbox]:checked:hover + label.btn{
