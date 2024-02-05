@@ -17,6 +17,7 @@ use Generic\Biblioteka\Cms;
  * @property int $idAuthor
  * @property string $rozmiar
  * @property string $kod
+ * @property string $opis
  */
 
 class Obiekt extends ObiektDanych

@@ -148,10 +148,19 @@ class Http extends Modul\Http
              * tutaj masz metody do pobrania załączników
              *******************************************
              *******************************************/
-		    //dump($aktualnosc->pobierzKatalog());
-		    //dump($aktualnosc->pobierzZalaczniki());
+            //$urlPlikow = Cms::inst()->url('aktualnosci', $this->obiekt->id);
+            //$zalaczniki = $strona->pobierzZalaczniki();
+            /**
+             * @var Zalacznik\Obiekt $zalacznik
+             */
+            /*
+            foreach($zalaczniki as $zalacznik)
+            {
+                dump($urlPlikow.$zalacznik->file);
+            }
+            */
 
-			$this->ustawGlobalne(array(
+            $this->ustawGlobalne(array(
                 
 				'tytul_strony' => sprintf($this->j->t['aktualnosc.tytul_strony'], $aktualnosc->tytul),
 				'tytul_modulu' => sprintf($this->j->t['aktualnosc.tytul_modulu'], $aktualnosc->tytul),

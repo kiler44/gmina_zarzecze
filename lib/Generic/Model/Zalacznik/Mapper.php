@@ -41,6 +41,7 @@ class Mapper extends Biblioteka\Mapper\Baza
 		'status' => 'status',
 		'type' => 'type',
 		'rozmiar' => 'rozmiar',
+		'opis' => 'opis',
 		'id_author' => 'idAuthor',
         'kod' => 'kod',
 	);

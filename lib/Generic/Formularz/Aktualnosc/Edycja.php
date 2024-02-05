@@ -125,7 +125,8 @@ class Edycja extends \Generic\Formularz\Abstrakcja
                     'id' => $zalacznik->id,
                     'kod' => $zalacznik->file,
                     'nazwa' => $zalacznik->file,
-                    'rozmiar'=> $zalacznik->rozmiar
+                    'rozmiar'=> $zalacznik->rozmiar,
+                    'opis'=> $zalacznik->opis
                 ];
             }
 
