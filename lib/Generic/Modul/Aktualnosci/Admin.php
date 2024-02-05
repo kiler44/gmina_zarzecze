@@ -307,8 +307,6 @@ class Admin extends Modul\Admin
 
 	private function formularz(Aktualnosc\Obiekt $aktualnosc)
 	{
-
-
         $katalog = $aktualnosc->pobierzKatalog();
         if (!$katalog->doZapisu())
         {
@@ -356,7 +354,7 @@ class Admin extends Modul\Admin
                         $katalogDocelowy = new \Generic\Biblioteka\Katalog($aktualnosc->pobierzKatalog());
 
                         $plikiUzytkownika = $multiUpload->przeniesPliki(
-                            listaZTablicy($wartosci['zalaczniki']['pliki'], null, 'nazwa'),
+                            listaZTablicy($wartosci['zalaczniki']['pliki'], null, 'kolejnosc'),
                             $wartosci['zalaczniki']['pliki'], $katalogDocelowy, 1);
 
                         continue;
@@ -366,19 +364,30 @@ class Admin extends Modul\Admin
 
 				if ($aktualnosc->dataWaznosci == '') $aktualnosc->dataWaznosci = null;
 
-				if(count($plikiUzytkownika))
+                if(count($plikiUzytkownika))
                 {
-                    foreach($plikiUzytkownika as $plik)
+                    foreach($plikiUzytkownika as $id => $plik)
                     {
-                        $zalacznikPlik = new Plik($katalogDocelowy.'/'.$plik['nazwa']);
+                        if(isset($plik['kod']))
+                        {
+                            $zalacznikPlik = new Plik($katalogDocelowy.'/'.$plik['nazwa']);
 
-                        $zalacznik = new Zalacznik\Obiekt();
-                        $zalacznik->file = $plik['nazwa'];
-                        $zalacznik->dateAdded = new \DateTime();
-                        $zalacznik->rozmiar = $plik['rozmiar'];
-                        $zalacznik->type = $zalacznikPlik->getMimeType();
+                            $zalacznik = new Zalacznik\Obiekt();
+                            $zalacznik->file = $plik['nazwa'];
+                            $zalacznik->dateAdded = new \DateTime();
+                            $zalacznik->rozmiar = $plik['rozmiar'];
+                            //$zalacznik->opis = $plik['opis'];
+                            $zalacznik->type = $zalacznikPlik->getMimeType();
 
-                        $aktualnosc->dodajZalacznik($zalacznik);
+                            $aktualnosc->dodajZalacznik($zalacznik);
+                        }
+                        elseif(isset($plik['opis']))
+                        {
+                            $zalacznik = $this->dane()->Zalacznik()->pobierzPoId($id);
+                            $zalacznik->opis = $plik['opis'];
+                            $zalacznik->zapisz(new Zalacznik\Mapper());
+                        }
+
                     }
                 }
 				$this->zapiszAktualnosc($aktualnosc, $zdjecieGlowne);

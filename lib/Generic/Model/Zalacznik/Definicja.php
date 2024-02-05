@@ -35,6 +35,7 @@ class Definicja extends Biblioteka\DefinicjaObiektu
 		'status' => self::_ENUM,
 		'type' => self::_STRING,
 		'rozmiar' => self::_STRING,
+		'opis' => self::_STRING,
 		'idAuthor' => self::_INTEGER,
         'kod' => self::_STRING,
 	);

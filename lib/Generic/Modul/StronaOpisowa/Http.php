@@ -1,7 +1,9 @@
 <?php
 namespace Generic\Modul\StronaOpisowa;
+use Generic\Biblioteka\Cms;
 use Generic\Biblioteka\Modul;
 use Generic\Model\StronaOpisowa;
+use Generic\Model\Zalacznik;
 
 
 /**
@@ -35,6 +37,20 @@ class Http extends Modul\Http
 		$strona = $mapper->pobierzDlaKategorii($this->kategoria->id);
 		if ($strona instanceof StronaOpisowa\Obiekt)
 		{
+
+
+            //$urlPlikow = Cms::inst()->url('strona_opisowa', $this->obiekt->id);
+            //$zalaczniki = $strona->pobierzZalaczniki();
+            /**
+             * @var Zalacznik\Obiekt $zalacznik
+             */
+            /*
+            foreach($zalaczniki as $zalacznik)
+            {
+                dump($urlPlikow.$zalacznik->file);
+            }
+            */
+
 			$this->ustawGlobalne(array(
 				'tytul_modulu' => $strona->tytul,
 			));

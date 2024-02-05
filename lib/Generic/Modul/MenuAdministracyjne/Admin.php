@@ -145,7 +145,7 @@ class Admin extends Modul\System
 				/**
 				 * @var $kategoria \Generic\Model\Kategoria\Obiekt
 				 */
-				
+
 				if ($kategoria->blokada || !$kategoria->czyWidoczna || $kategoria->poziom < 2){
                     continue;
                 }
@@ -185,7 +185,6 @@ class Admin extends Modul\System
                         $poziom = null;
                     }
 
-
 					$drzewo .= $this->szablon->parsujBlok('/drzewo/element', array(
                         'kategoria_id' => $kategoria->id,
 					    'rodzic_id' => $rodzicId,
@@ -201,6 +200,7 @@ class Admin extends Modul\System
 				}
 				else
                 {
+
                     $drzewo .= $this->szablon->parsujBlok('/drzewo/elementRozwijalny', array(
                         'kategoria_id' => $kategoria->id,
                         'poziom' => $kategoria->poziom,

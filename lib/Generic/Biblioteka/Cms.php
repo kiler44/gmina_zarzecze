@@ -244,6 +244,7 @@ final class Cms
 			),
 			'katalogi' => array(
 				'aktualnosci' => '/public/aktualnosci/',
+				'strona_opisowa' => '/public/strona_opisowa/',
 				'private_temp' => '/private/temp/',
 				'pliki_uzytkownika' => '/private/temp/user_files/',
 				'public_temp' => '/public/temp/',
@@ -275,6 +276,7 @@ final class Cms
 			),
 			'url' => array(
 				'aktualnosci' => '/_public/aktualnosci/',
+				'strona_opisowa' => '/_public/strona_opisowa/',
 				'private_temp' => '/_private/temp/',
 				'pliki_uzytkownika' => '/_private/temp/user_files/',
 				'pliki_uzytkownika_baza' => 'temp/user_files/',

@@ -1,15 +1,15 @@
 {{BEGIN szablon_zdjecie_1}}
-<li id="{{$id}}">
+<li id="{{$id}}" >
   <div class="edition-area">
 	<p><input type="checkbox" class="no-js" name="{{$usun_nazwa}}" value="{{$usun_wartosc}}" />
 	 </p>
 	 <label><a href="{{$url}}" {{$rel}}><strong>{{$nazwa}}</strong></a></label>
 	  <a href="javascript:void(0)" class="remove {{$funkcja_usun}}" id="{{$id}}" rel="{{$id}}">{{$etykieta_usun}}<span></span></a>
-	  <!--
+
 	  <p class="right">
 	  <label>{{$etykieta_opis}}</label>
-	  <input type="hidden" name="{{$opis_nazwa}}" value="{{$opis_wartosc}}" style="width: 130px;" onclick="this.focus();" /></p>
-	  -->
+	  <input type="text" name="{{$opis_nazwa}}" value="{{$opis_wartosc}}" style="width: 130px;" onclick="this.focus();" /></p>
+
   </div>
 </li>
 {{END}}
