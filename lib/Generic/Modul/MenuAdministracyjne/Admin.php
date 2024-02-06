@@ -173,7 +173,23 @@ class Admin extends Modul\System
 				if ( ! $cms->profil()->maUprawnieniaDo($kodUprawnienia)) $url = '';
 
                 if ($kategoria->blokada || !$kategoria->czyWidoczna || $kategoria->poziom < 2){
-                    $ukryj = true;
+                    if ($url != '')
+                    {
+                        $ukryj = false;
+                        if($poziom != null && $kategoria->poziom > $poziom  )
+                            $ukryj = true;
+                        else
+                        {
+                            $rodzicId = null;
+                            $poziom = null;
+                        }
+                    }
+                    else
+                    {
+                        $poziom = $kategoria->poziom;
+                        $rodzicId = $kategoria->id;
+                    }
+                    continue;
                 }
 				if ($url != '')
 				{
