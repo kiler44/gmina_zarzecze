@@ -401,7 +401,7 @@ class ObiektDanych implements \IteratorAggregate
 		}
 		catch (MapperWyjatek $wyjatek)
 		{
-			dump($wyjatek); die;
+			//dump($wyjatek); die;
 			return false;
 		}
 	}

@@ -146,9 +146,7 @@ class Admin extends Modul\System
 				 * @var $kategoria \Generic\Model\Kategoria\Obiekt
 				 */
 
-				if ($kategoria->blokada || !$kategoria->czyWidoczna || $kategoria->poziom < 2){
-                    continue;
-                }
+
 
 				$klasa_wiersza = ($licznik_wierszy % 2) ? 'nieparzysty' : 'parzysty';
 				$licznik_wierszy ++;
@@ -173,7 +171,10 @@ class Admin extends Modul\System
 				$kodUprawnienia = 'Admin_'.$kategoria->id.'_wykonajIndex';
 		
 				if ( ! $cms->profil()->maUprawnieniaDo($kodUprawnienia)) $url = '';
-	
+
+                if ($kategoria->blokada || !$kategoria->czyWidoczna || $kategoria->poziom < 2){
+                    $ukryj = true;
+                }
 				if ($url != '')
 				{
 				    $ukryj = false;
