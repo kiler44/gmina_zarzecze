@@ -13,6 +13,7 @@
 	<!-- Bootstrap css -->
 	<link href="/_szablon/css/bootstrap.min.css" rel="stylesheet">
 	<link href="/_szablon/css/style.css " rel="stylesheet">
+	<link href="/_szablon/js/dist/css/lightbox.min.css" rel="stylesheet">
 	<title>{{$tytul_strony}}</title>
 
 	<meta name="description" content="{{$opis_strony}}" />
@@ -653,5 +654,6 @@
 <!-- Footer End -->
 <script src="/_szablon/js/bootstrap.bundle.min.js"></script>
 <script src="/_szablon/js/gz-js.js"></script>
+<script src="/_szablon/js/dist/js/lightbox-plus-jquery.min.js" ></script>
 </body>
 </html>
