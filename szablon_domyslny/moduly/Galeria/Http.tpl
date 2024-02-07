@@ -69,7 +69,7 @@
 				{{ BEGIN miniaturka }}
 				<div class="col-lg-4 col-6 gallery-item" data-tags="{{escape($tytul)}}" >
 					<img src="{{ $miniaturka }}"  alt="{{escape($tytul)}}" >
-					<a class="example-image-link" href="{{ $zdjecie_link }}" data-lightbox="example-set" data-title="Click the right half of the image to move forward.">
+					<a class="example-image-link" href="{{ $zdjecie_link }}" data-lightbox="example-set" data-title="{{$opis}}">
 					<div class="gallery-overlay" ></div>
 					</a>
 
