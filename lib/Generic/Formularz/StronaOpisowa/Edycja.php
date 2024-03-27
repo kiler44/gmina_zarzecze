@@ -55,7 +55,7 @@ class Edycja extends \Generic\Formularz\Abstrakcja
                 'url_plikow' => Cms::inst()->url('strona_opisowa', $this->obiekt->id),
                 'prefix' => 's',
                 'max_wielkosc_pliku' => 50000000,
-                'dozwolone_rozszerzenia' => ['pdf', 'xls', 'xlsx', 'doc', 'docs'],
+                'dozwolone_rozszerzenia' => ['pdf', 'xls', 'xlsx', 'doc', 'docs', 'jpg', 'jpeg', 'png'],
             )));
 
             $this->formularz->zamknijZakladke('pliki');
