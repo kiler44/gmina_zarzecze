@@ -235,6 +235,7 @@ class Admin extends Modul\System
 				)),
 			);
 		}
+        dump($linki);
 
 		$katalogMiniatur = new Katalog(Cms::inst()->katalog('miniatury'), true);
 
