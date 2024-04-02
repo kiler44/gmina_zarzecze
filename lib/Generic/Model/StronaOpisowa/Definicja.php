@@ -20,6 +20,7 @@ class Definicja extends Biblioteka\DefinicjaObiektu
 		'kodJezyka' => self::_STRING,
 		'idKategorii' => self::_INTEGER,
 		'idAutora' => self::_INTEGER,
+		'idGalerii' => self::_INTEGER,
 		'tytul' => self::_STRING,
 		'tresc' => self::_STRING,
 		'dataDodania' => self::_STRING,

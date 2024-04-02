@@ -33,6 +33,9 @@ class Admin extends Tlumaczenie
 		'formularz.tytul.etykieta' => 'Tytuł',
 		'formularz.tytul.opis' => '',
         'formularz.pliki.zakladka' => 'Pliki',
+        'formularz.etykieta_select_wybierz' => '- wybierz -',
+        'formularz.idGalerii.etykieta' => 'Dołączona galeria',
+        'formularz.idGalerii.opis' => '',
         'formularz.glowna.zakladka' => 'Informacje',
 
 		'index.blad_nie_mozna_zapisac_strony' => 'Nie można zapisać danych strony!',

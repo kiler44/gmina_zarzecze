@@ -8,7 +8,9 @@ use Generic\Biblioteka\Router;
 use Generic\Biblioteka\Zadanie;
 use Generic\Model\StronaOpisowa;
 use Generic\Model\Zalacznik;
+use Generic\Model\Galeria;
 use Generic\Biblioteka\Cms;
+use function GuzzleHttp\Promise\queue;
 
 
 /**
@@ -54,14 +56,22 @@ class Admin extends Modul\Admin
 			$strona = new StronaOpisowa\Obiekt();
 		}
 
+        $galerie = $this->dane()->Galeria()
+            ->zwracaTablice(array('id', 'nazwa'))
+            ->szukaj(array(), null, new Galeria\Sorter('nazwa', 'asc'));
+
+        $lista = listaZTablicy($galerie, 'id', 'nazwa');
+
 		$obiektFormularza = new \Generic\Formularz\StronaOpisowa\Edycja();
 		$obiektFormularza->ustawTlumaczenia($this->pobierzBlokTlumaczen('formularz'))
 			->ustawObiekt($strona)
-            ->ustawKategorieLinkow($this->kategoria);;
+            ->ustawListeGalerii($lista)
+            ->ustawKategorieLinkow($this->kategoria);
 
 		if ($obiektFormularza->wypelniony() && $obiektFormularza->danePoprawne())
 		{
 		    $wartosci = $obiektFormularza->pobierzWartosci();
+
 			foreach ($wartosci as $klucz => $wartosc)
 			{
                 if($klucz == 'zalaczniki')
@@ -121,6 +131,10 @@ class Admin extends Modul\Admin
 			}
 			Router::przekierujDo(Router::urlAdmin($this->kategoria, 'index'));
 		}
+        else
+        {
+
+        }
 		$dane['form'] = $obiektFormularza->html();
 		$this->tresc .= $this->szablon->parsujBlok('index', $dane);
 	}

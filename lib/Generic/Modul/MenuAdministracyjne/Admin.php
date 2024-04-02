@@ -146,8 +146,6 @@ class Admin extends Modul\System
 				 * @var $kategoria \Generic\Model\Kategoria\Obiekt
 				 */
 
-
-
 				$klasa_wiersza = ($licznik_wierszy % 2) ? 'nieparzysty' : 'parzysty';
 				$licznik_wierszy ++;
 				
@@ -173,7 +171,6 @@ class Admin extends Modul\System
 				if ( ! $cms->profil()->maUprawnieniaDo($kodUprawnienia)) $url = '';
 
                 if (  $kategoria->poziom < 2 || $kategoria->blokada ){
-
                     continue;
                 }
 				if ($url != '')
@@ -187,22 +184,38 @@ class Admin extends Modul\System
                         $poziom = null;
                     }
 
-					$drzewo .= $this->szablon->parsujBlok('/drzewo/element', array(
-                        'kategoria_id' => $kategoria->id,
-					    'rodzic_id' => $rodzicId,
-					    'ukryj' => $ukryj,
-					    'poziom' => $kategoria->poziom,
-						'klasa' => $klasa_wiersza,
-						'url' => htmlspecialchars($url),
-						'nazwa' => $kategoria->nazwa,
-						'nazwaPelna' => (isset($kategoria->nazwaPrzyjazna[KOD_JEZYKA_ITERFEJSU]) && $kategoria->nazwaPrzyjazna[KOD_JEZYKA_ITERFEJSU] != '') ? $kategoria->nazwaPrzyjazna[KOD_JEZYKA_ITERFEJSU] : $kategoria->nazwa,
-						'ikona' => ($kategoria->ikona != '') ? $kategoria->ikona : '',
-						'aktywny' => ($aktualneIdkategorii == $kategoria->id) ? true : false,
-					));
+                    if( $kategoria->poziom == 2) {
+                        $drzewo .= $this->szablon->parsujBlok('/drzewo/elementRozwijalny', array(
+                            'kategoria_id' => $kategoria->id,
+                            'poziom' => $kategoria->poziom,
+                            'klasa' => $klasa_wiersza,
+                            'nazwa' => $kategoria->nazwa,
+                            'nazwaPelna' => (isset($kategoria->nazwaPrzyjazna[KOD_JEZYKA_ITERFEJSU]) && $kategoria->nazwaPrzyjazna[KOD_JEZYKA_ITERFEJSU] != '') ? $kategoria->nazwaPrzyjazna[KOD_JEZYKA_ITERFEJSU] : $kategoria->nazwa,
+                            'ikona' => ($kategoria->ikona != '') ? $kategoria->ikona : '',
+                            'aktywny' => ($aktualneIdkategorii == $kategoria->id) ? true : false,
+                        ));
+                        $poziom = $kategoria->poziom;
+                        $rodzicId = $kategoria->id;
+                    }
+                    else
+                    {
+                        $drzewo .= $this->szablon->parsujBlok('/drzewo/element', array(
+                            'kategoria_id' => $kategoria->id,
+                            'rodzic_id' => $rodzicId,
+                            'ukryj' => $ukryj,
+                            'poziom' => $kategoria->poziom,
+                            'klasa' => $klasa_wiersza,
+                            'url' => htmlspecialchars($url),
+                            'nazwa' => $kategoria->nazwa,
+                            'nazwaPelna' => (isset($kategoria->nazwaPrzyjazna[KOD_JEZYKA_ITERFEJSU]) && $kategoria->nazwaPrzyjazna[KOD_JEZYKA_ITERFEJSU] != '') ? $kategoria->nazwaPrzyjazna[KOD_JEZYKA_ITERFEJSU] : $kategoria->nazwa,
+                            'ikona' => ($kategoria->ikona != '') ? $kategoria->ikona : '',
+                            'aktywny' => ($aktualneIdkategorii == $kategoria->id) ? true : false,
+                        ));
+                    }
+
 				}
 				else
                 {
-
                     $drzewo .= $this->szablon->parsujBlok('/drzewo/elementRozwijalny', array(
                         'kategoria_id' => $kategoria->id,
                         'poziom' => $kategoria->poziom,

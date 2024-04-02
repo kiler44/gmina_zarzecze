@@ -8,6 +8,7 @@ use Generic\Model\Zalacznik\Obiekt;
 
 class Edycja extends \Generic\Formularz\Abstrakcja
 {
+    protected $listaGalerii = array();
 	protected function generujFormularz()
 	{
 		$this->formularz = new Formularz('', 'stronaEdycja');
@@ -26,6 +27,14 @@ class Edycja extends \Generic\Formularz\Abstrakcja
 			'atrybuty' => array('style' => 'width: 90%;'),
 		)));
 		$this->formularz->tresc->dodajFiltr('filtr_xss', 'trim');
+        if (count($this->listaGalerii) > 0)
+        {
+            $this->formularz->input(new Input\Select('idGalerii', '', array(
+                'lista' => $this->listaGalerii,
+                'wybierz' => $this->tlumaczenia['etykieta_select_wybierz']
+            )));
+            $this->formularz->idGalerii->ustawWartosc($this->obiekt->idGalerii);
+        }
         $this->formularz->zamknijZakladke('glowna');
 
         if($this->obiekt->id > 0)
@@ -68,4 +77,14 @@ class Edycja extends \Generic\Formularz\Abstrakcja
 
 		$this->formularz->ustawTlumaczenia($this->tlumaczenia);
 	}
+
+    /**
+     * @return \Generic\Formularz\StronaOpisowa\Edycja
+     */
+    public function ustawListeGalerii(Array $lista)
+    {
+        $this->listaGalerii = $lista;
+
+        return $this;
+    }
 }

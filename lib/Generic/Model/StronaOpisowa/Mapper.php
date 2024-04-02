@@ -39,6 +39,7 @@ class Mapper extends Biblioteka\Mapper\Baza
 		'id_kategorii' => 'idKategorii',
 		'tytul' => 'tytul',
 		'tresc' => 'tresc',
+		'id_galerii' => 'idGalerii',
 		'id_uzytkownika' => 'idAutora',
 		'data_dodania' => 'dataDodania',
 	);

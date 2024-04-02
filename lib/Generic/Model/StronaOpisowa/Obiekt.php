@@ -19,6 +19,7 @@ use Generic\Biblioteka\ObiektDanych;
  * @property string $tytul
  * @property string $tresc
  * @property int $idAutora
+ * @property int $idGalerii
  * @property string $dataDodania
  */
 
