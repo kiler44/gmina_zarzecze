@@ -235,8 +235,7 @@ class Admin extends Modul\System
 				)),
 			);
 		}
-        dump($linki);
-
+        dump($_SERVER);
 		$katalogMiniatur = new Katalog(Cms::inst()->katalog('miniatury'), true);
 
 		$config = array(
