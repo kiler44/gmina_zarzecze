@@ -512,7 +512,7 @@ class Mapper extends Biblioteka\Mapper\Baza
 		$cache = Kategoria\MapperCache::wywolaj($this->zwracaTablice);
 		if ($cache->dostepny())
 		{
-			return $cache->pobierzWszystko();
+			//return $cache->pobierzWszystko();
 		}
 		$dane = $this->drzewo->pobierzDrzewo();
 
