@@ -306,7 +306,10 @@ class Router
 	 */
 	static function urlAdmin($cel, $akcja = '', Array $parametry = array())
 	{
-		$url = Zadanie::protokol().'://'.WWW_PREF.Cms::inst()->projekt->domena.'/'.Cms::inst()->pobierzKodUslugi('Admin').'/?';
+        //zmieniamy generowanie linka po https, jesli serwis jest w dockerze to PORT jest na 80 i zmienne serwerowe nie są https
+        $protokol = (Cms::inst()->config['router']['caly_serwis_https']) ? 'https' : 'http';
+		//$url = Zadanie::protokol().'://'.WWW_PREF.Cms::inst()->projekt->domena.'/'.Cms::inst()->pobierzKodUslugi('Admin').'/?';
+		$url = $protokol.'://'.WWW_PREF.Cms::inst()->projekt->domena.'/'.Cms::inst()->pobierzKodUslugi('Admin').'/?';
 
 		if ($cel instanceof Kategoria\Obiekt)
 		{
