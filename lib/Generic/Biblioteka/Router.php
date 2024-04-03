@@ -452,7 +452,9 @@ class Router
 	 */
 	static function urlPopup($usluga, $cel, $akcja = '', Array $parametry = array())
 	{
-		$url = Zadanie::protokol().'://';
+		//$url = Zadanie::protokol().'://';
+        //zmieniamy generowanie linka po https, jesli serwis jest w dockerze to PORT jest na 80 i zmienne serwerowe nie są https
+        $url = (Cms::inst()->config['router']['caly_serwis_https']) ? 'https' : 'http';
 		$url .= WWW_PREF.Cms::inst()->projekt->domena.'/popup/?';
 
 		$usluga = strtolower($usluga);
