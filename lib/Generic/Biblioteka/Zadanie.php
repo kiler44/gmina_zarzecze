@@ -254,8 +254,6 @@ class Zadanie
 		else
 			$protokol = ($_SERVER['SERVER_PORT'] == 443) ? 'https' : 'http';
 
-        dump($protokol);
-
 		return $protokol;
 	}
 
