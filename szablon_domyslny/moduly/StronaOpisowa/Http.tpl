@@ -6,7 +6,7 @@
 
 {{BEGIN index}}
 <h1>{{$tytul_modulu}}</h1>
-<div class="col-lg-9 col-12">
+<div class="gz-content">
 {{$tresc}}
 </div>
 {{END}}

@@ -8,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function() {
     toggleButton.addEventListener('click', function() {
         var currentlyHiddenTiles = document.querySelectorAll('#tiles-container .tile.hidden');
 
-      
         if (currentlyHiddenTiles.length > 0) {
             currentlyHiddenTiles.forEach(function(tile) {
                 tile.classList.remove('hidden');
@@ -23,80 +22,73 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
-
 /* Load more END*/
-
-
-    let dataDocelowa1 = new Date("2023-11-15 15:00:00");
-    let dataDocelowa2 = new Date("2023-12-01 10:00:00");
-    let dataDocelowa3 = new Date("2023-12-15 12:00:00");
+/* Odliczanie/counter */
+    let dataDocelowa1 = new Date("2024-06-12 15:00:00");
+    let dataDocelowa2 = new Date("2024-06-01 10:00:00");
+    let dataDocelowa3 = new Date("2024-06-15 12:00:00");
+    let dataDocelowa4 = new Date("2024-06-13 17:30:00");
 
     function aktualizujOdliczanie(dataDocelowa, dniId, godzinyId, minutyId, sekundyId) {
         let teraz = new Date().getTime();
         let roznica = dataDocelowa - teraz;
-
-        let dni = Math.floor(roznica / (1000 * 60 * 60 * 24));
-        let godziny = Math.floor((roznica % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        let minuty = Math.floor((roznica % (1000 * 60 * 60)) / (1000 * 60));
-        let sekundy = Math.floor((roznica % (1000 * 60)) / 1000);
-
+        let dni = Math.floor(Math.abs(roznica) / (1000 * 60 * 60 * 24));
+        let godziny = Math.floor((Math.abs(roznica) % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minuty = Math.floor((Math.abs(roznica) % (1000 * 60 * 60)) / (1000 * 60));
+        let sekundy = Math.floor((Math.abs(roznica) % (1000 * 60)) / 1000);
+    
         document.getElementById(dniId).innerHTML = dni;
         document.getElementById(godzinyId).innerHTML = godziny;
         document.getElementById(minutyId).innerHTML = minuty;
         document.getElementById(sekundyId).innerHTML = sekundy;
     }
-
     setInterval(() => {
         aktualizujOdliczanie(dataDocelowa1, "dni1-val", "godziny1-val", "minuty1-val", "sekundy1-val");
         aktualizujOdliczanie(dataDocelowa2, "dni2-val", "godziny2-val", "minuty2-val", "sekundy2-val");
         aktualizujOdliczanie(dataDocelowa3, "dni3-val", "godziny3-val", "minuty3-val", "sekundy3-val");
+        aktualizujOdliczanie(dataDocelowa3, "dni4-val", "godziny4-val", "minuty4-val", "sekundy4-val");
     }, 1000);
 /* Odliczanie/counter Homepage END */
-
-
 /* Kalendarz */
 moment.locale('pl');
-
     const events = {
-        '2023-09-01': {
+        '2024-09-01': {
             image: 'images/jpg/img-jpg-07.jpg',
             title: 'Sesja rady gminy zarzecze',
             description: 'W najbliższy piątek odbędzie się kolejna sesja Rady Gminy Zarzecze, tematy które  zostaną poruszone: Przebudowa drogi Skarbowskiego, Nowi odbiorcy odpadów komunalnych.',
-            date: '2023-09-01',
+            date: '2024-09-01',
             hour: '14:00 - 18:00',
             location: 'Ratusz Miejski'
         },
-        '2023-09-11': {
+        '2024-09-11': {
             image: 'images/jpg/img-jpg-06.jpg',
             title: 'Rozpoczęcie roku szkolnego',
             description: 'Quisque euismod lorem est, in convallis risus malesuada vitae. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae',
-            date: '2023-09-01',
+            date: '2024-09-01',
             hour: '7:00',
             location: 'Kościół'
         },
-        '2023-09-15': {
+        '2024-09-15': {
             image: 'images/jpg/img-jpg-05.jpg',
             title: 'Zbiórka zużytych opon',
             description: 'Praesent luctus odio laoreet nunc vehicula ornare. In faucibus eu dui ac dictum. Proin vestibulum dui quis felis rhoncus, eget porttitor lacus consequat.',
-            date: '2023-09-15',
+            date: '2024-09-15',
             hour: '17:00 - 22:00',
             location: 'Remiza'
         },
-        '2023-10-10': {
+        '2024-10-10': {
             image: 'images/jpg/img-jpg-08.jpg',
             title: 'Koncert zespołu "Baja Bongo"',
             description: 'Duis diam orci, mattis sit amet diam at, euismod fermentum eros. Nunc imperdiet laoreet nunc, ac venenatis sapien lacinia eu. Vestibulum iaculis ornare tortor.',
-            date: '2023-10-10',
+            date: '2024-10-10',
             hour: '21:30',
             location: 'Stadion Gminny'
         }
     };
-
     const getEarliestEvent = () => {
         let sortedDates = Object.keys(events).sort();
         return events[sortedDates[0]];
     };
-
     let currentMonth = moment(getEarliestEvent().date);
     let currentEventDate = getEarliestEvent().date;
 
@@ -139,9 +131,8 @@ moment.locale('pl');
         }
         let html = `
 
-          
             <img src="${event.image}" alt="${event.title}">
-     
+
             <div class="gz-right-padding">
                 <h2>${event.title}</h2>
                 <p>${event.description}</p>
@@ -172,7 +163,6 @@ moment.locale('pl');
     drawCalendar(currentMonth);
     displayEventDetails(events[currentEventDate]);
 /* Kalendarz END */
-
 /* Filtrowanie aktualnosci*/
 function filterAktualnosci(tag) {
     const items = document.querySelectorAll('.aktualnosci-item');
@@ -195,7 +185,6 @@ function filterGallery(tag) {
         }
     });
 }
-
 function loadMoreBoxes() {
     const hiddenBoxes = document.querySelectorAll('.hidden-box');
     hiddenBoxes.forEach(box => {
@@ -203,30 +192,310 @@ function loadMoreBoxes() {
     });
 }
 /* Galeria hover i filtrowanie END */
-
 function openVideoModal(videoSrc) {
     const videoPlayer = document.getElementById('videoPlayer');
     const videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
 
     videoPlayer.src = videoSrc;
     videoModal.show();
-
-    // Stop video playback when modal is closed
     videoModal._element.addEventListener('hidden.bs.modal', () => {
     videoPlayer.src = '';
     });
 }
+/* Ustawienia Kontrastu */
+document.addEventListener('DOMContentLoaded', function() {
+    var contrastOption = localStorage.getItem('contrastOption');
+    var fontSizeOption = localStorage.getItem('fontSizeOption');
+    if (!contrastOption) {
+        contrastOption = 'normal';
+        localStorage.setItem('contrastOption', contrastOption);
+    }
+    if (!fontSizeOption) {
+        fontSizeOption = 'normal';
+        localStorage.setItem('fontSizeOption', fontSizeOption);
+    }
+    changeContrast(contrastOption);
+    changeFontSize(fontSizeOption);
+});
+function changeContrast(option) {
+    document.getElementById('contrastA').disabled = true;
+    document.getElementById('contrastB').disabled = true;
+    document.getElementById('contrastC').disabled = true;
+    document.getElementById('normalStyle').disabled = false;
+    if (option === 'A') {
+        document.getElementById('contrastA').disabled = false;
+    } else if (option === 'B') {
+        document.getElementById('contrastB').disabled = false;
+    } else if (option === 'C') {
+        document.getElementById('contrastC').disabled = false;
+    }
+    if (option === 'normal') {
+        localStorage.removeItem('contrastOption');
+    } else {
+        localStorage.setItem('contrastOption', option);
+    }
+    var buttons = document.querySelectorAll('.contrastButton');
+    buttons.forEach(function(button) {
+        button.classList.remove('active');
+    });
+    document.getElementById(option === 'normal' ? 'normalButton' : 'contrastButton' + option).classList.add('active');
+}
+function changeFontSize(option) {
+    document.getElementById('fontSmall').disabled = true;
+    document.getElementById('fontMedium').disabled = true;
 
+    if (option === 'small') {
+        document.getElementById('fontSmall').disabled = false;
+    } else if (option === 'medium') {
+        document.getElementById('fontMedium').disabled = false;
+    } else if (option === 'large') {
+        document.getElementById('fontLarge').disabled = false;
+    }
+    if (option === 'normal') {
+        localStorage.removeItem('fontSizeOption');
+    } else {
+        localStorage.setItem('fontSizeOption', option);
+    }
+}
+/* Ustawienia Kontrastu END */
 
-function openImageModal(imageSrc) {
-    const image = document.getElementById('img');
-    const imageModal = new bootstrap.Modal(document.getElementById('imageModal'));
+// Karuzela 1
+var carousel1 = document.querySelector("#carousel-gz-1");
+var isMobileView1 = window.matchMedia("(max-width: 767px)").matches;
+if (isMobileView1) {
+    // Mobile
+    $(carousel1).addClass("slide");
+    var cardWidth1 = $(".carousel-item", carousel1).width();
+    var scrollPosition1 = 0;
 
-    image.src = imageSrc;
-    imageModal.show();
+    $("#carousel-gz-1 .carousel-control-next").on("click", function () {
+        var carouselWidth1 = $(".carousel-inner", carousel1)[0].scrollWidth;
+        if (scrollPosition1 < carouselWidth1 - cardWidth1) {
+            scrollPosition1 += cardWidth1;
+            $("#carousel-gz-1 .carousel-inner").animate(
+                { scrollLeft: scrollPosition1 },
+                600
+            );
+        } else {
+            scrollPosition1 = 0;
+            $("#carousel-gz-1 .carousel-inner").animate(
+                { scrollLeft: scrollPosition1 },
+                600
+            );
+        }
+    });
 
-    // Stop video playback when modal is closed
-    imageModal._element.addEventListener('hidden.bs.modal', () => {
-        image.src = '';
+    $("#carousel-gz-1 .carousel-control-prev").on("click", function () {
+        if (scrollPosition1 > 0) {
+            scrollPosition1 -= cardWidth1;
+            $("#carousel-gz-1 .carousel-inner").animate(
+                { scrollLeft: scrollPosition1 },
+                600
+            );
+        } else {
+            var carouselWidth1 = $(".carousel-inner", carousel1)[0].scrollWidth;
+            scrollPosition1 = carouselWidth1 - cardWidth1;
+            $("#carousel-gz-1 .carousel-inner").animate(
+                { scrollLeft: scrollPosition1 },
+                600
+            );
+        }
+    });
+} else {
+    // Desktop  
+    var carouselWidth1 = $(".carousel-inner", carousel1)[0].scrollWidth;
+    var cardWidth1 = $(".carousel-item", carousel1).width();
+    var scrollPosition1 = 0;
+
+    $("#carousel-gz-1 .carousel-control-next").on("click", function () {
+        if (scrollPosition1 < carouselWidth1 - cardWidth1 * 2) {
+            scrollPosition1 += cardWidth1 * 2;
+            $("#carousel-gz-1 .carousel-inner").animate(
+                { scrollLeft: scrollPosition1 },
+                600
+            );
+        } else {
+            scrollPosition1 = 0;
+            $("#carousel-gz-1 .carousel-inner").animate(
+                { scrollLeft: scrollPosition1 },
+                600
+            );
+        }
+    });
+
+    $("#carousel-gz-1 .carousel-control-prev").on("click", function () {
+        if (scrollPosition1 > 0) {
+            scrollPosition1 -= cardWidth1 * 2;
+            $("#carousel-gz-1 .carousel-inner").animate(
+                { scrollLeft: scrollPosition1 },
+                600
+            );
+        } else {
+            scrollPosition1 = carouselWidth1 - cardWidth1 * 2;
+            $("#carousel-gz-1 .carousel-inner").animate(
+                { scrollLeft: scrollPosition1 },
+                600
+            );
+        }
+    });
+}
+// Karuzela 2
+var carousel2 = document.querySelector("#carousel-gz-2");
+var isMobileView2 = window.matchMedia("(max-width: 767px)").matches;
+if (isMobileView2) {
+    // Mobile
+    $(carousel2).addClass("slide");
+    var cardWidth2 = $(".carousel-item", carousel2).width();
+    var scrollPosition2 = 0;
+
+    $("#carousel-gz-2 .carousel-control-next").on("click", function () {
+        var carouselWidth2 = $(".carousel-inner", carousel2)[0].scrollWidth;
+        if (scrollPosition2 < carouselWidth2 - cardWidth2) {
+            scrollPosition2 += cardWidth2;
+            $("#carousel-gz-2 .carousel-inner").animate(
+                { scrollLeft: scrollPosition2 },
+                600
+            );
+        } else {
+            scrollPosition2 = 0;
+            $("#carousel-gz-2 .carousel-inner").animate(
+                { scrollLeft: scrollPosition2 },
+                600
+            );
+        }
+    });
+
+    $("#carousel-gz-2 .carousel-control-prev").on("click", function () {
+        if (scrollPosition2 > 0) {
+            scrollPosition2 -= cardWidth2;
+            $("#carousel-gz-2 .carousel-inner").animate(
+                { scrollLeft: scrollPosition2 },
+                600
+            );
+        } else {
+            var carouselWidth2 = $(".carousel-inner", carousel2)[0].scrollWidth;
+            scrollPosition2 = carouselWidth2 - cardWidth2;
+            $("#carousel-gz-2 .carousel-inner").animate(
+                { scrollLeft: scrollPosition2 },
+                600
+            );
+        }
+    });
+} else {
+    // Desktop  
+    var carouselWidth2 = $(".carousel-inner", carousel2)[0].scrollWidth;
+    var cardWidth2 = $(".carousel-item", carousel2).width();
+    var scrollPosition2 = 0;
+
+    $("#carousel-gz-2 .carousel-control-next").on("click", function () {
+        if (scrollPosition2 < carouselWidth2 - cardWidth2 * 4) {
+            scrollPosition2 += cardWidth2 * 4;
+            $("#carousel-gz-2 .carousel-inner").animate(
+                { scrollLeft: scrollPosition2 },
+                600
+            );
+        } else {
+            scrollPosition2 = 0;
+            $("#carousel-gz-2 .carousel-inner").animate(
+                { scrollLeft: scrollPosition2 },
+                600
+            );
+        }
+    });
+
+    $("#carousel-gz-2 .carousel-control-prev").on("click", function () {
+        if (scrollPosition2 > 0) {
+            scrollPosition2 -= cardWidth2 * 4;
+            $("#carousel-gz-2 .carousel-inner").animate(
+                { scrollLeft: scrollPosition2 },
+                600
+            );
+        } else {
+            scrollPosition2 = carouselWidth2 - cardWidth2 * 4;
+            $("#carousel-gz-2 .carousel-inner").animate(
+                { scrollLeft: scrollPosition2 },
+                600
+            );
+        }
+    });
+}
+// Karuzela 3
+var carousel3 = document.querySelector("#carousel-gz-3");
+var isMobileView3 = window.matchMedia("(max-width: 767px)").matches;
+if (isMobileView3) {
+    // Mobile
+    $(carousel3).addClass("slide");
+    var cardWidth3 = $(".carousel-item", carousel3).width();
+    var scrollPosition3 = 0;
+
+    $("#carousel-gz-3 .carousel-control-next").on("click", function () {
+        var carouselWidth3 = $(".carousel-inner", carousel3)[0].scrollWidth;
+        if (scrollPosition3 < carouselWidth3 - cardWidth3) {
+            scrollPosition3 += cardWidth3;
+            $("#carousel-gz-3 .carousel-inner").animate(
+                { scrollLeft: scrollPosition3 },
+                600
+            );
+        } else {
+            scrollPosition3 = 0;
+            $("#carousel-gz-3 .carousel-inner").animate(
+                { scrollLeft: scrollPosition3 },
+                600
+            );
+        }
+    });
+
+    $("#carousel-gz-3 .carousel-control-prev").on("click", function () {
+        if (scrollPosition3 > 0) {
+            scrollPosition3 -= cardWidth3;
+            $("#carousel-gz-3 .carousel-inner").animate(
+                { scrollLeft: scrollPosition3 },
+                600
+            );
+        } else {
+            var carouselWidth3 = $(".carousel-inner", carousel3)[0].scrollWidth;
+            scrollPosition3 = carouselWidth3 - cardWidth3;
+            $("#carousel-gz-3 .carousel-inner").animate(
+                { scrollLeft: scrollPosition3 },
+                600
+            );
+        }
+    });
+} else {
+    // Desktop  
+    var carouselWidth3 = $(".carousel-inner", carousel3)[0].scrollWidth;
+    var cardWidth3 = $(".carousel-item", carousel3).width();
+    var scrollPosition3 = 0;
+
+    $("#carousel-gz-3 .carousel-control-next").on("click", function () {
+        if (scrollPosition3 < carouselWidth3 - cardWidth3 * 4) {
+            scrollPosition3 += cardWidth3 * 4;
+            $("#carousel-gz-3 .carousel-inner").animate(
+                { scrollLeft: scrollPosition3 },
+                600
+            );
+        } else {
+            scrollPosition3 = 0;
+            $("#carousel-gz-3 .carousel-inner").animate(
+                { scrollLeft: scrollPosition3 },
+                600
+            );
+        }
+    });
+
+    $("#carousel-gz-3 .carousel-control-prev").on("click", function () {
+        if (scrollPosition3 > 0) {
+            scrollPosition3 -= cardWidth3 * 4;
+            $("#carousel-gz-3 .carousel-inner").animate(
+                { scrollLeft: scrollPosition3 },
+                600
+            );
+        } else {
+            scrollPosition3 = carouselWidth3 - cardWidth3 * 4;
+            $("#carousel-gz-3 .carousel-inner").animate(
+                { scrollLeft: scrollPosition3 },
+                600
+            );
+        }
     });
 }

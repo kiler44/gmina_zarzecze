@@ -1490,11 +1490,13 @@ class MenedzerPlikow
 				trigger_error('Katalog dla menedzera plikow nie ma mozliwosci zapisu danych lub nie istnieje', E_USER_WARNING);
 			}
 		}
+
 		if (strpos($this->download, '{SCIEZKA}' === false)) {
 			$this->komunikat = sprintf($this->j->t['menedzer_plikow_brak_sciezka'], $this->trybAktywny['nazwa']);
 			$this->halt = true;
 			trigger_error('Drugi parametr konstruktora musi zawierać w sobie {SCIEZKA}', E_USER_WARNING);
 		}
+
 		$this->komunikat = $this->j->t['menedzer_plikow_kom_domyslny'];
 	}
 

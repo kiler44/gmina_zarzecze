@@ -181,14 +181,16 @@ class Http extends Modul\Http
 						$klasa_wiersza .= ($kategoria_ma_podkategorie) ? ' parent' : null;
 						$klasa_wiersza .= ($this->k->k['oznaczanie_rodzicow'] && in_array($kategoria->id, $rodziceBierzacej)) ? ' thisParent' : null;
 
-						if ($kategoria->czyWidoczna || $kategoria_ma_podkategorie)
+						if (($kategoria->czyWidoczna || $kategoria_ma_podkategorie) && $kategoria->typ != 'link_wewnetrzny')
 						{
 							$drzewo .= $this->szablon->parsujBlok('/drzewo/elementStart', array(
 								'poziom' => $poziom,
 								'klasa' => $klasa_wiersza,
 							));
 						}
-						if ($kategoria->czyWidoczna)
+
+                        //if ($kategoria->czyWidoczna) //Fix dla GZ i kontakt poza menu
+						if ($kategoria->czyWidoczna && $kategoria->typ != 'link_wewnetrzny')
 						{
                             if ($kategoria->blokada)
                             {
@@ -200,6 +202,8 @@ class Http extends Modul\Http
 							{
 								$szablonLink = ($linkiSeoWlaczone) ? '/drzewo/elementTrescLinkSeo' : '/drzewo/elementTrescLink';
 								if ($linkiSeoWlaczone) $url = strToHex($url);
+
+                                $klasa_wiersza .= ($poziom == 1) ? ' nav-link dropdown-toggle' : ' dropdown-item';
 
 								$drzewo .= $this->szablon->parsujBlok($szablonLink, array(
 									'poziom' => $poziom,
@@ -223,16 +227,28 @@ class Http extends Modul\Http
 				}
 				if ($kategoria->id != $kategoriaStartowa->id)
 				{
-					//testowo zmieniona liczba zakonczen
-					//$powtorz = (int)($poprzednia->poziom - 1);
 					$powtorz = (int)($kategoria->poziom - $kategoriaStartowa->poziom);
 					while ($powtorz > 0)
 					{
 						$drzewo .= $this->szablon->parsujBlok('/drzewo/elementStop');
 						$drzewo .= $this->szablon->parsujBlok('/drzewo/listaStop');
+
+                        // Fix dla GZ kontakt poza menu
+                        if ($kategoria->typ == 'link_wewnetrzny')
+                        {
+                            $drzewo .= $this->szablon->parsujBlok($szablonLink, array(
+                                'poziom' => $poziom,
+                                'klasa' => 'gz-nav-kontakt-cta ms-auto',
+                                'url' => $url,
+                                'rel' => $rel,
+                                'nazwa' => $kategoria->nazwa,
+                            ));
+                        }
+
 						$powtorz--;
 					}
 				}
+
 			}
 			unset($kategorie);
 			$drzewo = trim($drzewo);

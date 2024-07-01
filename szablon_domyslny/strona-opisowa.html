@@ -1,47 +1,71 @@
 <!doctype html>
 <html lang="pl">
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-  <!-- Google font -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
-    
-  <!-- Bootstrap css -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link href="css/style.css " rel="stylesheet">
   <title>Gmina Zarzecz</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="js/jquery-3.6.0.min.js"></script>
   <script src="js/moment.min.js"></script>
   <script src="js/pl.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
+  <link id="bootstrap" rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link id="normalStyle" href="css/style.css" rel="stylesheet">
+  <link id="contrastA" href="css/style-czarno-bialy.css" rel="stylesheet" disabled>
+  <link id="contrastB" href="css/style-czarno-zolty.css" rel="stylesheet" disabled>
+  <link id="contrastC" href="css/style-zolto-czarny.css" rel="stylesheet" disabled>
+  <link id="fontSmall" href="css/style-font-small.css" rel="stylesheet" disabled>
+  <link id="fontMedium" href="css/style-font-medium.css" rel="stylesheet" disabled>
 </head>
 <body>
+<!-- Ułatwienie czytania -->
+<div class="ulatwienie">
+  <div class="button-main">
+    <div class="ico">
+      <img src="images/ico/ico-19.svg" width="35" height="25" alt="">
+    </div>
+    <p>Ułatwienie czytania</p>
+  </div>
+  <div class="content">
+    <div class="content-iner">
+      <p>Rozmiar Czcionki:</p>
+      <button type="button" class="fontSizeButton" id="normalFontSizeButton" onclick="changeFontSize('normal')"><img src="images/ico/ico-20.svg" alt="">Normalna</button>
+      <button type="button" class="fontSizeButton" id="fontSizeButtonSmall" onclick="changeFontSize('small')"><img src="images/ico/ico-21.svg" alt="">Duża</button>
+      <button type="button" class="fontSizeButton" id="fontSizeButtonMedium" onclick="changeFontSize('medium')"><img src="images/ico/ico-22.svg" alt="">Bardzo duża</button>
+    </div>
+    <div class="content-iner content-iner-bottom">
+      <p>Kontrast:</p>
+      <button type="button" class="contrastButton active" id="normalButton" onclick="changeContrast('normal')"><img src="images/svg/img-svg-03.svg" alt="">Normalny</button>
+      <button type="button" class="contrastButton" id="contrastButtonA" onclick="changeContrast('A')"><img src="images/svg/img-svg-04.svg" alt="">Czarno Biały</button>
+      <button type="button" class="contrastButton" id="contrastButtonB" onclick="changeContrast('B')"><img src="images/svg/img-svg-05.svg" alt="">Czarno Żółty</button>
+      <button type="button" class="contrastButton" id="contrastButtonC" onclick="changeContrast('C')"><img src="images/svg/img-svg-06.svg" alt="">Żółto Czarny</button>
+    </div>
+  </div>
+</div>
+<!-- Ułatwienie czytania END-->
 <!-- Header START -->
 <header class="gz-header">
   <div class="container">
     <div class=""><a href="index.html" class="herb"><img src="images/svg/img-svg-01.svg" alt="Herb Gminy Zarzecze"></a></div>
       <div class="row gz-navbar-top align-items-center">
-        <div class="col-md-8 col-sm-6 col-8 gz-navbar-title">
+        <div class="col-md-8 col-sm-6 col-6 gz-navbar-title">
           <h2>Zarzecze</h2>
           <span id="gz-span-text-change" data-md-text="Oficjalny serwis informacyjny Urzędu Gminy Zarzecze" data-xs-text="Urząd Gminy Zarzecze"></span>
         </div>
-        <div class="col-md-4 col-sm-6 col-4 d-flex justify-content-end flex-column flex-sm-row align-items-end align-items-sm-start">
+        <div class="col-md-4 col-sm-6 col-6 d-flex justify-content-end flex-column flex-sm-row align-items-end align-items-sm-start gz-logo-img">
           <a href="#" class="gz-epuap-cta mb-2 mb-sm-0">
-            <img src="images/png/img-png-01.png" width="108" height="22" alt="ePUAP">
+            <img src="images/jpg/img-jpg-37.jpg" width="150" height="50" alt="ePUAP">
           </a>
           <a href="#" class="gz-bip-cta">
-            <img src="images/png/img-png-02.png" width="74" height="32" alt="bip">
+            <img src="images/jpg/img-jpg-38.jpg" width="100" height="50" alt="bip">
           </a>
         </div>
     </div>
   </div>
 </header>
 <!-- Header END -->
-
 <!-- Navbar START --> 
 <nav class="navbar navbar-dark navbar-expand-lg gz-navbar" aria-label="Ninth navbar example">
   <div class="container-xl justify-content-end">
@@ -59,6 +83,7 @@
             <li><a class="dropdown-item" href="lista-aktualnosci.html">Lista Aktualności</a></li>
             <li><a class="dropdown-item" href="lista-galerii.html">Lista Galerii</a></li>
             <li><a class="dropdown-item" href="kontakt.html">Kontakt</a></li>
+            <li><a class="dropdown-item" href="wyniki-wyszukiwania.html">Wyniki Wyszukiwania</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -129,7 +154,6 @@
             <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
           </ul>
         </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Kultura i oświata</a>
           <ul class="dropdown-menu">
@@ -147,7 +171,6 @@
             <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
           </ul>
         </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Gospodarka</a>
           <ul class="dropdown-menu">
@@ -165,17 +188,14 @@
             <li><a class="dropdown-item" href="#">Petycje i wnioski</a></li>
           </ul>
         </li>
-
       </ul>
-      
       <a class="gz-nav-kontakt-cta ms-auto" href="#">Kontakt</a>
     </div>
   </div>
 </nav>
 <!-- Navbar END -->
-
 <!-- Sekcja 1 -->
-<section class="gz-section">
+<section class="gz-section gz-opisowa">
   <div class="container" >
     <div class="row">
       <!-- Page title -->
@@ -193,7 +213,6 @@
         <!-- Okruszki End-->
       </div>
       <!-- Page title End-->
-
       <!-- Content Strony -->
       <div class="col-lg-9 col-12">
         <h1>Gmina Zarzecze - Strona opisowa</h1>
@@ -203,22 +222,20 @@
         <h3>Przykładowy tytuł H3</h3>
         <h4>Przykładowy tytuł H4</h4>
         <h5>Przykładowy tytuł H5</h5>
-        
         <figure class="figure">
           <img src="images/jpg/img-jpg-27.jpg" class="figure-img img-fluid rounded" alt="Obrazek">
           <figcaption class="">Fotografia własna</figcaption>
         </figure>
-
         <p>Aliquam sodales, dolor id porta condimentum, neque augue hendrerit felis, non pretium lectus eros sit amet orci. Phasellus dignissim nulla vitae neque commodo tristique. Aliquam vitae sem rhoncus, auctor nulla nec, porttitor lectus. Pellentesque nisi nibh, mollis ut ullamcorper et, feugiat ut metus</p>
         <h5>Aliquam sodales, dolor id porta:</h5>
-
         <ul>
           <li>Condimentum, neque augue hendrerit felis;</li>
           <li>Aliquam vitae sem rhoncus;</li>
           <li>Auctor nulla nec, porttitor lectus;</li>
           <li>Pellentesque nisi nibh.</li>
         </ul>
-
+        <p>Aliquam sodales, <a href="#" class="gz-text-link">Przykładowy link</a> dolor id porta condimentum, neque augue hendrerit felis, non pretium lectus eros sit amet orci. Phasellus dignissim nulla vitae neque commodo tristique. Aliquam vitae sem rhoncus, auctor nulla nec, porttitor lectus. Pellentesque nisi nibh, mollis ut ullamcorper et, feugiat ut metus</p>
+        <p>Aliquam sodales, dolor id porta condimentum, neque augue hendrerit felis, non pretium lectus eros sit amet orci. Phasellus dignissim nulla vitae neque commodo tristique. Aliquam vitae sem rhoncus, auctor nulla nec, porttitor lectus. Pellentesque nisi nibh, mollis ut ullamcorper et, feugiat ut metus</p><br>
         <!-- Tabelka -->
         <table>
           <thead>
@@ -269,20 +286,13 @@
           </tbody>
         </table>
         <!-- Tabelka End-->
-        
         <h5>Dokumenty do pobrania:</h5>
-
-        
-
         <ul class="gz-download list-unstyled">
           <li><a href="#" class="gz-pdf">Oświadczenie o zarobkach.pdf</a></li>
           <li><a href="#" class="gz-xls">Status mieszkaniowy.xls</a></li>
           <li><a href="#" class="gz-ppt">Wyniki przetargu na zakup ciepła 2022/2023.ppt</a></li>
           <li><a href="#" class="gz-doc">Zarządzenia Rady 2023r.doc</a></li>
-          
         </ul> 
-        
-        
       </div>
       <!-- Content End-->
       <!-- Menu boczne -->
@@ -388,112 +398,174 @@
   </div>
 </section>
 <!-- Sekcja 1 -->
-
-<!-- Sekcja 9 Banery-01 -->
-<section class="gz-section gz-banery-01">
-  <div class="container gz-mt-40 ">
+<!-- Sekcja 9 Banerki  -->
+<section class="gz-banery-01 karuzela-4">
+  <div class="container">
     <div class="row">
       <div class="col-12">
-        <!-- Karuzela -->
-        <div id="gz-slider-homepage-5" class="carousel slide carousel-dark" data-bs-ride="carousel">
-          <!-- Karuzela nawigacja-->
-          <button class="carousel-control-prev" type="button" data-bs-target="#gz-slider-homepage-5" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#gz-slider-homepage-5" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-          <!-- Karuzela nawigacja END-->
-          <div class="carousel-inner gz-margin-karuzela">
-            <!-- bloczek karuzeli 1 -->
-            <div class="carousel-item active" data-bs-interval="3000">
-              <div class="row align-items-center gz-counter-container">
-
-                <div class="col-md-3 col-6">
-                  <div class="gz-banery-item">
-                    <img src="images/jpg/img-jpg-23.jpg" alt="">
-                    <h4>Raport ostanie Gminy Zarzecz</h4>
-                  </div>  
+        <div id="carousel-gz-3" class="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item">
+              <a href="#" class="gz-banery-item">
+                <img src="images/jpg/Banerki/01-biuletyn-informacji-publicznej.jpg" alt="">
+                <div class="content">
+                  <h4>Biuletyn informacji publicznej</h4>
                 </div>
-                <div class="col-md-3 col-6">
-                  <div class="gz-banery-item">
-                    <img src="images/jpg/img-jpg-24.jpg" alt="">
-                    <h4>ZS Zarzecz</h4>
-                  </div>  
-                </div>
-                <div class="col-md-3 col-6">
-                  <div class="gz-banery-item">
-                    <img src="images/jpg/img-jpg-25.jpg" alt="">
-                    <h4>OZE</h4>
-                  </div>  
-                </div>
-                <div class="col-md-3 col-6">
-                  <div class="gz-banery-item">
-                    <img src="images/jpg/img-jpg-26.jpg" alt="">
-                    <h4>Czyste pwietrze</h4>
-                  </div>  
-                </div>
-              </div>
+              </a>
             </div>
-            <!-- bloczek karuzeli 1 END -->
-            <!-- bloczek karuzeli 2 -->
-            <div class="carousel-item" data-bs-interval="3000">
-              <div class="row align-items-center gz-counter-container">
-                <div class="col-md-3 col-6">
-                  <div class="gz-banery-item">
-                    <img src="images/jpg/img-jpg-23.jpg" alt="">
-                    <h4>Raport ostanie Gminy Zarzecz</h4>
-                  </div>  
+            <div class="carousel-item">
+              <a href="#" class="gz-banery-item">
+                <img src="images/jpg/Banerki/02-cyfrowa-gmina.jpg" alt="">
+                <div class="content">
+                  <h4>Cyfrowa gmina</h4>
                 </div>
-                <div class="col-md-3 col-6">
-                  <div class="gz-banery-item">
-                    <img src="images/jpg/img-jpg-24.jpg" alt="">
-                    <h4>ZS Zarzecz</h4>
-                  </div>  
-                </div>
-                <div class="col-md-3 col-6">
-                  <div class="gz-banery-item">
-                    <img src="images/jpg/img-jpg-25.jpg" alt="">
-                    <h4>OZE</h4>
-                  </div>  
-                </div>
-                <div class="col-md-3 col-6">
-                  <div class="gz-banery-item">
-                    <img src="images/jpg/img-jpg-26.jpg" alt="">
-                    <h4>Czyste pwietrze</h4>
-                  </div>  
-                </div>
-              </div>
+              </a>
             </div>
-            <!-- bloczek karuzeli 2 END -->
+            <div class="carousel-item">
+              <a href="#" class="gz-banery-item">
+                <img src="images/jpg/Banerki/03-dziennik-ustaw.jpg" alt="">
+                <div class="content">
+                  <h4>Dziennik ustaw</h4>
+                </div>
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="#" class="gz-banery-item">
+                <img src="images/jpg/Banerki/04-gminna-biblioteka-publiczna.jpg" alt="">
+                <div class="content">
+                  <h4>Gminna biblioteka publiczna</h4>
+                </div>
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="#" class="gz-banery-item">
+                <img src="images/jpg/Banerki/05-gminny-punkt-czyste-powietrze.jpg" alt="">
+                <div class="content">
+                  <h4>Gminny punkt - czyste powietrze</h4>
+                </div>
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="#" class="gz-banery-item">
+                <img src="images/jpg/Banerki/06-harmonogram-odbioru-odpadow-komunalnych.jpg" alt="">
+                <div class="content">
+                  <h4>Harmonogram odbioru odpadów komunalnych</h4>
+                </div>
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="#" class="gz-banery-item">
+                <img src="images/jpg/Banerki/07-monitor-polski.jpg" alt="">
+                <div class="content">
+                  <h4>Monitor Polski</h4>
+                </div>
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="#" class="gz-banery-item">
+                <img src="images/jpg/Banerki/08-oze-odnawialne-zrodla-energii.jpg" alt="">
+                <div class="content">
+                  <h4>OZE - Odnawialne źródła energii</h4>
+                </div>
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="#" class="gz-banery-item">
+                <img src="images/jpg/Banerki/09-oze-odnawialne-zrodla-energii-2.jpg" alt="">
+                <div class="content">
+                  <h4>OZE - Odnawialne źródła energii</h4>
+                </div>
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="#" class="gz-banery-item">
+                <img src="images/jpg/Banerki/10-platforma-zakupowa.jpg" alt="">
+                <div class="content">
+                  <h4>Platforma zakupowa</h4>
+                </div>
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="#" class="gz-banery-item">
+                <img src="images/jpg/Banerki/11-raport-o-stanie-gminy-zarzecze.jpg" alt="">
+                <div class="content">
+                  <h4>Raport o stanie gminy Zarzecze</h4>
+                </div>
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="#" class="gz-banery-item">
+                <img src="images/jpg/Banerki/12-rynek-pracy-pomoc-dla-obywateli-ukrainy.jpg" alt="">
+                <div class="content">
+                  <h4>Rynek pracy pomoc dla obywateli Ukrainy</h4>
+                </div>
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="#" class="gz-banery-item">
+                <img src="images/jpg/Banerki/13-rzadowy-fundusz-inwestycji-lokalnych.jpg" alt="">
+                <div class="content">
+                  <h4>Rządowy Fundusz Inwestycji Lokalnych</h4>
+                </div>
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="#" class="gz-banery-item">
+                <img src="images/jpg/Banerki/14-system-informacji-przestrzennej.jpg" alt="">
+                <div class="content">
+                  <h4>System informacji przestrzennej</h4>
+                </div>
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="#" class="gz-banery-item">
+                <img src="images/jpg/Banerki/15-tereny-budowlane.jpg" alt="">
+                <div class="content">
+                  <h4>Tereny budowlane</h4>
+                </div>
+              </a>
+            </div>
+            <div class="carousel-item">
+              <a href="#" class="gz-banery-item">
+                <img src="images/jpg/Banerki/16-zespol-szkol-im-wincentego-witosa-w-zarzeczu.jpg" alt="">
+                <div class="content">
+                  <h4>Zespół szkół imienia Wincentego Witosa w Zarzeczu</h4>
+                </div>
+              </a>
+            </div>         
           </div>
-        <!-- Karuzela END-->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carousel-gz-3" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carousel-gz-3" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+          </button>
         </div>
-      </div>  
+      </div>
     </div>
-  </div>  
+  </div>
 </section>
-<!-- Sekcja 9 Banery-01 END -->
+<!-- Sekcja 9 Banerki END -->
 <!-- Footer -->
 <section class="gz-footer">
   <div class="container">
     <footer class="row">
-      <div class="col-3 text-center">
+      <div class="col-lg-3 col-sm-6 text-center">
         <img src="images/svg/img-svg-02.svg" alt="">
         <h2>Gmina Zarzecze</h2>
         <h3>Wójt gminy: Tomasz Bury</h3>
         <p>Urzęduje od 2018r.</p>
       </div>
-      <div class="col-3">
+      <div class="col-lg-3 col-sm-6 ">
         <h5>Adres:</h5>
         <p>ul. Długa 7</p>
         <p>37-205 Zarzecze,</p>
         <p>Powiat Przeworski</p>
         <p>Województwo Podkarpackie</p>
       </div>
-      <div class="col-3">
+      <div class="col-lg-3 col-sm-6 gz-footer-c">
         <h5>Godziny otwarcia:</h5>
         <p>Poniedziałek 7:00 – 15:00</p>
         <p>Wtorek 7:00 – 17:00</p>
@@ -501,7 +573,7 @@
         <p>Czwartek 7:00 – 15:00</p>
         <p>Piątek 7:00 – 13:00</p>
       </div>
-      <div class="col-3">
+      <div class="col-lg-3 col-sm-6 gz-footer-d">
         <h5>Dane:</h5>
         <p>tel. 16 640-15-28</p>
         <p>tel. 16 640-15-29</p>

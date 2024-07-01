@@ -24,10 +24,10 @@
     }
     input:focus, select:focus {
         box-shadow: none;
-        border-color: $text_ciemny; 
+        border-color: $Text-Ciemny-1; 
     }
     input::placeholder {
-        color: $text_ciemny;
+        color: $Text-Ciemny-1;
     }
     select {
         max-width: 250px;
@@ -35,7 +35,7 @@
         font-style: normal;
         font-weight: 500;
         line-height: normal;
-        color: $szary_text;
+        color: $Text-Szary-1;
         padding-left: 20px;
     }
     .form-select {
@@ -44,7 +44,7 @@
         background-size: 10px 10px;
     }
     .gz-btn-search, .gz-btn-search:focus  {
-        background-color: $akcent2;
+        background-color: $Akcent-3;
         min-width: 160px;
         font-size: 16px;
         font-weight: 600;
@@ -52,8 +52,8 @@
         transition-timing-function: ease-in;
     }
     .gz-btn-search:hover  {
-        background-color: $akcent1;
-        color: $white;
+        background-color: $Akcent-1;
+        color: $White;
     }
     .gz-search-ico-1 {
         position: absolute;
@@ -66,9 +66,9 @@
     .gz-cta-search-more {
         width: 140px;
         text-align: center;
-        color: $white;
+        color: $White;
         text-decoration: none;
-        background-color: $akcent1;
+        background-color: $Akcent-1;
         padding: 6px 10px;
         border-radius: 20px;
         position: absolute;
@@ -82,7 +82,7 @@
         z-index: 10;
     }
     @media (max-width: 991px) {
-        .gz-btn-search, .gz-btn-search:focus   {
+        .gz-btn-search, .gz-btn-search:focus {
             padding: 10px 0px;
             min-width: 130px;
             display: block;

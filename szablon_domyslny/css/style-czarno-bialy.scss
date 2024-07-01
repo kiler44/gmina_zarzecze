@@ -1,0 +1,601 @@
+$white: #fff;
+$text_ciemny: #000000;
+$akcent1: #000000;
+$akcent2: #000000;
+$akcent3: #000000;
+$akcent4: #000000;
+/* -=== Ułatwienia ===- */
+.ulatwienie {
+    z-index: 100;
+    .button-main {
+        background-color: $text_ciemny;
+        border-top: 1px solid $white;
+        border-bottom: 1px solid $white;
+        border-left: 1px solid $white;
+        z-index: 1;
+    }
+    .content {
+        margin-left: -1px;
+        border: 1px solid $white;
+        background-color: $text_ciemny;
+    }
+}
+body {
+    color: $white;
+    background-color: $text_ciemny;
+}
+.gz-breadcrumb {
+    li, li:last-child, li a {
+        color: $white;
+    } 
+}
+.btn-outline-primary {
+    border: 2px solid $white;
+    border-radius: 8px;
+}
+.btn-outline-primary:hover {
+    background-color: $white;
+    border: 2px solid $white;
+    color: $text_ciemny;
+}
+.btn-primary:active {
+    background-color: $white!important;
+}
+.btn-outline-primary:active {
+    background-color: $white!important;
+    color: $text_ciemny!important;
+    border: 2px solid $white!important;
+}
+.gz-section {
+    background-color: $text_ciemny;
+}
+.gz-header {
+    background-color: $text_ciemny;
+    color: $white;
+} 
+.gz-navbar {
+    background-color: $text_ciemny;
+    border-top: 1px $white solid;
+    border-bottom: 1px $white solid;
+    .dropdown-menu {
+        background-color: $text_ciemny;
+        color: $white;
+        border: 1px solid $white;
+    }
+    .dropdown-item:hover {
+        background-color: $white;
+        color: $text_ciemny!important;
+    }
+    .gz-nav-kontakt-cta {
+        background-color: #242424;
+        color: white;
+    }
+    .gz-nav-kontakt-cta:hover {
+        background-color: $white;
+        color: $text_ciemny;
+    }
+    .nav-item::after {
+        background-color: $white; 
+    }
+    .dropdown-menu a, .dropdown-menu {
+        color: $white!important;
+    }
+    @media (max-width: 1199px) {
+        background-color: $text_ciemny!important;
+
+    }
+    @media (max-width: 991px) {
+        .active {
+            border: 1px solid $white;
+            background-color: $text_ciemny;
+        }
+        .nav-item:hover {
+            background-color: $white; 
+            border-radius: 5px;
+            color: $text_ciemny;
+        }
+        .nav-item:hover a {
+            color: $text_ciemny;
+        }
+    }
+}
+.gz-section-search {
+    select {
+        color: $text_ciemny;
+    }
+    .gz-btn-search, .gz-btn-search:focus, .gz-btn-search:hover   {
+        background-color: $akcent1;
+        color: $white;
+    }
+    .gz-cta-search-more {
+        color: $white;
+        border: 1px $white solid;
+        background-color: $akcent1;
+    }
+    .form-select {
+        background-image: url('../images/ico/ico-23.svg');
+    }
+}
+.gz-newscenter {
+    background-color: $text_ciemny;
+    .bg-danger, .text-bg-success  {
+        background-color: $text_ciemny!important;
+        border: 1px $white solid;
+    }
+    .blog-post-meta {
+        color: $white;
+    }
+}  
+.gz-newscenter-left {
+    background-color: $text_ciemny;
+    border: 1px $white solid;
+    h3, p {
+        color: $white;
+    }
+    .btn-primary {
+        background-color: $white;
+        color: $text_ciemny;
+    }  
+}
+.sorter-more {
+    color: $white;
+}
+.gz-newscenter-right img {
+    border: 1px $white solid;
+}
+.gz-newscenter-sorter {
+    .btn-sm, .gz-sorter-przetarg, .gz-sorter-allert  {
+        background-color: $text_ciemny;
+        color: $white;
+        border: 1px solid $white;
+    }
+    .btn-sm:hover, .gz-sorter-przetarg:hover, .gz-sorter-allert:hover {
+        background-color: $white;
+        color: $text_ciemny;
+        border: 1px solid $text_ciemny;
+    }
+}
+.icobox-1-section {
+    background-color: $text_ciemny;
+    .gz-cta-more {
+        border: 1px solid $white;
+        color: $white;
+        margin-bottom: 40px;
+    }
+    h2, h5 {
+        color: $white!important;
+    }
+}
+.gz-icobox-1 {
+    background-color: $text_ciemny;
+    border: 1px solid $white;
+}
+.gz-icobox-1:hover {
+    background-color: $text_ciemny;
+}
+.counter-section {
+    background-color: $text_ciemny;
+   .gz-counter {
+    background-color: $text_ciemny;
+    border: 1px solid $white;
+        h3, p, .counter-label, .counter-value {
+            color: $white;
+        }
+        .gz-event-label {
+            z-index: 0!important;
+        }
+        .zolty, .czerwony, .niebieski, .zielony, .counter-box {
+            background-color: $akcent1;
+            border: 1px solid $white;
+            color: $white;
+        }
+        .btn-outline-primary {
+            background-color: $white;
+        }
+        .btn-outline-primary:hover {
+            color: $text_ciemny;
+        }
+    } 
+}
+/* -=== Kalendarz wydarzenia ===- */
+.gz-kalendarz-container {
+    padding-bottom: 60px;
+}
+.gz-kalendarz {
+    background: $text_ciemny;
+    border: 1px solid $white;
+    .btn-nav  {
+        background-color: transparent;
+        opacity: 1;
+    }
+    #prev {
+        background-image: url('../images/ico/ico-24.svg');
+        width: 30px;
+        height: 30px;
+    }
+    #next {
+        background-image: url('../images/ico/ico-25.svg');
+        width: 30px;
+        height: 30px;
+    }
+    .gz-kalendarz-right {
+        background-color: $text_ciemny;
+        color: $white;
+        border-left: 1px solid $white;
+        .gz-frame {
+            border: 1px solid $white;
+        }
+    }
+    .gz-miesiac {
+        color: $white;
+    }
+    th, td, tr {
+        color: $white;
+    }
+    .gz-activ-day, .gz-activ-day:hover {
+        background-color: $white;
+        color: $text_ciemny;
+    }
+    .gz-cta-text {
+        color: $white;   
+    }
+}
+/* -=== Strszalki karuzeli ===- */
+.carousel-control-next, .carousel-control-prev, .carousel-control-next:hover, .carousel-control-prev:hover {
+    opacity: 1;
+}
+.carousel-control-prev-icon {
+    background-image: url('../images/ico/ico-24.svg');
+}
+.carousel-control-next-icon {
+    background-image: url('../images/ico/ico-25.svg');
+}
+/* -=== Galeria ===- */
+.gz-gallery-section {
+    padding-bottom: 60px;
+    .gz-title {
+        h2, h5 {
+            color: $white;
+        }
+        .btn-primary {
+            color: $white;
+            border: 1px solid $white;
+        }
+        .btn-primary:hover {
+            color: $text_ciemny;
+        }
+    }
+    .gallery-overlay {
+        background: linear-gradient(transparent, $text_ciemny);
+        border: 1px solid $white;
+    }
+    .gz-cta-more {
+        border: 1px solid $white;
+        color: $white;
+    }
+    .gallery-item:hover .gallery-overlay {
+        background-color: $akcent1;
+        opacity: 0.95;
+    }
+}
+.gallery-item {
+    color: $white;
+    .gallery-item:hover .gallery-overlay {
+        background-color: $akcent1;
+        opacity: 0.4;
+    }
+    .gallery-overlay, .gallery-content {
+        transition: all 0.4s ease-out;
+    }
+    .gallery-tags li {
+        background-color: $text_ciemny;
+    }
+    .gallery-button:hover {
+        background-color: $white;
+        color: $text_ciemny;
+    }
+}
+/* -=== Video Galeria ===- */
+.gz-video-gallery-section {
+    padding-bottom: 60px;
+    h2, h5 {
+        color: $white!important;
+    }
+    .video-thumbnail {
+        border: 1px solid $white;
+    }
+    .gallery-overlay {
+        background: linear-gradient(transparent, $text_ciemny);
+        transition: all 0.3s ease-out;
+    }
+    .gallery-overlay:hover {
+        background-color: $text_ciemny;
+        opacity: 0.95;
+    }
+}    
+/* -=== Kurier ===- */
+.gz-kurier {
+    padding-bottom: 30px;
+    h2, h5, h4, span {
+        color: $white!important;
+    }
+    .gz-kurier-item {
+        background-color: $text_ciemny;
+        border: 1px solid $white;
+    }
+}     
+/* -=== Banery-01 ===- */
+.gz-banery-01 {
+    margin-top: 0;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    border-top: 1px solid $white;
+    background-color: $text_ciemny;
+    .gz-banery-item {
+        border: 1px solid $white;
+        background-color: $text_ciemny!important;
+    }
+    
+}
+/* -=== Footer ===- */
+.gz-footer {
+    background-color: $text_ciemny!important;
+    color: $white!important;
+    border-top: 1px solid $white;
+    border-bottom: 1px solid $white;
+    p, a, a::before {
+        color: $white;
+    }
+    .logo-image {
+        background-image: url('../images/svg/img-svg-07.svg');
+        width: 100%;
+        height: 90px;
+        background-size: 77px 90px;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin-bottom: 20px;
+    }
+}
+.gz-footer-copyright {
+    background-color: $text_ciemny;
+    color: $white;
+}
+/* -=== Strona Opisowa ===- */
+.gz-opisowa {
+    figcaption, li::marker, .gz-download a {
+        color: $white;
+    }
+    .gz-text-link {
+        color: $white;
+        text-decoration: underline 2px dotted $white!important;
+    }
+    table, tr:nth-child(even) {
+        background-color: transparent;
+    }
+    table th, table td {
+        border: 1px solid $white;
+    }
+    table th {
+        color: $text_ciemny;
+        background-color: $white;
+    }
+    .gz-nawigacja-boczna {
+        button {
+            background-color: $white;
+            color: $text_ciemny;
+        }
+        li a {
+            color: $white!important;
+        }
+    } 
+}
+.wyszukiwarka-collapse-cta {
+    background-color: $text_ciemny;
+    button, button:hover {
+        background-color: $white;
+    }
+}
+.gz-aktualnosc-wpis {
+    time {
+        color: $white;
+    }
+    .btn, .btn:hover, .pilne, .nowe, .wydarzenie, .inwestycje  {
+        background-color: $white;
+        color: $text_ciemny;
+    }
+    .aktualnosc-wpis-tags {
+        color: $white;
+    }
+    .aktualnosc-wpis-tags li {
+        border: 1px solid $white;
+    }
+    .aktualnosci-tags-info li{
+        background-color: $white!important;
+        font-size: 150px; 
+    }
+}
+.gz-aktualnosci-karuzela {
+    .inwestycje, .pilne, .nowe, .wydarzenie {
+        background-color: $white;
+        color: $text_ciemny;
+    }
+}
+.gz-aktualnosci {
+    .aktualnosci-button:hover {
+        background-color: $white!important;
+    }
+    .aktualnosci-image-content {
+        border: 1px solid $white;
+        border-radius: 10px;
+        .inwestycje, .pilne, .nowe, .wydarzenie {
+            background-color: $white;
+            color: $text_ciemny;
+        }
+    }
+    .aktualnosci-overlay {
+	background: linear-gradient(transparent 40%, $text_ciemny 100%);
+    }
+    .aktualnosci-item:hover .aktualnosci-overlay {
+        background-color: $text_ciemny;
+        opacity: 1;
+    }
+    .aktualnosci-content {
+        time, h4 {
+            color: $white;
+        }
+    }
+    .gz-sorter {
+        .btn-primary {
+            background-color: $white;
+            color: $text_ciemny;
+        }
+        .btn-outline-primary {
+            color: $white;
+            border: 1px solid $white;
+        }
+        .btn:hover {
+            color: $text_ciemny;
+        }
+    }
+    .gz-pagination {
+        .active a {
+            background-color: $text_ciemny;
+            border: 1px solid $white;
+        }
+        .gz-item a:hover {
+            background-color: $white;
+        }
+    }
+}
+.gz-page-title {
+    h1, h5 {
+        color: $white;
+    }
+}
+.gz-kontakt {
+    span {
+        color: $white;
+    }
+    hr {
+        border: 1px solid $white;
+        opacity: 100;
+    }
+    form {
+        .error {
+            .form-control, .form-select {
+                border: 2px solid $text_ciemny;
+            }
+            .invalid-feedback {
+                background-color: $white;
+                color: $text_ciemny;
+            }
+        }
+        .input_ok {
+            .form-control, .form-select {
+                border: 2px solid $text_ciemny;
+            }
+            .ok-feedback {
+                background-color: $white;
+                color: $text_ciemny;
+            }
+            .send-ok {
+                background-color: $white;
+                color: $text_ciemny;
+            }
+        }
+        .form-check-label {
+            color: $white;
+        }
+        .form-check-input:checked {
+            background-color: $text_ciemny;
+        }
+        button, button:hover {
+            background-color: $white;
+            color: $text_ciemny;
+        }
+    }
+    .gz-info-section {
+        p, h5 {
+            color: $white;
+        }
+    }
+    .show {
+        background: rgba(0, 0, 0, 0.8);
+    }
+}
+.bloczek-kontakt {
+    .stanowisko, .phone span, .phone p, .mail a, .mail span, .godziny-urzedowania span {
+        color: $white;
+    }
+    .pokoj, .btn-primary, .btn-primary:hover {
+        background-color: $white;
+        color: $text_ciemny;
+        border: 2px solid $white;
+    }
+    .btn-outline-primary {
+        color: $white;
+        border: 2px solid $white;
+    }
+    .btn-outline-primary:hover {
+        color: $text_ciemny;
+       
+    }
+    .modal {
+        .modal-content {
+            background-color: $text_ciemny;
+            border: 2px solid $white;
+        }
+        .modal-header {
+            h5, span {
+                color: $white;
+            }
+        }
+        .btn-close {
+            background-color: $white;
+            opacity: 1;
+        }
+        .btn-secondary:hover {
+            background-color: $white;
+            color: $text_ciemny;
+        }
+    }
+}
+.bloczek-kontakt:hover {
+    border: 1px solid $white;
+}
+.wyszukiwanie-pt {
+    span, h2 {
+    color: $white;
+    }
+}
+.gz-wyszukiwanie-bloczek {
+    .info-tags li {
+        background: $white!important;
+        color: $text_ciemny!important;
+    }
+    .tags li {
+        border: 1px solid $white;
+    }
+    time, h4 {
+        color: $white!important;
+    }
+    .btn-outline-primary {
+        border: 1px solid $white;
+        color: $white;
+    }
+    .btn-outline-primary:hover {
+        border: 1px solid $white;
+        color: $text_ciemny;
+    }
+}
+.gz-wyniki-wyszukiwania {
+    .gz-pagination {
+        .active a {
+            background-color: $text_ciemny;
+            border: 1px solid $white;
+        }
+        .gz-item a:hover {
+            background-color: $white;
+        }
+    }
+}

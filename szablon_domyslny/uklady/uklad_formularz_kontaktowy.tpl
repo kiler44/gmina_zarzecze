@@ -2,37 +2,26 @@
 <html lang="pl">
 <head>
 	<meta charset="utf-8">
-
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- Google font -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
-
-	<!-- Bootstrap css -->
-	<link href="/_szablon/css/bootstrap.min.css" rel="stylesheet">
-	<link href="/_szablon/css/style.css " rel="stylesheet">
-	<title>{{$tytul_strony}}</title>
-
-	<meta name="description" content="{{$opis_strony}}" />
-	<link rel="canonical" href="https://gminazarzecze.pl/" />
-	<meta property="og:locale" content="pl_PL" />
-
-	<meta property="og:type" content="website" />
-	<meta property="og:title" content="{{$tytul_strony}}" />
-	<meta property="og:description" content="{{$opis_strony}}" />
-	<meta property="og:url" content="https://gminazarzecze.pl/" />
-	<meta property="og:site_name" content="{{$tytul_strony}}" />
-
-
-
 	<script src="/_szablon/js/jquery-3.6.0.min.js"></script>
 	<script src="/_szablon/js/moment.min.js"></script>
 	<script src="/_szablon/js/pl.min.js"></script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap" rel="stylesheet">
+	<link id="bootstrap" rel="stylesheet" type="text/css" href="/_szablon/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/_szablon/css/style.css">
+	<link id="normalStyle" href="/_szablon/css/style.css" rel="stylesheet">
+	<link id="contrastA" href="/_szablon/css/style-czarno-bialy.css" rel="stylesheet" disabled>
+	<link id="contrastB" href="/_szablon/css/style-czarno-zolty.css" rel="stylesheet" disabled>
+	<link id="contrastC" href="/_szablon/css/style-zolto-czarny.css" rel="stylesheet" disabled>
+	<link id="fontSmall" href="/_szablon/css/style-font-small.css" rel="stylesheet" disabled>
+	<link id="fontMedium" href="/_szablon/css/style-font-medium.css" rel="stylesheet" disabled>
+
 	<script>
 		function checkOpeningStatus(schedule) {
 			var now = new Date();
+			var currentWeekDay = now.getDay();
 			var currentHour = now.getHours();
 			var currentMinute = now.getMinutes();
 
@@ -53,21 +42,65 @@
 			}
 		}
 
-		var schedule = {
-			"otwarcie_8-00_16-30": { otwarcie: "8:00", zamkniecie: "16:30" },
-			"otwarcie_9-00_17-30": { otwarcie: "9:00", zamkniecie: "17:30" },
-			"otwarcie_18-00_24-00": { otwarcie: "18:00", zamkniecie: "00:00" },
-		};
+		var shedule = {
+			'1': schedule["otwarcie_7-00_15-00"],
+			'2': schedule["otwarcie_7-00_17-00"],
+			'3': schedule["otwarcie_7-00_15-00"],
+			'4': schedule["otwarcie_7-00_15-00"],
+			'5': schedule["otwarcie_7-00_13-00"],
+		}
 
 		window.onload = function() {
 			checkOpeningStatus(schedule);
 		};
 	</script>
+
+	<title>{{$tytul_strony}}</title>
+
+	<meta name="description" content="{{$opis_strony}}" />
+	<link rel="canonical" href="https://gminazarzecze.pl/" />
+	<meta property="og:locale" content="pl_PL" />
+
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="{{$tytul_strony}}" />
+	<meta property="og:description" content="{{$opis_strony}}" />
+	<meta property="og:url" content="https://gminazarzecze.pl/" />
+	<meta property="og:site_name" content="{{$tytul_strony}}" />
+	<!-- dodatkowe naglowki -->
+	{{$naglowek_html}}
+	{{BEGIN rss}}<link rel="alternate" type="application/rss+xml" title="{{$tytul}}" href="{{$url}}" />
+	{{END}}
+
 	{{$naglowek_html}}
 	{{BEGIN rss}}<link rel="alternate" type="application/rss+xml" title="{{$tytul}}" href="{{$url}}" />
 	{{END}}
 </head>
 <body>
+<!-- Ułatwienie czytania -->
+<div class="ulatwienie">
+	<div class="button-main">
+		<div class="ico">
+			<img src="/_szablon/images/ico/ico-19.svg" width="35" height="25" alt="">
+		</div>
+		<p>{$ETYKIETA_ULATWIENIE_CZYTANIA}</p>
+	</div>
+	<div class="content">
+		<div class="content-iner">
+			<p>{$ROZMIAR_CZCIONKI}</p>
+			<button type="button" class="fontSizeButton" id="normalFontSizeButton" onclick="changeFontSize('normal')"><img src="/_szablon/images/ico/ico-20.svg" alt="">{$ROZMIAR_NORMALNY}</button>
+			<button type="button" class="fontSizeButton" id="fontSizeButtonSmall" onclick="changeFontSize('small')"><img src="/_szablon/images/ico/ico-21.svg" alt="">{$ROZMIAR_DUZY}</button>
+			<button type="button" class="fontSizeButton" id="fontSizeButtonMedium" onclick="changeFontSize('medium')"><img src="/_szablon/images/ico/ico-22.svg" alt="">{$ROZMIAR_BARDZO_DUZY}</button>
+		</div>
+		<div class="content-iner content-iner-bottom">
+			<p>{$KONTRAST}</p>
+			<button type="button" class="contrastButton active" id="normalButton" onclick="changeContrast('normal')"><img src="/_szablon/images/svg/img-svg-03.svg" alt="">{$KONTRAST_NORMALNY}</button>
+			<button type="button" class="contrastButton" id="contrastButtonA" onclick="changeContrast('A')"><img src="/_szablon/images/svg/img-svg-04.svg" alt="">{$KONTRAST_CZARNO_BIALY}</button>
+			<button type="button" class="contrastButton" id="contrastButtonB" onclick="changeContrast('B')"><img src="/_szablon/images/svg/img-svg-05.svg" alt="">{$KONTRAST_CZARNO_ZOLTY}</button>
+			<button type="button" class="contrastButton" id="contrastButtonC" onclick="changeContrast('C')"><img src="/_szablon/images/svg/img-svg-06.svg" alt="">{$KONTRAST_ZOLTO_CZARNY}</button>
+		</div>
+	</div>
+</div>
+<!-- Ułatwienie czytania END-->
 <!-- Header START -->
 <header class="gz-header">
 	<div class="container">

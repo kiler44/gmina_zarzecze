@@ -1,0 +1,8 @@
+.gz-kurier div {
+    float: left;
+}
+.gz-kurier img {
+    border-radius: 8px;
+    max-height: 360px;
+    max-width: 251px;
+}

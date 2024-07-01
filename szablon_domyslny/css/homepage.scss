@@ -4,21 +4,12 @@
 /* Galeria */
 /* Video Galeria */
 /* Kurier */
-
 /* -=== Icon box - 01 */
-.gz-footer-copyright {
-    background-color: #03242F;
-    color: $white;
-    font-family: Poppins;
-    font-size: 12px;
-    font-weight: 500;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
+
 .gz-icobox-1 {
     padding: 20px 20px;
     margin-bottom: 10px;
-    background-color: $text_ciemny;
+    background-color: $Text-Ciemny-1;
     border-radius: 6px;
     text-align: center;    
     overflow: hidden!important;
@@ -26,7 +17,7 @@
     min-height: 120px;
 }
 .gz-icobox-1 p {
-    color: $white;
+    color: $White;
     font-size: 18px;
     font-weight: 600;
     padding-top: 16px;
@@ -36,11 +27,11 @@
     transform: scale(1.02); 
     border-radius: 6px;
     box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.08), 1px 14px 14px 0px rgba(0, 0, 0, 0.07), 2px 31px 19px 0px rgba(0, 0, 0, 0.04), 4px 55px 22px 0px rgba(0, 0, 0, 0.01), 6px 86px 24px 0px rgba(0, 0, 0, 0.00);
-    background-color: $akcent1;
+    background-color: $Akcent-1;
 }
 @media (max-width: 1199px) {
     .gz-icobox-1 p {
-        color: $white;
+        color: $White;
         font-size: 15px;
         font-weight: 500;
         padding-top: 16px;
@@ -65,22 +56,21 @@
     }
 }
 /* -=== Icon box - 01 END */
-
 /* -=== Counter dni do wydarzenia */
 .gz-counter {
     margin-top: 35px;
     margin-bottom: 35px;
     padding: 12px 40px 12px 35px;
     border-radius: 8px;
-    background-color: $szare_tlo;
+    background-color: $Bg-Szary-1;
     h3 {
-        color: $text_ciemny;
+        color: $Text-Ciemny-1;
         font-size: 26px;
         font-weight: 600;
         padding-top: 5px;
     }
     p {
-        color: $szary_text2;
+        color: $Text-Szary-1;
         font-size: 15px;
         font-weight: 500;
         padding-top: 5px;
@@ -94,19 +84,19 @@
         width: 100px;
         height: 81px;
         border-radius: 8px;
-        background-color: $akcent1;
+        background-color: $Akcent-1;
         margin-right: 10px;
     }
     .counter-value {
         font-size: 40px;
         font-weight: 600;
-        color: $white;
+        color: $White;
     }
     .counter-label {
         height: 15px;
         font-size: 14px;
         font-weight: 500;
-        color: $white;
+        color: $White;
         line-height: 0;
     }  
     .gz-event-label {
@@ -131,18 +121,18 @@
         }
     }   
     .zolty {
-        background-color: $akcent2;
+        background-color: $Akcent-3;
     }
     .czerwony {
-        background-color: $akcent3;
-        color: $white;
+        background-color: $Akcent-2;
+        color: $White;
     }
     .niebieski {
-        background-color: $akcent4;
-        color: $white;
+        background-color: $Akcent-4;
+        color: $White;
     }
     .zielony {
-        background-color: $akcent1;
+        background-color: $Akcent-1;
     }
     @media (max-width: 1199px) {
         h3 {
@@ -186,25 +176,40 @@
     }   
 }    
 /* -=== Counter dni do wydarzenia END*/
-
 /* -=== Kalendarz wydarzenia */
 .gz-kalendarz {
     border-radius: 8px;
     overflow: hidden;
-    background: $szare_tlo;
+    background: $Bg-Szary-1;
     margin-top: -23px;
     .gz-kalendarz-left {
         padding: 30px 20px;
         min-height: 400px;
+        .btn-nav-left {
+            width: 25px;
+            height: 25px;
+            background-image: url('../images/ico/ico-04.svg');
+            background-size: cover; 
+            background-repeat: no-repeat;
+        }
+        .btn-nav-right {
+            width: 25px;
+            height: 25px;
+            background-image: url('../images/ico/ico-05.svg');
+            background-size: cover; 
+            background-repeat: no-repeat;
+        }
     }
     .gz-kalendarz-right {
-        background-color: $text_ciemny;
-        color: $white;
+        background-color: $Text-Ciemny-1;
+        color: $White;
         padding: 4px;
         border-radius: 8px;
         h2 {
             font-size: 25px;
             font-weight: 500;
+            margin-bottom: 10px;
+            margin-top: 10px;
         }
         img {
             height: 100%;
@@ -236,7 +241,7 @@
     .gz-miesiac {
         font-size: 26px;
         font-weight: 600;
-        color: $text_ciemny;
+        color: $Text-Ciemny-1;
         min-width: 250px;
         text-align: center;
     }
@@ -254,6 +259,9 @@
         text-align: center;
         width: 100%;
         font-size: 15px;
+        background-color: transparent;
+        border: none;
+        margin-bottom: 0px;
     }
     th, td, tr {
         width: calc(100% / 7);
@@ -262,17 +270,32 @@
     }
     th {      
         line-height: 3;
-        color: $szary_text2;
+        color: $Text-Szary-1;
     }
     tr {
-        color: $text_ciemny;
+        color: $Text-Ciemny-1;
     }
+    table th {
+        padding: 10px 10px;
+        background-color: transparent;
+        text-align: center;
+        font-size: 13px;
+        font-weight: 600;
+      }
+      table td {
+        padding: 10px 5px;
+        text-align: center;
+        font-weight: 400;
+      }
+      tr:nth-child(even) {
+        background-color: transparent;
+      }
     /* Dzień aktywny */
     .gz-activ-day {
         min-width: 40px;
         border: 0;
-        background-color:  $akcent1;
-        color: $white;
+        background-color:  $Akcent-1;
+        color: $White;
         border-radius: 6px;
         font-size: 15px;
         padding: 7px 12px;
@@ -280,12 +303,12 @@
         transition-timing-function: ease-in;
     }
     .gz-activ-day:hover {
-        background-color:  $akcent2;
-        color: $text_ciemny;
+        background-color:  $Akcent-3;
+        color: $Text-Ciemny-1;
     }
     /* guzik pod kalendarzem */
     .gz-cta-text {
-        color: $text_ciemny;
+        color: $Text-Ciemny-1;
         font-size: 14px;
         font-weight: 600;
         padding: 10px 25px 0px 25px;
@@ -293,27 +316,27 @@
     .gz-cta-text:hover {
         text-decoration: underline;
     }
-
 }
 .gz-kalendarz-container {
     padding-right: 23px!important;
     padding-left: 23px!important; 
+    padding-bottom: 60px;
 }
 @media (max-width: 991px) {
     .gz-kalendarz-container{
         padding-right: 20px!important;
         padding-left: 20px!important;
-        
     }
 }
 /* -=== Kalendarz wydarzenia END */
-
 /* -=== Galeria */
 .gz-gallery-section {
+    padding-bottom: 60px;
+    
     .gz-title {
         .btn-primary {
-            color: $white;
-            border: 1px solid $text_ciemny;
+            color: $White;
+            border: 1px solid $Text-Ciemny-1;
         }
     }
     .gallery-overlay {
@@ -326,19 +349,19 @@
         border-radius: 8px;
     }
     @media (max-width: 991px)
-     {
-        .gallery-overlay {
-            bottom: 0px;
-            left: 8px;
-            height: 100%;
-            width: calc( 100% - 15px)
+    {
+    .gallery-overlay {
+        bottom: 0px;
+        left: 8px;
+        height: 100%;
+        width: calc( 100% - 15px)
     }
 }
     .gz-cta-more {
         margin-top: 16px;
     }
     .gallery-item:hover .gallery-overlay {
-        background-color: $akcent1;
+        background-color: $Akcent-1;
         opacity: 0.7;
     }
     .gallery-item:hover  .gallery-content{
@@ -362,7 +385,7 @@
     }
 }
 .gallery-item {
-    color: $white;
+    color: $White;
     position: relative;
     overflow: hidden;
     height: fit-content;
@@ -382,7 +405,7 @@
         padding-left: 25px;
         padding-top: 0px;
         line-height: 30px;
-        color: $white;
+        color: $White;
         text-align: left;
     }
     .gallery-tags {
@@ -396,7 +419,7 @@
         display: inline;
         margin-right: 4px;
         list-style-type: none;
-        border: 1px solid $white;
+        border: 1px solid $White;
         padding: 4px 8px;
         border-radius: 6px;
         font-size: 11px;
@@ -413,18 +436,18 @@
     }  
     .gallery-button {
         position: absolute;
-        background-color: $white;
+        background-color: $White;
         left: 35px;
         bottom: -40px;
         border: 0;
         border-radius: 8px;
         font-size: 15px;
         font-weight: 600;
-        color: $text_ciemny;
+        color: $Text-Ciemny-1;
         padding: 8px 20px;
     }
     .gallery-button:hover {
-        background-color: $akcent2;
+        background-color: $Akcent-3;
     }
     @media (max-width: 991px) {
         .gallery-title {
@@ -460,9 +483,21 @@
     }  
 }
 /* -=== Galeria END*/
-
 /* -=== Video Galeria */
 .gz-video-gallery-section {
+    padding-bottom: 60px;
+    .carousel-inner {
+        padding-top: 25px;
+    }
+    .gz-title {
+        padding-left: 22px;
+    }
+    .carousel-item {
+
+
+        padding: 0px 10px;
+        transition: all 0.3s ease-out;
+    }
     .video-thumbnail {
         position: relative;
         overflow: hidden;
@@ -513,13 +548,10 @@
     }
 }
 .video-gallery-content  {
-    color: $white;
+    color: $White;
     position: absolute;
     bottom: 0;
     padding: 15px 30px;
-    .video-thumbnail {
-        background-color: red;
-    }
     .video-gallery-content:hover {
         position: absolute;
         bottom: 0;
@@ -535,20 +567,21 @@
     }
 }
 /* -=== Video Galeria END*/
-
 /* -=== Kurier */
 .gz-kurier {
     .gz-kurier-item {
-        background-color: $szare_tlo;
-        border-radius: 8px;
         overflow: hidden;
+        margin-top: 30px;
+        margin-right: 5px;
+        margin-left: 5px;
         padding: 3px;
         text-align: center;
-        margin-top: 30px;
+        border-radius: 8px;
+        border: 1px solid $Ramka-Szara-1;
+        background-color: $Bg-Szary-1;    
     }
     @media (max-width: 991px) {
-        .gz-kurier-item {
-            
+        .gz-kurier-item { 
             margin-top: 15px;
         } 
     }
@@ -562,78 +595,109 @@
         min-height: 270px;
         object-fit: cover; 
         border-radius: 6px;
-        
     }
     h4 {
         padding-top: 14px;
         font-size: 15px;
         font-weight: 500;
-
     }
     span {
-        color: $szary_text2;
-
+        color: $Text-Szary-1;
         display: block;
-
         font-size: 12px;
         font-weight: 500;
-
         padding-bottom: 10px;
     }
-
 }
 /* -=== Kurier END*/
-
-/* -=== Banery-01 */
+/* -=== Banery-dolne ===- */
 .gz-banery-01 {
-    background-color: $szare_tlo;
-    text-align: center;
-    color: $white;
+    background-color: $Bg-Szary-1;
     margin-top: 50px;
     padding-top: 20px;
     padding-bottom: 60px;
-    .gz-banery-item:hover {
-        cursor: pointer;
+    .carousel-item {
+        padding-top: 5px;
+        padding-bottom: 5px;
+        .gz-banery-item  {
+            background-color: $Text-Ciemny-1;
+            padding: 4px;
+            border-radius: 8px;
+            display: block;
+            margin: 0 0.5em;
+            transition: all 0.3s ease-out;
+        }
+        img {
+            border-radius: 6px;
+            height: 100%;
+            width: 100%;
+            max-height: 135px;
+            min-height: 135px;
+            object-fit: cover; 
+            transition: all 0.3s ease-out;
+        }
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 45px;
+            padding: 0px 10px; 
+            h4 {
+                font-size: 14px;
+                font-weight: 400;
+                padding-top: 2px;
+                line-height: 1.3;
+                color: $White; 
+                text-align: center;
+            }
+        }
+        a.gz-banery-item {
+            text-decoration: none;
+        }
     }
-    .gz-banery-item {
-        background-color: $text_ciemny;
-        padding: 4px;
-        border-radius: 8px;
-    }
-    h4 {
-        font-size: 15px;
-        font-weight: 600;
-        padding-top: 10px;
-        padding-bottom: 8px;
-    }
-    img {
-        border-radius: 6px;
-        height: 100%;
-        width: 100%;
-        max-height: 135px;
-        min-height: 135px;
-        object-fit: cover; 
+    .carousel-item:hover {
+        .gz-banery-item  {
+            background-color: $Akcent-1;
+            box-shadow: 0 0 0 5px rgba(26, 103, 26, 0.4); 
+        }
+        img {
+            transform: scale(calc(1 + 0.03)) translateY(-2px);
+        }   
     }
     @media (max-width: 1199px) {
         .gz-banery-item {
-            min-height: 200px;
+            .content {
+            height: 55px;
+            }
         }
     }
     @media (max-width: 991px) {
         .gz-banery-item {
-            min-height: 200px;
             margin-top: 15px;
+            .content {
+                h4 {
+                    font-size: 12px;
+                }
+            }
         }
     }
+    @media (max-width: 767px) {
+        .carousel-item {
+            .content {
+                h4 {
+                    font-size: 14px;
+                }
+            }
+        }
+    }   
 }
-/* -=== Banery-01 END */
-
 .hidden {
     display: none;
 }
 .gz-cta-more {
     padding: 4px 12px;
     margin-top: 10px;
+    margin-bottom: 40px;
 }
 
 

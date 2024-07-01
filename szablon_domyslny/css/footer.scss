@@ -1,11 +1,12 @@
 .gz-footer {
-    background-color: $text_ciemny;
-    color: $white;
+    background-color: $Text-Ciemny-1!important;
+    color: $White;
     padding-top: 40px;
     padding-bottom: 40px;
     h2 {
         font-size: 30px;
         font-weight: 600;
+        padding-top: 10px;
     }
     h3 {
         font-size: 16px;
@@ -24,9 +25,10 @@
         color: #C9C9C9;
         font-size: 13px;
         font-weight: 400;
+        padding-top: 5px;
     }
     a {
-        color: $akcent2;
+        color: $Akcent-3;
         font-size: 13px;
         font-weight: 400;
         text-decoration: none;
@@ -40,4 +42,26 @@
     a:hover {
         text-decoration: underline;
     }
+    @media (max-width: 991px) {
+        .gz-footer-c {
+            padding-top: 30px;
+        }
+        .gz-footer-d {
+            text-align: center;
+        }
+    }
+    @media (max-width: 576px) {
+        .gz-footer-b, .gz-footer-c, .gz-footer-d {
+            padding-top: 30px;
+        }
+    }
+}
+.gz-footer-copyright {
+    background-color: #03242F;
+    color: $White;
+    font-family: Poppins;
+    font-size: 12px;
+    font-weight: 500;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }

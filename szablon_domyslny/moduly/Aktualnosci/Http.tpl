@@ -85,7 +85,7 @@
 				<a href="{{ $link_wstecz }}" class="btn">{{ $etykieta_wstecz }}</a>
 			</div>
 			<!-- Content Strony -->
-			<div class="col-lg-8 col-12">
+			<div class="col-lg-8 col-12 gz-content">
 				<div class="page-title text-center">
 					<h1>{{ $tytul }}</h1>
 					<time datetime="{{ $datetime }}">{{ $data }}</time>

@@ -72,7 +72,7 @@ class Http extends Modul\Http
 	public function wykonajFormularz()
 	{
 		$this->ustawGlobalne(array(
-			'tytul_strony' => $this->kategoria->nazwa,
+			'tytul_strony' => $this->kategoria->tytulStrony,
 			'tytul_modulu' => $this->kategoria->tytulStrony,// $this->j->t['index.tytul_modulu'],
 		));
 

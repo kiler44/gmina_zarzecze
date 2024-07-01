@@ -13,42 +13,33 @@
 .gz-mt-10 {
   margin-top: 10px;
 }
-
 /* Nadpisywanie wartości odstępów dla wszystkich rozmiarów */
 .row {
     --bs-gutter-x: 1.5rem; /* Poziome odstępy */
+}
+/* Nadpisywanie wartości odstępów dla konkretnych breakpointów */
+@media (max-width: 576px) { /* Small devices (sm breakpoint) */
+  .row {
+    --bs-gutter-x: 10px;
   }
-  
-  /* Nadpisywanie wartości odstępów dla konkretnych breakpointów */
-  @media (max-width: 576px) { /* Small devices (sm breakpoint) */
-    .row {
-      --bs-gutter-x: 10px;
-
-    }
+}
+@media (max-width: 768px) { /* Medium devices (md breakpoint) */
+  .row {
+    --bs-gutter-x: 10px;
   }
-  
-  @media (max-width: 768px) { /* Medium devices (md breakpoint) */
-    .row {
-      --bs-gutter-x: 10px;
-
-    }
+}
+@media (max-width: 992px) { /* Large devices (lg breakpoint) */
+  .row {
+    --bs-gutter-x: 15px;
   }
-  
-  @media (max-width: 992px) { /* Large devices (lg breakpoint) */
-    .row {
-      --bs-gutter-x: 15px;
-
-    }
+}
+@media (min-width: 1200px) { /* Extra large devices (xl breakpoint) */
+  .row {
+    --bs-gutter-x: 1.5rem;
   }
-  
-  @media (min-width: 1200px) { /* Extra large devices (xl breakpoint) */
-    .row {
-      --bs-gutter-x: 1.5rem;
-    }
-  }
-  
+} 
   @media (min-width: 1400px) { /* Extra extra large devices (xxl breakpoint) */
     .row {
       --bs-gutter-x: 1.5rem;
     }
-  }
+}
