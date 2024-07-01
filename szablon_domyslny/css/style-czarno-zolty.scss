@@ -70,6 +70,10 @@ body {
         background-color: $white;
         color: $text_ciemny!important;
     }
+    .dropdown-item.active {
+        background-color: white !important;
+        color:$text_ciemny !important;
+    }
     .gz-nav-kontakt-cta {
         background-color: #242424;
         color: $white;

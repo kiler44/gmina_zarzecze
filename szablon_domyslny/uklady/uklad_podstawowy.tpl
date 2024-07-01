@@ -92,7 +92,7 @@
 
 <!-- Sekcja 1 -->
 
-<section class="gz-section">
+<section class="gz-section gz-opisowa">
 	<div class="container">
 		<div class="row">
 			{{ $region_0 }}

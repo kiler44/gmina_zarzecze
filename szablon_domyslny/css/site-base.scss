@@ -55,6 +55,9 @@ content: attr(data-xs-text);
 }
 }
 /* Zmiana treści RWD END */
+.gz-section {
+  padding-bottom: 20px;
+}
 .gz-page-title {
 h1 {
   color: $Text-Ciemny-1;
@@ -151,35 +154,24 @@ h5 {
   }
 }
 /* Menu boczne */
-.gz-nawigacja-boczna button {
+.gz-nawigacja-boczna button, .gz-nawigacja-boczna a.button {
   background-color: $Text-Ciemny-1;
   width: 100%;
   color: $White;
   font-size: 16px;
   font-weight: 400;
   height: 50px;
-  text-align: left;
+  text-align: center;
   position: relative;
-  padding-left: 30px;
   border: 0;
   margin-bottom: 2px;
   transition: 0.2s;
   transition-timing-function: ease-in;
 }
-.gz-nawigacja-boczna button:hover {
+.gz-nawigacja-boczna button:hover, .gz-nawigacja-boczna a.button:hover {
   background-color: $Akcent-1;
 }
-.gz-nawigacja-boczna button::before {
-  content: '';
-  display: block;
-  position: absolute;
-  right: 25px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 9px; 
-  height: 6px; 
-  background-image: url('../images/ico/ico-11.svg');
-}
+
 .gz-nawigacja-boczna:first-child > button {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;

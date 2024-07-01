@@ -83,6 +83,10 @@ body {
 .gz-navbar .dropdown-menu a, .gz-navbar .dropdown-menu {
   color: #fff !important;
 }
+.gz-navbar .dropdown-item.active {
+  background-color: whitesmoke;
+  color: #000000 !important;
+}
 @media (max-width: 1199px) {
   .gz-navbar {
     background-color: #000000 !important;

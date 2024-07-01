@@ -166,7 +166,10 @@
         font-weight: 500;
         line-height: normal;
     }
-    .dropdown-item:hover {
+    .dropdown-item.active {
+        background-color: whitesmoke;
+    }
+    .dropdown-item:hover  {
         background-color: $Akcent-1;
         color: $White!important;
     }

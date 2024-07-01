@@ -80,6 +80,10 @@ body {
     .dropdown-menu a, .dropdown-menu {
         color: $white!important;
     }
+    .dropdown-item.active {
+        background-color: whitesmoke;
+        color: #000000 !important;
+    }
     @media (max-width: 1199px) {
         background-color: $text_ciemny!important;
 

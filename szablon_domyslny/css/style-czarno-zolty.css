@@ -73,6 +73,10 @@ body {
   background-color: #FFD800;
   color: #000000 !important;
 }
+.gz-navbar .dropdown-item.active {
+  background-color: white !important;
+  color: #000000 !important;
+}
 .gz-navbar .gz-nav-kontakt-cta {
   background-color: #242424;
   color: #FFD800;

@@ -111,10 +111,11 @@ class Http extends Modul\Http
 
                 foreach ($listaWynikow as $wpis)
                 {
+                    //dump($wpis);
                     $this->szablon->ustawBlok('index/wynik', [
                         'tytul' => $wpis->tytul,
                         'data' => $wpis->data,
-                        'tresc' => str_cut($wpis->tresc, 250, true),
+                        'tresc' => str_cut(strip_tags($wpis->tresc), 160, true),
                         'link' => $wpis->link,
                         'kategoria' => $wpis->kategoria,
                         'url_zdjecia' => $wpis->zdjecie

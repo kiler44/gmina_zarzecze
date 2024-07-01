@@ -88,15 +88,16 @@
 </nav>
 <!-- Navbar END -->
 
-
-
 <!-- Sekcja 1 -->
-
+<section class="gz-section">
+	{{ $region_3 }}
+</section>
+<!-- Sekcja treści -->
 <section class="gz-section">
 	<div class="container">
 		<div class="row gz-opisowa">
 			<div class="col-lg-10 col-12 gz-top">{{ $region_0 }}</div>
-			<div class="col-lg-2 col-12 gz-top" style="position: static">{{ $region_3 }}</div>
+			<div class="col-lg-2 col-12 gz-top" style="position: static">{{ $region_4 }}</div>
 		</div>
 </section>
 
@@ -104,7 +105,7 @@
 <section class="gz-footer">
 	<div class="container">
 		<footer class="row">
-			{{ $region_4 }}
+			{{ $region_5 }}
 		</footer>
 	</div>
 </section>
