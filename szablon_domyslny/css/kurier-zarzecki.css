@@ -6,3 +6,9 @@
     max-height: 360px;
     max-width: 251px;
 }
+.gz-kurier .gz-kurier-item a {
+    
+}
+.gz-kurier .gz-kurier-item a::after {
+    content: '';
+}
