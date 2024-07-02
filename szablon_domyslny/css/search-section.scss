@@ -6,6 +6,7 @@
     background-attachment: fixed;
     background-size: cover;
     position: relative;
+    z-index: 100;
     .input-group {
         border-radius: 11px;
         border: 4px solid rgba(255, 255, 255, 0.20); 
