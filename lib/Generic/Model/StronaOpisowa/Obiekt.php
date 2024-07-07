@@ -40,6 +40,7 @@ class Obiekt extends ObiektDanych
         return  $zalacznikiMapper->pobierzDlaObjektu('StronaOpisowa', $this->id);
     }
 
+
     public function dodajZalacznik(\Generic\Model\Zalacznik\Obiekt $zalacznik)
     {
         $zalacznik->ustawObiekt($this);

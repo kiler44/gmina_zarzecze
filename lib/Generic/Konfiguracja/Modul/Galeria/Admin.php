@@ -38,7 +38,7 @@ class Admin extends Konfiguracja
         'formularz.prefix_miniaturki_zdjecia' => array(
             'opis' => 'Rozmiar pełnego zdjęcia. Wartość musi się znajdować w określonych w polu [rozmiary_miniaturek]',
             'typ' => 'varchar',
-            'wartosc' => 'miniaturka-podglad',
+            'wartosc' => 'min',
         ),
 
         'formularz.prefix_zdjecia' => array(
@@ -81,11 +81,9 @@ class Admin extends Konfiguracja
     				np. full => 800.600.scale',
 		'typ' => 'array',
 		'wartosc' => array(
-            '' => '800.600.scale',
-            'miniaturka-podglad' => '400.250.crop',
-            'mid' => '200.200.crop',
-            'min' => '120.120.crop',
-            'xs' => '30.30.crop',
+            '' => '3840.3840.scale',
+            'mid' => '800.600.scale',
+            'min' => '400.250.crop',
 			),
 		),
 

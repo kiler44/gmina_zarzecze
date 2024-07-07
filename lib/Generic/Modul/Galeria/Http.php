@@ -131,24 +131,24 @@ class Http extends Modul\Http
 
 				$tresc['nazwa'] = $galeria->nazwa;
 				$tresc['opis'] = $galeria->opis;
-				$tresc['autor'] = ($galeria->autor == '') ? $this->j->t['listaGalerii.brak_autora'] : $galeria->autor;
+				$tresc['autor'] = ($galeria->autor == '') ? $this->j->t['listaGalerii.brak_autora'] : str_replace('$autor', $galeria->autor, $this->j->t['listaGalerii.podpis_autor']);
 				$tresc['data_dodania'] = $galeria->dataDodania->format($this->k->k['listaGalerii.format_daty']);
 				$tresc['ilosc_zdjec'] = $ilosc_zdjec;
 				$tresc['link'] = Router::urlHttp($this->kategoria, array('galeria', $galeria->id)); //'?kategoria='.$this->kategoria->id.'&amp;akcja=galeria&amp;galeria='.$galeria->id;//
 				$tresc['link_wiecej'] = $this->j->t['listaGalerii.etykieta_link_wiecej'];
 
+                $tresc['kategoria'] = $galeria->pobierzKategorie()->nazwa;
 				if ($galeria->zdjecieGlowne != '')
 				{
 					$prefix = (empty($this->k->k['listaGalerii.prefix_miniaturki'])) ? null : $this->k->k['listaGalerii.prefix_miniaturki'].'-';
 					$tresc['zdjecie'] = Cms::inst()->url('galeria', $galeria->id).'/'.$prefix.$galeria->zdjecieGlowne;
 					$tresc['zdjecie_alt'] = $galeria->nazwa;
-                    $tresc['kategoria'] = $galeria->pobierzKategorie()->nazwa;
 
 					$this->szablon->ustawBlok('listaGalerii/galeria_wylistowanie/zdjecie_glowne', $tresc);
 				}
 				else
 				{
-					$zdjecie_alt = $this->j->t['listaGalerii.etykieta_brak_zdjecia_glownego'];
+                    $tresc['zdjecie_alt'] = $this->j->t['listaGalerii.etykieta_brak_zdjecia_glownego'];
 
 					$this->szablon->ustawBlok('listaGalerii/galeria_wylistowanie/brak_zdjecia_glownego', $tresc);
 				}
@@ -222,20 +222,20 @@ class Http extends Modul\Http
 					$tresc['tytul'] = $zdjecie->tytul;
 					$tresc['opis'] = $zdjecie->opis;
 					$tresc['data_dodania'] = $zdjecie->dataDodania->format($this->k->k['galeria.format_daty']);
-					$tresc['autor'] = ($zdjecie->autor != '') ? $zdjecie->autor : $this->j->t['galeria.brak_autora'];
-                    $tresc['zdjecie_link'] = Cms::inst()->url('galeria', $id).'/'.$zdjecie->nazwaPliku;
-					/*
+					$tresc['autor'] = ($zdjecie->autor != '') ? str_replace('$autor', $galeria->autor, $this->j->t['listaGalerii.podpis_autor']) : $this->j->t['galeria.brak_autora'];
+                    //$tresc['zdjecie_link'] = Cms::inst()->url('galeria', $id).'/'.$zdjecie->nazwaPliku;
+
 					if($this->k->k['galeria.uzyj_lightbox'])
 					{
-						$tresc['zdjecie_link'] = Cms::inst()->url('galeria', $id).$zdjecie->nazwaPliku;
-						$tresc['lightbox'] = 'rel="lightbox"';
+						$tresc['zdjecie_link'] = Cms::inst()->url('galeria', $id).'/'.$zdjecie->nazwaPliku;
+						$tresc['lightbox'] = 'data-toggle="lightbox" data-gallery="galeria-'.$id.'" ';
 					}
 					else
 					{
 						$tresc['zdjecie_link'] = Router::urlHttp($this->kategoria, array('zdjecie', $zdjecie->id));
 						$tresc['lightbox'] = null;
 					}
-					*/
+
 
 					$this->szablon->ustawBlok('galeria/miniaturka', $tresc);
 				}
@@ -243,7 +243,7 @@ class Http extends Modul\Http
 				$this->tresc .= $this->szablon->parsujBlok('galeria', array(
 					'pager' => $pager->html(Router::urlHttp($this->kategoria, array('galeria' ,$id ,'{NR_STRONY}', '{NA_STRONIE}'))),
                     'opis' => $galeria->opis,
-                    'autor' => $galeria->autor,
+                    'autor' => str_replace('$autor', $galeria->autor, $this->j->t['listaGalerii.podpis_autor']),
                     'data_dodania' => $galeria->dataDodania->format('Y-m-d')
 				));
 			}

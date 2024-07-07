@@ -63,11 +63,11 @@
   font-size: 16px;
 }
 
-.gz-nawigacja-boczna button {
+.gz-nawigacja-boczna a.button {
   font-size: 18px;
 }
 
-.gz-nawigacja-boczna li {
+.gz-nawigacja-boczna-submenu li a {
   font-size: 17px;
 }
 

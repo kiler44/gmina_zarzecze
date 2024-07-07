@@ -428,12 +428,16 @@ body {
   color: #000000;
   background-color: #FFD800;
 }
-.gz-opisowa .gz-nawigacja-boczna button {
+.gz-opisowa .gz-nawigacja-boczna a.button {
   background-color: #FFD800;
   color: #000000;
 }
 .gz-opisowa .gz-nawigacja-boczna li a {
   color: #FFD800 !important;
+}
+.gz-opisowa .gz-nawigacja-boczna-submenu {
+  background-color: #000000;
+  border: 0px;
 }
 
 .wyszukiwarka-collapse-cta {

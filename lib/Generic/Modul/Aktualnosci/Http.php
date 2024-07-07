@@ -204,8 +204,8 @@ class Http extends Modul\Http
 					{
 						$foto['tytul'] = $zdjecie->tytul;
 						$foto['opis'] = $zdjecie->opis;
-						$foto['miniaturka'] = $katalogZdjec.$prefix.$zdjecie->nazwaPliku;
-						$foto['zdjecie_link'] = $katalogZdjec.$zdjecie->nazwaPliku;
+						$foto['miniaturka'] = $katalogZdjec.'/'.$prefix.$zdjecie->nazwaPliku;
+						$foto['zdjecie_link'] = $katalogZdjec.'/'.$zdjecie->nazwaPliku;
 						$foto['lightbox'] = (int)(bool)$this->k->k['dolaczonaGaleria.uzyj_lightbox'];
 
 						$this->szablon->ustawBlok('galeria/miniaturka', $foto);

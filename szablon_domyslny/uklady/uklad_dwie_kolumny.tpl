@@ -142,7 +142,7 @@
 </div>
 </section>
 <script src="/_szablon/js/bootstrap.bundle.min.js"></script>
-<script src="/_szablon/js/dist/js/lightbox-plus-jquery.min.js" ></script>
+<script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
 <script src="/_szablon/js/gz-js.js"></script>
 </body>
 </html>

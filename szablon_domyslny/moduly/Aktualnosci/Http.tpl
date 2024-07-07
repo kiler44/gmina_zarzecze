@@ -78,14 +78,14 @@
 
 
 {{ BEGIN aktualnosc }}
-<section class="gz-section gz-aktualnosc-wpis">
+<section class="gz-section gz-aktualnosc-wpis gz-opisowa">
 	<div class="container" >
 		<div class="row">
 			<div class="col-lg-2 col-12 gz-top">
 				<a href="{{ $link_wstecz }}" class="btn">{{ $etykieta_wstecz }}</a>
 			</div>
 			<!-- Content Strony -->
-			<div class="col-lg-8 col-12 gz-content">
+			<div class="col-lg-10 col-12 gz-content">
 				<div class="page-title text-center">
 					<h1>{{ $tytul }}</h1>
 					<time datetime="{{ $datetime }}">{{ $data }}</time>
@@ -128,12 +128,10 @@
 
 
 {{BEGIN galeria}}
-<div class="lista_miniaturek">
+<div class="row gz-gallery-section">
 	{{ BEGIN miniaturka }}
-	<div class="miniaturka">
-		<div class="image">
-			<a title="{{ $tytul }}" href="{{ $zdjecie_link }}" {{ if($lightbox, 'data-toggle="lightbox"') }}><img alt="{{escape($tytul)}}" src="{{ $miniaturka }}"/></a>
-		</div>
+	<div class="col-lg-4 col-6 gallery-item">
+		<a class="not-text-link" title="{{ $tytul }}" href="{{ $zdjecie_link }}" {{ if($lightbox, 'data-toggle="lightbox"') }}><img alt="{{escape($tytul)}}" src="{{ $miniaturka }}"/></a>
 		<div class="caption">{{ $opis }}</div>
 	</div>
 	{{END}}

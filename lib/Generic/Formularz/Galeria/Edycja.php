@@ -55,7 +55,7 @@ class Edycja extends \Generic\Formularz\Abstrakcja
                     'url_upload' => Router::urlAjax('Admin', $this->kategoriaLinkow, 'zapiszPlik', array('idGalerii' => $this->obiekt->id)),
                     'url_plikow' => $this->konfiguracja['urlZalacznikow'],
                     'url_usun' => Router::urlAjax('Admin', $this->kategoriaLinkow, 'usunPlik' ,array('idGalerii' =>  $this->obiekt->id)),
-                    'prefix' => 'miniaturka-podglad',
+                    'prefix' => 'min',
                     'lista' => $lista_zdjec,
                     'wyswietlaj_drop_area' => 0,
                     'rozmiary_miniaturek' => $this->konfiguracja['kody_miniatur'],

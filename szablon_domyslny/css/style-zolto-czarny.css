@@ -485,12 +485,16 @@ body {
   color: #FFD800;
   background-color: #000000;
 }
-.gz-opisowa .gz-nawigacja-boczna button {
+.gz-opisowa .gz-nawigacja-boczna a.button {
   background-color: #000000;
   color: #FFD800;
 }
 .gz-opisowa .gz-nawigacja-boczna li a {
   color: #000000 !important;
+}
+.gz-opisowa .gz-nawigacja-boczna-submenu {
+  background-color: #FFD800;
+  border: 0px;
 }
 
 .wyszukiwarka-collapse-cta {

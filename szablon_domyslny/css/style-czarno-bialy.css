@@ -402,12 +402,16 @@ body {
   color: #000000;
   background-color: #fff;
 }
-.gz-opisowa .gz-nawigacja-boczna button {
+.gz-opisowa .gz-nawigacja-boczna a.button {
   background-color: #fff;
   color: #000000;
 }
 .gz-opisowa .gz-nawigacja-boczna li a {
   color: #fff !important;
+}
+.gz-opisowa .gz-nawigacja-boczna-submenu {
+  background-color: #000000;
+  border: 0px;
 }
 
 .wyszukiwarka-collapse-cta {

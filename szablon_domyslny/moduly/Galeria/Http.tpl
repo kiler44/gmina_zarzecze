@@ -31,19 +31,37 @@
 				</div>
 				<div class="row gz-gallery-section">
 					{{ BEGIN galeria_wylistowanie }}
-					<div class="col-lg-4 col-6 gallery-item" data-tags="sport">
-						<img src="{{$zdjecie}}" alt="{{escape($zdjecie_alt)}}" >
-						<div class="gallery-overlay"></div>
-						<div class="gallery-content">
-							<div class="gallery-tags">
-								<ul>
-									<li>{{$kategoria}}</li>
-								</ul>
+						{{ BEGIN zdjecie_glowne }}
+							<div class="col-lg-4 col-6 gallery-item" data-tags="sport">
+								<img src="{{$zdjecie}}" alt="{{escape($zdjecie_alt)}}" >
+								<div class="gallery-overlay"></div>
+								<div class="gallery-content">
+									<div class="gallery-tags">
+										<ul>
+											<li>{{$kategoria}}</li>
+										</ul>
+									</div>
+									<h4 class="gallery-title">{{ $nazwa }}</h4>
+								</div>
+								<a href="{{ $link }}"  title="{{escape($zdjecie_alt)}}" class="gallery-button">Cała galeria »</a>
 							</div>
-							<h4 class="gallery-title">{{ $nazwa }}</h4>
-						</div>
-						<a href="{{ $link }}"  title="{{escape($zdjecie_alt)}}" class="gallery-button">Cała galeria »</a>
-					</div>
+						{{ END}}
+						{{ BEGIN brak_zdjecia_glownego }}
+							<div class="col-lg-4 col-6 gallery-item" data-tags="sport">
+								<div style="min-height: 290px; background: center / 50% no-repeat url(/_szablon/images/svg/img-svg-02.svg); text-align: center; padding-top: 235px"></div>
+								<div class="gallery-overlay"></div>
+								<div class="gallery-content">
+									<div class="gallery-tags">
+										<ul>
+											<li>{{$kategoria}}</li>
+										</ul>
+									</div>
+									<h4 class="gallery-title">{{ $nazwa }}</h4>
+								</div>
+								<a href="{{ $link }}"  title="{{escape($zdjecie_alt)}}" class="gallery-button">Cała galeria »</a>
+							</div>
+
+						{{ END }}
 					{{ END }}
 				</div>
 			</div>
@@ -62,35 +80,28 @@
 	<h1>{{$tytul_strony}}</h1>
 	<h5>{{$opis}}</h5>
 </div>
-<div class="gz-section gz-aktualnosci gz-mt-20">
+<div class="gz-section gz-aktualnosc-wpis gz-opisowa gz-mt-20">
 	<div class="container">
 		<div class="row">
 			<div class="row gz-gallery-section">
 				{{ BEGIN miniaturka }}
 				<div class="col-lg-4 col-6 gallery-item" data-tags="{{escape($tytul)}}" >
-					<img src="{{ $miniaturka }}"  alt="{{escape($tytul)}}" >
-					<a class="example-image-link" href="{{ $zdjecie_link }}" data-lightbox="example-set" data-title="{{$opis}}">
-					<div class="gallery-overlay" ></div>
+					<a class="image-link" href="{{ $zdjecie_link }}" {{$lightbox}} data-title="{{$opis}}">
+						<img src="{{ $miniaturka }}"  alt="{{escape($tytul)}}" >
+						<!--<div class="gallery-overlay" ></div>-->
 					</a>
 
 				</div>
-				<!--
-					<div class="caption"><a href="{{ $zdjecie_link }}" title="{{ $tytul }}" {{ $lightbox }}>{{ $tytul }}</a></div>
-					-->
 				{{ END }}
-				<div class="r_clear"></div>
 				<div class="text-center">
 					<p>
 					<small>{{$autor}} {{$data_dodania}}</small>
 					</p>
 				</div>
-				<div class="r_clear"></div>
 				{{$pager}}
 			</div>
-			<div class="back">
-			<a href="{{ $wstecz_link }}" class="btn">{{ $wstecz_etykieta }}</a>
-			</div>
 		</div>
+		<a href="{{ $wstecz_link }}" class="btn">{{ $wstecz_etykieta }}</a>
 	</div>
 </div>
 

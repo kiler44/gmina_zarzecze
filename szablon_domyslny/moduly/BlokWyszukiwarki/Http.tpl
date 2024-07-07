@@ -1,6 +1,6 @@
 {{BEGIN index}}
-<section class="gz-section-search d-flex align-items-center collapse" id="collapsibleContent">
-	<img class="gz-search-ico-1" src="/_szablon/images/ico/ico-03.svg" alt="">
+<section id="collapsibleContent" class="gz-section-search d-flex align-items-center">
+	<img class="gz-search-ico-1" src="/_szablon/images/ico/ico-03.svg" alt="Ikona szukaj">
 	<a href="#czytaj-wiecej" class="gz-cta-search-more">{{$czytaj_wiecej_input}}</a>
 	<div class="container">
 		<div class="row">

@@ -13,6 +13,7 @@ use Generic\Tlumaczenie\Tlumaczenie;
  * @property string $t['galeria.info_brak_zdjec_w_galerii']
  * @property string $t['galeria.tytul_modulu']
  * @property string $t['galeria.tytul_strony']
+ * @property string $t['listaGalerii.podpis_autor']
  * @property string $t['listaGalerii.brak_autora']
  * @property string $t['listaGalerii.etykieta_autor']
  * @property string $t['listaGalerii.etykieta_brak_zdjecia_glownego']
@@ -50,6 +51,7 @@ class Http extends Tlumaczenie
 		'galeria.tytul_modulu' => '%s',
 		'galeria.tytul_strony' => '%s',
 
+        'listaGalerii.podpis_autor' => 'Autor zdjęć: $autor',
 		'listaGalerii.brak_autora' => 'Anonim',
 		'listaGalerii.etykieta_autor' => 'Autor',
 		'listaGalerii.etykieta_brak_zdjecia_glownego' => 'Zdjęcia wkrótce',

@@ -18,7 +18,6 @@ use Generic\Konfiguracja\Konfiguracja;
  * @property string $k['zdjecie.prefix_pelne_zdjecie']
  * @property string $k['zdjecie.prefix_zdjecie']
  * @property int $k['zdjecie.slider_ilosc_miniaturek']
- * @property string $k['zdjecie.tryb_wyswietlania']
  */
 
 class Http extends Konfiguracja
@@ -84,7 +83,7 @@ class Http extends Konfiguracja
 	'listaGalerii.prefix_miniaturki' => array(
 		'opis' => '',
 		'typ' => 'varchar',
-		'wartosc' => 'miniaturka-podglad',
+		'wartosc' => 'min',
 		),
 
 	'listaGalerii.wierszy_na_stronie' => array(
@@ -122,17 +121,5 @@ class Http extends Konfiguracja
 		'typ' => 'int',
 		'wartosc' => 6,
 		),
-
-	'zdjecie.tryb_wyswietlania' => array(
-		'opis' => '\'\' - nie robi nic, \'link\' - link do pełnego zdjęcia, \'lightbox\' - link z lightboxem',
-		'typ' => 'select',
-		'wartosc' => 'lightbox',
-		'dozwolone' => array(
-			'0' => '',
-			1 => 'link',
-			2 => 'lightbox',
-			),
-		),
-
 	);
 }

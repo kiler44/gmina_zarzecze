@@ -107,3 +107,57 @@
     }
 }
 
+
+/* Menu boczne */
+.gz-nawigacja-boczna {
+    margin-top: 5px;
+}
+.gz-nawigacja-boczna a.button {
+    display: inline-block;
+    background-color: $Text-Ciemny-1;
+    width: 100%;
+    color: $White;
+    font-size: 16px;
+    font-weight: 400;
+    height: 50px;
+    text-align: center;
+    position: relative;
+    transition: 0.2s;
+    transition-timing-function: ease-in;
+    text-align: left;
+    padding-left: 30px;
+    padding-top: 13px;
+    border-radius:  8px;
+}
+.gz-nawigacja-boczna button:hover, .gz-nawigacja-boczna a.button:hover {
+    background-color: $Akcent-1;
+}
+.gz-nawigacja-boczna-submenu {
+    background-color: $Bg-Szary-1;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border: 1px solid $Ramka-Szara-1;
+}
+.gz-nawigacja-boczna-submenu li a {
+    color: $Text-Ciemny-1;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 6px 30px;
+    transition: 0.2s;
+    transition-timing-function: ease-in;
+    line-height: 18px;
+    cursor: pointer;
+    display: inline-block;
+}
+.gz-nawigacja-boczna-submenu a:hover {
+    font-weight: 600;
+}
+.gz-nawigacja-boczna-submenu li:first-child a {
+    padding-top: 25px;
+}
+.gz-nawigacja-boczna-submenu li:last-child a {
+    padding-bottom: 15px;
+}
+/* Menu boczne END*/

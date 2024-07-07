@@ -223,13 +223,6 @@ $(document).ready(function(){
 </div>
 {{END}}
 
-{{BEGIN kontener_supertraders}}
-<div class="modul supertraders">
-<h1>{{$tytul_modulu}}</h1>
-<div class="tresc">{{$tresc}}</div>
-</div>
-{{END}}
-
 {{BEGIN kontener_galeria}}
 <div class="modul">
 <h1>{{$tytul_galerii}}</h1>
@@ -241,9 +234,6 @@ $(document).ready(function(){
 {{$tresc}}
 {{END}}
 
-{{BEGIN kontener_blok_kategorii_ogloszen}}
-<div class="kategorie_ogloszen">{{$tresc}}</div>
-{{END}}
 
 {{BEGIN kontener_tresc}}
 <div class="modul">
@@ -251,109 +241,82 @@ $(document).ready(function(){
 </div>
 {{END}}
 
-
-{{BEGIN kontener_blue_box}}
-<div class="blue_box">
-	<div class="gora"><b></b></div>
-	<h3 class="tytul">{{$tytul_modulu}}</h3>
-	<div class="tresc">
+{{BEGIN kontener_sekcja}}
+<section class="gz-section icobox-1-section">
+	<div class="container" id="tiles-container">
 		{{$tresc}}
 	</div>
-	<div class="dol"><b class="l"></b><b class="r"></b></div>
-</div>
+</section>
 {{END}}
 
-{{BEGIN kontener_orange_box_wiecej}}
-<div class="orange_box wiecej_box">
-	<div class="gora"><b></b></div>
-	<h3 class="tytul">{{$tytul_modulu}}</h3>
-	<div class="tresc">
-		{{$tresc}}
-	</div>
-	<div class="dol"><b class="l"></b><b class="r"></b></div>
-</div>
-{{END}}
-
-{{BEGIN kontener_orange_box_notatka}}
-<div class="orange_box wiecej_box">
-	<div class="gora"><b></b></div>
-	<h3 class="tytul">{{$tytul_modulu}}</h3>
-	<div class="tresc">
-		{{$tresc}}
-	</div>
-	<div class="zapisz">{{$etykieta_zapisz}}</div>
-</div>
-{{END}}
-
-{{BEGIN kontener_orange_box}}
-<div class="orange_box">
-	<div class="gora"><b></b></div>
-	<h3 class="tytul">{{$tytul_modulu}}</h3>
-	<div class="tresc">
-		{{$tresc}}
-	</div>
-	<div class="dol"><b class="l"></b><b class="r"></b></div>
-</div>
-{{END}}
-
-{{BEGIN kontener_blue_box2}}
-<div class="blue_box">
-	<div class="gora"><b></b></div>
-	<h3 class="tytul"><span class="kontener_tytul">{{$tytul_modulu}}</span><a class="kontener_link" href="{{escape($link_url)}}" title="{{escape($link_etykieta)}}">{{$link_etykieta}}</a><span class="clear"></span></h3>
-	<div class="tresc2">
-		{{$tresc}}
-	</div>
-	<div class="dol"><b class="l"></b><b class="r"></b></div>
-</div>
-{{END}}
-
-{{BEGIN kontener_blue_box_przewijany}}
-<div class="blue_box">
-	<script>
-		function otworzBoxPomocyBlok()
-		{
-			$('#boxPomocyBlokPomoc').css('display', 'block');
-		}
-
-		function zamknijBoxPomocyBlok()
-		{
-			$('#boxPomocyBlokPomoc').css('display', 'none');
-		}
-	</script>
-	<div class="gora"><b></b></div>
-	<h3 class="tytul"><span class="kontener_tytul">{{$tytul_modulu}}</span><a class="kontener_link" onclick="{{$link_onclick}}" title="{{escape($link_etykieta)}}">{{$link_etykieta}}</a><span class="clear"></span></h3>
-	<div id="boxPomocyBlokPomoc" style="width:200px; height:150px; background-color: #eee; position:absolute; right:220px; border:1px solid #333; text-align:center; display:none;">
-		<div onclick="zamknijBoxPomocyBlok();" style="width:20px; height:20px; background-color: #ccc; color:#fff; float:right;">X</div>
-		<br /><br /><strong>{{$etykieta_pomoc}}</strong>
-		<div style="background-color: #333; color:#fff; margin:10px;">{{$etykieta_pomoc2}}</div>
-	</div>
-	<div style="width:30px; background-color:#ddd; height:160px; float:left;">&laquo;</div>
-	<div style="width:30px; background-color:#ddd; height:160px; float:right;">&raquo;</div>
-	<div class="tresc2" style="height:160px; overflow:hidden;">
-		<div style="width:2000px; height:160px; float:left;">
-			{{$tresc}}
+{{BEGIN kontener_sekcja_wideo}}
+<section class="gz-video-gallery-section gz-section karuzela-2">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 gz-title text-lg-start text-center">
+				<h2>{{$tytul_modulu}}</h2>
+			</div>
+			<div class="col-12">
+				{{$tresc}}
+			</div>
 		</div>
 	</div>
-	<div class="dol"><b class="l"></b><b class="r"></b></div>
-</div>
-{{END}}
-
-
-{{BEGIN kontener_orange_box2}}
-<div class="orange_box">
-	<div class="gora"><b></b></div>
-	<h3 class="tytul"><span class="kontener_tytul">{{$tytul_modulu}}</span><a class="kontener_link" href="{{escape($link_url)}}" title="{{escape($link_etykieta)}}">{{$link_etykieta}}</a><span class="clear"></span></h3>
-	<div class="tresc2">
-		{{$tresc}}
+	<div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered gz-modal-lg">
+			<div class="modal-content">
+				<div class="modal-body">
+					<video controls id="videoPlayer"></video>
+				</div>
+			</div>
+		</div>
 	</div>
-	<div class="dol"><b class="l"></b><b class="r"></b></div>
-</div>
+</section>
 {{END}}
 
+{{BEGIN kontener_sekcja_kurier}}
+<section class="gz-kurier gz-section karuzela-6">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div id="carousel-gz-2" class="carousel">
+					<div class="carousel-inner">
+						{{$tresc}}
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carousel-gz-2" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden"></span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carousel-gz-2" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+{{END}}
 
-{{BEGIN kontener_wizytowka}}
-<div class="modul wizytowka_zarzadzanie">
-<h1>{{$tytul_modulu}}</h1>
-<div class="tresc">{{$tresc}}</div>
-</div>
+{{BEGIN kontener_sekcja_banery}}
+<section class="gz-banery-01 karuzela-4">
+	<div class="container">
+		<div class="row">
+			<div class="col-12">
+				<div id="carousel-gz-3" class="carousel">
+					<div class="carousel-inner">
+						{{$tresc}}
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carousel-gz-3" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden"></span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carousel-gz-3" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden"></span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
 {{END}}

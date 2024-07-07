@@ -384,13 +384,17 @@ body {
         background-color: $white;
     }
     .gz-nawigacja-boczna {
-        button {
+        a.button {
             background-color: $white;
             color: $text_ciemny;
         }
         li a {
             color: $white!important;
         }
+    }
+    .gz-nawigacja-boczna-submenu {
+        background-color: $akcent1;
+        border: 0px; 
     } 
 }
 .wyszukiwarka-collapse-cta {

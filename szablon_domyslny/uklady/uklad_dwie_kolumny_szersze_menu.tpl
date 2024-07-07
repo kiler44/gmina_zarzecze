@@ -78,25 +78,34 @@
 <!-- Header END -->
 
 <!-- Navbar START -->
-<nav class="navbar navbar-dark navbar-expand-lg gz-navbar">
+<nav class="navbar navbar-dark navbar-expand-lg gz-navbar" aria-label="Ninth navbar example">
 	<div class="container-xl justify-content-end">
 		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#gz-Nav-Dropdown" aria-controls="gz-Nav-Dropdown" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
-		{{ $region_2 }}
+		{{$region_2 }}
 	</div>
 </nav>
 <!-- Navbar END -->
 
-<!-- Sekcja main -->
-{{ $region_0 }}
-<!-- Sekcja main END-->
+<!-- Sekcja 1 -->
+<section class="gz-section">
+	{{ $region_3 }}
+</section>
+<!-- Sekcja treści -->
+<section class="gz-section">
+	<div class="container">
+		<div class="row gz-opisowa">
+			<div class="col-lg-9 col-12 gz-top">{{ $region_0 }}</div>
+			<div class="col-lg-3 col-12 gz-top" style="position: static">{{ $region_4 }}</div>
+		</div>
+</section>
 
 <!-- Footer -->
 <section class="gz-footer">
 	<div class="container">
 		<footer class="row">
-			{{ $region_3 }}
+			{{ $region_5 }}
 		</footer>
 	</div>
 </section>
@@ -109,7 +118,29 @@
 		</footer>
 	</div>
 </section>
+
 <!-- Footer End -->
+<!-- Video Modal -->
+<div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered gz-modal-lg">
+		<div class="modal-content">
+			<div class="modal-body">
+				<video controls id="videoPlayer"></video>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Image Modal -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered gz-modal-lg">
+		<div class="modal-content">
+			<div class="modal-body">
+				<img id="img" src="" />
+			</div>
+		</div>
+	</div>
+</div>
+</section>
 <script src="/_szablon/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
 <script src="/_szablon/js/gz-js.js"></script>

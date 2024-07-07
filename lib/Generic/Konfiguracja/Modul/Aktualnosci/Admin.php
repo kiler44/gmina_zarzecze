@@ -99,10 +99,9 @@ class Admin extends Konfiguracja
 	),
 
 	'szablon.formularz_wyszukiwarka' => array(
-		'opis' => '',
-		'typ' => 'varchar',
-		'wartosc' => 'formularz_grid.tpl',
+            'opis' => '',
+            'typ' => 'varchar',
+            'wartosc' => 'formularz_grid.tpl',
 		),
-
 	);
 }

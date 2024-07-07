@@ -99,18 +99,18 @@
 		{{ $region_3 }}
 	</div>
 </div>
-	<section class="gz-footer-copyright">
-		<div class="container">
-			<footer class="row">
-				<div class="col-12 text-center">
-					Copyright © Urząd Gminy Zarzecze
-				</div>
-			</footer>
-		</div>
-	</section>
+<section class="gz-footer-copyright">
+	<div class="container">
+		<footer class="row">
+			<div class="col-12 text-center">
+				Copyright © Urząd Gminy Zarzecze
+			</div>
+		</footer>
+	</div>
+</section>
 	<!-- Footer End -->
 	<script src="/_szablon/js/bootstrap.bundle.min.js"></script>
-	<script src="/_szablon/js/dist/js/lightbox-plus-jquery.min.js" ></script>
+	<script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
 	<script src="/_szablon/js/gz-js.js"></script>
 </body>
 </html>
