@@ -265,7 +265,7 @@ class Http extends Modul\Http
 	{
 		$id = Zadanie::pobierz('url_parametr_1','intval','abs');
 
-		$mapper = $this->dane()->GaleriaZdjecia();
+		$mapper = $this->dane()->GaleriaZdjecie();
 		$zdjecie = $mapper->pobierzPoId($id);
 
 		if($zdjecie instanceof GaleriaZdjecie\Obiekt)

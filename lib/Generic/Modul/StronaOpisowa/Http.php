@@ -60,7 +60,7 @@ class Http extends Modul\Http
 
                 if (count($zdjecia) > 0) {
                     $mapper_galeria = $this->dane()->Galeria();
-                    $galeria = $mapper_galeria->pobierzPoId($aktualnosc->idGalerii);
+                    $galeria = $mapper_galeria->pobierzPoId($strona->idGalerii);
 
                     $galeria_dane = array(
                         'tytul_galerii' => $galeria->nazwa,
