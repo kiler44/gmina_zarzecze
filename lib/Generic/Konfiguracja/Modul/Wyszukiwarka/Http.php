@@ -19,6 +19,7 @@ use Generic\Konfiguracja\Konfiguracja;
  * @property string $k['zdjecie.prefix_zdjecie']
  * @property int $k['zdjecie.slider_ilosc_miniaturek']
  * @property string $k['zdjecie.tryb_wyswietlania']
+ * @property string $k[listaWynikow.wierszy_na_stronie]
  */
 
 class Http extends Konfiguracja
@@ -28,7 +29,12 @@ class Http extends Konfiguracja
         'listaWynikow.wierszy_na_stronie' => array(
             'opis' => '',
             'typ' => 'int',
-            'wartosc' => 3,
+            'wartosc' => 10,
+        ),
+        'listaWynikow.ileZnakowOpisu' => array(
+            'opis' => '',
+            'typ' => 'int',
+            'wartosc' => 120,
         ),
 
         'szablon.pager' => array(

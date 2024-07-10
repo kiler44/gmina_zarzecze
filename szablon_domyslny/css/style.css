@@ -1140,10 +1140,13 @@ tr:nth-child(even) {
   padding: 0;
   float: left;
   display: block;
-  padding-right: 25px;
+  margin-right: 10px;
 }
 .gz-wyszukiwanie-bloczek p {
-  padding: 0 20px;
+  padding: 0 10px;
+  display: block;
+  height: 63px;
+  overflow: clip;
 }
 .gz-wyszukiwanie-bloczek .info-tags {
   position: absolute;

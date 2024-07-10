@@ -166,10 +166,13 @@
         padding: 0;
         float: left;
         display: block;
-        padding-right: 25px;
+        margin-right: 10px;
     }
     p {
-        padding: 0 20px;
+        padding: 0 10px;
+        display: block;
+        height: 63px;
+        overflow: clip;
     }
     .info-tags {
         position: absolute;

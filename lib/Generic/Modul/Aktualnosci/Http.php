@@ -202,6 +202,7 @@ class Http extends Modul\Http
 
 					foreach($zdjecia as $zdjecie)
 					{
+                        $foto['id'] = $aktualnosc->idGalerii;
 						$foto['tytul'] = $zdjecie->tytul;
 						$foto['opis'] = $zdjecie->opis;
 						$foto['miniaturka'] = $katalogZdjec.'/'.$prefix.$zdjecie->nazwaPliku;
