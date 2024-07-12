@@ -12,7 +12,7 @@ class Http extends Konfiguracja
         'dolaczonaGaleria.prefix_miniaturki' => array(
             'opis' => 'Prefix miniaturki list zdjęć dołączonej galerii',
             'typ' => 'varchar',
-            'wartosc' => 'miniaturka-podglad',
+            'wartosc' => 'mid',
         ),
         'dolaczonaGaleria.uzyj_lightbox' => array(
             'opis' => 'Czy po kliknięciu miniaturki zdjęcia, pełne zdjęcie ma się wyświetlić w lightboxie',

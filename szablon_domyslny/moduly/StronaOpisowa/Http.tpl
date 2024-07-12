@@ -16,7 +16,7 @@
 <div class="row gz-gallery-section">
 	{{ BEGIN miniaturka }}
 	<div class="col-lg-4 col-6 gallery-item">
-		<a class="not-text-link" title="{{ $tytul }}" href="{{ $zdjecie_link }}" {{ if($lightbox, 'data-toggle="lightbox"') }}><img alt="{{escape($tytul)}}" src="{{ $miniaturka }}"/></a>
+		<a class="not-text-link" title="{{ $tytul }}" href="{{ $zdjecie_link }}" {{IF $lightbox}} data-toggle="lightbox" data-gallery="galeria-{{$id}}"{{END IF}}><img alt="{{escape($tytul)}}" src="{{ $miniaturka }}"/></a>
 		<div class="caption">{{ $opis }}</div>
 	</div>
 	{{END}}
