@@ -789,6 +789,7 @@
       <div class="col-12">
         <div id="carousel-gz-1" class="carousel">
           <div class="carousel-inner">
+
             <div class="carousel-item">
               <div class="video-thumbnail" onclick="openVideoModal('images/video/gz-video-01.mp4')">
                 <div class="gallery-overlay"></div>
@@ -799,6 +800,7 @@
                 </div>
               </div>
             </div>
+            
             <div class="carousel-item">
               <div class="video-thumbnail" onclick="openVideoModal('images/video/gz-video-01.mp4')">
                 <div class="gallery-overlay"></div>
@@ -810,6 +812,39 @@
               </div>
             </div>
           </div>
+          <!-- yt link -->
+          <div class="video-thumbnail" onclick="openVideoModal('https://www.youtube.com/embed/W0CezPq-tG4?autoplay=1', true)">
+            <div class="gallery-overlay"></div>
+            <img src="https://img.youtube.com/vi/W0CezPq-tG4/0.jpg" class="img-fluid" alt="Video 2">
+            <div class="video-gallery-content">
+              <h4>GOSIR Zarzecze - Film promocyjny</h4>
+              <time datetime="2023-10-27">2023-10-27</time>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="video-thumbnail" onclick="openVideoModal('images/video/gz-video-01.mp4')">
+            <div class="gallery-overlay"></div>
+            <img src="images/jpg/img-jpg-15.jpg" class="img-fluid" alt="Video 1">
+            <div class="video-gallery-content">
+              <h4>GOSIR Zarzecze - Film  promocyjny</h4>
+              <time datetime="2023-10-27">2023-10-27</time>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="video-thumbnail" onclick="openVideoModal('https://www.youtube.com/embed/P61tiEo1oPE?autoplay=1', true)">
+            <div class="gallery-overlay"></div>
+            <img src="https://img.youtube.com/vi/P61tiEo1oPE/0.jpg" class="img-fluid" alt="Video 2">
+            <div class="video-gallery-content">
+              <h4>GOSIR Zarzecze - Film promocyjny</h4>
+              <time datetime="2023-10-27">2023-10-27</time>
+            </div>
+          </div>
+        </div>
+
+
+
           <button class="carousel-control-prev" type="button" data-bs-target="#carousel-gz-1" data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
@@ -822,12 +857,23 @@
       </div>
     </div>
   </div>
-  <!-- Video Modal -->
+  <!-- Video Modal OLD zły -->
   <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered gz-modal-lg">
       <div class="modal-content">
         <div class="modal-body">
           <video controls id="videoPlayer"></video>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Video Modal zamień na to -->
+  <div class="modal fade" id="videoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered gz-modal-lg">
+      <div class="modal-content">
+        <div class="modal-body">
+          <iframe id="videoPlayerIframe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display: none;"></iframe>
+          <video controls id="videoPlayer" style="width: 100%; display: none;"></video>
         </div>
       </div>
     </div>

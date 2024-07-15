@@ -143,23 +143,6 @@ class Http extends Modul\Http
 
 		if ($aktualnosc instanceof Aktualnosc\Obiekt)
 		{
-            /*******************************************
-             * *****************************************
-             * tutaj masz metody do pobrania załączników
-             *******************************************
-             *******************************************/
-            //$urlPlikow = Cms::inst()->url('aktualnosci', $this->obiekt->id);
-            //$zalaczniki = $strona->pobierzZalaczniki();
-            /**
-             * @var Zalacznik\Obiekt $zalacznik
-             */
-            /*
-            foreach($zalaczniki as $zalacznik)
-            {
-                dump($urlPlikow.$zalacznik->file);
-            }
-            */
-
             $this->ustawGlobalne(array(
                 
 				'tytul_strony' => sprintf($this->j->t['aktualnosc.tytul_strony'], $aktualnosc->tytul),
@@ -180,6 +163,32 @@ class Http extends Modul\Http
             $tresc['data'] = $this->k->k['listaAktualnosci.format_daty_po_polsku'] ? dataGramatyczniePL(strtotime($aktualnosc->dataDodania)) : date($this->k->k['listaAktualnosci.format_daty'], strtotime($aktualnosc->dataDodania));
             $tresc['datetime'] = date($this->k->k['listaAktualnosci.format_daty_datetime'], strtotime($aktualnosc->dataDodania));
 			$tresc['link_wstecz'] = Router::urlHttp($this->kategoria);
+
+
+            $urlPlikow = Cms::inst()->url('aktualnosci', $this->obiekt->id);
+            $zalaczniki = $aktualnosc->pobierzZalaczniki();
+            /**
+             * @var Zalacznik\Obiekt $zalacznik
+             */
+
+            if (count($zalaczniki) > 0) {
+                $urlPlikow = Cms::inst()->url('strona_opisowa', $strona->id);
+
+                foreach ($zalaczniki as $zalacznik) {
+                    $plik['nazwa'] = $zalacznik->file;
+                    $plik['opis'] = $zalacznik->opis;
+                    $plik['typ'] = $zalacznik->type;
+                    $plik['rozszerzenie'] = strtolower(file_ext(basename($zalacznik->file)));
+                    $plik['link'] = $urlPlikow.'/'.urldecode($zalacznik->file);
+                    $plik['rozmiar'] = bajtyNa($zalacznik->rozmiar, 0);
+
+
+                    $this->szablon->ustawBlok('zalaczniki/element', $plik);
+                }
+                $tresc['zalaczniki'] = $this->szablon->parsujBlok('zalaczniki');
+
+            }
+
 
 			if ($aktualnosc->idGalerii > 0)
 			{

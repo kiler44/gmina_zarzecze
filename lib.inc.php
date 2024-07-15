@@ -1844,3 +1844,23 @@ function dataGramatyczniePL($data)
     $m = array('stycznia','lutego','marca','kwietnia','maja','czerwca','lipca','sierpnia','września','października','listopada','grudnia');
     return  date('j', $data) . ' ' . $m[date('n', $data)-1] . ' ' . date('Y', $data);
 }
+
+function bajtyNa($bytes, $dokladnosc = 2)
+{
+    $rozmiary = array('B', 'kB', 'MB', 'GB', 'TB');
+    $break = count($rozmiary)-1;
+    $wynik = floatval( $bytes );
+    $rozmiar = $wynik;
+    $i = -1;
+    do
+    {
+        $wynik /= 1024;
+        if($wynik > 1) { $rozmiar = $wynik; }
+        $i++;
+        if($i == $break) { break; }
+    }
+    while($wynik > 1);
+    $oznaczenie = $rozmiary[$i];
+    $rozmiar = number_format($rozmiar, $dokladnosc, '.', '');
+    return $rozmiar.$oznaczenie;
+}

@@ -192,14 +192,26 @@ function loadMoreBoxes() {
     });
 }
 /* Galeria hover i filtrowanie END */
-function openVideoModal(videoSrc) {
+function openVideoModal(videoSrc, isYouTube) {
     const videoPlayer = document.getElementById('videoPlayer');
+    const videoPlayerIframe = document.getElementById('videoPlayerIframe');
     const videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
 
-    videoPlayer.src = videoSrc;
+    if (isYouTube) {
+        videoPlayer.style.display = 'none';
+        videoPlayerIframe.style.display = 'block';
+        videoPlayerIframe.src = videoSrc;
+    } else {
+        videoPlayerIframe.style.display = 'none';
+        videoPlayer.style.display = 'block';
+        videoPlayer.src = videoSrc;
+        videoPlayer.play();
+    }
+
     videoModal.show();
     videoModal._element.addEventListener('hidden.bs.modal', () => {
-    videoPlayer.src = '';
+        videoPlayer.src = '';
+        videoPlayerIframe.src = '';
     });
 }
 /* Ustawienia Kontrastu */

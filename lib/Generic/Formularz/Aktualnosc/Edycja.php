@@ -137,7 +137,7 @@ class Edycja extends \Generic\Formularz\Abstrakcja
                 'url_plikow' => Cms::inst()->url('aktualnosci', $this->obiekt->id),
                 'prefix' => 's',
                 'max_wielkosc_pliku' => 50000000,
-                'dozwolone_rozszerzenia' => ['pdf', 'xls', 'xlsx', 'doc', 'docs'],
+                'dozwolone_rozszerzenia' => $this->konfiguracja['pliki.dozwoloneRozszerzenia'],
             )));
 
             $this->formularz->zamknijZakladke('pliki');

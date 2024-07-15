@@ -10,7 +10,7 @@ use Generic\Model\StronaOpisowa;
 use Generic\Model\Zalacznik;
 use Generic\Model\Galeria;
 use Generic\Biblioteka\Cms;
-use function GuzzleHttp\Promise\queue;
+//use function GuzzleHttp\Promise\queue;
 
 
 /**
@@ -67,6 +67,7 @@ class Admin extends Modul\Admin
 			->ustawObiekt($strona)
             ->ustawListeGalerii($lista)
             ->ustawKategorieLinkow($this->kategoria);
+        $obiektFormularza->ustawKonfiguracje($this->k->k);
 
 		if ($obiektFormularza->wypelniony() && $obiektFormularza->danePoprawne())
 		{
@@ -78,9 +79,10 @@ class Admin extends Modul\Admin
                 {
                     $multiUpload = new MultiUpload($wartosci['zalaczniki']['token']);
                     $katalogDocelowy = new \Generic\Biblioteka\Katalog($strona->pobierzKatalog());
-
+                    $zalaczniki = array();
+                    $zalaczniki = listaZTablicy($wartosci['zalaczniki']['pliki'], null, 'kolejnosc');
                     $plikiUzytkownika = $multiUpload->przeniesPliki(
-                        listaZTablicy($wartosci['zalaczniki']['pliki'], null, 'kolejnosc'),
+                        $zalaczniki,
                         $wartosci['zalaczniki']['pliki'], $katalogDocelowy, 1);
 
                     continue;
@@ -103,13 +105,14 @@ class Admin extends Modul\Admin
                     {
                         if(isset($plik['kod']))
                         {
+                            $plik['nazwa'] = Plik::unifikujNazwe($plik['nazwa']);
                             $zalacznikPlik = new Plik($katalogDocelowy.'/'.$plik['nazwa']);
 
                             $zalacznik = new Zalacznik\Obiekt();
                             $zalacznik->file = $plik['nazwa'];
                             $zalacznik->dateAdded = new \DateTime();
                             $zalacznik->rozmiar = $plik['rozmiar'];
-                            //$zalacznik->opis = $plik['opis'];
+                            $zalacznik->opis = $plik['opis'];
                             $zalacznik->type = $zalacznikPlik->getMimeType();
 
                             $strona->dodajZalacznik($zalacznik);

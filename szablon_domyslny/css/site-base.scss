@@ -254,18 +254,40 @@ tr:nth-child(even) {
   background-color: $Bg-Szary-1;
 }
 /* Tabelka */
+.gz-download {
+  padding-left: 0 !important;
+}
 .gz-download a {
   color: $Text-Ciemny-1;
   font-size: 14px;
   font-weight: 500;
-  text-decoration: underline!important;
+  text-decoration: underline !important;
   padding-left: 40px;
 }
 .gz-download a:hover {
-  color: $Akcent-1;
+  color: $Akcent-1 !important;
 }
 .gz-download li {
   margin-bottom: 20px;
+}
+.gz-download span {
+  font-size: 12px;
+  color: $Akcent-1;
+  font-weight: 500;
+}
+.gz-download span::before{
+  content: '•';
+  font-size: 14px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+.gz-download p {
+  font-size: 10px;
+  color: $Text-Szary-1;
+  font-weight: 500;
+  line-height: 14px;
+  margin-top: 10px;
+  margin-left: 40px;
 }
 .gz-pdf::before  {
   content: '';
@@ -277,7 +299,7 @@ tr:nth-child(even) {
   margin-right: 10px; 
   background-image: url('../images/ico/ico-12.svg');
 }
-.gz-xls::before  {
+.gz-xls::before, .gz-xlsx::before, .gz-xlsm::before  {
   content: '';
   display: block;
   position: absolute;
@@ -287,7 +309,7 @@ tr:nth-child(even) {
   margin-right: 10px; 
   background-image: url('../images/ico/ico-13.svg');
 }
-.gz-ppt::before  {
+.gz-ppt::before, .gz-pptx::before  {
   content: '';
   display: block;
   position: absolute;
@@ -297,7 +319,7 @@ tr:nth-child(even) {
   margin-right: 10px; 
   background-image: url('../images/ico/ico-14.svg');
 }
-.gz-doc::before  {
+.gz-doc::before, .gz-docx::before  {
   content: '';
   display: block;
   position: absolute;

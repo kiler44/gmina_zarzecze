@@ -9,6 +9,7 @@
 <div class="gz-content">
 	{{$tresc}}
 	{{$galeria}}
+	{{$zalaczniki}}
 </div>
 {{END}}
 
@@ -21,4 +22,12 @@
 	</div>
 	{{END}}
 </div>
+{{END}}
+
+{{BEGIN zalaczniki}}
+<ul class="gz-download list-unstyled">
+	{{ BEGIN element }}
+	<li><a href="{{$link}}" class="gz-{{$rozszerzenie}} not-text-link">{{$nazwa}}</a><span>{{$rozmiar}}</span><p>{{$opis}}</p></li>
+	{{END}}
+</ul>
 {{END}}

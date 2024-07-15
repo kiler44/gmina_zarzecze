@@ -138,3 +138,11 @@
 	<div class="r_clear"></div>
 </div>
 {{END}}
+
+{{BEGIN zalaczniki}}
+<ul class="gz-download list-unstyled">
+	{{ BEGIN element }}
+	<li><a href="{{$link}}" class="gz-{{$rozszerzenie}} not-text-link">{{$nazwa}}</a><span>{{$rozmiar}}</span><p>{{$opis}}</p></li>
+	{{END}}
+</ul>
+{{END}}

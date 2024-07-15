@@ -237,7 +237,7 @@ class Admin extends Modul\Admin
                 else
                 {
                     $doUsuniecia++;
-                    dump(Cms::inst()->katalog('galeria', $id_galerii).$prefix.'-'.$nazwa_pliku);
+                    //dump(Cms::inst()->katalog('galeria', $id_galerii).$prefix.'-'.$nazwa_pliku);
                     $plik = new Plik(Cms::inst()->katalog('galeria', $id_galerii).$prefix.'-'.$nazwa_pliku);
                     if ( ! $plik->istnieje() || $plik->usun()) $usuniete++;
                 }

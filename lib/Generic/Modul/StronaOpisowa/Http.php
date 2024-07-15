@@ -1,6 +1,7 @@
 <?php
 namespace Generic\Modul\StronaOpisowa;
 use Generic\Biblioteka\Cms;
+use Generic\Biblioteka\MenedzerPlikow;
 use Generic\Biblioteka\Modul;
 use Generic\Model\StronaOpisowa;
 use Generic\Model\Zalacznik;
@@ -37,21 +38,10 @@ class Http extends Modul\Http
 		$strona = $mapper->pobierzDlaKategorii($this->kategoria->id);
 		if ($strona instanceof StronaOpisowa\Obiekt)
 		{
-            //$urlPlikow = Cms::inst()->url('strona_opisowa', $this->obiekt->id);
-            //$zalaczniki = $strona->pobierzZalaczniki();
-            /**
-             * @var Zalacznik\Obiekt $zalacznik
-             */
-            /*
-            foreach($zalaczniki as $zalacznik)
-            {
-                dump($urlPlikow.$zalacznik->file);
-            }
-            */
-
-
             $strona_opisowa = array(
                 'tresc' => $strona->tresc,
+                'galeria' => null,
+                'zalaczniki' => null,
             );
 
             if ($strona->idGalerii > 0) {
@@ -84,6 +74,30 @@ class Http extends Modul\Http
                 }
             }
 
+
+            $zalaczniki = $strona->pobierzZalaczniki();
+            /**
+             * @var Zalacznik\Obiekt $zalacznik
+             */
+
+            if (count($zalaczniki) > 0) {
+                $urlPlikow = Cms::inst()->url('strona_opisowa', $strona->id);
+
+                foreach ($zalaczniki as $zalacznik) {
+                    $plik['nazwa'] = $zalacznik->file;
+                    $plik['opis'] = $zalacznik->opis;
+                    $plik['typ'] = $zalacznik->type;
+                    $plik['rozszerzenie'] = strtolower(file_ext(basename($zalacznik->file)));
+                    $plik['link'] = $urlPlikow.'/'.urldecode($zalacznik->file);
+                    $plik['rozmiar'] = bajtyNa($zalacznik->rozmiar, 0);
+
+
+                    $this->szablon->ustawBlok('zalaczniki/element', $plik);
+                }
+                $strona_opisowa['zalaczniki'] = $this->szablon->parsujBlok('zalaczniki');
+
+            }
+
 			$this->ustawGlobalne(array(
 				'tytul_modulu' => $strona->tytul,
 			));
@@ -91,6 +105,7 @@ class Http extends Modul\Http
 			$this->tresc .= $this->szablon->parsujBlok('index', array(
 				'tresc' => $strona_opisowa['tresc'],
                 'galeria' => $strona_opisowa['galeria'],
+                'zalaczniki' => $strona_opisowa['zalaczniki'],
 			));
 		}
 		else

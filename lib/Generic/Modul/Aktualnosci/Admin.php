@@ -370,13 +370,14 @@ class Admin extends Modul\Admin
                     {
                         if(isset($plik['kod']))
                         {
+                            $plik['nazwa'] = Plik::unifikujNazwe($plik['nazwa']);
                             $zalacznikPlik = new Plik($katalogDocelowy.'/'.$plik['nazwa']);
 
                             $zalacznik = new Zalacznik\Obiekt();
                             $zalacznik->file = $plik['nazwa'];
                             $zalacznik->dateAdded = new \DateTime();
                             $zalacznik->rozmiar = $plik['rozmiar'];
-                            //$zalacznik->opis = $plik['opis'];
+                            $zalacznik->opis = $plik['opis'];
                             $zalacznik->type = $zalacznikPlik->getMimeType();
 
                             $aktualnosc->dodajZalacznik($zalacznik);

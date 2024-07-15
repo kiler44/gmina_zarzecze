@@ -62,9 +62,9 @@ class Edycja extends \Generic\Formularz\Abstrakcja
                 'url_upload' => Router::urlAjax('Admin', $this->kategoriaLinkow, 'zapiszPlik'),
                 'url_usun' => Router::urlAjax('Admin', $this->kategoriaLinkow, 'usunPlik'),
                 'url_plikow' => Cms::inst()->url('strona_opisowa', $this->obiekt->id),
-                'prefix' => 's',
                 'max_wielkosc_pliku' => 50000000,
-                'dozwolone_rozszerzenia' => ['pdf', 'xls', 'xlsx', 'doc', 'docs', 'jpg', 'jpeg', 'png'],
+                'dozwolone_rozszerzenia' => $this->konfiguracja['pliki.dozwoloneRozszerzenia'],
+                //'dozwolone_rozszerzenia' => ['pdf', 'xls', 'xlsx', 'doc', 'docs', 'jpg', 'jpeg', 'png'],
             )));
 
             $this->formularz->zamknijZakladke('pliki');

@@ -4,6 +4,7 @@ namespace Generic\Konfiguracja\Modul\Aktualnosci;
 use Generic\Konfiguracja\Konfiguracja;
 
 /**
+ * @property array $k['pliki.dozwoloneRozszerzenia']
  * @property boolean $k['modul_admin.czy_kategoria_wydarzen']
  * @property array $k['formularz.dozwolone_formaty_zdjec']
  * @property string $k['formularz.prefix_miniaturki_zdjecia']
@@ -18,7 +19,20 @@ use Generic\Konfiguracja\Konfiguracja;
 class Admin extends Konfiguracja
 {
 	protected $konfiguracjaDomyslna = array(
-
+    'pliki.dozwoloneRozszerzenia' => array(
+        'opis' => 'Dozwolone rozszerzenia w uploadnie plików',
+        'typ' => 'list',
+        'wartosc' => array(
+            'pdf',
+            'doc',
+            'docx',
+            'xls',
+            'xslx',
+            'jpg',
+            'jpeg',
+            'png',
+        ),
+    ),
     'modul_admin.czy_kategoria_wydarzen' => array(
         'opis' => 'Czy dana kategoria jest wydarzeniem w przyszłości zamiast standardowej aktualności',
         'typ' => 'bool',
@@ -104,4 +118,5 @@ class Admin extends Konfiguracja
             'wartosc' => 'formularz_grid.tpl',
 		),
 	);
+
 }
