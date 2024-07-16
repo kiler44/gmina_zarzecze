@@ -75,29 +75,30 @@ class Http extends Modul\Http
             }
 
 
-            $zalaczniki = $strona->pobierzZalaczniki();
-            /**
-             * @var Zalacznik\Obiekt $zalacznik
-             */
+            if ($this->k->k['zalaczniki.czyWyswietlac']) {
+                $zalaczniki = $strona->pobierzZalaczniki();
+                /**
+                 * @var Zalacznik\Obiekt $zalacznik
+                 */
 
-            if (count($zalaczniki) > 0) {
-                $urlPlikow = Cms::inst()->url('strona_opisowa', $strona->id);
+                if (count($zalaczniki) > 0) {
+                    $urlPlikow = Cms::inst()->url('strona_opisowa', $strona->id);
 
-                foreach ($zalaczniki as $zalacznik) {
-                    $plik['nazwa'] = $zalacznik->file;
-                    $plik['opis'] = $zalacznik->opis;
-                    $plik['typ'] = $zalacznik->type;
-                    $plik['rozszerzenie'] = strtolower(file_ext(basename($zalacznik->file)));
-                    $plik['link'] = $urlPlikow.'/'.urldecode($zalacznik->file);
-                    $plik['rozmiar'] = bajtyNa($zalacznik->rozmiar, 0);
+                    foreach ($zalaczniki as $zalacznik) {
+                        $plik['nazwa'] = $zalacznik->file;
+                        $plik['opis'] = $zalacznik->opis;
+                        $plik['typ'] = $zalacznik->type;
+                        $plik['rozszerzenie'] = strtolower(file_ext(basename($zalacznik->file)));
+                        $plik['link'] = $urlPlikow . '/' . urldecode($zalacznik->file);
+                        $plik['rozmiar'] = bajtyNa($zalacznik->rozmiar, 0);
 
 
-                    $this->szablon->ustawBlok('zalaczniki/element', $plik);
+                        $this->szablon->ustawBlok('zalaczniki/element', $plik);
+                    }
+                    $strona_opisowa['zalaczniki'] = $this->szablon->parsujBlok('zalaczniki');
+
                 }
-                $strona_opisowa['zalaczniki'] = $this->szablon->parsujBlok('zalaczniki');
-
             }
-
 			$this->ustawGlobalne(array(
 				'tytul_modulu' => $strona->tytul,
 			));

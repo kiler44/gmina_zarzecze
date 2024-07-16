@@ -19,5 +19,10 @@ class Http extends Konfiguracja
             'typ' => 'bool',
             'wartosc' => true,
         ),
+        's' => array(
+            'opis' => 'Czy na danej stronie opisowej mają być wyświetlane załączniki?',
+            'typ' => 'bool',
+            'wartosc' => true,
+        ),
 	);
 }
