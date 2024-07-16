@@ -46,7 +46,7 @@ class Http extends Konfiguracja
 	'galeria.prefix_miniaturki' => array(
 		'opis' => '',
 		'typ' => 'varchar',
-		'wartosc' => 'miniaturka-podglad',
+		'wartosc' => 'mid',
 		),
 
 	'galeria.uzyj_lightbox' => array(
@@ -83,7 +83,7 @@ class Http extends Konfiguracja
 	'listaGalerii.prefix_miniaturki' => array(
 		'opis' => '',
 		'typ' => 'varchar',
-		'wartosc' => 'min',
+		'wartosc' => 'mid',
 		),
 
 	'listaGalerii.wierszy_na_stronie' => array(
@@ -101,7 +101,7 @@ class Http extends Konfiguracja
 	'zdjecie.prefix_miniaturka' => array(
 		'opis' => '',
 		'typ' => 'varchar',
-		'wartosc' => 'small',
+		'wartosc' => 'mid',
 		),
 
 	'zdjecie.prefix_pelne_zdjecie' => array(

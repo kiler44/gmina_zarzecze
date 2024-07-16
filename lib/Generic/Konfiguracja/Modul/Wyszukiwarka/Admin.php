@@ -46,24 +46,5 @@ class Admin extends Konfiguracja
 		'typ' => 'varchar',
 		'wartosc' => 'formularz_grid.tpl',
 		),
-
-	'upload.miniaturki_kody' => array(
-		'opis' => 'Rozmiary tworzonych miniaturek w formacie:
-                    kod => szerokosc.wysokosc.akcja
-    				gdzie akcja:
-                    crop - przytnij,
-                    scale - skaluj,
-                    resize - zmien rozmiar,
-    				np. full => 800.600.scale',
-		'typ' => 'array',
-		'wartosc' => array(
-			'' => '800.600.scale',
-			'miniaturka-podglad' => '200.200.crop',
-			'mid' => '200.200.crop',
-			'min' => '120.120.crop',
-			'xs' => '30.30.crop',
-			),
-		),
-
 	);
 }
