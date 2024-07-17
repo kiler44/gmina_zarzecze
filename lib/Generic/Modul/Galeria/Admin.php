@@ -186,8 +186,14 @@ class Admin extends Modul\Admin
 	{
 		$baza = Cms::inst()->Baza();
 		$glowne = Zadanie::pobierz('glowne');
+
         $id = Zadanie::pobierz('id', 'intval','abs');
         $galeria_mapper = $this->dane()->Galeria();
+
+        $galeria_zmien = false;
+
+        $baza->transakcjaStart();
+        $galeria_zmien = true;
 
         if($glowne)
         {
@@ -197,7 +203,7 @@ class Admin extends Modul\Admin
                 $id_galerii = $id;
                 $nazwa_pliku = $galeria->zdjecieGlowne;
                 $galeria->zdjecieGlowne = '';
-                $galeria->zapisz($galeria_mapper);
+                if ($galeria->zapisz($galeria_mapper)) $zdjecie_usun = true;
             }
         }
         else
@@ -209,14 +215,11 @@ class Admin extends Modul\Admin
                 $id_galerii = $zdjecie->idGalerii;
 
                 $galeria = $galeria_mapper->pobierzPoId($id_galerii);
-                $galeria_zmien = true;
 
-                $baza->transakcjaStart();
                 if ($galeria->zdjecieGlowne == $nazwa_pliku) {
                     $galeria->zdjecieGlowne = '';
                     $galeria_zmien = $galeria->zapisz($galeria_mapper);
                 }
-                $zdjecie_usun = $zdjecie->usun($mapper);
             }
             else
             {
@@ -230,25 +233,13 @@ class Admin extends Modul\Admin
             $usuniete = 0;
             foreach ($this->k->k['upload.miniaturki_kody'] as $prefix => $kod)
             {
-                if ($prefix == '')
-                {
-                    continue;
-                }
-                else
-                {
-                    $doUsuniecia++;
-                    //dump(Cms::inst()->katalog('galeria', $id_galerii).$prefix.'-'.$nazwa_pliku);
-                    $plik = new Plik(Cms::inst()->katalog('galeria', $id_galerii).$prefix.'-'.$nazwa_pliku);
-                    if ( ! $plik->istnieje() || $plik->usun()) $usuniete++;
-                }
-            }
+                $doUsuniecia++;
+                $nazwa_pliku_do_usuniecia = ($prefix == '') ? $nazwa_pliku : $prefix.'-'.$nazwa_pliku;
 
-            $doUsuniecia++;
-            $plik = new Plik(Cms::inst()->katalog('galeria', $id_galerii).$nazwa_pliku);
-            if ( ! $plik->istnieje() || $plik->usun()) $usuniete++;
-            $doUsuniecia++;
-            $plik = new Plik(Cms::inst()->katalog('galeria', $id_galerii).'kopia_'.$nazwa_pliku);
-            if ( ! $plik->istnieje() || $plik->usun()) $usuniete++;
+                $plik = new Plik(Cms::inst()->katalog('galeria', $id_galerii).$nazwa_pliku_do_usuniecia);
+
+                if ( ! $plik->istnieje() || $plik->usun()) $usuniete++;
+            }
 
             if ($doUsuniecia != $usuniete)
             {
@@ -383,6 +374,7 @@ class Admin extends Modul\Admin
 		    if(count($plikiUzytkownika))
             {
                 foreach ($plikiUzytkownika as $plik) {
+
                     if($plik['kod'])
                         $galeria->dodajZdjecie($plik['kod'], $plik['opis']);
                     else
@@ -413,15 +405,25 @@ class Admin extends Modul\Admin
                 $k = new Katalog($katalog, true);
 
                 $nazwa_pliku = Plik::unifikujNazwe($zdjecieGlowne['name']);
+
                 $zdjecie = new Plik\Zdjecie($zdjecieGlowne['tmp_name']);
                 $zdjecie->przeniesDo($katalog.$nazwa_pliku);
 
+                $prefixJest = true;
+
                 foreach ($this->k->k['upload.miniaturki_kody'] as $prefix => $kod)
                 {
-                    $zdjecie->tworzMiniaturke($katalog.$prefix.'-'.$nazwa_pliku, $kod);
+                    if ($prefix == '')
+                    {
+                        $prefixJest = false;
+                        $zdjecie->tworzMiniaturke($katalog.$nazwa_pliku, $kod);
+                    }
+                    else {
+                        $zdjecie->tworzMiniaturke($katalog.$prefix.'-'.$nazwa_pliku, $kod);
+                    }
                 }
 
-                $zdjecie->usun();
+                if ($prefixJest) $zdjecie->usun();
 
                 $galeria->zdjecieGlowne = $nazwa_pliku;
                 $galeria->zapisz($mapper);

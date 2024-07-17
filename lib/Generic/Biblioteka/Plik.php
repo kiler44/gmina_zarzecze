@@ -90,6 +90,8 @@ class Plik
 	 */
 	public function istnieje() : bool
 	{
+        if ($this->sciezkaPliku == null) return false;
+
 		return is_file($this->sciezkaPliku);
 	}
 
