@@ -13,6 +13,7 @@ use Generic\Biblioteka\Zadanie;
 use Generic\Biblioteka\Katalog;
 use Generic\Biblioteka\Plik;
 use Generic\Model\GaleriaZdjecie;
+use Generic\Model\Zalacznik\Obiekt;
 
 
 /**
@@ -477,9 +478,31 @@ class Admin extends Modul\Admin
             $zalaczniki = $mapper->szukaj(array(
                 'id' => $ids,
             ));
-
+            /**
+             * @var GaleriaZdjecie\Obiekt $zalacznik
+             */
             foreach ($zalaczniki as $zalacznik) {
+                if($zalacznik->nazwaPliku != '')
+                {
+                    $doUsuniecia = 0;
+                    $usuniete = 0;
+                    foreach ($this->k->k['upload.miniaturki_kody'] as $prefix => $kod)
+                    {
+                        $doUsuniecia++;
+                        $nazwa_pliku_do_usuniecia = ($prefix == '') ? $zalacznik->nazwaPliku : $prefix.'-'.$zalacznik->nazwaPliku;
+
+                        $plik = new Plik(Cms::inst()->katalog('galeria', $zalacznik->idGalerii).$nazwa_pliku_do_usuniecia);
+
+                        if ( ! $plik->istnieje() || $plik->usun()) $usuniete++;
+                    }
+
+                    if ($doUsuniecia != $usuniete)
+                    {
+                        $this->komunikat($this->j->t['usun.blad_nie_mozna_usunac_plikow_zdjecia'], 'warning', 'sesja');
+                    }
+                }
                 $zalacznik->usun($mapper);
+
                 unset($ids[$zalacznik->id]);
             }
             $result = multiuploadUsunPlikiTemp($ids, $token);

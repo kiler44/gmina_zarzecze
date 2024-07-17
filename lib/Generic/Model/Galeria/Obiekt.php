@@ -55,7 +55,7 @@ class Obiekt extends ObiektDanych
         return $kategoriaMapper->pobierzPoId($this->idKategorii);
     }
 
-	public function dodajZdjecie(string $nazwaPliku, string $opis):bool
+	public function dodajZdjecie(string $nazwaPliku, ?string $opis = ''):bool
     {
         $zdjeciaMapper = new GaleriaZdjecie\Mapper();
         $zdjecieObiekt = new GaleriaZdjecie\Obiekt();
@@ -72,7 +72,7 @@ class Obiekt extends ObiektDanych
         return $zdjecieObiekt->zapisz($zdjeciaMapper);
     }
 
-    public function aktualizujOpisZdjecia(int $id, string $opis):bool
+    public function aktualizujOpisZdjecia(int $id, ?string $opis):bool
     {
         $zdjeciaMapper = new GaleriaZdjecie\Mapper();
         if( ( $zdjecie = $zdjeciaMapper->pobierzPoId($id) ) instanceof GaleriaZdjecie\Obiekt )
