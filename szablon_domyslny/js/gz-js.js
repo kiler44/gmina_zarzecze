@@ -42,12 +42,14 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById(minutyId).innerHTML = minuty;
         document.getElementById(sekundyId).innerHTML = sekundy;
     }
+    /**
     setInterval(() => {
         aktualizujOdliczanie(dataDocelowa1, "dni1-val", "godziny1-val", "minuty1-val", "sekundy1-val");
         aktualizujOdliczanie(dataDocelowa2, "dni2-val", "godziny2-val", "minuty2-val", "sekundy2-val");
         aktualizujOdliczanie(dataDocelowa3, "dni3-val", "godziny3-val", "minuty3-val", "sekundy3-val");
         aktualizujOdliczanie(dataDocelowa3, "dni4-val", "godziny4-val", "minuty4-val", "sekundy4-val");
     }, 1000);
+
 /* Odliczanie/counter Homepage END */
 /* Kalendarz */
 moment.locale('pl');

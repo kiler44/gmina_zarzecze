@@ -478,11 +478,16 @@ class Admin extends Modul\Admin
             $zalaczniki = $mapper->szukaj(array(
                 'id' => $ids,
             ));
+            if (empty($zalaczniki))
+            {
+                $idGalerii = $zalaczniki[0]->idGalerii;
+                $galeria = $this->dane()->Galeria()->pobierzPoId($idGalerii);
+            }
             /**
              * @var GaleriaZdjecie\Obiekt $zalacznik
              */
             foreach ($zalaczniki as $zalacznik) {
-                if($zalacznik->nazwaPliku != '')
+                if($zalacznik->nazwaPliku != '' && $galeria->zdjecieGlowne != $zalacznik->nazwaPliku)
                 {
                     $doUsuniecia = 0;
                     $usuniete = 0;

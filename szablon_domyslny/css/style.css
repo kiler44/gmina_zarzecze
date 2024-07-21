@@ -3017,4 +3017,15 @@ tr:nth-child(even) {
   padding-bottom: 15px;
 }
 
-/* Menu boczne END*//*# sourceMappingURL=style.css.map */
+/* Menu boczne END*/
+.modal-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+#videoPlayerIframe, #videoPlayer {
+  width: 100%;
+  height: 80vh; /* 80% wysokości ekranu */
+}/*# sourceMappingURL=style.css.map */

@@ -252,12 +252,26 @@ $(document).ready(function(){
 {{BEGIN kontener_sekcja_wideo}}
 <section class="gz-video-gallery-section gz-section karuzela-2">
 	<div class="container">
+
 		<div class="row">
 			<div class="col-12 gz-title text-lg-start text-center">
 				<h2>{{$tytul_modulu}}</h2>
 			</div>
 			<div class="col-12">
-				{{$tresc}}
+				<div id="carousel-gz-1" class="carousel">
+
+					<div class="carousel-inner">
+						{{$tresc}}
+					</div>
+					<button class="carousel-control-prev" type="button" data-bs-target="#carousel-gz-1" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Previous</span>
+					</button>
+					<button class="carousel-control-next" type="button" data-bs-target="#carousel-gz-1" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">Next</span>
+					</button>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -265,7 +279,8 @@ $(document).ready(function(){
 		<div class="modal-dialog modal-dialog-centered gz-modal-lg">
 			<div class="modal-content">
 				<div class="modal-body">
-					<video controls id="videoPlayer"></video>
+					<iframe id="videoPlayerIframe" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen style="display: none;"></iframe>
+					<video controls id="videoPlayer" style="width: 100%; display: none;"></video>
 				</div>
 			</div>
 		</div>
