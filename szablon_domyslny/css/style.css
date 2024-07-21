@@ -175,11 +175,6 @@ body {
 
 /* Okruszki End*/
 @media (max-width: 991px) {
-  .gz-nawigacja-boczna {
-    display: none;
-  }
-}
-@media (max-width: 991px) {
   .gz-section h1, h2, h3, h4, h5, p {
     text-align: center;
   }

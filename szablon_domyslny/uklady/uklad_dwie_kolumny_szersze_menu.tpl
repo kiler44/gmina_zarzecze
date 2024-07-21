@@ -96,8 +96,8 @@
 <section class="gz-section">
 	<div class="container">
 		<div class="row gz-opisowa">
-			<div class="col-lg-9 col-12 gz-top">{{ $region_0 }}</div>
-			<div class="col-lg-3 col-12 gz-top" style="position: static">{{ $region_4 }}</div>
+			<div class="col-lg-9 col-12 order-3 order-lg-2 gz-top">{{ $region_0 }}</div>
+			<div class="col-3 col-12 order-1 order-lg-3 gz-top" style="position: static">{{ $region_4 }}</div>
 		</div>
 </section>
 
