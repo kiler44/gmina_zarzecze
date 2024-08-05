@@ -26,6 +26,11 @@ class Aktualnosc implements TabelaInterface
     {
         $this->pager = $pager;
     }
+    protected function pobierzUrlZdjecia(mAktualnosc\Obiekt $aktualnosc):string
+    {
+        $prefix = 'mid-';
+        return Cms::inst()->url('aktualnosci', $aktualnosc->id).'/'.$prefix.$aktualnosc->zdjecieGlowne;
+    }
 
     public function pobierzWyniki():array
     {
@@ -47,18 +52,12 @@ class Aktualnosc implements TabelaInterface
             $oWynik->data = $aktualnosc->dataDodania;
 
             if($aktualnosc->zdjecieGlowne != '')
-                $oWynik->zdjecie = $aktualnosc->pobierzUrlZdjecia($aktualnosc);
+                $oWynik->zdjecie = $this->pobierzUrlZdjecia($aktualnosc);
 
             $oWynik->link = Router::urlHttp($aktualnosc->idKategorii, ['aktualnosc', $aktualnosc->id]);
             $wyniki[] = $oWynik;
         }
         return $wyniki;
-    }
-
-    protected function pobierzUrlZdjecia(mAktualnosc\Obiekt $aktualnosc):string
-    {
-        $prefix = 'mid-';
-        return Cms::inst()->url('aktualnosci', $aktualnosc->id).'/'.$prefix.$aktualnosc->zdjecieGlowne;
     }
 
     public function pobierzIlosc():int
