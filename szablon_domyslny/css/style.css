@@ -257,16 +257,12 @@ tr:nth-child(even) {
 }
 
 /* Tabelka */
-.gz-download {
-  padding-left: 0 !important;
-}
-
 .gz-download a {
   color: #003344;
   font-size: 14px;
   font-weight: 500;
   text-decoration: underline !important;
-  padding-left: 40px;
+  position: relative;
 }
 
 .gz-download a:hover {
@@ -275,6 +271,7 @@ tr:nth-child(even) {
 
 .gz-download li {
   margin-bottom: 20px;
+  padding-left: 40px;
 }
 
 .gz-download span {
@@ -295,51 +292,43 @@ tr:nth-child(even) {
   color: #525469;
   font-weight: 500;
   line-height: 14px;
-  margin-top: 10px;
-  margin-left: 40px;
+  margin-top: 5px;
+  text-align: left;
 }
 
 .gz-pdf::before {
   content: "";
-  display: block;
   position: absolute;
-  margin-top: -3px;
+  left: -40px;
   width: 26px;
   height: 30px;
-  margin-right: 10px;
   background-image: url("../images/ico/ico-12.svg");
 }
 
 .gz-xls::before, .gz-xlsx::before, .gz-xlsm::before {
   content: "";
-  display: block;
   position: absolute;
-  margin-top: -3px;
+  left: -40px;
   width: 26px;
   height: 30px;
-  margin-right: 10px;
   background-image: url("../images/ico/ico-13.svg");
 }
 
 .gz-ppt::before, .gz-pptx::before {
   content: "";
-  display: block;
   position: absolute;
-  margin-top: -3px;
+  left: -40px;
   width: 26px;
   height: 30px;
-  margin-right: 10px;
   background-image: url("../images/ico/ico-14.svg");
 }
 
 .gz-doc::before, .gz-docx::before {
   content: "";
-  display: block;
   position: absolute;
-  margin-top: -3px;
+  left: -40px;
   width: 26px;
   height: 30px;
-  margin-right: 10px;
   background-image: url("../images/ico/ico-15.svg");
 }
 
@@ -456,7 +445,7 @@ tr:nth-child(even) {
   z-index: 100;
   display: flex;
   position: absolute;
-  right: -190px;
+  left: -190px;
   top: 350px;
   color: #fff;
   transition: all 0.5s ease-out;
@@ -467,7 +456,7 @@ tr:nth-child(even) {
   height: 95px;
   padding: 5px;
   text-align: center;
-  border-radius: 7px 0px 0px 7px;
+  border-radius: 0px 7px 7px 0px;
 }
 .ulatwienie .button-main p {
   font-size: 11px;
@@ -573,7 +562,7 @@ tr:nth-child(even) {
 }
 
 .ulatwienie:hover {
-  right: 0px;
+  left: 0px;
 }
 
 /* -=== Ułatwienia END -=== */

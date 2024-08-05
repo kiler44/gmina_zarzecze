@@ -78,26 +78,26 @@
 <body>
 <!-- Ułatwienie czytania -->
 <div class="ulatwienie">
-	<div class="button-main">
-		<div class="ico">
-			<img src="/_szablon/images/ico/ico-19.svg" width="35" height="25" alt="">
-		</div>
-		<p>{$ETYKIETA_ULATWIENIE_CZYTANIA}</p>
-	</div>
 	<div class="content">
 		<div class="content-iner">
 			<p>{$ROZMIAR_CZCIONKI}</p>
-			<button type="button" class="fontSizeButton" id="normalFontSizeButton" onclick="changeFontSize('normal')"><img src="/_szablon/images/ico/ico-20.svg" alt="">{$ROZMIAR_NORMALNY}</button>
-			<button type="button" class="fontSizeButton" id="fontSizeButtonSmall" onclick="changeFontSize('small')"><img src="/_szablon/images/ico/ico-21.svg" alt="">{$ROZMIAR_DUZY}</button>
-			<button type="button" class="fontSizeButton" id="fontSizeButtonMedium" onclick="changeFontSize('medium')"><img src="/_szablon/images/ico/ico-22.svg" alt="">{$ROZMIAR_BARDZO_DUZY}</button>
+			<button type="button" class="fontSizeButton" id="normalFontSizeButton" onclick="changeFontSize('normal')"><img src="/_szablon/images/ico/ico-20.svg" alt="{$ROZMIAR_NORMALNY}">{$ROZMIAR_NORMALNY}</button>
+			<button type="button" class="fontSizeButton" id="fontSizeButtonSmall" onclick="changeFontSize('small')"><img src="/_szablon/images/ico/ico-21.svg" alt="{$ROZMIAR_DUZY}">{$ROZMIAR_DUZY}</button>
+			<button type="button" class="fontSizeButton" id="fontSizeButtonMedium" onclick="changeFontSize('medium')"><img src="/_szablon/images/ico/ico-22.svg" alt="{$ROZMIAR_BARDZO_DUZY}">{$ROZMIAR_BARDZO_DUZY}</button>
 		</div>
 		<div class="content-iner content-iner-bottom">
-			<p>{$KONTRAST}</p>
-			<button type="button" class="contrastButton active" id="normalButton" onclick="changeContrast('normal')"><img src="/_szablon/images/svg/img-svg-03.svg" alt="">{$KONTRAST_NORMALNY}</button>
-			<button type="button" class="contrastButton" id="contrastButtonA" onclick="changeContrast('A')"><img src="/_szablon/images/svg/img-svg-04.svg" alt="">{$KONTRAST_CZARNO_BIALY}</button>
-			<button type="button" class="contrastButton" id="contrastButtonB" onclick="changeContrast('B')"><img src="/_szablon/images/svg/img-svg-05.svg" alt="">{$KONTRAST_CZARNO_ZOLTY}</button>
-			<button type="button" class="contrastButton" id="contrastButtonC" onclick="changeContrast('C')"><img src="/_szablon/images/svg/img-svg-06.svg" alt="">{$KONTRAST_ZOLTO_CZARNY}</button>
+			<p>Kontrast:</p>
+			<button type="button" class="contrastButton active" id="normalButton" onclick="changeContrast('normal')"><img src="/_szablon/images/svg/img-svg-03.svg" alt="{$KONTRAST_NORMALNY}">{$KONTRAST_NORMALNY}</button>
+			<button type="button" class="contrastButton" id="contrastButtonA" onclick="changeContrast('A')"><img src="/_szablon/images/svg/img-svg-04.svg" alt="{$KONTRAST_CZARNO_BIALY}">{$KONTRAST_CZARNO_BIALY}</button>
+			<button type="button" class="contrastButton" id="contrastButtonB" onclick="changeContrast('B')"><img src="/_szablon/images/svg/img-svg-05.svg" alt="{$KONTRAST_CZARNO_ZOLTY}">{$KONTRAST_CZARNO_ZOLTY}</button>
+			<button type="button" class="contrastButton" id="contrastButtonC" onclick="changeContrast('C')"><img src="/_szablon/images/svg/img-svg-06.svg" alt="{$KONTRAST_ZOLTO_CZARNY}">{$KONTRAST_ZOLTO_CZARNY}</button>
 		</div>
+	</div>
+	<div class="button-main">
+		<div class="ico">
+			<img src="/_szablon/images/ico/ico-19.svg" width="35" height="25" alt="{$ETYKIETA_ULATWIENIE_CZYTANIA}">
+		</div>
+		<p>{$ETYKIETA_ULATWIENIE_CZYTANIA}</p>
 	</div>
 </div>
 <!-- Ułatwienie czytania END-->
