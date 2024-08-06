@@ -436,80 +436,69 @@ if (isMobileView2) {
 // Karuzela 3
 var carousel3 = document.querySelector("#carousel-gz-3");
 var isMobileView3 = window.matchMedia("(max-width: 767px)").matches;
+var cardWidth3 = $(".carousel-item", carousel3).width();
+var scrollPosition3 = 0;
+var intervalTime = 3000; // 3 sekundy
+function scrollCarouselNext() {
+    var carouselWidth3 = $(".carousel-inner", carousel3)[0].scrollWidth;
+    if (isMobileView3) {
+        if (scrollPosition3 < carouselWidth3 - cardWidth3) {
+            scrollPosition3 += cardWidth3;
+        } else {
+            scrollPosition3 = 0;
+        }
+    } else {
+        if (scrollPosition3 < carouselWidth3 - cardWidth3 * 4) {
+            scrollPosition3 += cardWidth3 * 4;
+        } else {
+            scrollPosition3 = 0;
+        }
+    }
+    $("#carousel-gz-3 .carousel-inner").animate(
+        { scrollLeft: scrollPosition3 },
+        600
+    );
+}
 if (isMobileView3) {
     // Mobile
     $(carousel3).addClass("slide");
-    var cardWidth3 = $(".carousel-item", carousel3).width();
-    var scrollPosition3 = 0;
-
     $("#carousel-gz-3 .carousel-control-next").on("click", function () {
-        var carouselWidth3 = $(".carousel-inner", carousel3)[0].scrollWidth;
-        if (scrollPosition3 < carouselWidth3 - cardWidth3) {
-            scrollPosition3 += cardWidth3;
-            $("#carousel-gz-3 .carousel-inner").animate(
-                { scrollLeft: scrollPosition3 },
-                600
-            );
-        } else {
-            scrollPosition3 = 0;
-            $("#carousel-gz-3 .carousel-inner").animate(
-                { scrollLeft: scrollPosition3 },
-                600
-            );
-        }
+        scrollCarouselNext();
     });
-
     $("#carousel-gz-3 .carousel-control-prev").on("click", function () {
         if (scrollPosition3 > 0) {
             scrollPosition3 -= cardWidth3;
-            $("#carousel-gz-3 .carousel-inner").animate(
-                { scrollLeft: scrollPosition3 },
-                600
-            );
         } else {
             var carouselWidth3 = $(".carousel-inner", carousel3)[0].scrollWidth;
             scrollPosition3 = carouselWidth3 - cardWidth3;
-            $("#carousel-gz-3 .carousel-inner").animate(
-                { scrollLeft: scrollPosition3 },
-                600
-            );
         }
+        $("#carousel-gz-3 .carousel-inner").animate(
+            { scrollLeft: scrollPosition3 },
+            600
+        );
     });
 } else {
-    // Desktop  
+    // Desktop
     var carouselWidth3 = $(".carousel-inner", carousel3)[0].scrollWidth;
-    var cardWidth3 = $(".carousel-item", carousel3).width();
-    var scrollPosition3 = 0;
-
     $("#carousel-gz-3 .carousel-control-next").on("click", function () {
-        if (scrollPosition3 < carouselWidth3 - cardWidth3 * 4) {
-            scrollPosition3 += cardWidth3 * 4;
-            $("#carousel-gz-3 .carousel-inner").animate(
-                { scrollLeft: scrollPosition3 },
-                600
-            );
-        } else {
-            scrollPosition3 = 0;
-            $("#carousel-gz-3 .carousel-inner").animate(
-                { scrollLeft: scrollPosition3 },
-                600
-            );
-        }
+        scrollCarouselNext();
     });
-
     $("#carousel-gz-3 .carousel-control-prev").on("click", function () {
         if (scrollPosition3 > 0) {
             scrollPosition3 -= cardWidth3 * 4;
-            $("#carousel-gz-3 .carousel-inner").animate(
-                { scrollLeft: scrollPosition3 },
-                600
-            );
         } else {
             scrollPosition3 = carouselWidth3 - cardWidth3 * 4;
-            $("#carousel-gz-3 .carousel-inner").animate(
-                { scrollLeft: scrollPosition3 },
-                600
-            );
         }
+        $("#carousel-gz-3 .carousel-inner").animate(
+            { scrollLeft: scrollPosition3 },
+            600
+        );
     });
 }
+// Start
+var carouselInterval = setInterval(scrollCarouselNext, intervalTime);
+// Stop
+$(".carousel-control-prev, .carousel-control-next").on("click", function() {
+    clearInterval(carouselInterval);
+    carouselInterval = setInterval(scrollCarouselNext, intervalTime);
+});

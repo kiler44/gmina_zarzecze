@@ -42,7 +42,7 @@
                             -->
                             <time datetime="{{$data}}">{{$data}}</time>
                             <h4>{{$tytul}}</h4>
-                            <p>{{$tresc}}</p>
+                            <!--<p>{{$tresc}}</p>-->
                         </div>
                         <a href="{{$link}}" class="btn btn-outline-primary justify-content-lg-end">Czytaj więcej »</a>
                     </div>
