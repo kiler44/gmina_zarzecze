@@ -172,14 +172,14 @@ class Http extends Modul\Http
              */
 
             if (count($zalaczniki) > 0) {
-                $urlPlikow = Cms::inst()->url('strona_opisowa', $strona->id);
+                $urlPlikow = Cms::inst()->url('aktualnosci', $strona->id);
 
                 foreach ($zalaczniki as $zalacznik) {
                     $plik['nazwa'] = $zalacznik->file;
                     $plik['opis'] = $zalacznik->opis;
                     $plik['typ'] = $zalacznik->type;
                     $plik['rozszerzenie'] = strtolower(file_ext(basename($zalacznik->file)));
-                    $plik['link'] = $urlPlikow.'/'.urldecode($zalacznik->file);
+                    $plik['link'] = $urlPlikow. $aktualnosc->id . '/' .urldecode($zalacznik->file);
                     $plik['rozmiar'] = bajtyNa($zalacznik->rozmiar, 0);
 
 
