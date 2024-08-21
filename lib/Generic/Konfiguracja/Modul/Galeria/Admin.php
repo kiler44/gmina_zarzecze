@@ -81,7 +81,7 @@ class Admin extends Konfiguracja
     				np. full => 800.600.scale',
 		'typ' => 'array',
 		'wartosc' => array(
-            '' => '3840.3840.scale',
+            '' => '1600.1600.scale',
             'mid' => '800.600.scale',
             'min' => '400.250.crop',
 			),
