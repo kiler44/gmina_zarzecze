@@ -164,8 +164,7 @@ class EdycjaAdmin extends \Generic\Formularz\Abstrakcja
             $this->formularz->zamknijRegion('dane_opiekuna');
         }
 		
-
-
+        /*
 		if ($this->uprawnienia['edycjaDanychPracowniczych'])
 		{
             $this->formularz->otworzRegion('dane_pracownicze');
@@ -201,11 +200,12 @@ class EdycjaAdmin extends \Generic\Formularz\Abstrakcja
            
             $this->formularz->zamknijRegion('dane_pracownicze');
 		}
+        */
 
 
 		$this->formularz->zamknijZakladke('uzytkownik');
 
-		
+		/*
 		if ($this->uprawnienia['edycjaDaneTidsbanken'])
 		{
 			$this->formularz->otworzZakladke('tidsbanken');
@@ -247,8 +247,9 @@ class EdycjaAdmin extends \Generic\Formularz\Abstrakcja
 			
 			$this->formularz->zamknijZakladke('tidsbanken');
 		}
+		 */
 		
-		
+		/*
 		if ($this->uprawnienia['edycjaStawkaUzytkownika'] && $this->obiekt->id > 0)
 		{
 			$this->formularz->otworzZakladke('stawkaUzytkownika');
@@ -289,6 +290,7 @@ class EdycjaAdmin extends \Generic\Formularz\Abstrakcja
 
 			$this->formularz->zamknijZakladke('kolekcje');
 		}
+		*/
 		
 		if ($this->uprawnienia['edycjaRoli'])
 		{

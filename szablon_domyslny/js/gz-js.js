@@ -438,7 +438,7 @@ var carousel3 = document.querySelector("#carousel-gz-3");
 var isMobileView3 = window.matchMedia("(max-width: 767px)").matches;
 var cardWidth3 = $(".carousel-item", carousel3).width();
 var scrollPosition3 = 0;
-var intervalTime = 3000; // 3 sekundy
+var intervalTime = 2000; // 3 sekundy
 function scrollCarouselNext() {
     var carouselWidth3 = $(".carousel-inner", carousel3)[0].scrollWidth;
     if (isMobileView3) {
