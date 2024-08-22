@@ -31,6 +31,7 @@ class Definicja extends Biblioteka\DefinicjaObiektu
 		'publikuj' => self::_BOOLEAN,
 		'idGalerii' => self::_INTEGER,
         'autorZdjec' => self::_STRING,
+        'wyswietlacZdjecieGlowne' => self::_BOOLEAN,
 	);
 
 

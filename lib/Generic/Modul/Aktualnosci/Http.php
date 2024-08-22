@@ -226,7 +226,7 @@ class Http extends Modul\Http
 
 			$this->szablon->ustawBlok('aktualnosc', $tresc);
 
-			if ($aktualnosc->zdjecieGlowne != '')
+			if ($aktualnosc->zdjecieGlowne != '' && $aktualnosc->wyswietlacZdjecieGlowne)
 			{
 				$prefix = (empty($this->k->k['aktualnosc.prefix_miniaturki'])) ? null : $this->k->k['aktualnosc.prefix_miniaturki'].'-';
 				$prefix_pelne_zdjecie = (empty($this->k->k['aktualnosc.prefix_pelne_zdjecie'])) ? null : $this->k->k['aktualnosc.prefix_pelne_zdjecie'].'-';

@@ -38,6 +38,8 @@ use Generic\Tlumaczenie\Tlumaczenie;
  * @property string $t['formularz.zapisz.wartosc']
  * @property string $t['formularz.zdjecieGlowne.etykieta']
  * @property string $t['formularz.zdjecieGlowne.opis']
+ * @property string $t['formularz.wyswietlacZdjecieGlowne']
+ * @property string $t['formularz.wyswietlacZdjecieGlowne.opis']
  * @property string $t['index.blad_nie_mozna_zapisac_strony']
  * @property string $t['index.data_dodania.etykieta']
  * @property string $t['index.etykieta_autor']
@@ -119,6 +121,8 @@ class Admin extends Tlumaczenie
 		'formularz.zapisz.wartosc' => 'Zapisz',
 		'formularz.zdjecieGlowne.etykieta' => 'Zdjęcie główne',
 		'formularz.zdjecieGlowne.opis' => 'Zdjęcie główne jest wyświetlane na liście aktualności.<br/>Więcej zdjęć dodasz poprzez edytor',
+        'formularz.wyswietlacZdjecieGlowne' => 'Zdjęcie główne widoczne',
+        'formularz.wyswietlacZdjecieGlowne.opis' => 'Czy zdjęcie główne ma być widoczne w widoku otwartej aktualności?',
 
 		'index.blad_nie_mozna_zapisac_strony' => 'Nie można zapisać danych strony!',
 		'index.data_dodania.etykieta' => 'Data dodania',

@@ -49,6 +49,7 @@ class Mapper extends Biblioteka\Mapper\Baza
 		'publikuj' => 'publikuj',
 		'id_galerii' => 'idGalerii',
         'autor_zdjec' => 'autorZdjec',
+        'wyswietlac_zdjecie_glowne' => 'wyswietlacZdjecieGlowne',
 	);
 
 

@@ -67,6 +67,9 @@ class Edycja extends \Generic\Formularz\Abstrakcja
 				'link_popraw_miniaturke' => $linkCropper,
 				'rozmiary_miniaturek' => $this->konfiguracja['rozmiary_miniaturek'],
 			)));
+            $this->formularz->input(new Input\Checkbox('wyswietlacZdjecieGlowne'));
+            $this->formularz->wyswietlacZdjecieGlowne->dodajFiltr('boolval');
+
 			$this->formularz->zdjecieGlowne->dodajWalidator(new Walidator\PoprawnyUpload());
 			$this->formularz->zdjecieGlowne->dodajWalidator(new Walidator\RozszerzeniePliku($this->konfiguracja['formularz.dozwolone_formaty_zdjec']));
 		}
