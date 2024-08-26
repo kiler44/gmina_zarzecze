@@ -27,7 +27,7 @@
 {{BEGIN zalaczniki}}
 <ul class="gz-download list-unstyled">
 	{{ BEGIN element }}
-	<li><a href="{{$link}}" class="gz-{{$rozszerzenie}} not-text-link">{{$opis}}</a><span>{{$rozmiar}}</span><!--<p> UNDO: tutaj miejsce na dodatkowy opis z bazy</p>--></li>
+	<li><a href="{{$link}}" class="gz-{{$rozszerzenie}} not-text-link">{{IF $opis !=''}}{{$opis}}{{ELSE}}{{$link}}{{END IF}}</a><span>{{$rozmiar}}</span><!--<p> TODO: tutaj miejsce na dodatkowy opis z bazy</p>--></li>
 	{{END}}
 </ul>
 {{END}}

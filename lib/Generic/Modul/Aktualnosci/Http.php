@@ -164,8 +164,6 @@ class Http extends Modul\Http
             $tresc['datetime'] = date($this->k->k['listaAktualnosci.format_daty_datetime'], strtotime($aktualnosc->dataDodania));
 			$tresc['link_wstecz'] = Router::urlHttp($this->kategoria);
 
-
-            $urlPlikow = Cms::inst()->url('aktualnosci', $this->obiekt->id);
             $zalaczniki = $aktualnosc->pobierzZalaczniki();
             /**
              * @var Zalacznik\Obiekt $zalacznik
@@ -173,6 +171,8 @@ class Http extends Modul\Http
 
             if (count($zalaczniki) > 0) {
                 $urlPlikow = Cms::inst()->url('aktualnosci', $strona->id);
+
+                $urlPlikow = Cms::inst()->url('aktualnosci', $this->obiekt->id);
 
                 foreach ($zalaczniki as $zalacznik) {
                     $plik['nazwa'] = $zalacznik->file;
@@ -186,7 +186,6 @@ class Http extends Modul\Http
                     $this->szablon->ustawBlok('zalaczniki/element', $plik);
                 }
                 $tresc['zalaczniki'] = $this->szablon->parsujBlok('zalaczniki');
-
             }
 
 
