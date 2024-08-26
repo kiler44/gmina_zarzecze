@@ -142,7 +142,7 @@
 {{BEGIN zalaczniki}}
 <ul class="gz-download list-unstyled">
 	{{ BEGIN element }}
-	<li><a href="{{$link}}" target="_blank" class="gz-{{$rozszerzenie}} not-text-link">{{IF $opis !=''}}{{$opis}}{{ELSE}}{{$link}}{{END IF}}</a><span>{{$rozmiar}}</span><!--<p> TODO: TUTAJ miejsce na dodatkowy opis-trzeba dorobić w bazie </p>--></li>
+	<li><a href="{{$link}}" target="_blank" class="gz-{{$rozszerzenie}} not-text-link">{{IF $opis !=''}}{{$opis}}{{ELSE}}{{$nazwa}}{{END IF}}</a><span>{{$rozmiar}}</span><!--<p> TODO: TUTAJ miejsce na dodatkowy opis-trzeba dorobić w bazie </p>--></li>
 	{{END}}
 </ul>
 {{END}}
