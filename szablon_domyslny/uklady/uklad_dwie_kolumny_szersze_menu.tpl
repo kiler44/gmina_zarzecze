@@ -35,6 +35,14 @@
 	{{END}}
 </head>
 <body>
+<!-- Stara strona www  -->
+<a href="{$STARA_STRONA_URL}" target="_blank">
+	<div class="www-old">
+		<img src="/_szablon/images/ico/ico-32.svg" alt="ico-www">
+		<p>{$STARA_STRONA_ETYKIETA}</p>
+	</div>
+</a>
+<!-- Stara strona www - end  -->
 <!-- Ułatwienie czytania -->
 <div class="ulatwienie">
 	<div class="content">

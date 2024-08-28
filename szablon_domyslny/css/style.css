@@ -587,6 +587,41 @@ tr:nth-child(even) {
 }
 
 /* -=== Ułatwienia END -=== */
+/* -=== Stara strona www -=== */
+.www-old {
+  background-color: #1A671A;
+  display: block;
+  position: absolute;
+  top: 247px;
+  width: 70px;
+  z-index: 100;
+  padding: 10px 5px;
+  text-align: center;
+  border-radius: 0px 7px 7px 0px;
+  transition: all 0.3s ease-out;
+  border: solid 2px #1A671A;
+}
+.www-old p {
+  color: #fff;
+  font-size: 10px;
+  margin-top: 5px;
+  margin-bottom: 0;
+  line-height: 13px;
+}
+
+.www-old:hover {
+  background-color: #003344;
+  border: solid 2px #fff;
+}
+
+@media (max-width: 768px) {
+  .www-old {
+    top: 100px;
+    width: 70px;
+    padding: 10px 5px;
+  }
+}
+/* -=== Stara strona www END -=== */
 .gz-header img {
   border-radius: 8px;
 }
