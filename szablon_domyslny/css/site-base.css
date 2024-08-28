@@ -333,14 +333,24 @@ tr:nth-child(even) {
 }
 
 /* Strszalki karuzeli */
+.carousel-control-next-icon, .carousel-control-prev-icon, .carousel-control-slider-next-icon, .carousel-control-slider-prev-icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100% 100%;
+}
+
 .carousel-control-prev {
   left: -50px;
   width: 40px;
 }
 
 .carousel-control-prev-icon {
-  background-image: url("../images/ico/ico-04.svg");
+  background-image: url("../images/ico/ico-30.svg");
   filter: none !important;
+  opacity: 1;
 }
 
 .carousel-control-next {
@@ -349,9 +359,9 @@ tr:nth-child(even) {
 }
 
 .carousel-control-next-icon {
-  background-image: url("../images/ico/ico-05.svg");
+  background-image: url("../images/ico/ico-31.svg");
   filter: none !important;
-  background-blend-mode: hard-light;
+  opacity: 1;
 }
 
 .gz-section a {
@@ -367,6 +377,17 @@ tr:nth-child(even) {
 }
 .gz-section .gz-bg-1 {
   background: #F9F9F9;
+}
+
+.carousel-control-slider-prev-icon {
+  background-image: url("../images/ico/ico-04.svg");
+  filter: none !important;
+}
+
+.carousel-control-slider-next-icon {
+  background-image: url("../images/ico/ico-05.svg");
+  filter: none !important;
+  background-blend-mode: hard-light;
 }
 
 /* -=== Paginacja ===- */
