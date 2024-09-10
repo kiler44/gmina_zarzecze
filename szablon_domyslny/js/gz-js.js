@@ -438,7 +438,7 @@ var carousel3 = document.querySelector("#carousel-gz-3");
 var isMobileView3 = window.matchMedia("(max-width: 767px)").matches;
 var cardWidth3 = $(".carousel-item", carousel3).width();
 var scrollPosition3 = 0;
-var intervalTime = 3500; // 3,5 sekundy
+var intervalTime = 4500; // 4,5 sekundy
 function scrollCarouselNext() {
     var carouselWidth3 = $(".carousel-inner", carousel3)[0].scrollWidth;
     if (isMobileView3) {
@@ -448,8 +448,8 @@ function scrollCarouselNext() {
             scrollPosition3 = 0;
         }
     } else {
-        if (scrollPosition3 < carouselWidth3 - cardWidth3 * 4) {
-            scrollPosition3 += cardWidth3 * 4;
+        if (scrollPosition3 < carouselWidth3 - cardWidth3 * 2) {
+            scrollPosition3 += cardWidth3 * 2;
         } else {
             scrollPosition3 = 0;
         }
@@ -485,9 +485,9 @@ if (isMobileView3) {
     });
     $("#carousel-gz-3 .carousel-control-prev").on("click", function () {
         if (scrollPosition3 > 0) {
-            scrollPosition3 -= cardWidth3 * 4;
+            scrollPosition3 -= cardWidth3 * 2;
         } else {
-            scrollPosition3 = carouselWidth3 - cardWidth3 * 4;
+            scrollPosition3 = carouselWidth3 - cardWidth3 * 2;
         }
         $("#carousel-gz-3 .carousel-inner").animate(
             { scrollLeft: scrollPosition3 },
