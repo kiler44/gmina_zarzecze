@@ -389,8 +389,7 @@ body {
 }
 .gz-opisowa .gz-text-link {
   color: #fff;
-  -webkit-text-decoration: underline 2px dotted #fff !important;
-          text-decoration: underline 2px dotted #fff !important;
+  text-decoration: underline 2px dotted #fff !important;
 }
 .gz-opisowa table, .gz-opisowa tr:nth-child(even) {
   background-color: transparent;
@@ -594,4 +593,6 @@ body {
 }
 .gz-wyniki-wyszukiwania .gz-pagination .gz-item a:hover {
   background-color: #fff;
-}/*# sourceMappingURL=style-czarno-bialy.css.map */
+}
+
+/*# sourceMappingURL=style-czarno-bialy.css.map */

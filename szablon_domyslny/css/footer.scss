@@ -33,7 +33,7 @@
         font-weight: 400;
         text-decoration: none;
     }
-    a::before {
+    a:not(.notBefore)::before {
         content: 'e-mail: ';
         color: #C9C9C9;
         font-size: 13px;

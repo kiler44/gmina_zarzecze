@@ -396,14 +396,6 @@ body {
   color: #000000;
 }
 
-.form-control::-moz-placeholder {
-  color: #000000 !important;
-  font-weight: 500;
-  font-size: 16px;
-  font-style: normal;
-  line-height: normal;
-}
-
 .form-control::placeholder {
   color: #000000 !important;
   font-weight: 500;
@@ -472,8 +464,7 @@ body {
 }
 .gz-opisowa .gz-text-link {
   color: #000000;
-  -webkit-text-decoration: underline 2px dotted #000000 !important;
-          text-decoration: underline 2px dotted #000000 !important;
+  text-decoration: underline 2px dotted #000000 !important;
 }
 .gz-opisowa table, .gz-opisowa tr:nth-child(even) {
   background-color: transparent;
@@ -696,4 +687,6 @@ body {
   margin-top: -1px;
   border: 1px solid #000000;
   background-color: #FFD800;
-}/*# sourceMappingURL=style-zolto-czarny.css.map */
+}
+
+/*# sourceMappingURL=style-zolto-czarny.css.map */

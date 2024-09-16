@@ -16,8 +16,7 @@ body {
 /* Link w tekscie */
 .gz-text-link, .gz-opisowa .gz-content a:not(.not-text-link) {
   color: #1A671A;
-  -webkit-text-decoration: underline 2px dotted #1A671A !important;
-          text-decoration: underline 2px dotted #1A671A !important;
+  text-decoration: underline 2px dotted #1A671A !important;
   font-weight: 500;
 }
 
@@ -27,8 +26,7 @@ body {
 
 .gz-text-link:hover, .gz-opisowa .gz-content a:hover {
   color: #105A9E;
-  -webkit-text-decoration: underline 2px solid #105A9E !important;
-          text-decoration: underline 2px solid #105A9E !important;
+  text-decoration: underline 2px solid #105A9E !important;
   font-weight: 500;
 }
 
@@ -47,7 +45,6 @@ body {
 @media (max-width: 991px) {
   .gz-opisowa .gz-content .btn {
     text-align: center;
-    width: -moz-fit-content;
     width: fit-content;
     margin-bottom: 20px;
   }
@@ -621,4 +618,6 @@ tr:nth-child(even) {
     padding: 10px 5px;
   }
 }
-/* -=== Stara strona www END -=== *//*# sourceMappingURL=site-base.css.map */
+/* -=== Stara strona www END -=== */
+
+/*# sourceMappingURL=site-base.css.map */

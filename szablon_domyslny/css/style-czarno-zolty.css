@@ -415,8 +415,7 @@ body {
 }
 .gz-opisowa .gz-text-link {
   color: #FFD800;
-  -webkit-text-decoration: underline 2px dotted #FFD800 !important;
-          text-decoration: underline 2px dotted #FFD800 !important;
+  text-decoration: underline 2px dotted #FFD800 !important;
 }
 .gz-opisowa table, .gz-opisowa tr:nth-child(even) {
   background-color: transparent;
@@ -627,4 +626,6 @@ body {
 }
 .gz-wyniki-wyszukiwania .gz-pagination .gz-item a:hover {
   background-color: #FFD800;
-}/*# sourceMappingURL=style-czarno-zolty.css.map */
+}
+
+/*# sourceMappingURL=style-czarno-zolty.css.map */
