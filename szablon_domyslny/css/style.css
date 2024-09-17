@@ -3066,4 +3066,8 @@ tr:nth-child(even) {
 #videoPlayerIframe, #videoPlayer {
   width: 100%;
   height: 80vh; /* 80% wysokości ekranu */
+}
+
+div.no-label:has(.f_email) {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

@@ -57,6 +57,11 @@ class Http extends \Generic\Formularz\Abstrakcja
 			}
 		}
 
+        $this->formularz->input(new Input\Text('email', array(
+            'atrybuty' => array('class' => 'f_email'),
+        )));
+        $this->formularz->email->dodajFiltr('strip_tags', 'filtr_xss', 'trim');
+        $this->formularz->email->dodajWalidator(new Walidator\Puste());
 		foreach($this->listaPol as $nazwa => $ustawieniePola)
 		{
 			if (isset($konfiguracja[$nazwa]))
@@ -105,6 +110,7 @@ class Http extends \Generic\Formularz\Abstrakcja
 				}
 			}
 		}
+        //$this->formularz->input(new Input\CaptchaText('lobuz'));
 		$this->formularz->stopka(new Input\Submit('zapisz', '&nbsp;', array(
 			'wartosc' => $this->tlumaczenia['etykieta_zapisz'],
 			'atrybuty' => array('class' => 'btn btn-primary'),
