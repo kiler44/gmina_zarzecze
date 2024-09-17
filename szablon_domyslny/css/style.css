@@ -2126,7 +2126,7 @@ tr:nth-child(even) {
   font-weight: 400;
   text-decoration: none;
 }
-.gz-footer a::before {
+.gz-footer a:not(.notBefore)::before {
   content: "e-mail: ";
   color: #C9C9C9;
   font-size: 13px;
