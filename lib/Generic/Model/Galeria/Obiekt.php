@@ -55,7 +55,7 @@ class Obiekt extends ObiektDanych
         return $kategoriaMapper->pobierzPoId($this->idKategorii);
     }
 
-	public function dodajZdjecie(string $nazwaPliku, ?string $opis = ''):bool
+	public function dodajZdjecie(string $nazwaPliku, ?string $opis = '', int $pozycja = 0):bool
     {
         $zdjeciaMapper = new GaleriaZdjecie\Mapper();
         $zdjecieObiekt = new GaleriaZdjecie\Obiekt();
@@ -66,18 +66,20 @@ class Obiekt extends ObiektDanych
         $zdjecieObiekt->opis = $opis;
         $zdjecieObiekt->idGalerii = $this->id;
         $zdjecieObiekt->publikuj = true;
+        $zdjecieObiekt->pozycja = $pozycja;
         $zdjecieObiekt->kodJezyka = KOD_JEZYKA;
 
 
         return $zdjecieObiekt->zapisz($zdjeciaMapper);
     }
 
-    public function aktualizujOpisZdjecia(int $id, ?string $opis):bool
+    public function aktualizujOpisZdjecia(int $id, ?string $opis, int $kolejnosc = 0):bool
     {
         $zdjeciaMapper = new GaleriaZdjecie\Mapper();
         if( ( $zdjecie = $zdjeciaMapper->pobierzPoId($id) ) instanceof GaleriaZdjecie\Obiekt )
         {
             $zdjecie->opis = $opis;
+            $zdjecie->pozycja = $kolejnosc;
             return $zdjecie->zapisz($zdjeciaMapper);
         }
         else

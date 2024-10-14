@@ -209,8 +209,8 @@ class Http extends Modul\Http
 			$tresc['pager'] = $pager->html(Router::urlHttp($this->kategoria, array('galeria' ,$id ,'{NR_STRONY}', '{NA_STRONIE}')));
 
 			$this->szablon->ustawBlok('galeria', $tresc);
-
-			$zdjecia = $mapper->pobierzOpublikowane($galeria->id, $pager);
+            $galeriaSorter = new GaleriaZdjecie\Sorter('pozycja');
+			$zdjecia = $mapper->pobierzOpublikowane($galeria->id, $pager, $galeriaSorter);
 
 			if (count($zdjecia) > 0)
 			{

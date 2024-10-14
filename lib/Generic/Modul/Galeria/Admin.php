@@ -376,10 +376,12 @@ class Admin extends Modul\Admin
             {
                 foreach ($plikiUzytkownika as $plik) {
 
+                    $kolejnosc = ($plik['kolejnosc']) ?? 0;
+
                     if($plik['kod'])
-                        $galeria->dodajZdjecie($plik['kod'], $plik['opis']);
+                        $galeria->dodajZdjecie($plik['kod'], $plik['opis'], $kolejnosc);
                     else
-                        $galeria->aktualizujOpisZdjecia($plik['zdjecie_id'], $plik['opis']);
+                        $galeria->aktualizujOpisZdjecia($plik['zdjecie_id'], $plik['opis'], $kolejnosc);
                 }
             }
 			$trescKomunikatu = $this->j->t['formularz.info_zapisano_galerie'];

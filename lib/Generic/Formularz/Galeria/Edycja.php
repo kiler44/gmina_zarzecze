@@ -18,7 +18,8 @@ class Edycja extends \Generic\Formularz\Abstrakcja
 			$this->formularz->otworzZakladke('zdjecia', 'Zdjęcia');
 
             $zdjeciaMapper = new GaleriaZdjecie\Mapper();
-            $zdjecia = $zdjeciaMapper->pobierzDlaGalerii($this->obiekt->id);
+            $zdjeciaSorter = new GaleriaZdjecie\Sorter('pozycja');
+            $zdjecia = $zdjeciaMapper->pobierzDlaGalerii($this->obiekt->id, null, $zdjeciaSorter);
 
             $kategorieMapper = new \Generic\Model\Kategoria\Mapper();
             $kategoriaCropper = $kategorieMapper->pobierzDlaModulu('CropperZdjec');
