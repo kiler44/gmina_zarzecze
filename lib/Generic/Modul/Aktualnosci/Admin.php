@@ -379,6 +379,7 @@ class Admin extends Modul\Admin
                             $zalacznik->rozmiar = $plik['rozmiar'];
                             $zalacznik->opis = $plik['opis'];
                             $zalacznik->type = $zalacznikPlik->getMimeType();
+                            $zalacznik->pozycja = $plik['kolejnosc'];
 
                             $aktualnosc->dodajZalacznik($zalacznik);
                         }
@@ -386,6 +387,7 @@ class Admin extends Modul\Admin
                         {
                             $zalacznik = $this->dane()->Zalacznik()->pobierzPoId($id);
                             $zalacznik->opis = $plik['opis'];
+                            $zalacznik->pozycja = $plik['kolejnosc'];
                             $zalacznik->zapisz(new Zalacznik\Mapper());
                         }
 

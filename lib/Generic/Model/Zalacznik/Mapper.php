@@ -44,6 +44,7 @@ class Mapper extends Biblioteka\Mapper\Baza
 		'opis' => 'opis',
 		'id_author' => 'idAuthor',
         'kod' => 'kod',
+        'pozycja' => 'pozycja',
 	);
 
 
@@ -116,7 +117,7 @@ class Mapper extends Biblioteka\Mapper\Baza
 		return $this->pobierzWiele($sql, $pager, $sorter);
 	}
 	
-	public function pobierzDlaObjektu($objekt, $idObjektu, $status = 'active', $nazwaZalacznika = null, Array $kryteria = array())
+	public function pobierzDlaObjektu($objekt, $idObjektu, \Generic\Model\Zalacznik\Sorter $sorter = null,  $status = 'active', $nazwaZalacznika = null, Array $kryteria = array())
 	{
 		$objekt = addslashes($objekt);
 		$sql = 'SELECT * FROM ' . $this->tabela
@@ -145,7 +146,7 @@ class Mapper extends Biblioteka\Mapper\Baza
 			}
 		}
 
-		return $this->pobierzWiele($sql);
+		return $this->pobierzWiele($sql, null, $sorter);
 		
 	}
 

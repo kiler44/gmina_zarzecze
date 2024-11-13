@@ -3,6 +3,7 @@ namespace Generic\Model\StronaOpisowa;
 use Generic\Biblioteka\Cms;
 use Generic\Biblioteka\Katalog;
 use Generic\Biblioteka\ObiektDanych;
+use Generic\Model\Zalacznik;
 
 
 /**
@@ -36,8 +37,9 @@ class Obiekt extends ObiektDanych
 
     public function pobierzZalaczniki():array
     {
-        $zalacznikiMapper = new \Generic\Model\Zalacznik\Mapper();
-        return  $zalacznikiMapper->pobierzDlaObjektu('StronaOpisowa', $this->id);
+        $zalacznikiMapper = new Zalacznik\Mapper();
+        $zalacznikiSorter = new Zalacznik\Sorter('pozycja', 'asc');
+        return  $zalacznikiMapper->pobierzDlaObjektu('StronaOpisowa', $this->id, $zalacznikiSorter);
     }
 
 

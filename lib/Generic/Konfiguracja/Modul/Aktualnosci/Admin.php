@@ -20,7 +20,7 @@ class Admin extends Konfiguracja
 {
 	protected $konfiguracjaDomyslna = array(
     'pliki.dozwoloneRozszerzenia' => array(
-        'opis' => 'Dozwolone rozszerzenia w uploadnie plików',
+        'opis' => 'Dozwolone rozszerzenia w uploadzie plików',
         'typ' => 'list',
         'wartosc' => array(
             'pdf',
@@ -31,6 +31,7 @@ class Admin extends Konfiguracja
             'jpg',
             'jpeg',
             'png',
+            'zip',
         ),
     ),
     'modul_admin.czy_kategoria_wydarzen' => array(

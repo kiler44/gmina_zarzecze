@@ -3,6 +3,7 @@ namespace Generic\Modul\StronaOpisowa;
 use Generic\Biblioteka\Cms;
 use Generic\Biblioteka\MenedzerPlikow;
 use Generic\Biblioteka\Modul;
+use Generic\Model\GaleriaZdjecie;
 use Generic\Model\StronaOpisowa;
 use Generic\Model\Zalacznik;
 
@@ -46,7 +47,8 @@ class Http extends Modul\Http
 
             if ($strona->idGalerii > 0) {
                 $mapper_zdjecia = $this->dane()->GaleriaZdjecie();
-                $zdjecia = $mapper_zdjecia->pobierzOpublikowane($strona->idGalerii);
+                $sorter = new GaleriaZdjecie\Sorter('pozycja', 'asc');
+                $zdjecia = $mapper_zdjecia->pobierzOpublikowane($strona->idGalerii, null, $sorter);
 
                 if (count($zdjecia) > 0) {
                     $mapper_galeria = $this->dane()->Galeria();
@@ -54,7 +56,7 @@ class Http extends Modul\Http
 
                     $galeria_dane = array(
                         'tytul_galerii' => $galeria->nazwa,
-                        'autor_zdjec' => ($galeria->autor != '') ? $galeria->autor : $this->j->t['aktualnosc.autor_zdjec_nieznany'],
+                        'autor_zdjec' => ($galeria->autor != '') ? $galeria->autor : $this->j->t['stronaOpisowa.autor_zdjec_nieznany'],
                     );
 
 
@@ -91,7 +93,6 @@ class Http extends Modul\Http
                         $plik['rozszerzenie'] = strtolower(file_ext(basename($zalacznik->file)));
                         $plik['link'] = $urlPlikow . '/' . urldecode($zalacznik->file);
                         $plik['rozmiar'] = bajtyNa($zalacznik->rozmiar, 0);
-
 
                         $this->szablon->ustawBlok('zalaczniki/element', $plik);
                     }

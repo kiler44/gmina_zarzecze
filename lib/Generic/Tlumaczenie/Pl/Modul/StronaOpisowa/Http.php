@@ -12,7 +12,7 @@ use Generic\Tlumaczenie\Tlumaczenie;
 class Http extends Tlumaczenie
 {
 	protected $tlumaczeniaDomyslne = array(
-	
+        'stronaOpisowa.autor_zdjec_nieznany' => 'nieznany',
 		'index.blad_brak_strony' => 'Nie dysponujemy treścią dla tej kategorii',
 			'_akcje_etykiety_' => array(
 			'wykonajIndex' => 'Wyświetlanie treści strony',

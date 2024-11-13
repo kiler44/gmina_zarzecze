@@ -21,6 +21,7 @@ class Admin extends Konfiguracja
                 'jpg',
                 'jpeg',
                 'png',
+                'zip',
             ),
         ),
 	);

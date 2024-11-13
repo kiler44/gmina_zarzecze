@@ -633,6 +633,33 @@ a.ui-spinner-button{
 	margin: 0;
 	list-style: none;
 }
+#zalaczniki-separate-list {
+	.ui-sortable li {line-height: 20px;}
+	.edition-area {height: 160px}
+	.operations, .edition-area {
+		width: 100%;
+	}
+	li {
+		width: 309px;
+		margin: 1px 1px 0 0;
+		border: 1px solid whitesmoke;
+		background-color: white;
+		border-radius: 5px;
+	}
+	label {
+		text-overflow: ellipsis;
+		overflow: hidden;
+	}
+	.usun {
+		display: block;
+		width: 20px;
+		height: 20px;
+		float: right;
+		padding: 0px !important;
+	}
+	input[type='text'] {width: 95%}
+	p {text-overflow: ellipsis; overflow: hidden; margin: 10px 0 0 0}
+}
 .editable-input .input-medium {float: left; margin-right: 5px}
 .ui-sortable li {padding: 5px 10px; cursor: move; border-top: 1px solid #EEE; line-height: 28px}
 .ui-sortable li:first-child {border-top: none}

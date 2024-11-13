@@ -212,6 +212,7 @@ class MultiUpload {
 				$zdjeciaInfo[$klucz]['kolejnosc'] = isset($zdjecie['kolejnosc']) ? $zdjecie['kolejnosc'] : 0;
 				if (isset($zdjecie['opis']))
 				{
+                    $zdjeciaInfo[$klucz]['kolejnosc'] = $zdjecie['kolejnosc'];
 					$zdjeciaInfo[$klucz]['opis'] = $zdjecie['opis'];
 				}
 			}

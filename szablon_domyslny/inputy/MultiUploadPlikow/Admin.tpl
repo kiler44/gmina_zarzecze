@@ -1,14 +1,12 @@
 {{BEGIN szablon_zdjecie_1}}
 <li id="{{$id}}" >
   <div class="edition-area">
-	<p><input type="checkbox" class="no-js" name="{{$usun_nazwa}}" value="{{$usun_wartosc}}" />
-	 </p>
-	 <label><a href="{{$url}}" {{$rel}}><strong>{{$nazwa}}</strong></a></label>
-	  <a href="javascript:void(0)" class="remove {{$funkcja_usun}}" id="{{$id}}" rel="{{$id}}">{{$etykieta_usun}}<span></span></a>
-
-	  <p class="right">
-	  <label>{{$etykieta_opis}}</label>
-	  <input type="text" name="{{$opis_nazwa}}" value="{{$opis_wartosc}}" style="width: 130px;" onclick="this.focus();" /></p>
+	  <div class="operations">
+		  <input type="checkbox" class="no-js" name="{{$usun_nazwa}}" value="{{$usun_wartosc}}" />
+		  <a href="javascript:void(0)" class="btn btn-mini btn-danger usun {{$funkcja_usun}}" id="{{$id}}" rel="{{$id}}" title="{{$etykieta_usun}}">x</a>
+	  </div>
+	  <input type="text" name="{{$opis_nazwa}}" value="{{$opis_wartosc}}" onclick="this.focus();" placeholder="{{$etykieta_opis}}" />
+	  <p><a href="{{$url}}" {{$rel}}>{{$nazwa}}</a></p>
 
   </div>
 </li>

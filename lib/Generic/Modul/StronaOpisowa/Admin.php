@@ -81,6 +81,7 @@ class Admin extends Modul\Admin
                     $katalogDocelowy = new \Generic\Biblioteka\Katalog($strona->pobierzKatalog());
                     $zalaczniki = array();
                     $zalaczniki = listaZTablicy($wartosci['zalaczniki']['pliki'], null, 'kolejnosc');
+
                     $plikiUzytkownika = $multiUpload->przeniesPliki(
                         $zalaczniki,
                         $wartosci['zalaczniki']['pliki'], $katalogDocelowy, 1);
@@ -113,7 +114,9 @@ class Admin extends Modul\Admin
                             $zalacznik->dateAdded = new \DateTime();
                             $zalacznik->rozmiar = $plik['rozmiar'];
                             $zalacznik->opis = $plik['opis'];
+                            $zalacznik->pozycja = $plik['kolejnosc'];
                             $zalacznik->type = $zalacznikPlik->getMimeType();
+
 
                             $strona->dodajZalacznik($zalacznik);
                         }
@@ -121,9 +124,9 @@ class Admin extends Modul\Admin
                         {
                             $zalacznik = $this->dane()->Zalacznik()->pobierzPoId($id);
                             $zalacznik->opis = $plik['opis'];
+                            $zalacznik->pozycja = $plik['kolejnosc'];
                             $zalacznik->zapisz(new Zalacznik\Mapper());
                         }
-
                     }
                 }
 				$this->komunikat($this->j->t['index.info_zapisano_dane_strony'], 'info', 'sesja');

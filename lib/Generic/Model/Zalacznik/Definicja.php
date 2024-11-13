@@ -15,6 +15,7 @@ use Generic\Biblioteka;
  * @property string $type
  * @property int $idAuthor
  * @property  string $kod
+ * @property int $pozycja
  */
 class Definicja extends Biblioteka\DefinicjaObiektu
 {
@@ -38,6 +39,7 @@ class Definicja extends Biblioteka\DefinicjaObiektu
 		'opis' => self::_STRING,
 		'idAuthor' => self::_INTEGER,
         'kod' => self::_STRING,
+        'pozycja' => self::_INTEGER,
 	);
 
 

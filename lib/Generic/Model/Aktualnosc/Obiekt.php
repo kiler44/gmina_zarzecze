@@ -69,7 +69,8 @@ class Obiekt extends ObiektDanych
 	public function pobierzZalaczniki():array
     {
         $zalacznikiMapper = new \Generic\Model\Zalacznik\Mapper();
-        return  $zalacznikiMapper->pobierzDlaObjektu('Aktualnosc', $this->id);
+        $zalacznikiSorter = new \Generic\Model\Zalacznik\Sorter('pozycja', 'ASC');
+        return  $zalacznikiMapper->pobierzDlaObjektu('Aktualnosc', $this->id, $zalacznikiSorter);
     }
 
     public function dodajZalacznik(\Generic\Model\Zalacznik\Obiekt $zalacznik)

@@ -18,20 +18,11 @@ use Generic\Biblioteka\Cms;
  * @property string $rozmiar
  * @property string $kod
  * @property string $opis
+ * @property int $pozycja
  */
 
 class Obiekt extends ObiektDanych
 {
-	/**
-	 * @var \Generic\Konfiguracja\Model\Zalaczniki\Obiekt
-	 */
-	protected $k;
-
-	/**
-	 * @var \Generic\Tlumaczenie\Pl\Model\Zalaczniki\Obiekt
-	 */
-	protected $j;
-
 	public function __construct($dane = array())
     {
         parent::__construct($dane);

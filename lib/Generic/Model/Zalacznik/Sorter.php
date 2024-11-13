@@ -18,7 +18,7 @@ class Sorter extends Biblioteka\Sorter
 			'id_projektu' => 'ASC', 
 			'object' => 'ASC',  
 			'file' => 'ASC', 
-			'date_added' => 'ASC', 
+			'date_added' => 'ASC',
 		),
 		
 		'id_projektu' => array(
@@ -55,7 +55,10 @@ class Sorter extends Biblioteka\Sorter
 			'object' => 'ASC', 
 			'date_added' => 'ASC', 
 		),
-		
+		'pozycja' => array(
+            'pozycja',
+            'date_added' => 'ASC',
+        )
 	);	
 
 
