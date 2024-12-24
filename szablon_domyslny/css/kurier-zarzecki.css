@@ -10,5 +10,5 @@
     
 }
 .gz-kurier .gz-kurier-item a::after {
-    content: '';
+    content: '' !important;
 }
