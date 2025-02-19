@@ -1,2 +1,8 @@
 User-agent: *
 Disallow: /
+Disallow: /na_biezaco/
+Disallow: /dla-mieszkancow/
+Disallow: /gmina-zarzecze/
+Disallow: /urzad-gminy/
+Disallow: /kultura-i-oswiata/
+Disallow: /gospodarka/
